@@ -1,8 +1,8 @@
-# [HUOA](www.huoa.org)
+# [HUOA](https://huoa.org/nuuzi/)
 
 Website redesign for Hawaian United Okinawa Association
 
-Visit the WordPress back-end [here](github.com/masalcedo88/huoa-wp).
+Visit the WordPress back-end [here](https://github.com/masalcedo88/huoa-wp).
 
 ## Index:
 - [Scope](#Scope)
