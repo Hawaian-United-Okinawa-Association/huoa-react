@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 //Components
-import App from './components/App';
+import App from './App';
 
 ReactDOM.render(
 	<Router>

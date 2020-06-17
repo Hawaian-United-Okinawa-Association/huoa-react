@@ -2,9 +2,9 @@
 import React from 'react';
 
 //Components
-import Navbar from './Navbar';
-import Footer from './Footer';
-import Routes from '../config/routes';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Routes from './config/routes';
 
 const App = () => {
 	return (
