@@ -6,7 +6,7 @@ class Navbar extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>Testing Github FTP Deploy</h1>
+				<h1>Testing Github FTP Deploys</h1>
 				<Link to="/">
 					<h4>HUOA Home</h4>
 				</Link>
