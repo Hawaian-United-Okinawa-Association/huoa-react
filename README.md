@@ -20,6 +20,9 @@ The objective is to redesign the current website for HUOA to give the associatio
   - axios
   - react-router-dom
 
+##### For testing coverage reporting
+- use `npm test -- --coverage --watchAll=false`
+
 ## User Stories
 
 Pending...
