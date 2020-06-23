@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 //Components, config, utils, etc.
+import './index.scss';
 import App from './base/App';
 import configureStore from './store/configureStore';
 
