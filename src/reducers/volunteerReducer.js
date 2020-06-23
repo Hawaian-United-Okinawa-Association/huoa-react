@@ -4,7 +4,7 @@
 // 	FETCH_VOLUNTEER_REQUEST,
 // 	EDIT_VOLUNTEER_REQUEST,
 // 	DELETE_VOLUNTEER_REQUEST
-// } from '../actions/types';
+// } from '../actions/actionTypes';
 
 export default (state = {}, action) => {
 	switch (action.type) {

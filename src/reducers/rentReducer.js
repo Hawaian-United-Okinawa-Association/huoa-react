@@ -4,7 +4,7 @@
 // 	FETCH_RENT_REQUESTS,
 // 	EDIT_RENT_REQUEST,
 // 	DELETE_RENT_REQUEST
-// } from '../actions/types';
+// } from '../actions/actionTypes';
 
 export default (state = {}, action) => {
 	switch (action.type) {
