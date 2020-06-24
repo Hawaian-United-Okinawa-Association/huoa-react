@@ -1,14 +1,18 @@
-// Dependencies
+// NPM Dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-//Components
+//Components, config, utils, etc.
+import './index.scss';
 import App from './base/App';
+import configureStore from './store/configureStore';
+
+const store = configureStore();
 
 ReactDOM.render(
-	<Router>
+	<Provider store={store}>
 		<App />
-	</Router>,
+	</Provider>,
 	document.querySelector('#root')
 );
