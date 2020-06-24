@@ -1,6 +1,5 @@
 //Dependencies
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
 
 //Components
 import Navbar from './../components/Navbar/Navbar';
@@ -9,11 +8,11 @@ import Routes from './../config/routes';
 
 const App = () => {
 	return (
-		<BrowserRouter>
+		<main>
 			<Navbar />
 			<Routes />
 			<Footer />
-		</BrowserRouter>
+    </main>
 	);
 };
 
