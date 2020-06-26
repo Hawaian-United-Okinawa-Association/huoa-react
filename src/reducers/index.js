@@ -5,6 +5,7 @@ import volunteerReducer from './volunteerReducer';
 import subscribeReducer from './subscribeReducer';
 import newsReducer from './newsReducer';
 import rentReducer from './rentReducer';
+import modalsReducer from './modalsReducer';
 
 export default combineReducers({
 	donation: donationReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
 	volunteer: volunteerReducer,
 	subscribe: subscribeReducer,
 	news: newsReducer,
-	rent: rentReducer
+	rent: rentReducer,
+	modals: modalsReducer
 });
