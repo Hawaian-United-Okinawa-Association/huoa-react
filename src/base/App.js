@@ -12,7 +12,7 @@ import { openModal, closeModal } from './../actions/index.js'
 
 const actions = { openModal, closeModal };
 
-const App = (props) => {
+const App = () => {
 	return (
 		<main>
 			<ModalManager/>

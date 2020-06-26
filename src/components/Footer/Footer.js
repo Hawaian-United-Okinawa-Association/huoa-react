@@ -1,21 +1,29 @@
 //Dependencies
 import React from 'react';
-import { connect } from 'react-redux';
-import { openModal } from './../../actions/index';
+import { useDispatch } from 'react-redux';
 
-const actions = { openModal };
+const Footer = () => {
+	const dispatch = useDispatch();
 
-const Footer = (props) => {
-	const onOpenModalClicked = () => {
-		openModal("TestModal", { a : 42});
+	const openModal = (modalType) => {
+		dispatch({
+			type: 'MODAL_OPEN',
+			payload: {
+				modalType: modalType,
+				modalProps: {
+					a: 46
+				}
+			}
+		})
 	}
 
 	return (
 		<div>
 			<h4>Footer</h4>
-			<button onClick={() => onOpenModalClicked()}>Click for modal.</button>
+			<button onClick={() => openModal('TestModal')}>Click for Modal One.</button>
+			<button onClick={() => openModal('TestModalTwo')}>Click for Modal Two.</button>
 		</div>
 	);
 };
 
-export default connect(null, actions)(Footer);
+export default Footer;
