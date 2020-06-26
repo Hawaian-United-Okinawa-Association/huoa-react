@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import Modal from "./Modal";
 
-const TestModal = () => {
+const TestModalTwo = () => {
   const dispatch = useDispatch();
 
   const closeModal = () => {
@@ -14,11 +14,11 @@ const TestModal = () => {
 
   return (
     <Modal>
-      <h1>Modal One Working!</h1>
+      <h1>Modal Two Working!</h1>
       <p>Click button to exit modal!</p>
       <button onClick={() => closeModal()}>Close Modal</button>
     </Modal>
   )
 }
 
-export default TestModal;
+export default TestModalTwo;
