@@ -1,4 +1,4 @@
-import content from '../apis/content';
+import content from 'apis/content';
 import { CREATE_EVENT, FETCH_EVENT, FETCH_EVENTS, DELETE_EVENT, EDIT_EVENT } from './actionTypes';
 
 //Event Actions Examples

@@ -15,8 +15,8 @@ Visit the WordPress back-end [here](https://github.com/masalcedo88/huoa-wp).
 
 The objective is to redesign the current website for HUOA to give the association a fresh, modern look that will also run on some of today's latest technologies.
 
-##### For testing coverage reporting
-- use `npm test -- --coverage --watchAll=false`
+## Getting started
+- Create an `.env` file in the main directory and add `NODE_PATH=src/` this will handle our absolute paths
 
 #### Installation
 - use `npm install` to install dependencies
@@ -27,6 +27,9 @@ The objective is to redesign the current website for HUOA to give the associatio
 - `npm run server` to run in `Production`
 
 **Note** Nodemon is installed thus running server you will have a reloading state of the server
+
+##### For testing coverage reporting
+- use `npm test -- --coverage --watchAll=false`
 
 ## User Stories
 
