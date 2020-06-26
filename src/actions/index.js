@@ -15,9 +15,6 @@ export const deleteEvent = (id) => async (dispatch) => {
 };
 
 export const openModal = (modalType, modalProps) => {
-	console.log('hits openModal action')
-	console.log(modalType);
-	console.log(modalProps);
 	return {
 		type: MODAL_OPEN,
 		payload: { modalType, modalProps }
