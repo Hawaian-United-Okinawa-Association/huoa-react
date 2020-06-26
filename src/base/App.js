@@ -1,5 +1,6 @@
 //Dependencies
 import React from 'react';
+import { connect } from 'react-redux';
 
 //Components
 import ModalManager from './../components/Modal/ModalManager'
@@ -7,10 +8,14 @@ import Navbar from './../components/Navbar/Navbar';
 import Footer from './../components/Footer/Footer';
 import Routes from './../config/routes';
 
-const App = () => {
+import { openModal, closeModal } from './../actions/index.js'
+
+const actions = { openModal, closeModal };
+
+const App = (props) => {
 	return (
 		<main>
-			<ModalManager />
+			<ModalManager/>
 			<Navbar />
 			<Routes />
 			<Footer />
@@ -18,4 +23,4 @@ const App = () => {
 	);
 };
 
-export default App;
+export default connect(null, actions)(App);
