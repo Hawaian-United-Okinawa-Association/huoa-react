@@ -1,5 +1,7 @@
 # [HUOA](https://huoa.org/nuuzi/)
 
+[![<Hawaian-United-Okinawa-Association>](https://circleci.com/gh/Hawaian-United-Okinawa-Association/huoa-react.svg?style=svg)](https://app.circleci.com/pipelines/github/Hawaian-United-Okinawa-Association/huoa-react)
+
 Website redesign for Hawaian United Okinawa Association
 
 Visit the WordPress back-end [here](https://github.com/masalcedo88/huoa-wp).
