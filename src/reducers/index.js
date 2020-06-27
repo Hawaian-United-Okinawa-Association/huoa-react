@@ -7,10 +7,10 @@ import newsReducer from './newsReducer';
 import rentReducer from './rentReducer';
 
 export default combineReducers({
-	donation: donationReducer,
-	event: eventReducer,
-	volunteer: volunteerReducer,
-	subscribe: subscribeReducer,
-	news: newsReducer,
-	rent: rentReducer
+  donation: donationReducer,
+  event: eventReducer,
+  volunteer: volunteerReducer,
+  subscribe: subscribeReducer,
+  news: newsReducer,
+  rent: rentReducer
 });

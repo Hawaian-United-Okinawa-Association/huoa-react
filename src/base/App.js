@@ -1,19 +1,24 @@
 //Dependencies
 import React from 'react';
+import { connect } from 'react-redux';
 
 //Components
 import Navbar from './../components/Navbar/Navbar';
 import Footer from './../components/Footer/Footer';
 import Routes from './../config/routes';
 
-const App = () => {
-	return (
-		<main>
-			<Navbar />
-			<Routes />
-			<Footer />
+import { fetchEvents } from './../actions/index'
+
+const App = (props) => {
+  let events = props.fetchEvents();
+
+  return (
+    <main>
+      <Navbar />
+      <Routes />
+      <Footer />
     </main>
-	);
+  );
 };
 
-export default App;
+export default connect(null, { fetchEvents })(App);
