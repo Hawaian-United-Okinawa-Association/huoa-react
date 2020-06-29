@@ -11,8 +11,7 @@ const createReducer = (initialState, fnMap) => {
 }
 
 export function openModal(state, payload) {
-  const {modalType, modalProps} = payload;
-  return {modalType, modalProps}
+  return payload;
 };
 
 export function closeModal(state, payload) {

@@ -14,10 +14,10 @@ export const deleteEvent = (id) => async (dispatch) => {
 	dispatch({ type: DELETE_EVENT, payload: id });
 };
 
-export const openModal = (modalType, modalProps) => {
+export const openModal = (modalContent) => {
 	return {
 		type: MODAL_OPEN,
-		payload: { modalType, modalProps }
+		payload: modalContent
 	};
 }
 
