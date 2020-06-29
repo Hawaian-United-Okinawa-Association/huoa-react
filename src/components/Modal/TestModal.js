@@ -1,8 +1,6 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
 
-import Modal from "./Modal";
-
 const TestModal = () => {
   const dispatch = useDispatch();
 
@@ -13,11 +11,11 @@ const TestModal = () => {
 	}
 
   return (
-    <Modal>
+    <div>
       <h1>Modal One Working!</h1>
       <p>Click button to exit modal!</p>
       <button onClick={() => closeModal()}>Close Modal</button>
-    </Modal>
+    </div>
   )
 }
 
