@@ -2,12 +2,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import TestModal from './../Modal/TestModal/TestModal';
-import TestModalTwo from './../Modal/TestModalTwo/TestModalTwo';
+import DefaultModal from './../Modal/DefaultModal/DefaultModal';
 
 const Footer = () => {
-	const RenderTestModal = <TestModal />
-	const RenderTestModalTwo = <TestModalTwo />
+	const RenderDefaultModal = <DefaultModal />
 
 	const dispatch = useDispatch();
 	const openModal = (modalContent) => {
@@ -22,8 +20,7 @@ const Footer = () => {
 	return (
 		<div>
 			<h4>Footer</h4>
-			<button onClick={() => openModal(RenderTestModal)}>Click for Modal One.</button>
-			<button onClick={() => openModal(RenderTestModalTwo)}>Click for Modal Two.</button>
+			<button onClick={() => openModal(RenderDefaultModal)}>Click for Modal One.</button>
 		</div>
 	);
 };

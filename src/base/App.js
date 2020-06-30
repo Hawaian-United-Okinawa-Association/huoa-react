@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 //Components
-import ModalManager from './../components/Modal/ModalManager'
+import Modal from './../components/Modal/Modal'
 import Navbar from './../components/Navbar/Navbar';
 import Footer from './../components/Footer/Footer';
 import Routes from './../config/routes';
@@ -15,7 +15,7 @@ const actions = { openModal, closeModal };
 const App = () => {
 	return (
 		<main>
-			<ModalManager/>
+			<Modal/>
 			<Navbar />
 			<Routes />
 			<Footer />
