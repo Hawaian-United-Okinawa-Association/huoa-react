@@ -13,11 +13,11 @@ import configureStore from './store/configureStore';
 const store = configureStore(window.__REDUX_STATE__ || {});
 
 const Main = (
-	<Provider store={store}>
+  <Provider store={store}>
     <BrowserRouter>
-		  <App />
+      <App />
     </BrowserRouter>
-	</Provider>
+  </Provider>
 );
 
 if (process.env.NODE_ENV === 'production') {
