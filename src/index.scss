@@ -1,6 +1,5 @@
-// Normalize SCSS
+// Import Normalize Stylesheet
 @import 'styles/normalize.scss';
 
-// Global CSS Variables
-@import 'styles/colors.scss';
-@import 'styles/fonts.scss';
+// Import Typography Stylesheet
+@import 'styles/typography.scss';

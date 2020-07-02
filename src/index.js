@@ -6,9 +6,12 @@ import { BrowserRouter } from 'react-router-dom';
 // TODO: "react-loadable" for code-splitting
 
 //Components, config, utils, etc.
-import './index.scss';
 import App from './base/App';
 import configureStore from './store/configureStore';
+import { fonts } from './resources/font';
+import './index.scss';
+
+
 
 const store = configureStore(window.__REDUX_STATE__ || {});
 
