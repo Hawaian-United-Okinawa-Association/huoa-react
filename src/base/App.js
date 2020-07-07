@@ -10,8 +10,6 @@ import Routes from './../config/routes';
 import { fetchEvents } from './../actions/index'
 
 const App = (props) => {
-  let events = props.fetchEvents();
-
   return (
     <main>
       <Navbar />
