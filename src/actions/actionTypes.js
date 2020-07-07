@@ -37,3 +37,5 @@ export const FETCH_SUBSCRIPTIONS = 'FETCH_SUBSCRIPTIONS';
 // export const FETCH_SUBSCRIPTION = 'FETCH_SUBSCRIPTION'; I don't think this one is necessary since you only subcribe with email (marco)
 export const DELETE_SUBSCRIPTION = 'DELETE_SUBSCRIPTION';
 // export const EDIT_SUBSCRIPTION = 'EDIT_SUBSCRIPTION'; Same with this one (marco)
+export const MODAL_OPEN = 'MODAL_OPEN';
+export const MODAL_CLOSE = 'MODAL_CLOSE';
