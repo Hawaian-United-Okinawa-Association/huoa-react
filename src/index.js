@@ -10,8 +10,6 @@ import App from './base/App';
 import configureStore from './store/configureStore';
 import './index.scss';
 
-
-
 const store = configureStore(window.__REDUX_STATE__ || {});
 
 const Main = (
