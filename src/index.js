@@ -8,7 +8,6 @@ import { BrowserRouter } from 'react-router-dom';
 //Components, config, utils, etc.
 import App from './base/App';
 import configureStore from './store/configureStore';
-import { fonts } from './resources/font';
 import './index.scss';
 
 
