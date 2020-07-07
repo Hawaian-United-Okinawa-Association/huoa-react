@@ -1,5 +1,5 @@
 import content from '../apis/content';
-import { FETCH_EVENTS, DELETE_EVENT } from './actionTypes';
+import { FETCH_EVENTS, DELETE_EVENT, MODAL_OPEN, MODAL_CLOSE } from './actionTypes';
 
 //Event Actions Examples
 export const fetchEvents = () => async (dispatch) => {
@@ -13,3 +13,16 @@ export const deleteEvent = (id) => async (dispatch) => {
 
   dispatch({ type: DELETE_EVENT, payload: id });
 };
+
+export const openModal = (modalContent) => {
+  return {
+    type: MODAL_OPEN,
+    payload: modalContent
+  };
+}
+
+export const closeModal = () => {
+  return {
+    type: MODAL_CLOSE
+  };
+}
