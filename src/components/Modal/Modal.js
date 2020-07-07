@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeModal } from './../../actions/index';
 
-import { ReactComponent as Close } from './../../assets/Close.svg';
+import { ReactComponent as ButtonClose } from './../../assets/button-close.svg';
 import './Modal.scss';
 
 const Modal = (props) => {
@@ -14,8 +14,8 @@ const Modal = (props) => {
       <div className='modal'>
         <div className='modal--overlay' onClick={() => dispatch(closeModal())}></div>
         <div className='modal--container'>
-          <Close className='modal--close' onClick={() => dispatch(closeModal())}/>
-          <div className='modal--content'>
+          <ButtonClose className='modal--close' onClick={() => dispatch(closeModal())} />
+          <div className='modal--body'>
             { modalState }
           </div>
         </div>
