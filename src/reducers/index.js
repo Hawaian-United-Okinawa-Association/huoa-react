@@ -6,8 +6,10 @@ import subscribeReducer from './subscribeReducer';
 import newsReducer from './newsReducer';
 import rentReducer from './rentReducer';
 import modalReducer from './modalReducer';
+import navReducer from './navReducer';
 
 export default combineReducers({
+  nav: navReducer,
   donation: donationReducer,
   event: eventReducer,
   volunteer: volunteerReducer,

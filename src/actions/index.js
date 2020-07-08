@@ -1,28 +1,24 @@
 import content from '../apis/content';
-import { FETCH_EVENTS, DELETE_EVENT, MODAL_OPEN, MODAL_CLOSE } from './actionTypes';
+import { SET_ACTIVE_MENU, MODAL_OPEN, MODAL_CLOSE } from './actionTypes';
 
-//Event Actions Examples
-export const fetchEvents = () => async (dispatch) => {
-  const res = await content.get('/events');
-
-  dispatch({ type: FETCH_EVENTS, payload: res.data });
+//Nav Actions
+export const setActiveMenu = (menu) => {
+  return {
+    type: SET_ACTIVE_MENU,
+    payload: menu
+  };
 };
 
-export const deleteEvent = (id) => async (dispatch) => {
-  // const res = await content.delete(`/events/${id}`);
-
-  dispatch({ type: DELETE_EVENT, payload: id });
-};
-
+//Modal Actions
 export const openModal = (modalContent) => {
   return {
     type: MODAL_OPEN,
     payload: modalContent
   };
-}
+};
 
 export const closeModal = () => {
   return {
     type: MODAL_CLOSE
   };
-}
+};
