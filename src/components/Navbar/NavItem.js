@@ -13,7 +13,7 @@ const NavItem = (props) => {
   return (
     <Link
       className={props.name === 'Donate' ? 'donate-btn' : null}
-      onClick={() => dispatch(setActiveMenu(props.name))}
+      onMouseEnter={() => dispatch(setActiveMenu(props.name))}
       to={props.children ? '#' : props.linkTo}
     >
       <li href="#" className={props.name === 'Donate' ? 'donate-btn-txt' : null}>
