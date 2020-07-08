@@ -7,7 +7,6 @@ $bgAccent: #484a4d;
 $textColor: #dadce1;
 $navSize: 155px;
 $border: 1px solid #474a4d;
-$borderRadius: 8px;
 
 .button-text {
   font-family: $poppins;
@@ -55,6 +54,35 @@ $borderRadius: 8px;
   text-transform: uppercase;
   color: $dark-purple;
   transform: matrix(1, -0.01, 0.01, 1, 0, 0);
+}
+
+//Dropdown Menu
+.dropdown {
+  position: absolute;
+  z-index: 10;
+  top: 100px;
+  width: 200px;
+  background-color: $background;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  overflow: hidden;
+  transition: height 500ms ease;
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: .2rem;
+}
+
+.menu-item:hover {
+  text-decoration: none;
+  color: $dark-purple;
 }
 
 nav {

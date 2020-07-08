@@ -37,7 +37,20 @@ const INITIAL_STATE = {
     {
       name: 'Events',
       linkTo: '/events',
-      children: []
+      children: [
+        {
+          name: 'Calendar',
+          linkTo: '/events/calendar'
+        },
+        {
+          name: 'Exchange Programs',
+          linkTo: '/events/exchanges'
+        },
+        {
+          name: 'Okinawan Classes',
+          linkTo: '/events/classes'
+        }
+      ]
     },
     {
       name: 'Geneology',
