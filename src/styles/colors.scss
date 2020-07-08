@@ -1,14 +1,12 @@
-:root {
-  // Default Colors
-  --white: #ffffff;
-  --black: #000000;
-  --danger: #ff0000;
+// Default Colors
+$white: #ffffff;
+$black: #242728;
+$dark-grey: #494949;
+$danger: #ff0000;
 
-  // Custom Colors
-  --gray: #494949;
-  --magenta-dark: #763263;
-  --magenta: #9f4e8d;
-  --magenta-light: #efe8f6;
-  --magenta-lighter: #f7f0f5;
-  --green: #285f1a;
-}
+// Custom Colors
+$dark-purple: #763263;
+$purple: #9f4e8d;
+$light-purple: #efe8f6;
+$lighter-purple: #f7f0f5;
+$dark-green: #194f1a;
