@@ -1,10 +1,13 @@
 // Dependencies
 import React, { useRef } from 'react';
+import { useDispatch } from 'react-redux';
 
 //Components, assets, actions, styles etc..
 import DropDownItem from './DropDownItem';
+import { setActiveMenu } from '../../actions/index';
 
 const DropDownMenu = (props) => {
+  const dispatch = useDispatch();
   const dropdownRef = useRef(null);
 
   const renderMenuItems = (items) => {
@@ -14,8 +17,8 @@ const DropDownMenu = (props) => {
   };
 
   return (
-    <div className="dropdown" ref={dropdownRef}>
-      <div className="dropdown-menu">{renderMenuItems(props.items)}</div>
+    <div className="nav--dropdown" ref={dropdownRef} onMouseLeave={() => dispatch(setActiveMenu(null))}>
+      <div className="nav--dropdown__links">{renderMenuItems(props.items)}</div>
     </div>
   );
 };

@@ -29,21 +29,17 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
-      <div className="nav-brand">
-        <div className="nav-img">
-          <Link to="/">
-            <img className="nav-logo" src={logo} />
-          </Link>
-        </div>
-        <div className="nav-text">
-          <h4>Hawaii United Okinawa Association</h4>
-          <p>Celebrating 120 years of Uchinanchu in Hawaii</p>
-        </div>
+    <nav className="nav">
+      <div className="nav--container">
+        <Link className="nav--container" to="/">
+          <img className="nav--logo" src={logo} />
+          <div className="nav--txt">
+            <h4 className="nav--txt__title">Hawaii United Okinawa Association</h4>
+            <p className="nav--txt__body">Celebrating 120 years of Uchinanchu in Hawaii</p>
+          </div>
+        </Link>
       </div>
-      <div className="nav-block">
-        <ul className="nav-links">{renderNavItems(navState.navItems)}</ul>
-      </div>
+      <ul className="nav--links">{renderNavItems(navState.navItems)}</ul>
     </nav>
   );
 };
