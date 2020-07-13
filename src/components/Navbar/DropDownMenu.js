@@ -10,15 +10,11 @@ const DropDownMenu = (props) => {
   const dispatch = useDispatch();
   const dropdownRef = useRef(null);
 
-  const renderMenuItems = (items) => {
-    return items.map((item) => {
-      return <DropDownItem name={item.name} linkTo={item.linkTo} />;
-    });
-  };
+  const renderMenuItems = props.items.map((item) => <DropDownItem name={item.name} linkTo={item.linkTo} />);
 
   return (
     <div className="nav--dropdown" ref={dropdownRef} onMouseLeave={() => dispatch(setActiveMenu(null))}>
-      <div className="nav--dropdown__links">{renderMenuItems(props.items)}</div>
+      <div className="nav--dropdown__links">{renderMenuItems}</div>
     </div>
   );
 };
