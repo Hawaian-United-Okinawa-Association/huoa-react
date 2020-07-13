@@ -32,7 +32,7 @@ const Navbar = () => {
     <nav className="nav">
       <div className="nav--container">
         <Link className="nav--container" to="/">
-          <img className="nav--logo" src={logo} />
+          <img className="nav--logo" src={logo} alt="HUOA Logo" />
           <div className="nav--txt">
             <h4 className="nav--txt__title">Hawaii United Okinawa Association</h4>
             <p className="nav--txt__body">Celebrating 120 years of Uchinanchu in Hawaii</p>

@@ -1,5 +1,3 @@
-import { SET_ACTIVE_MENU } from '../actions/actionTypes';
-
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     default:

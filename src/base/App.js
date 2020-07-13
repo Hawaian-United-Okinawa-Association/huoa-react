@@ -1,6 +1,5 @@
 //Dependencies
 import React from 'react';
-import { connect } from 'react-redux';
 
 //Components
 import Modal from './../components/Modal/Modal';

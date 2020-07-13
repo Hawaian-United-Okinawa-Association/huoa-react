@@ -1,4 +1,3 @@
-import content from '../apis/content';
 import { SET_ACTIVE_MENU, MODAL_OPEN, MODAL_CLOSE } from './actionTypes';
 
 //Nav Actions
