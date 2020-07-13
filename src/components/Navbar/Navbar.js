@@ -10,7 +10,7 @@ import logo from '../../assets/huoa-logo.png';
 import './Navbar.scss';
 
 const Navbar = () => {
-  const navState = useSelector((state) => state.nav);
+  const routerState = useSelector((state) => state.router);
 
   const hasDropdown = (children) => {
     if (children.length) {
@@ -39,7 +39,7 @@ const Navbar = () => {
           </div>
         </Link>
       </div>
-      <ul className="nav--links">{renderNavItems(navState.navItems)}</ul>
+      <ul className="nav--links">{renderNavItems(routerState.routes)}</ul>
     </nav>
   );
 };

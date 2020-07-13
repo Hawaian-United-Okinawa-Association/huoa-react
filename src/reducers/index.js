@@ -7,6 +7,7 @@ import newsReducer from './newsReducer';
 import rentReducer from './rentReducer';
 import modalReducer from './modalReducer';
 import navReducer from './navReducer';
+import routerReducer from './routerReducer';
 
 export default combineReducers({
   nav: navReducer,
@@ -16,5 +17,6 @@ export default combineReducers({
   subscribe: subscribeReducer,
   news: newsReducer,
   rent: rentReducer,
-  modals: modalReducer
+  modals: modalReducer,
+  router: routerReducer
 });
