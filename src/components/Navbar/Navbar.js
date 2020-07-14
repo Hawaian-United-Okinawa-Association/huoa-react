@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 //Components, assets, actions, styles etc..
 import NavItem from './NavItem';
 import DropDownMenu from './DropDownMenu';
-import logo from '../../assets/huoa-logo.png';
+import logo from '../../assets/huoa-logo.svg';
 import './Navbar.scss';
 
 const Navbar = () => {
