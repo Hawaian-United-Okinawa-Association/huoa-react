@@ -8,6 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 //Components, config, utils, etc.
 import App from './base/App';
 import configureStore from './store/configureStore';
+import './resources/font';
 import './index.scss';
 
 const store = configureStore(window.__REDUX_STATE__ || {});
@@ -22,14 +23,8 @@ const Main = (
 
 if (process.env.NODE_ENV === 'production') {
   window.onload = async () => {
-    ReactDOM.hydrate(
-      Main,
-      document.getElementById('root')
-    );
+    ReactDOM.hydrate(Main, document.getElementById('root'));
   };
 } else {
-  ReactDOM.render(
-    Main,
-    document.getElementById('root')
-  );
+  ReactDOM.render(Main, document.getElementById('root'));
 }

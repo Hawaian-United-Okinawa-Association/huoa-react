@@ -10,5 +10,5 @@ export default (state = INITIAL_STATE, action) => {
 };
 
 const INITIAL_STATE = {
-  activeMenu: null
+  activeMenu: false
 };
