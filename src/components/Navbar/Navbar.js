@@ -21,7 +21,7 @@ const Navbar = () => {
   const renderNavItems = (items) => {
     return items.map((item) => {
       return (
-        <NavItem name={item.name} linkTo={item.linkTo}>
+        <NavItem name={item.name} linkTo={item.linkTo} key={item.linkTo}>
           {hasDropdown(item.children)}
         </NavItem>
       );

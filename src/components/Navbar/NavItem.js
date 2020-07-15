@@ -1,7 +1,7 @@
 //Dependencies
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 //Components, assets, actions, styles etc..
 import { setActiveMenu } from '../../actions/index';
@@ -10,20 +10,17 @@ const NavItem = (props) => {
   const navState = useSelector((state) => state.nav);
   const dispatch = useDispatch();
 
+  const setMenu = () => dispatch(setActiveMenu(props.name));
+  const closeMenu = () => dispatch(setActiveMenu(false));
+  const setClass = () => (props.name === 'Donate' ? 'donate' : 'nav');
+  const goToLink = () => props.history.push(props.children ? props.children.props.items[0].linkTo : props.linkTo);
+
   return (
-    <Link
-      className={props.name === 'Donate' ? 'donate--link' : 'nav--link'}
-      onMouseEnter={() => {
-        dispatch(setActiveMenu(props.name));
-      }}
-      to={props.children ? '#' : props.linkTo}
-    >
-      <li href="#" className={props.name === 'Donate' ? 'donate--link__txt' : 'nav--link__txt'}>
-        {props.name}
-      </li>
+    <div className={`${setClass()}--link`} onMouseEnter={setMenu} onMouseLeave={closeMenu} onClick={goToLink}>
+      <li className={`${setClass()}--link__txt`}>{props.name}</li>
       {navState.activeMenu === props.name && props.children}
-    </Link>
+    </div>
   );
 };
 
-export default NavItem;
+export default withRouter(NavItem);

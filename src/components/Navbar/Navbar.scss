@@ -1,10 +1,12 @@
 @import '../../styles/colors.scss';
 
+$shadow: 0 8px 8px -6px $black;
+
 .nav {
   height: 10rem;
   background-color: $white;
   padding: 0 1rem;
-  border-bottom: 1px solid $dark-grey;
+  box-shadow: $shadow;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -20,28 +22,29 @@
 }
 
 .nav--logo {
-  height: 6rem;
+  height: 7rem;
   color: $dark-purple;
 }
 
 .nav--txt__title {
-  font-weight: bolder;
+  font-weight: 1000;
   color: $dark-grey;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-decoration: none;
+  line-height: 20px;
   margin: 0;
   padding: 0;
 }
 
 .nav--txt__body {
   color: $black;
-  font-size: 1rem;
+  font-size: .8rem;
   margin: 0;
   padding: 0;
 }
 
 .nav--links {
-  width: 55%;
+  width: 60%;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -66,6 +69,9 @@
   color: $black;
   text-decoration: none;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.03);
+  border: 0;
+  cursor: pointer;
+  padding: 1rem 1.3rem;
 }
 
 .nav--link:hover {
@@ -73,12 +79,10 @@
 }
 
 .nav--link__txt {
-  width: 7rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 300;
-  font-size: 1rem;
+  font-size: .9rem;
 }
 
 .nav--link__txt:hover {
@@ -88,15 +92,14 @@
 
 .donate--link {
   text-decoration: none;
+  cursor: pointer;
   border: 2px solid $dark-purple;
-  box-sizing: border-box;
   border-radius: 28px;
   padding: .5rem 1.3rem;
-  margin-left: .5rem;
 }
 
 .donate--link__txt {
-  font-size: 1rem;
+  font-size: .9rem;
   text-transform: uppercase;
   color: $dark-purple;
 }
@@ -105,11 +108,12 @@
 .nav--dropdown {
   position: absolute;
   z-index: 10;
-  top: 100px;
-  width: 200px;
+  top: 5.6rem;
   background-color: $white;
+  box-shadow: $shadow;
   border: 1px solid rgba(0, 0, 0, 0.09);
   overflow: hidden;
+  padding: .5rem;
 }
 
 .nav--dropdown__link {
@@ -118,6 +122,9 @@
   display: flex;
   align-items: center;
   padding: .2rem;
+  &--txt {
+    font-size: .9rem;
+  }
 }
 
 .nav--dropdown__link:hover {

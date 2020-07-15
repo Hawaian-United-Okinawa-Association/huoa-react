@@ -13,19 +13,19 @@ const INITIAL_STATE = {
       children: [
         {
           name: 'Mission and Values',
-          linkTo: '/about/mission'
+          linkTo: '/about/mission-and-values'
         },
         {
           name: 'History',
           linkTo: '/about/history'
         },
         {
-          name: 'HO Center',
-          linkTo: '/about/ho-center'
+          name: 'Hawaii Okinawan Center',
+          linkTo: '/about/hawaii-okinawan-center'
         },
         {
           name: 'Banquet Facility',
-          linkTo: '/about/banquet'
+          linkTo: '/about/banquet-facility'
         },
         {
           name: 'HUOA Team',
@@ -46,15 +46,15 @@ const INITIAL_STATE = {
           linkTo: '/join/clubs'
         },
         {
-          name: 'Okinawan Art Directory',
-          linkTo: '/join/art'
+          name: 'Okinawan Performing Arts Directory',
+          linkTo: '/join/performing-arts-directory'
         },
         {
           name: 'Club Sports',
           linkTo: '/join/sports'
         },
         {
-          name: 'Scholarships',
+          name: 'Scholarships & Grants',
           linkTo: '/join/scholarships'
         },
         {
@@ -76,8 +76,8 @@ const INITIAL_STATE = {
           linkTo: '/events/calendar'
         },
         {
-          name: 'Exchange Programs',
-          linkTo: '/events/exchanges'
+          name: 'Student Exchange Program',
+          linkTo: '/events/student-exchange-program'
         },
         {
           name: 'Okinawan Classes',
@@ -96,7 +96,7 @@ const INITIAL_STATE = {
       children: [
         {
           name: 'Uchinanchu Newsletter',
-          linkTo: '/news/uchinanchu'
+          linkTo: '/news/newsletter'
         },
         {
           name: 'Purple Blast',
@@ -104,7 +104,7 @@ const INITIAL_STATE = {
         },
         {
           name: 'HOT Schedule & KZOO Radio',
-          linkTo: '/news/hot-kzoo'
+          linkTo: '/news/hot-schedule-kzoo-radio'
         }
       ]
     },
