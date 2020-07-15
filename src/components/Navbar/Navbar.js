@@ -35,7 +35,7 @@ const Navbar = () => {
           <img className="nav--logo" src={logo} alt="HUOA Logo" />
           <div className="nav--txt">
             <h2 className="nav--txt__title">Hawaii United Okinawa Association</h2>
-            <p className="nav--txt__body">Celebrating 120 years of Uchinanchu in Hawaii</p>
+            <h5 className="nav--txt__body">Celebrating 120 years of Uchinanchu in Hawaii</h5>
           </div>
         </Link>
       </div>
