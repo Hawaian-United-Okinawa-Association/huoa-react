@@ -1,21 +1,16 @@
 // Dependencies
-import React, { useRef } from 'react';
-import { useDispatch } from 'react-redux';
-
-//Components, assets, actions, styles etc..
-import DropDownItem from './DropDownItem';
-import { setActiveMenu } from '../../actions/index';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const DropDownMenu = (props) => {
-  const dispatch = useDispatch();
-  const dropdownRef = useRef(null);
-
   const renderMenuItems = props.items.map((item) => (
-    <DropDownItem name={item.name} linkTo={item.linkTo} key={item.linkTo} />
+    <Link className="nav--dropdown__link" to={item.linkTo} onClick={(e) => e.stopPropagation()} key={item.linkTo}>
+      <li className="nav--dropdown__link--txt">{item.name}</li>
+    </Link>
   ));
 
   return (
-    <div className="nav--dropdown" ref={dropdownRef}>
+    <div className="nav--dropdown">
       <div className="nav--dropdown__links">{renderMenuItems}</div>
     </div>
   );
