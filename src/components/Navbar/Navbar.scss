@@ -24,7 +24,7 @@
   color: $dark-purple;
 }
 
-.nav--txt__title {
+.nav--title {
   font-weight: bolder;
   color: $dark-grey;
   font-size: 1.5rem;
@@ -34,7 +34,7 @@
   padding: 0;
 }
 
-.nav--txt__body {
+.nav--title__sm {
   color: $black;
   font-size: .9rem;
   margin: 0;
@@ -54,7 +54,7 @@
   align-items: center;
 }
 
-.nav--txt {
+.nav--titles {
   margin-left: 1rem;
   display: flex;
   flex-direction: column;
