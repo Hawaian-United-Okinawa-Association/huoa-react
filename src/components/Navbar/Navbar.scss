@@ -1,12 +1,10 @@
 @import '../../styles/colors.scss';
 
-$shadow: 0 8px 8px -6px $black;
-
 .nav {
   height: 10rem;
   background-color: $white;
   padding: 0 1rem;
-  box-shadow: $shadow;
+  box-shadow: 0 -9px 12px $black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -27,24 +25,24 @@ $shadow: 0 8px 8px -6px $black;
 }
 
 .nav--txt__title {
-  font-weight: 1000;
+  font-weight: bolder;
   color: $dark-grey;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-decoration: none;
-  line-height: 20px;
+  line-height: 30px;
   margin: 0;
   padding: 0;
 }
 
 .nav--txt__body {
   color: $black;
-  font-size: .8rem;
+  font-size: .9rem;
   margin: 0;
   padding: 0;
 }
 
 .nav--links {
-  width: 60%;
+  width: 55%;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -71,7 +69,7 @@ $shadow: 0 8px 8px -6px $black;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.03);
   border: 0;
   cursor: pointer;
-  padding: 1rem 1.3rem;
+  padding: 2rem .5rem;
 }
 
 .nav--link:hover {
@@ -82,7 +80,7 @@ $shadow: 0 8px 8px -6px $black;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: .9rem;
+  font-size: 1.1rem;
 }
 
 .nav--link__txt:hover {
@@ -95,11 +93,11 @@ $shadow: 0 8px 8px -6px $black;
   cursor: pointer;
   border: 2px solid $dark-purple;
   border-radius: 28px;
-  padding: .5rem 1.3rem;
+  padding: .5rem 1.8rem;
 }
 
 .donate--link__txt {
-  font-size: .9rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   color: $dark-purple;
 }
@@ -108,9 +106,9 @@ $shadow: 0 8px 8px -6px $black;
 .nav--dropdown {
   position: absolute;
   z-index: 10;
-  top: 5.6rem;
+  top: 7rem;
   background-color: $white;
-  box-shadow: $shadow;
+  box-shadow: 0 8px 8px -9px $black;
   border: 1px solid rgba(0, 0, 0, 0.09);
   overflow: hidden;
   padding: .5rem;
@@ -121,9 +119,9 @@ $shadow: 0 8px 8px -6px $black;
   color: $black;
   display: flex;
   align-items: center;
-  padding: .2rem;
+  padding: .5rem;
   &--txt {
-    font-size: .9rem;
+    font-size: 1rem;
   }
 }
 
