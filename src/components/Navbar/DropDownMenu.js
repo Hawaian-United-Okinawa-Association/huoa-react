@@ -1,10 +1,21 @@
 // Dependencies
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+//Components, assets, actions, styles etc..
+import { setActiveMenu } from '../../actions/index';
 
 const DropDownMenu = (props) => {
+  const dispatch = useDispatch();
+
+  const closeMenu = (e) => {
+    e.stopPropagation();
+    dispatch(setActiveMenu(false));
+  };
+
   const renderMenuItems = props.items.map((item) => (
-    <Link className="nav--dropdown__link" to={item.linkTo} onClick={(e) => e.stopPropagation()} key={item.linkTo}>
+    <Link className="nav--dropdown__link" to={item.linkTo} onClick={closeMenu} key={item.linkTo}>
       <li className="nav--dropdown__link--txt">{item.name}</li>
     </Link>
   ));
