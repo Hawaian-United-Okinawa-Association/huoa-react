@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 //Components, assets, actions, styles etc..
 import NavItem from './NavItem';
 import DropDownMenu from './DropDownMenu';
-import logo from '../../assets/huoa-logo.svg';
+import { ReactComponent as HUOALogo } from '../../assets/huoa-logo.svg';
 import './Navbar.scss';
 
 const Navbar = () => {
@@ -32,7 +32,7 @@ const Navbar = () => {
     <nav className="nav">
       <div className="nav--container">
         <Link className="nav--container" to="/">
-          <img className="nav--logo" src={logo} alt="HUOA Logo" />
+          <HUOALogo className="nav--logo" alt="HUOA Logo" />
           <div className="nav--titles">
             <h2 className="nav--title">Hawaii United Okinawa Association</h2>
             <h5 className="nav--title__sm">Celebrating 120 years of Uchinanchu in Hawaii</h5>
