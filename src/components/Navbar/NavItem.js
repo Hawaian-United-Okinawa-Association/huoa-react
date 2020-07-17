@@ -10,8 +10,8 @@ const NavItem = (props) => {
   const navState = useSelector((state) => state.nav);
   const dispatch = useDispatch();
 
-  const setMenu = () => dispatch(setActiveMenu(props.name));
-  const closeMenu = () => dispatch(setActiveMenu(false));
+  const setMenu = () => (props.children ? dispatch(setActiveMenu(props.name)) : null);
+  const closeMenu = () => (props.children ? dispatch(setActiveMenu(false)) : null);
   const setClass = () => (props.name === 'Donate' ? 'donate' : 'nav');
   const goToLink = () => props.history.push(props.children ? props.children.props.items[0].linkTo : props.linkTo);
 
