@@ -1,20 +1,38 @@
 //Dependencies
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 //Components, assets, actions, styles etc..
 import NavItem from './NavItem';
-import DropDownMenu from './DropDownMenu';
+import { setActiveMenu } from '../../actions/index';
 import { ReactComponent as HUOALogo } from '../../assets/huoa-logo.svg';
 import './Navbar.scss';
 
 const Navbar = () => {
-  const routerState = useSelector((state) => state.router);
+  const dispatch = useDispatch();
+  const { routes } = useSelector((state) => state.router);
 
-  const hasDropdown = (children) => {
+  const renderMenuItems = (children) => {
+    return children.map((item) => (
+      <Link
+        className="nav--dropdown__link"
+        to={item.linkTo}
+        onClick={() => dispatch(setActiveMenu(false))}
+        key={item.linkTo}
+      >
+        <li className="nav--dropdown__link--txt">{item.name}</li>
+      </Link>
+    ));
+  };
+
+  const dropdown = (children) => {
     if (children.length) {
-      return <DropDownMenu items={children} />;
+      return (
+        <div className="nav--dropdown">
+          <ul className="nav--dropdown__links">{renderMenuItems(children)}</ul>
+        </div>
+      );
     }
   };
 
@@ -22,7 +40,7 @@ const Navbar = () => {
     return items.map((item) => {
       return (
         <NavItem name={item.name} linkTo={item.linkTo} key={item.linkTo}>
-          {hasDropdown(item.children)}
+          {dropdown(item.children)}
         </NavItem>
       );
     });
@@ -30,16 +48,16 @@ const Navbar = () => {
 
   return (
     <nav className="nav">
-      <div className="nav--container">
-        <Link className="nav--container" to="/">
-          <HUOALogo className="nav--logo" alt="HUOA Logo" />
+      <Link to="/">
+        <div className="nav--container">
+          <HUOALogo className="nav--logo" />
           <div className="nav--titles">
             <h2 className="nav--title">Hawaii United Okinawa Association</h2>
             <h5 className="nav--title__sm">Celebrating 120 years of Uchinanchu in Hawaii</h5>
           </div>
-        </Link>
-      </div>
-      <ul className="nav--links">{renderNavItems(routerState.routes)}</ul>
+        </div>
+      </Link>
+      <ul className="nav--items">{renderNavItems(routes)}</ul>
     </nav>
   );
 };
