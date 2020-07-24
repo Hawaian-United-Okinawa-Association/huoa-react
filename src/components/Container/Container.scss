@@ -1,6 +1,10 @@
 @import './../../styles/fonts.scss';
 
-$breakpoint-tablet: 839px;
+$breakpoint-laptop-large: 1440px;
+$breakpoint-laptop: 1200px;
+$breakpoint-tablet-large: 1024px;
+$breakpoint-tablet: 960px;
+$breakpoint-mobile-large: 768px;
 $breakpoint-mobile: 599px;
 
 .container {
