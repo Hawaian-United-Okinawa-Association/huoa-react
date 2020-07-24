@@ -9,24 +9,24 @@ $breakpoint-mobile-large: 768px;
 $breakpoint-mobile: 599px;
 
 .container {
-	display: grid;
-	grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
-	grid-column-gap: 24px;
-	max-width: 1440px;
-	margin: 0 16px;
-	background-color: aquamarine;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+  grid-column-gap: 24px;
+  max-width: 1440px;
+  margin: 0 16px;
+  background-color: aquamarine;
 }
 
 @media (max-width: $breakpoint-tablet) {
-	.container {
-		grid-template-columns: auto auto auto auto auto auto auto auto;
-		grid-column-gap: 16px;
-		background-color: aqua;
-	}
+  .container {
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    grid-column-gap: 16px;
+    background-color: aqua;
+  }
 }
 @media (max-width: $breakpoint-mobile) {
-	.container {
-		grid-template-columns: auto auto auto auto;
-		background-color: blue;
-	}
+  .container {
+    grid-template-columns: auto auto auto auto;
+    background-color: blue;
+  }
 }
