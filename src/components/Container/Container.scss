@@ -6,27 +6,45 @@ $breakpoint-laptop: 1200px;
 $breakpoint-tablet-large: 1024px;
 $breakpoint-tablet: 960px;
 $breakpoint-mobile-large: 768px;
-$breakpoint-mobile: 599px;
+$breakpoint-mobile: 480px;
 
 .container {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
   grid-column-gap: 24px;
-  max-width: 1440px;
+  max-width: $breakpoint-laptop-large;
   margin: 0 16px;
-  background-color: aquamarine;
+  background-color: rgb(255, 127, 127);
 }
 
-@media (max-width: $breakpoint-tablet) {
+@media (max-width: $breakpoint-laptop) {
+  .container {
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    background-color: rgb(255, 162, 0);
+  }
+}
+@media (max-width: $breakpoint-tablet-large) {
   .container {
     grid-template-columns: auto auto auto auto auto auto auto auto;
     grid-column-gap: 16px;
-    background-color: aqua;
+    background-color: rgb(255, 255, 0);
+  }
+}
+@media (max-width: $breakpoint-tablet) {
+  .container {
+    grid-template-columns: auto auto auto auto auto auto;
+    background-color: rgb(128, 255, 0);
+  }
+}
+@media (max-width: $breakpoint-mobile-large) {
+  .container {
+    grid-template-columns: auto auto auto auto;
+    background-color: rgb(0, 195, 255);
   }
 }
 @media (max-width: $breakpoint-mobile) {
   .container {
-    grid-template-columns: auto auto auto auto;
-    background-color: blue;
+    grid-template-columns: auto auto;
+    background-color: rgb(136, 0, 255);
   }
 }
