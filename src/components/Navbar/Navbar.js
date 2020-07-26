@@ -1,26 +1,21 @@
 //Dependencies
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 //Components, assets, actions, styles etc..
 import NavItem from './NavItem';
-import { setActiveMenu } from '../../actions/index';
 import { ReactComponent as HUOALogo } from '../../assets/huoa-logo.svg';
 import './Navbar.scss';
 
 const Navbar = () => {
-  const dispatch = useDispatch();
+  const [ navState, setNavState ] = useState(false);
   const { routes } = useSelector((state) => state.router);
 
   const renderMenuItems = (children) => {
     return children.map((item) => (
-      <Link
-        className="nav--dropdown__link"
-        to={item.linkTo}
-        onClick={() => dispatch(setActiveMenu(false))}
-        key={item.linkTo}
-      >
+      <Link className="nav--dropdown__link" to={item.linkTo} onClick={() => setNavState(false)} key={item.linkTo}>
         <li className="nav--dropdown__link--txt">{item.name}</li>
       </Link>
     ));
@@ -39,7 +34,7 @@ const Navbar = () => {
   const renderNavItems = (items) => {
     return items.map((item) => {
       return (
-        <NavItem name={item.name} linkTo={item.linkTo} key={item.linkTo}>
+        <NavItem name={item.name} linkTo={item.linkTo} key={item.linkTo} navState={navState} setNavState={setNavState}>
           {dropdown(item.children)}
         </NavItem>
       );
