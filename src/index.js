@@ -9,6 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './base/App';
 import configureStore from './store/configureStore';
 import './index.scss';
+import './resources/font';
 
 const store = configureStore(window.__REDUX_STATE__ || {});
 

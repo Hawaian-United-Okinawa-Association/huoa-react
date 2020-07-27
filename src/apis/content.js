@@ -1,5 +1,7 @@
-import axios from 'axios';
+const root = 'http://dev.huoa.org/wp-json';
 
-export default axios.create({
-  baseURL: 'http://example.api.root'
-});
+const getAPIRoot = () => {
+  return root;
+}
+
+export default getAPIRoot();

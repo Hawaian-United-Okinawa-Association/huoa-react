@@ -39,3 +39,5 @@ export const DELETE_SUBSCRIPTION = 'DELETE_SUBSCRIPTION';
 // export const EDIT_SUBSCRIPTION = 'EDIT_SUBSCRIPTION'; Same with this one (marco)
 export const MODAL_OPEN = 'MODAL_OPEN';
 export const MODAL_CLOSE = 'MODAL_CLOSE';
+
+export const GET_PAGES = 'GET_PAGES';
