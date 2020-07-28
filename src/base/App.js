@@ -1,6 +1,6 @@
 //Dependencies
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 //Components
 import Modal from './../components/Modal/Modal';
@@ -8,11 +8,14 @@ import Navbar from './../components/Navbar/Navbar';
 import Footer from './../components/Footer/Footer';
 import Routes from './../config/routes';
 
-import { fetchEvents } from './../actions/index';
+import { getPages } from './../actions/index';
 
 import './App.scss';
 
 const App = (props) => {
+  const dispatch = useDispatch();
+  dispatch(getPages());
+
   return (
     <main>
       <Modal />
@@ -23,4 +26,4 @@ const App = (props) => {
   );
 };
 
-export default connect(null, { fetchEvents })(App);
+export default App;
