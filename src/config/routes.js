@@ -16,22 +16,18 @@ import GetInvolved from '../pages/GetInvolved/GetInvolved';
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
 
-  if (pageState) {
-    return (
-      <Switch>
-        <Route exact path="/" render={(props) => <Home {...props} data={pageState.home} />} />
-        <Route path="/about" component={About} />
-        <Route path="/events" component={Events} />
-        <Route path="/join" component={GetInvolved} />
-        <Route path="/news" component={News} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/donate" component={Donate} />
-        <Route path="/ogsh" component={Geneology} />
-      </Switch>
-    );
-  }
-
-  return null;
+  return (
+    <Switch>
+      <Route exact path="/" render={(props) => <Home {...props} data={pageState.home} />} />
+      <Route path="/about" component={About} />
+      <Route path="/events" component={Events} />
+      <Route path="/join" component={GetInvolved} />
+      <Route path="/news" component={News} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/donate" component={Donate} />
+      <Route path="/ogsh" component={Geneology} />
+    </Switch>
+  );
 };
 
 export default Routes;

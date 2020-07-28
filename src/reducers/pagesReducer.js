@@ -1,7 +1,7 @@
 import { GET_PAGES } from '../actions/actionTypes';
 import { createReducer } from './reducerUtils';
 
-const INITIAL_STATE = null;
+const INITIAL_STATE = {};
 
 const getPagesReducer = (state, payload) => {
   return payload;
