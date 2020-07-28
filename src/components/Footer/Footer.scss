@@ -1,0 +1,66 @@
+@import '../../styles/colors';
+
+.footer {
+  background-color: $darkest-purple;
+  color: $white;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: .5px;
+
+  &--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: auto;
+    max-width: 800px;
+    padding: 3rem 1rem;
+  }
+
+  &--links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    width: 100%;
+    text-align: center;
+  }
+
+  &--link {
+    margin: 1rem;
+  }
+
+  &--logo {
+    margin: 4rem auto;
+  }
+
+  &--contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 4rem;
+    justify-content: center;
+
+    margin-bottom: 2rem;
+
+    &__col {
+      max-width: 240px;
+      text-align: center;
+      line-height: 24px;
+
+      @media (max-width: 840px) {
+        margin: 1rem auto;
+      }
+    }
+
+    @media (max-width: 840px) {
+      display: block;
+    }
+  }
+
+  &--social {
+    svg {
+      margin: auto 1rem;
+    }
+  }
+}
