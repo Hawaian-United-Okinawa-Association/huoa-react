@@ -1,49 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import './Container.scss';
 
-class Container extends React.Component {
-  render() {
-    return (
-      <div className='container'>
-        <div className='grid=item'>
-          <h1>1</h1>
-        </div>
-        <div className='grid=item'>
-          <h1>2</h1>
-        </div>
-        <div className='grid=item'>
-          <h1>3</h1>
-        </div>
-        <div className='grid=item'>
-          <h1>4</h1>
-        </div>
-        <div className='grid=item'>
-          <h1>5</h1>
-        </div>
-        <div className='grid=item'>
-          <h1>6</h1>
-        </div>
-        <div className='grid=item'>
-          <h1>7</h1>
-        </div>
-        <div className='grid=item'>
-          <h1>8</h1>
-        </div>
-        <div className='grid=item'>
-          <h1>9</h1>
-        </div>
-        <div className='grid=item'>
-          <h1>10</h1>
-        </div>
-        <div className='grid=item'>
-          <h1>11</h1>
-        </div>
-        <div className='grid=item'>
-          <h1>12</h1>
-        </div>
-      </div>
-    );
-  }
-}
+// TODO 1. refactor this as a functional expression with react hooks.
+
+// TODO 2. See if there's a way to turn off columns, if needed.
+// Can we pass a property that dictates how many columns a div takes up?
+
+const Container = props => {
+  return (
+    <div className={'container ' + (this.props.grid || '')}>
+      {this.props.children}
+    </div>
+  );
+};
+
+// WORKING CODE
+// class Container extends Component {
+//   render() {
+//     return (
+//       <div className={'container ' + (this.props.grid || '')}>
+//         {this.props.children}
+//       </div>
+//     );
+//   }
+// }
+
 export default Container;
