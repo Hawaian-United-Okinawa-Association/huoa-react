@@ -8,6 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 //Components, config, utils, etc.
 import App from './base/App';
 import configureStore from './store/configureStore';
+import './resources/font';
 import './index.scss';
 
 const store = configureStore(window.__REDUX_STATE__ || {});
