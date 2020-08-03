@@ -24,7 +24,7 @@ const Routes = () => {
       <Route path="/join" component={GetInvolved} />
       <Route path="/news" component={News} />
       <Route path="/contact" component={Contact} />
-      <Route path="/donate" component={Donate} />
+      <Route path="/donate" render={(props) => <Donate {...props} data={pageState.donate} /> } />
       <Route path="/ogsh" component={Geneology} />
     </Switch>
   );
