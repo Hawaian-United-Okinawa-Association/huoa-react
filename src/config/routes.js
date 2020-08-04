@@ -1,6 +1,7 @@
 //Dependencies
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 //Components
 import Home from '../pages/Home/Home';
@@ -13,9 +14,11 @@ import Geneology from '../pages/Geneology/Geneology';
 import GetInvolved from '../pages/GetInvolved/GetInvolved';
 
 const Routes = () => {
+  const pageState = useSelector(state => state.pages);
+
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" render={(props) => <Home {...props} data={pageState.home} />} />
       <Route path="/about" component={About} />
       <Route path="/events" component={Events} />
       <Route path="/join" component={GetInvolved} />
