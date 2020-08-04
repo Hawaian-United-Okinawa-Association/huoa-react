@@ -3,7 +3,7 @@
 .nav {
   height: 10rem;
   background-color: $white;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -20,13 +20,13 @@
   &--logo {
     height: 7rem;
     width: 7rem;
+    margin-left: -.5rem;
   }
 
   &--title {
     font-weight: 700;
     color: $dark-grey;
     font-size: 1.5rem;
-    line-height: 30px;
     margin: 0;
     padding: 0;
 
@@ -40,9 +40,9 @@
 
   &--items {
     width: 55%;
+    padding: 0;
     list-style: none;
     display: flex;
-    justify-self: flex-end;
     justify-content: space-between;
     align-items: center;
   }
@@ -116,9 +116,9 @@
 
 .donate--link {
   cursor: pointer;
-  border: 2px solid $dark-purple;
+  border: 2.2px solid $dark-purple;
   border-radius: 28px;
-  padding: .5rem 1.8rem;
+  padding: .5rem 1.6rem;
 
   &__txt {
     font-size: 1.1rem;
