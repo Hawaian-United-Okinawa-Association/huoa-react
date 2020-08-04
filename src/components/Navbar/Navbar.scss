@@ -4,82 +4,114 @@
   height: 10rem;
   background-color: $white;
   padding: 0 1rem;
-  box-shadow: 0 -9px 12px $black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
+  filter: drop-shadow(0px -4px 10px rgba(0, 0, 0, 0.25));
 
-.nav--container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
+  &--container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 
-.nav--logo {
-  height: 7rem;
-  width: 7rem;
-}
+  &--logo {
+    height: 7rem;
+    width: 7rem;
+  }
 
-.nav--title {
-  font-weight: 700;
-  color: $dark-grey;
-  font-size: 1.5rem;
-  line-height: 30px;
-  margin: 0;
-  padding: 0;
-}
+  &--title {
+    font-weight: 700;
+    color: $dark-grey;
+    font-size: 1.5rem;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
 
-.nav--title__sm {
-  color: $black;
-  font-size: .9rem;
-  margin: 0;
-  padding: 0;
-}
+    &__sm {
+      color: $black;
+      font-size: .8rem;
+      margin: 0;
+      padding: 0;
+    }
+  }
 
-.nav--items {
-  width: 55%;
-  list-style: none;
-  display: flex;
-  justify-self: flex-end;
-  justify-content: space-between;
-  align-items: center;
-}
+  &--items {
+    width: 55%;
+    list-style: none;
+    display: flex;
+    justify-self: flex-end;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.nav--titles {
-  margin-left: 1rem;
-  display: flex;
-  flex-direction: column;
-  font-size: 17px;
-  line-height: 25px;
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.03);
-}
+  &--titles {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 17px;
+    line-height: 25px;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.03);
+  }
 
-.nav--link {
-  color: $black;
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.03);
-  border: 0;
-  cursor: pointer;
-  padding: 2rem .5rem;
-}
+  &--link {
+    color: $black;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.03);
+    border: 0;
+    cursor: pointer;
+    padding: 2rem .5rem;
 
-.nav--link:hover {
-  color: $dark-purple;
-}
+    &:hover {
+      color: $dark-purple;
+    }
 
-.nav--link__txt {
-  display: flex;
-  color: $black;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-}
+    &__txt {
+      display: flex;
+      color: $black;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
 
-.nav--link__txt:hover {
-  color: $dark-purple;
-  font-weight: bold;
+      &:hover {
+        color: $dark-purple;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &--dropdown {
+    position: absolute;
+    z-index: 10;
+    top: 7rem;
+    background-color: $white;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    overflow: hidden;
+    padding: .5rem;
+
+    &__link {
+      color: $black;
+      display: flex;
+      align-items: center;
+      padding: .5rem;
+
+      &--txt {
+        font-size: 1rem;
+      }
+
+      &:hover {
+        color: $dark-purple;
+        font-weight: 600;
+      }
+    }
+
+    &__links {
+      list-style-type: none;
+      padding: 0;
+    }
+  }
 }
 
 .donate--link {
@@ -87,42 +119,10 @@
   border: 2px solid $dark-purple;
   border-radius: 28px;
   padding: .5rem 1.8rem;
-}
 
-.donate--link__txt {
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  color: $dark-purple;
-}
-
-//Dropdown Menu
-.nav--dropdown {
-  position: absolute;
-  z-index: 10;
-  top: 7rem;
-  background-color: $white;
-  box-shadow: 0 8px 8px -12px $black;
-  border: 1px solid rgba(0, 0, 0, 0.09);
-  overflow: hidden;
-  padding: .5rem;
-}
-
-.nav--dropdown__links {
-  list-style-type: none;
-  padding: 0;
-}
-
-.nav--dropdown__link {
-  color: $black;
-  display: flex;
-  align-items: center;
-  padding: .5rem;
-  &--txt {
-    font-size: 1rem;
+  &__txt {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: $dark-purple;
   }
-}
-
-.nav--dropdown__link:hover {
-  color: $dark-purple;
-  font-weight: 700;
 }
