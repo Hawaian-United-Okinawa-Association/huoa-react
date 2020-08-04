@@ -36,6 +36,10 @@
       margin: 0;
       padding: 0;
     }
+
+    @media (max-width: 1300px) {
+      font-size: 1.3rem;
+    }
   }
 
   &--items {
@@ -77,6 +81,10 @@
       &:hover {
         color: $dark-purple;
         font-weight: 600;
+      }
+
+      @media (max-width: 1300px) {
+        font-size: .9rem;
       }
     }
   }
