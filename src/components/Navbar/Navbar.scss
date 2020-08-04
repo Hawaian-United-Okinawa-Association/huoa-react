@@ -138,5 +138,10 @@
       background-color: $dark-purple;
       color: $light-purple;
     }
+
+    @media (max-width: 1300px) {
+      padding: .3rem 1.2rem;
+      font-size: .9rem;
+    }
   }
 }
