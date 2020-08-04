@@ -80,7 +80,7 @@
 
       &:hover {
         color: $dark-purple;
-        font-weight: 600;
+        text-shadow: 0 0 .9px $dark-purple, 0 0 .9px $dark-purple, 0 0 .9px $dark-purple;
       }
 
       @media (max-width: 1300px) {
@@ -111,7 +111,7 @@
 
       &:hover {
         color: $dark-purple;
-        font-weight: 600;
+        text-shadow: 0 0 .9px $dark-purple, 0 0 .9px $dark-purple, 0 0 .9px $dark-purple;
       }
     }
 
@@ -124,13 +124,19 @@
 
 .donate--link {
   cursor: pointer;
-  border: 2.2px solid $dark-purple;
-  border-radius: 28px;
-  padding: .5rem 1.6rem;
 
   &__txt {
+    border: 2px solid $dark-purple;
+    border-radius: 28px;
+    padding: .5rem 1.6rem;
     font-size: 1.1rem;
     text-transform: uppercase;
     color: $dark-purple;
+
+    &:hover {
+      border: 2px solid $light-purple;
+      background-color: $dark-purple;
+      color: $light-purple;
+    }
   }
 }

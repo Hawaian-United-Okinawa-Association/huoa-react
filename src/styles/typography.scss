@@ -28,8 +28,13 @@ a {
   text-decoration: none;
 }
 
-.nav a {
-  font-weight: 300;
+.nav {
+  a {
+    font-weight: 300;
+  }
+  li {
+    font-family: $open-sans;
+  }
 }
 
 .donate--link a {
