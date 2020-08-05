@@ -2,40 +2,159 @@
 @import './../../styles/breakpoints.scss';
 
 // TODO remove the background colors before committing
-.col {
-}
-
-.row {
-  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
-}
 
 .container {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
-  grid-column-gap: 24px;
+  text-align: center;
   max-width: $breakpoint-laptop-large;
   margin: 0 16px;
-  background-color: rgb(255, 127, 127);
+  // background-color: rgb(255, 127, 127);
+}
 
-  @media (max-width: $breakpoint-laptop) {
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
-    background-color: rgb(255, 162, 0);
+.container-header {
+  grid-area: header;
+  background-color: aqua;
+}
+
+.grid-item {
+  padding: 10px;
+  margin: 10px;
+  border: solid;
+  border-color: gray;
+  border-radius: 5px;
+}
+
+.grid-item-1 {
+  // justify-items: center;
+  grid-area: grid-item-1;
+  background-color: cadetblue;
+  align-self: center;
+  padding: 10px;
+  margin: 10px;
+  border: solid;
+  border-color: gray;
+  border-radius: 5px;
+  // display: grid;
+}
+
+.cols-3 {
+  grid-template-areas:
+    'header header header'
+    'grid-item grid-item grid-item';
+  // grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;
+  @media screen and (max-width: $breakpoint-tablet) {
+    grid-template-areas:
+      'header grid-item'
+      'header grid-item'
+      'header grid-item';
+    grid-template-columns: 200px 1fr;
   }
-  @media (max-width: $breakpoint-tablet-large) {
-    grid-template-columns: auto auto auto auto auto auto auto auto;
-    grid-column-gap: 16px;
-    background-color: rgb(255, 255, 0);
+  @media screen and (max-width: $breakpoint-mobile) {
+    grid-template-areas:
+      'header'
+      'grid-item'
+      'grid-item'
+      'grid-item';
+    grid-template-columns: 1fr;
   }
-  @media (max-width: $breakpoint-tablet) {
-    grid-template-columns: auto auto auto auto auto auto;
-    background-color: rgb(128, 255, 0);
+}
+.cols-4 {
+  grid-template-areas:
+    'header header header header'
+    'grid-item-1 grid-item grid-item grid-item';
+  grid-template-columns: repeat(4, 1fr);
+  @media screen and (max-width: $breakpoint-tablet) {
+    grid-template-areas:
+      'header header'
+      'grid-item-1 grid-item';
+    grid-template-columns: 1fr 1fr;
   }
-  @media (max-width: $breakpoint-mobile-large) {
-    grid-template-columns: auto auto auto auto;
-    background-color: rgb(0, 195, 255);
+  @media screen and (max-width: $breakpoint-mobile) {
+    grid-template-areas:
+      'header'
+      'grid-item-1'
+      'grid-item'
+      'grid-item'
+      'grid-item';
+    grid-template-columns: 1fr;
   }
-  @media (max-width: $breakpoint-mobile) {
-    grid-template-columns: auto auto;
-    background-color: rgb(136, 0, 255);
+}
+
+.cols-4-image-main {
+  overflow: hidden;
+  grid-area: image;
+  background-image: url('https://huoa.org/nuuzi/images/frontpage/Page0004.gif');
+  min-height: 30px;
+}
+
+.cols-4-image {
+  grid-template-areas:
+    'header header header header'
+    'image image grid-item grid-item'
+    'image image grid-item grid-item';
+  grid-template-columns: repeat(4, 1fr);
+  @media screen and (max-width: $breakpoint-tablet) {
+    grid-template-areas:
+      'header header'
+      'image grid-item';
+    grid-template-columns: 1fr 1fr;
   }
+  @media screen and (max-width: $breakpoint-mobile) {
+    grid-template-areas:
+      'header'
+      'image'
+      'grid-item'
+      'grid-item'
+      'grid-item';
+    grid-template-columns: 1fr;
+  }
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: start;
+}
+
+.align-end {
+  align-items: end;
+}
+
+.justify-items-stretch {
+  justify-items: stretch;
+}
+
+.justify-items-center {
+  justify-items: center;
+}
+
+.justify-items-start {
+  justify-items: start;
+}
+
+.justify-items-end {
+  justify-items: end;
+}
+
+.justify-self-stretch {
+  justify-items: stretch;
+}
+
+.justify-self-center {
+  justify-self: center;
+}
+
+.justify-self-start {
+  justify-self: start;
+}
+
+.justify-self-end {
+  justify-self: end;
 }
