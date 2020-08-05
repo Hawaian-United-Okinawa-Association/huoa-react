@@ -31,9 +31,9 @@ const Footer = () => {
           <div className="footer--contact__col">Mon-Fri, 8:30 am - 5 pm Saturday & Sunday, Closed</div>
         </div>
         <div className="footer--social">
-          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><Twitter /></a>
-          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"><Instagram /></a>
-          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer"><Facebook /></a>
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><Twitter className='footer--social__icon' /></a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"><Instagram className='footer--social__icon' /></a>
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer"><Facebook className='footer--social__icon' /></a>
         </div>
       </div>
     </footer>
