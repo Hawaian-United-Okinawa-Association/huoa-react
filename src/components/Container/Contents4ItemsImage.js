@@ -6,7 +6,7 @@ const Contents4ItemsImage = props => {
   return (
     <>
       <div className='container-header'>
-        <h1>Here is the header of this New Container</h1>
+        <h1>Here is the header of this Container with an Image</h1>
       </div>
       <div className='cols-4-image-main grid-item'></div>
       <div className='grid-item'>
