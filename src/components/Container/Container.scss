@@ -11,9 +11,13 @@
   // background-color: rgb(255, 127, 127);
 }
 
+/* Container Sections */
+
 .container-header {
   grid-area: header;
   background-color: aqua;
+  border: solid;
+  border-color: gray;
 }
 
 .grid-item {
@@ -37,6 +41,10 @@
   // display: grid;
 }
 
+/* Layouts  */
+
+// 3 Columns of Grid Items
+
 .cols-3 {
   grid-template-areas:
     'header header header'
@@ -59,6 +67,9 @@
     grid-template-columns: 1fr;
   }
 }
+
+// 4 Columns of Grid Items
+
 .cols-4 {
   grid-template-areas:
     'header header header header'
@@ -80,6 +91,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+// 4 Columns with a Large Image in the first space
 
 .cols-4-image-main {
   overflow: hidden;
@@ -110,6 +123,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Align Classes - Not Being Used in Current Designs */
 
 .align-stretch {
   align-items: stretch;
