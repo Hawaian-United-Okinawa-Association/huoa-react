@@ -1,11 +1,10 @@
-// Transform from snake-case to TitleCase
-const titleCase = str => str.replace(/(-|^)([^-]?)/g, (match, _, char) => char.toLowerCase());
-
-// Given a component name in snake-case, returns a regex. The regex
+// Transform from PascalCase to kebab-case
+const pascalToKebabCase = str => str.replace(/\.?([A-Z])/g, (char) =>  "-" + char.toLowerCase()).replace(/^-/, "");
+// Given a component name in PascalCase, returns a regex. The regex
 // must match CSS selectors conforming to the BEM naming conventions
 // you want to enforce.
 const customBemSelector = component => {
-  const block = titleCase(component);
+  const block = pascalToKebabCase(component);
   const kebabCase = "[a-z][a-zA-Z0-9]*";
   const element = `(?:--${kebabCase})?`;
   const modifier = `(?:__${kebabCase})?`;
