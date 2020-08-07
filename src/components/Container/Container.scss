@@ -1,7 +1,6 @@
 @import './../../styles/fonts.scss';
 @import './../../styles/breakpoints.scss';
-
-// TODO remove the background colors before committing
+@import './../../styles/alignment.scss';
 
 .container {
   display: grid;
@@ -9,168 +8,110 @@
   max-width: $breakpoint-laptop-large;
   margin: 0 16px;
   padding: 5px;
-  // background-color: rgb(255, 127, 127);
 }
 
-/* Container Sections */
+// This column class could be removed entirely and the grid system would work. We could consiser adding the padding and margin to the layout classes, and controlling this in the layout classes.
 
-.container-header {
-  grid-area: header;
-  background-color: aqua;
-  border: solid;
-  border-color: gray;
-}
-
-.grid-item {
+.column {
   padding: 10px;
   margin: 10px;
-  border: solid;
-  border-color: gray;
-  border-radius: 5px;
-}
-
-.grid-item-1 {
-  // justify-items: center;
-  grid-area: grid-item-1;
-  background-color: cadetblue;
-  align-self: center;
-  padding: 10px;
-  margin: 10px;
-  border: solid;
-  border-color: gray;
-  border-radius: 5px;
-  // display: grid;
 }
 
 /* Layouts  */
 
-// 3 Columns of Grid Items
+// 2 Columns
 
-.cols-3 {
-  grid-template-areas:
-    'header header header'
-    'grid-item grid-item grid-item';
-  // grid-template-columns: repeat(3, 1fr);
+.cols-2 {
+  grid-template-areas: 'column column';
+  grid-template-columns: 1fr, 1fr;
   grid-auto-flow: column;
   @media screen and (max-width: $breakpoint-tablet) {
-    grid-template-areas:
-      'header grid-item'
-      'header grid-item'
-      'header grid-item';
-    grid-template-columns: 200px 1fr;
+    grid-template-areas: 'column column';
+    grid-template-columns: 1fr 1fr;
   }
   @media screen and (max-width: $breakpoint-mobile) {
     grid-template-areas:
-      'header'
-      'grid-item'
-      'grid-item'
-      'grid-item';
+      'column'
+      'column';
     grid-template-columns: 1fr;
   }
 }
 
-// 4 Columns of Grid Items
+// 3 Columns
+
+.cols-3 {
+  grid-template-areas: 'column column column';
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;
+  @media screen and (max-width: $breakpoint-tablet) {
+    grid-template-areas: 'column column column';
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: $breakpoint-mobile) {
+    grid-template-areas:
+      'column'
+      'column'
+      'column';
+    grid-template-columns: 1fr;
+  }
+}
+
+// 4 Columns
 
 .cols-4 {
-  grid-template-areas:
-    'header header header header'
-    'grid-item-1 grid-item grid-item grid-item';
+  grid-template-areas: 'column column column column';
   grid-template-columns: repeat(4, 1fr);
   @media screen and (max-width: $breakpoint-tablet) {
-    grid-template-areas:
-      'header header'
-      'grid-item-1 grid-item';
+    grid-template-areas: 'column column';
     grid-template-columns: 1fr 1fr;
   }
   @media screen and (max-width: $breakpoint-mobile) {
     grid-template-areas:
-      'header'
-      'grid-item-1'
-      'grid-item'
-      'grid-item'
-      'grid-item';
+      'column'
+      'column'
+      'column'
+      'column';
     grid-template-columns: 1fr;
   }
 }
 
-// 4 Columns with a Large Image in the first space
+// 5 Columns
 
-.cols-4-image-main {
-  overflow: hidden;
-  grid-area: image;
-  background-image: url('https://huoa.org/nuuzi/images/frontpage/Page0004.gif');
-  min-height: 30px;
-}
-
-.cols-4-image {
-  grid-template-areas:
-    'header header header header'
-    'image image grid-item grid-item'
-    'image image grid-item grid-item';
-  grid-template-columns: repeat(4, 1fr);
+.cols-5 {
+  grid-template-areas: 'column column column column column';
+  grid-template-columns: repeat(5, 1fr);
   @media screen and (max-width: $breakpoint-tablet) {
-    grid-template-areas:
-      'header header'
-      'image grid-item';
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'column column column column column';
+    grid-template-columns: repeat(5, 1fr);
   }
   @media screen and (max-width: $breakpoint-mobile) {
     grid-template-areas:
-      'header'
-      'image'
-      'grid-item'
-      'grid-item'
-      'grid-item';
+      'column'
+      'column'
+      'column'
+      'column'
+      'column';
     grid-template-columns: 1fr;
   }
 }
 
-/* Align Classes - Not Being Used in Current Designs */
+// 6 Columns
 
-.align-stretch {
-  align-items: stretch;
-}
-
-.align-center {
-  align-items: center;
-}
-
-.align-start {
-  align-items: start;
-}
-
-.align-end {
-  align-items: end;
-}
-
-.justify-items-stretch {
-  justify-items: stretch;
-}
-
-.justify-items-center {
-  justify-items: center;
-}
-
-.justify-items-start {
-  justify-items: start;
-}
-
-.justify-items-end {
-  justify-items: end;
-}
-
-.justify-self-stretch {
-  justify-items: stretch;
-}
-
-.justify-self-center {
-  justify-self: center;
-}
-
-.justify-self-start {
-  justify-self: start;
-}
-
-.justify-self-end {
-  justify-self: end;
+.cols-6 {
+  grid-template-areas: 'column column column column column column';
+  grid-template-columns: repeat(6, 1fr);
+  @media screen and (max-width: $breakpoint-tablet) {
+    grid-template-areas: 'column column column';
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: $breakpoint-mobile) {
+    grid-template-areas:
+      'column'
+      'column'
+      'column'
+      'column'
+      'column'
+      'column';
+    grid-template-columns: 1fr;
+  }
 }
