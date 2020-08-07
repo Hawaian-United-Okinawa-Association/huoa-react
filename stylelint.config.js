@@ -5,7 +5,7 @@ const pascalToKebabCase = str => str.replace(/\.?([A-Z])/g, (char) =>  "-" + cha
 // you want to enforce.
 const customBemSelector = component => {
   const block = pascalToKebabCase(component);
-  const kebabCase = "[a-z]+(?:-[a-z0-9]+)*";
+  const kebabCase = "[a-z]+(?:-[a-zA-Z0-9]+)*";
   const element = `(?:__${kebabCase})?`;
   const modifier = `(?:--${kebabCase})?`;
   const attribute = "(?:\\[.+\\])?";
