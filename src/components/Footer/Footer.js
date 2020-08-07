@@ -23,12 +23,12 @@ const Footer = () => {
         </div>
         <div className="footer__logo">Logo</div>
         <div className="footer__contact">
-          <div className="footer__contact__col">
+          <div className="footer__contact--col">
             <a href="https://goo.gl/maps/vPeokXPRG2e59jPS7" target="_blank" rel="noopener noreferrer">
               94-587 Ukeʻe Street Waipahu, HI 96797 808.676.5400
             </a>
           </div>
-          <div className="footer__contact__col">Mon-Fri, 8:30 am - 5 pm Saturday & Sunday, Closed</div>
+          <div className="footer__contact--col">Mon-Fri, 8:30 am - 5 pm Saturday & Sunday, Closed</div>
         </div>
         <div className="footer__social">
           <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><Twitter className='footer__social-icon' /></a>
