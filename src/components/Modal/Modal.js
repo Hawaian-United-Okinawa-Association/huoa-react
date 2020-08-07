@@ -12,10 +12,10 @@ const Modal = (props) => {
   if (modalState) {
     return (
       <div className='modal'>
-        <div className='modal--overlay' onClick={() => dispatch(closeModal())}></div>
-        <div className='modal--container'>
-          <ButtonClose className='modal--close' onClick={() => dispatch(closeModal())} />
-          <div className='modal--body'>
+        <div className='modal__overlay' onClick={() => dispatch(closeModal())}></div>
+        <div className='modal__container'>
+          <ButtonClose className='modal__close' onClick={() => dispatch(closeModal())} />
+          <div className='modal__body'>
             { modalState }
           </div>
         </div>

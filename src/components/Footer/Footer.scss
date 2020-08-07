@@ -1,4 +1,4 @@
-@import '../../styles/colors';
+@import '../../styles/utilities/colors';
 
 .footer {
   background-color: $darkest-purple;
@@ -7,7 +7,7 @@
   font-weight: 300;
   letter-spacing: .5px;
 
-  &--container {
+  &__container {
     display: flex;
     max-width: 800px;
     flex-direction: column;
@@ -17,7 +17,7 @@
     margin: auto;
   }
 
-  &--links {
+  &__links {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
@@ -25,22 +25,22 @@
     text-align: center;
   }
 
-  &--link {
+  &__link {
     margin: 1rem;
   }
 
-  &--logo {
+  &__logo {
     margin: 4rem auto;
   }
 
-  &--contact {
+  &__contact {
     display: grid;
     justify-content: center;
     margin-bottom: 2rem;
     grid-column-gap: 4rem;
     grid-template-columns: 1fr 1fr;
 
-    &__col {
+    &--col {
       max-width: 240px;
       line-height: 24px;
       text-align: center;
@@ -55,9 +55,7 @@
     }
   }
 
-  &--social {
-    &__icon {
-      margin: auto 1rem;
-    }
+  &__social-icon {
+    margin: auto 1rem;
   }
 }
