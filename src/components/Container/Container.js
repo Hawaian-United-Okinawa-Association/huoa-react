@@ -2,11 +2,11 @@ import React from 'react';
 
 import './Container.scss';
 
-const Container = props => {
-  if (props.layout) {
-    return <div className={'container ' + props.layout}>{props.children}</div>;
+const Container = ({ cols, children }) => {
+  if (cols) {
+    return <div className={`container cols-${cols}`}>{children}</div>;
   }
-  return <div className={'container'}>{props.children}</div>;
+  return <div className='container'>{children}</div>;
 };
 
 export default Container;
