@@ -10,108 +10,16 @@
   padding: 5px;
 }
 
-// This column class could be removed entirely and the grid system would work. We could consiser adding the padding and margin to the layout classes, and controlling this in the layout classes.
-
-.column {
-  padding: 10px;
-  margin: 10px;
-}
-
-/* Layouts  */
-
-// 2 Columns
-
-.cols-2 {
-  grid-template-areas: 'column column';
-  grid-template-columns: 1fr, 1fr;
-  grid-auto-flow: column;
-  @media screen and (max-width: $breakpoint-tablet) {
-    grid-template-areas: 'column column';
-    grid-template-columns: 1fr 1fr;
-  }
-  @media screen and (max-width: $breakpoint-mobile) {
-    grid-template-areas:
-      'column'
-      'column';
-    grid-template-columns: 1fr;
-  }
-}
-
-// 3 Columns
-
-.cols-3 {
-  grid-template-areas: 'column column column';
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-flow: column;
-  @media screen and (max-width: $breakpoint-tablet) {
-    grid-template-areas: 'column column column';
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media screen and (max-width: $breakpoint-mobile) {
-    grid-template-areas:
-      'column'
-      'column'
-      'column';
-    grid-template-columns: 1fr;
-  }
-}
-
-// 4 Columns
-
-.cols-4 {
-  grid-template-areas: 'column column column column';
-  grid-template-columns: repeat(4, 1fr);
-  @media screen and (max-width: $breakpoint-tablet) {
-    grid-template-areas: 'column column';
-    grid-template-columns: 1fr 1fr;
-  }
-  @media screen and (max-width: $breakpoint-mobile) {
-    grid-template-areas:
-      'column'
-      'column'
-      'column'
-      'column';
-    grid-template-columns: 1fr;
-  }
-}
-
-// 5 Columns
-
-.cols-5 {
-  grid-template-areas: 'column column column column column';
-  grid-template-columns: repeat(5, 1fr);
-  @media screen and (max-width: $breakpoint-tablet) {
-    grid-template-areas: 'column column column column column';
-    grid-template-columns: repeat(5, 1fr);
-  }
-  @media screen and (max-width: $breakpoint-mobile) {
-    grid-template-areas:
-      'column'
-      'column'
-      'column'
-      'column'
-      'column';
-    grid-template-columns: 1fr;
-  }
-}
-
-// 6 Columns
-
-.cols-6 {
-  grid-template-areas: 'column column column column column column';
-  grid-template-columns: repeat(6, 1fr);
-  @media screen and (max-width: $breakpoint-tablet) {
-    grid-template-areas: 'column column column';
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media screen and (max-width: $breakpoint-mobile) {
-    grid-template-areas:
-      'column'
-      'column'
-      'column'
-      'column'
-      'column'
-      'column';
-    grid-template-columns: 1fr;
+$total-columns: 12;
+@for $i from 1 through $total-columns {
+  .cols-#{$i} {
+    grid-template-columns: repeat(#{$i}, 1fr);
+    grid-auto-flow: row;
+    @media screen and (max-width: $breakpoint-tablet) {
+      grid-template-columns: repeat(#{calc(#{$i}/ 2)}, 1fr);
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      grid-template-columns: 1fr;
+    }
   }
 }
