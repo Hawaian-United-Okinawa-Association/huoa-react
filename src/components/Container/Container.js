@@ -2,9 +2,9 @@ import React from 'react';
 
 import './Container.scss';
 
-const Container = ({ cols, children }) => {
-  if (cols) {
-    return <div className={`container cols-${cols}`}>{children}</div>;
+const Container = ({ col, children }) => {
+  if (col) {
+    return <div className={`container col__${col}`}>{children}</div>;
   }
   return <div className='container'>{children}</div>;
 };
