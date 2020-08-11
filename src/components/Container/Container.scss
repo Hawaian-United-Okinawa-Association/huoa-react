@@ -9,7 +9,8 @@
   margin: 0 16px;
   text-align: center;
 }
-// TODO include an escape before this loop
+/* stylelint-disable */
+
 $total-columns: 12;
 @for $i from 1 through $total-columns {
   .col__#{$i} {
@@ -23,3 +24,4 @@ $total-columns: 12;
     }
   }
 }
+/* stylelint-enable */
