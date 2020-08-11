@@ -17,9 +17,11 @@ $total-columns: 12;
   .col__#{$i} {
     grid-auto-flow: row;
     grid-template-columns: repeat(#{$i}, 1fr);
+
     @media screen and (max-width: $breakpoint-tablet) {
       grid-template-columns: repeat(#{calc(#{$i}/ 2)}, 1fr);
     }
+
     @media screen and (max-width: $breakpoint-mobile) {
       grid-template-columns: 1fr;
     }
