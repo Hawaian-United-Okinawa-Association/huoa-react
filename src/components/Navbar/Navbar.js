@@ -44,7 +44,7 @@ const Navbar = () => {
   return (
     <nav className="nav">
       <Link to="/">
-        <div className="nav--container">
+        <div className="nav--header">
           <HUOALogo className="nav--logo" />
           <div className="nav--titles">
             <h2 className="nav--title">Hawaii United Okinawa Association</h2>
