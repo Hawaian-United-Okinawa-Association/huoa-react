@@ -2,14 +2,29 @@
 @import '../../styles/fonts.scss';
 
 .nav {
-  height: 10rem;
-  background-color: $white;
-  padding: 0 1.5rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  filter: drop-shadow(0px -4px 10px rgba(0, 0, 0, 0.25));
+  &--container {
+    height: 10rem;
+    background-color: $white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    filter: drop-shadow(0px -4px 10px rgba(0, 0, 0, 0.25));
+    @media (max-width: 1280px) {
+      display: none;
+    }
+  }
+
+  &--container__sm {
+    width: 100%;
+    max-width: 1440px;
+    height: 10rem;
+    background-color: $white;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   &--header {
     display: flex;
@@ -35,10 +50,6 @@
       font-size: .8rem;
       margin: 0;
       padding: 0;
-    }
-
-    @media (max-width: 1300px) {
-      font-size: 1.3rem;
     }
   }
 
@@ -82,11 +93,7 @@
 
       &:hover {
         color: $dark-purple;
-        text-shadow: 0 0 .9px $dark-purple, 0 0 .9px $dark-purple, 0 0 .9px $dark-purple;
-      }
-
-      @media (max-width: 1300px) {
-        font-size: .9rem;
+        text-shadow: 1px 0 0 $dark-purple;
       }
     }
   }
@@ -114,7 +121,7 @@
 
       &:hover {
         color: $dark-purple;
-        text-shadow: 0 0 .9px $dark-purple, 0 0 .9px $dark-purple, 0 0 .9px $dark-purple;
+        text-shadow: 1px 0 0 $dark-purple;
       }
     }
 
@@ -141,11 +148,6 @@
       border: 2px solid $light-purple;
       background-color: $dark-purple;
       color: $light-purple;
-    }
-
-    @media (max-width: 1300px) {
-      padding: .3rem 1.2rem;
-      font-size: .9rem;
     }
   }
 }

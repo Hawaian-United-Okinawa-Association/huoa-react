@@ -42,17 +42,19 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="nav">
-      <Link to="/">
-        <div className="nav--header">
-          <HUOALogo className="nav--logo" />
-          <div className="nav--titles">
-            <h2 className="nav--title">Hawaii United Okinawa Association</h2>
-            <h5 className="nav--title__sm">Celebrating 120 years of Uchinanchu in Hawaii</h5>
+    <nav className="nav--container">
+      <div className="nav--container__sm">
+        <Link to="/">
+          <div className="nav--header">
+            <HUOALogo className="nav--logo" />
+            <div className="nav--titles">
+              <h2 className="nav--title">Hawaii United Okinawa Association</h2>
+              <h5 className="nav--title__sm">Celebrating 120 years of Uchinanchu in Hawaii</h5>
+            </div>
           </div>
-        </div>
-      </Link>
-      <ul className="nav--items">{renderNavItems(routes)}</ul>
+        </Link>
+        <ul className="nav--items">{renderNavItems(routes)}</ul>
+      </div>
     </nav>
   );
 };
