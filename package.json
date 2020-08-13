@@ -15,11 +15,12 @@
     "ignore-styles": "^5.0.1",
     "node-sass": "^4.14.1",
     "react": "16.13.1",
+    "react-app-rewired": "^2.1.6",
     "react-dom": "16.13.1",
     "react-loadable": "^5.3.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.3",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "serialize-javascript": "^4.0.0",
@@ -29,7 +30,7 @@
     "babel-core": "7.0.0-bridge.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-app-rewired start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -51,6 +52,12 @@
     ]
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "postcss-bem-linter": "^3.3.0",
+    "stylelint": "^13.6.1",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-selector-bem-pattern": "^2.1.0",
+    "stylelint-webpack-plugin": "^2.1.0"
   }
 }

@@ -9,17 +9,21 @@ h2 {
 
 h4 {
   font-family: $poppins;
-  font-weight: 500;
   font-size: 21px;
-  line-height: 31px;
+  font-weight: 500;
   letter-spacing: 0.02em;
+<<<<<<< HEAD:src/styles/typography.scss
   text-transform: capitalize;
+=======
+  line-height: 31px;
+  text-transform: capitalize
+>>>>>>> main:src/styles/utilities/typography.scss
 }
 
 h5 {
   font-family: $poppins;
-  font-weight: 300;
   font-size: 13px;
+  font-weight: 300;
   line-height: 24px;
 }
 

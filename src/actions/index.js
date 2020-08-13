@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { GET_PAGES, MODAL_OPEN, MODAL_CLOSE } from './actionTypes';
 
-const api = 'http://dev.huoa.org/wp-json';
+const api = 'https://dev.huoa.org/wp-json';
 
 export const getPages = () => async (dispatch) => {
   const response = await axios.get(`${api}/wp/v2/pages?page=1&per_page=100`);
