@@ -38,7 +38,8 @@ module.exports = {
 				{
 					type: "at-rule",
 					name: "media",
-				},
+        },
+        "rules",
 			]
     ],
     "order/properties-order": [
