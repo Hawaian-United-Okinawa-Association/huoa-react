@@ -1,4 +1,4 @@
-@import './../../styles/utilities/fonts.scss';
+@import './../../styles/fonts.scss';
 @import './../../styles/utilities/breakpoints.scss';
 @import './../../styles/utilities/alignment.scss';
 
@@ -8,7 +8,6 @@ $total-columns: 12;
   display: grid;
   max-width: $breakpoint-laptop-large;
   margin: 0 16px;
-  padding: 5px;
   text-align: center;
 }
 /* stylelint-disable */

@@ -1,4 +1,4 @@
-@import './fonts.scss';
+@import './../fonts.scss';
 
 h2 {
   font-size: 42px;
@@ -11,7 +11,6 @@ h4 {
   font-size: 21px;
   font-family: $poppins;
   line-height: 31px;
-  letter-spacing: 0.02em;
   text-transform: capitalize
 }
 
