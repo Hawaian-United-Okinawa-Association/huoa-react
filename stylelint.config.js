@@ -96,8 +96,6 @@ module.exports = {
 				"overflow-y",
 				"overflow-scrolling",
 				"clip",
-
-				//
 				"box-sizing",
 				"width",
 				"min-width",
@@ -110,11 +108,6 @@ module.exports = {
 				"margin-right",
 				"margin-bottom",
 				"margin-left",
-				"padding",
-				"padding-top",
-				"padding-right",
-				"padding-bottom",
-				"padding-left",
 				"border",
 				"border-spacing",
 				"border-collapse",
@@ -157,8 +150,11 @@ module.exports = {
 				"border-top-right-image",
 				"border-bottom-right-image",
 				"border-bottom-left-image",
-
-				//
+				"padding",
+				"padding-top",
+				"padding-right",
+				"padding-bottom",
+				"padding-left",
 				"background",
 				"background-color",
 				"background-image",
@@ -185,8 +181,6 @@ module.exports = {
 				"list-style-position",
 				"list-style-type",
 				"list-style-image",
-
-				//
 				"font",
 				"font-weight",
 				"font-style",
@@ -226,8 +220,6 @@ module.exports = {
 				"tab-size",
 				"hyphens",
 				"interpolation-mode",
-
-				//
 				"opacity",
 				"visibility",
 				"filter",
@@ -235,8 +227,6 @@ module.exports = {
 				"cursor",
 				"pointer-events",
 				"user-select",
-
-				//
 				"unicode-bidi",
 				"direction",
 				"columns",
@@ -264,8 +254,6 @@ module.exports = {
 				"orientation",
 				"fill",
 				"stroke",
-
-				//
 				"transition",
 				"transition-delay",
 				"transition-timing-function",
