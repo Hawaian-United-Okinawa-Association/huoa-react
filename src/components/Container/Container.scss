@@ -1,13 +1,12 @@
 @import './../../styles/fonts.scss';
-@import './../../styles/breakpoints.scss';
-@import './../../styles/alignment.scss';
+@import './../../styles/utilities/breakpoints.scss';
+@import './../../styles/utilities/alignment.scss';
 
 $total-columns: 12;
 
 .container {
   display: grid;
   max-width: $breakpoint-laptop-large;
-  padding: 5px;
   margin: 0 16px;
   text-align: center;
 }
