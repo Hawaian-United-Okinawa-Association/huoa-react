@@ -2,6 +2,7 @@
 @import './../../styles/utilities/colors.scss';
 
 .button {
+  display: inline-block;
   border: 1px solid $dark-purple;
   border-radius: 120px;
   padding: 8px 16px;
@@ -10,12 +11,13 @@
   font-family: $poppins;
   line-height: 24px;
   text-transform: uppercase;
-  transition-duration: 0.6s;
-  transition-property: background-color, color, border-color;
+  transition-duration: 0.4s;
+  transition-property: background-color, color, border-color, fill;
 
   &[type=filled] {
     background-color: $dark-purple;
     color: $white;
+    fill: $white;
 
     &:focus {
       background-color: $purple;
@@ -30,6 +32,7 @@
   &[type=outlined] {
     background: $white;
     color: $dark-purple;
+    fill: $dark-purple;
 
     &:focus {
       color: $purple;
@@ -41,10 +44,37 @@
     }
   }
 
+  &[type=text] {
+    border-color: transparent;
+    background: $white;
+    color: $dark-purple;
+    font-weight: 600;
+    fill: $dark-purple;
+
+    &:hover {
+      border-color: transparent;
+      background: rgba(179, 112, 160, 0.32);
+      color: $dark-purple;
+      fill: $dark-purple;
+    }
+
+    &:focus {
+      border-color: transparent;
+      background: rgba(179, 112, 160, 0.54);
+      color: $darkest-purple;
+    }
+
+    &:disabled {
+      background: none;
+      color: $dark-grey;
+    }
+  }
+
   &:hover {
     border-color: $darkest-purple;
     background: $darkest-purple;
     color: $white;
+    fill: $white;
   }
 
   &:focus {
@@ -54,5 +84,14 @@
 
   &:disabled {
     color: $dark-grey;
+    fill: $dark-grey;
+  }
+
+  &__plus-icon {
+    position: relative;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    padding-right: 4px;
   }
 }
