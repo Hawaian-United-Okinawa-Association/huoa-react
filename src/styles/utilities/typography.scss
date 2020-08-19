@@ -1,25 +1,23 @@
-@import './fonts.scss';
+@import './../fonts.scss';
 
 h2 {
-  font-family: $lora;
-  font-weight: 700;
   font-size: 42px;
+  font-family: $lora;
   line-height: 48px;
 }
 
 h4 {
-  font-family: $poppins;
-  font-size: 21px;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  font-size: 21px;
+  font-family: $poppins;
   line-height: 31px;
   text-transform: capitalize;
 }
 
 h5 {
-  font-family: $poppins;
-  font-size: 13px;
   font-weight: 300;
+  font-size: 13px;
+  font-family: $poppins;
   line-height: 24px;
 }
 
