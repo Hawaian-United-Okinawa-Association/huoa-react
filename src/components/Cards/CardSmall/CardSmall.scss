@@ -1,0 +1,66 @@
+@import './../../../styles/utilities/colors.scss';
+@import './../../../styles/utilities/fonts.scss';
+@import './../../../styles/utilities/typography.scss';
+
+$card-image-height: 158.62px;
+
+/* stylelint-disable */
+.card-small {
+  display: grid;
+  width: 282px;
+  height: 399.62px;
+  margin: 16px;
+  background: $light-grey;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14), 0px 4px 5px rgba(0, 0, 0, 0.12), 0px 1px 10px rgba(0, 0, 0, 0.2);
+  grid-template-areas: 
+    "image"
+    "text"
+    "button";
+  grid-template-rows: $card-image-height auto 74px;
+  text-align: left;
+  align-items: left;
+}
+/* stylelint-enable */
+
+.card-small__image {
+  width: 100%;
+  height: $card-image-height;
+  margin-right: auto;
+  margin-left: auto;
+  grid-area: image;
+  object-fit: cover;
+}
+
+.card-small__text {
+  padding: 0 24px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  grid-area: text;
+}
+
+.card-small__header {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 31px;
+}
+
+.card-small__paragraph {
+  // margin: 0 60px;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+.card-small__button {
+  align-self: center;
+  padding: 0;
+  border-style: none;
+  margin-left: 25.5px;
+  background: $light-grey;
+  color: $purple;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  grid-area: button;
+  justify-self: left;
+}
