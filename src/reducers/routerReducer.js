@@ -87,8 +87,7 @@ const INITIAL_STATE = {
     },
     {
       name: 'Geneology',
-      linkTo: '/geneology',
-      children: []
+      linkTo: '/geneology'
     },
     {
       name: 'News',
@@ -110,13 +109,11 @@ const INITIAL_STATE = {
     },
     {
       name: 'Contact Us',
-      linkTo: '/contact',
-      children: []
+      linkTo: '/contact'
     },
     {
       name: 'Donate',
-      linkTo: '/donate',
-      children: []
+      linkTo: '/donate'
     }
   ]
 };

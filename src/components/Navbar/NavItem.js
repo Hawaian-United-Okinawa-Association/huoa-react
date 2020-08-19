@@ -1,18 +1,27 @@
-//Dependencies
+// Dependencies
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Components, actions, assets, etc..
+import Button from 'components/Button/Button';
+
 const NavItem = (props) => {
   const { name, linkTo, children, navState, setNavState } = props;
-  const setClass = () => (name === 'Donate' ? 'donate' : 'nav');
+  const isActive = navState === name ? 'navbar__link--active' : null;
 
-  return (
-    <div
-      className={`${setClass()}--link`}
-      onMouseEnter={() => setNavState(name)}
-      onMouseLeave={() => setNavState(false)}
-    >
-      <Link className={`${setClass()}--link__txt`} to={linkTo}>
+  return name === 'Donate' ? (
+    <Button type="outlined" link="donate">
+      Donate
+    </Button>
+  ) : (
+    <div>
+      <Link
+        className={`navbar__link ${isActive}`}
+        to={linkTo}
+        data-text={name}
+        onMouseEnter={() => setNavState(name)}
+        onClick={() => setNavState(false)}
+      >
         {name}
       </Link>
       {navState === name && children}
