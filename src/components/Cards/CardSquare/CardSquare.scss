@@ -1,0 +1,65 @@
+@import './../../../styles/utilities/colors.scss';
+@import './../../../styles/utilities/fonts.scss';
+@import './../../../styles/utilities/typography.scss';
+
+$card-image-height: 330.75px;
+
+
+/* stylelint-disable */
+.card-square {
+  display: grid;
+  width: 349px;
+  height: 330px;
+  padding: 0 16px;
+  margin: 15px;
+  background: $light-grey;
+  border-radius: 5px;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.14), 0px 4px 5px rgba(0, 0, 0, 0.12);
+  grid-template-areas: 
+    "text"
+    "button";
+  grid-template-rows: auto auto;
+  text-align: center;
+}
+/* stylelint-enable */
+
+.card-square__text {
+  padding-top: 58px;
+  margin-bottom: 10px;
+  color: $black;
+  font-family: Poppins;
+  font-style: normal;
+  grid-area: text;
+}
+
+.card-square__header {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 37px;
+}
+
+.card-square__subheader {
+  margin: 0 0 17px 0;
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 25px;
+  text-align: center;
+}
+
+.card-square__paragraph {
+  margin: 0 15px;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+.card-square__button {
+  width: 120px;
+  height: 44px;
+  border-style: none;
+  margin: 0 auto 34px auto;
+  background: $purple;
+  border-radius: 120px;
+  color: $light-grey;
+  grid-area: button;
+}
