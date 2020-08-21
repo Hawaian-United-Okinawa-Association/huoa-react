@@ -11,16 +11,22 @@
   font-family: $poppins;
   line-height: 24px;
   text-transform: uppercase;
-  transition-duration: 0.4s;
+  transition-timing-function: ease-in;
+  transition-duration: 0.5s;
   transition-property: background-color, color, border-color, fill;
 
   &[type=filled] {
     background-color: $dark-purple;
     color: $white;
     fill: $white;
-
+    
     &:focus {
       background-color: $purple;
+    }
+
+    &:hover {
+      border-color: $darkest-purple;
+      background-color: $darkest-purple;
     }
 
     &:disabled {
@@ -35,7 +41,12 @@
     fill: $dark-purple;
 
     &:focus {
+      border-color: $dark-purple;
       color: $purple;
+    }
+
+    &:hover {
+      color: $white;
     }
 
     &:disabled {
@@ -51,17 +62,17 @@
     font-weight: 600;
     fill: $dark-purple;
 
+    &:focus {
+      border-color: transparent;
+      background: rgba(179, 112, 160, 0.54);
+      color: $darkest-purple;
+    }
+
     &:hover {
       border-color: transparent;
       background: rgba(179, 112, 160, 0.32);
       color: $dark-purple;
       fill: $dark-purple;
-    }
-
-    &:focus {
-      border-color: transparent;
-      background: rgba(179, 112, 160, 0.54);
-      color: $darkest-purple;
     }
 
     &:disabled {
