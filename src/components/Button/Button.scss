@@ -3,7 +3,7 @@
 
 .button {
   display: inline-block;
-  border: 1px solid $dark-purple;
+  border: 1px solid $purple;
   border-radius: 120px;
   padding: 8px 16px;
   font-weight: 500;
@@ -11,22 +11,17 @@
   font-family: $poppins;
   line-height: 24px;
   text-transform: uppercase;
-  transition-timing-function: ease-in;
-  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.4s;
   transition-property: background-color, color, border-color, fill;
 
   &[type=filled] {
-    background-color: $dark-purple;
+    background-color: $purple;
     color: $white;
     fill: $white;
     
     &:focus {
       background-color: $purple;
-    }
-
-    &:hover {
-      border-color: $darkest-purple;
-      background-color: $darkest-purple;
     }
 
     &:disabled {
@@ -66,7 +61,7 @@
     &:focus {
       border-color: transparent;
       background: rgba(179, 112, 160, 0.54);
-      color: $darkest-purple;
+      color: $dark-purple;
     }
 
     &:hover {
@@ -83,8 +78,8 @@
   }
 
   &:hover {
-    border-color: $darkest-purple;
-    background: $darkest-purple;
+    border-color: $dark-purple;
+    background: $dark-purple;
     color: $white;
     fill: $white;
   }
