@@ -5,7 +5,7 @@ import { ReactComponent as PlusIcon } from 'assets/plus-icon.svg';
 import './Button.scss';
 
 const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled }, ref) => {
-  const hasIcon = (icon) => icon ? <PlusIcon className='button__plus-icon'/> : null;
+  const hasIcon = () => icon ? <PlusIcon className='button__plus-icon'/> : null;
 
   const rootURL = new RegExp('huoa.org/')
   if (rootURL.test(link)) {
@@ -18,7 +18,7 @@ const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled
   else if (onClick) {
     return (
       <button className='button' type={type} ref={ref} onClick={onClick} disabled={disabled}>
-        {hasIcon(icon)}
+        {hasIcon()}
         {children}
       </button>
     );
@@ -26,7 +26,7 @@ const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled
   else if (link.charAt(0) === '/') {
     return (
       <Link to={link} className='button' type={type} ref={ref}>
-        {hasIcon(icon)}
+        {hasIcon()}
         {children}
       </Link>
     )
@@ -34,7 +34,7 @@ const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled
   else {
     return (
       <a href={link} className='button' type={type} ref={ref}>
-        {hasIcon(icon)}
+        {hasIcon()}
         {children}
       </a>
     )
