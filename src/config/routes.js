@@ -15,6 +15,7 @@ const News = lazy(() => import('pages/News/News'));
 const Contact = lazy(() => import('pages/Contact/Contact'));
 const Donate = lazy(() => import('pages/Donate/Donate'));
 const Geneology = lazy(() => import('pages/Geneology/Geneology'));
+const Demo = lazy(() => import('pages/Demo/Demo'));
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
@@ -53,6 +54,10 @@ const Routes = () => {
         <Route path="/ogsh">
           <Header props={ pageState.ogsh } />
           <Geneology />
+        </Route>
+        <Route path="/demo">
+          <Header props={ pageState.demo } />
+          <Demo />
         </Route>
       </Switch>
     </Suspense>
