@@ -25,7 +25,7 @@ const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled
   } 
   else if (link.charAt(0) === '/') {
     return (
-      <Link to={link} className='button' type={type}>
+      <Link to={link} className='button' type={type} ref={ref}>
         {hasIcon(icon)}
         {children}
       </Link>
@@ -33,7 +33,7 @@ const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled
   } 
   else {
     return (
-      <a href={link} className='button' type={type}>
+      <a href={link} className='button' type={type} ref={ref}>
         {hasIcon(icon)}
         {children}
       </a>
