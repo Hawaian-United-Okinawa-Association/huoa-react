@@ -9,8 +9,7 @@ const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled
 
   const rootURL = new RegExp('huoa.org/')
   if (rootURL.test(link)) {
-    let match = rootURL.exec(link);
-    link = link.slice(match.index + 8)
+    link = link.slice(rootURL.exec(link).index + 8)
   }
   
   if (!onClick && !link) {
