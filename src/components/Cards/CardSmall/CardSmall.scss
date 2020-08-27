@@ -2,14 +2,13 @@
 @import './../../../styles/utilities/fonts.scss';
 @import './../../../styles/utilities/typography.scss';
 
-$card-image-height: 158.62px;
+$card-image-height: 157px;
 
 /* stylelint-disable */
 .card-small {
   display: grid;
-  width: 282px;
-  height: 399.62px;
-  margin: 16px;
+  max-width: 280px;
+  min-height: 400px;
   background: $light-grey;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14), 0px 4px 5px rgba(0, 0, 0, 0.12), 0px 1px 10px rgba(0, 0, 0, 0.2);
   grid-template-areas: 
@@ -19,6 +18,7 @@ $card-image-height: 158.62px;
   grid-template-rows: $card-image-height auto 74px;
   text-align: left;
   align-items: left;
+  justify-self: center;
 }
 /* stylelint-enable */
 
@@ -32,7 +32,7 @@ $card-image-height: 158.62px;
 }
 
 .card-small__text {
-  padding: 0 24px;
+  padding: 0 25px;
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;
@@ -42,7 +42,7 @@ $card-image-height: 158.62px;
 .card-small__header {
   font-size: 21px;
   font-weight: 500;
-  line-height: 31px;
+  line-height: 30px;
 }
 
 .card-small__paragraph {
@@ -55,7 +55,7 @@ $card-image-height: 158.62px;
   align-self: center;
   padding: 0;
   border-style: none;
-  margin-left: 25.5px;
+  margin-left: 25px;
   background: $light-grey;
   color: $purple;
   font-size: 18px;
