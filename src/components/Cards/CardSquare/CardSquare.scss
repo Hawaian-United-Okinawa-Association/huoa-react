@@ -2,16 +2,15 @@
 @import './../../../styles/utilities/fonts.scss';
 @import './../../../styles/utilities/typography.scss';
 
-$card-image-height: 330.75px;
+$card-image-height: 330px;
 
 
 /* stylelint-disable */
 .card-square {
   display: grid;
-  width: 349px;
-  height: 330px;
+  max-width: 350px;
+  min-height: 330px;
   padding: 0 16px;
-  margin: 15px;
   background: $light-grey;
   border-radius: 5px;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.14), 0px 4px 5px rgba(0, 0, 0, 0.12);
@@ -20,11 +19,12 @@ $card-image-height: 330.75px;
     "button";
   grid-template-rows: auto auto;
   text-align: center;
+  justify-self: center;
 }
 /* stylelint-enable */
 
 .card-square__text {
-  padding-top: 58px;
+  padding-top: 57px;
   margin-bottom: 10px;
   color: $black;
   font-family: Poppins;
@@ -55,9 +55,9 @@ $card-image-height: 330.75px;
 
 .card-square__button {
   width: 120px;
-  height: 44px;
+  height: 45px;
   border-style: none;
-  margin: 0 auto 34px auto;
+  margin: 0 auto 35px auto;
   background: $purple;
   border-radius: 120px;
   color: $light-grey;
