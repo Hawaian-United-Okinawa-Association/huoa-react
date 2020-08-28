@@ -1,18 +1,10 @@
-// Transform from PascalCase to kebab-case
-const pascalToKebabCase = str => str.replace(/\.?([A-Z])/g, (char) =>  "-" + char.toLowerCase()).replace(/^-/, "");
-// Given a component name in PascalCase, returns a regex. The regex
-// must match CSS selectors conforming to the BEM naming conventions
-// you want to enforce.
-
-// BEM Styling Pattern
-const kebabCase = "[a-z#{}$]+(?:-[a-zA-Z0-9#{}$]+)*";
-const element = `(?:__${kebabCase})?`;
-const modifier = `(?:--${kebabCase})?`;
-const attribute = "(?:\\[.+\\])?";
-
-// Initial and Combinator Selector Configs
-const customBemSelector = (component, isInitial) => {
-  let block = isInitial ? pascalToKebabCase(component) : `(?:${kebabCase})?`;
+// BEM Selector Class Configs
+const customBemSelector = () => {
+  const kebabCase = "[a-z#{}$]+(?:-[a-zA-Z0-9#{}$]+)*";
+  let block = `(?:${kebabCase})?`;
+  const element = `(?:__${kebabCase})?`;
+  const modifier = `(?:--${kebabCase})?`;
+  const attribute = "(?:\\[.+\\])?";
   return new RegExp(`^\\.${block}${element}${modifier}${attribute}$`);
 };
 
@@ -28,10 +20,9 @@ module.exports = {
     "sh-waqar/declaration-use-variable": [["color", "background-color", { ignoreValues: ["inherit"] }]],
     "plugin/selector-bem-pattern": {
       preset: "bem",
-      implicitComponents: "src/components/**/*.scss",
+      implicitComponents: true,
       componentSelectors: {
-        initial: (component) => customBemSelector(component, true),
-        combined: (component) => customBemSelector(component, false)
+        initial: customBemSelector
       }
     },
     "order/order": [
