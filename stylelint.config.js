@@ -3,9 +3,18 @@ const pascalToKebabCase = str => str.replace(/\.?([A-Z])/g, (char) =>  "-" + cha
 // Given a component name in PascalCase, returns a regex. The regex
 // must match CSS selectors conforming to the BEM naming conventions
 // you want to enforce.
-const customBemSelector = component => {
+const customInitialBemSelector = component => {
   const block = pascalToKebabCase(component);
   const kebabCase = "[a-z#{}$]+(?:-[a-zA-Z0-9#{}$]+)*";
+  const element = `(?:__${kebabCase})?`;
+  const modifier = `(?:--${kebabCase})?`;
+  const attribute = "(?:\\[.+\\])?";
+  return new RegExp(`^\\.${block}${element}${modifier}${attribute}$`);
+};
+
+const customCombinatorBemSelector = component => {
+  const kebabCase = "[a-z#{}$]+(?:-[a-zA-Z0-9#{}$]+)*";
+  const block = `(?:${kebabCase})?`;
   const element = `(?:__${kebabCase})?`;
   const modifier = `(?:--${kebabCase})?`;
   const attribute = "(?:\\[.+\\])?";
@@ -26,7 +35,8 @@ module.exports = {
       preset: "bem",
       implicitComponents: "src/components/**/*.scss",
       componentSelectors: {
-        initial: customBemSelector
+        initial: customInitialBemSelector,
+        combined: customCombinatorBemSelector
       }
     },
     "order/order": [
