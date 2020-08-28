@@ -288,7 +288,7 @@ module.exports = {
       "ignore": ["stylelint-commands", "after-comment"]
     } ],
     "declaration-colon-space-after": "always",
-    "max-empty-lines": 2,
+    "max-empty-lines": 1,
     "rule-empty-line-before": [ "always", {
       "except": ["first-nested"],
       "ignore": ["after-comment"]
