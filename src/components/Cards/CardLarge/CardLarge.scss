@@ -33,6 +33,7 @@ $card-image-height: 330px;
 }
 
 .card-large__text {
+  padding-top: 20px;
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;
@@ -40,6 +41,7 @@ $card-image-height: 330px;
 }
 
 .card-large__header {
+  margin: 20px 0;
   font-size: 27px;
   line-height: 37px;
 }
