@@ -1,4 +1,4 @@
-@import './../../styles/fonts.scss';
+@import './../../styles/utilities/fonts.scss';
 @import './../../styles/breakpoints.scss';
 @import './../../styles/alignment.scss';
 
@@ -13,7 +13,7 @@ $total-columns: 12;
 /* stylelint-disable */
 
 @for $i from 1 through $total-columns {
-  .col__#{$i} {
+  .container__col--#{$i} {
     grid-auto-flow: row;
     grid-template-columns: repeat(#{$i}, 1fr);
 
