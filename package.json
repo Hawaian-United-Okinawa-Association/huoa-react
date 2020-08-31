@@ -8,22 +8,16 @@
     "@testing-library/react": "10.3.0",
     "@testing-library/user-event": "12.0.6",
     "axios": "^0.19.2",
-    "babel-plugin-dynamic-import-node": "^2.0.0",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "express": "^4.17.1",
-    "file-loader": "^2.0.0",
-    "ignore-styles": "^5.0.1",
     "node-sass": "^4.14.1",
     "react": "16.13.1",
     "react-app-rewired": "^2.1.6",
     "react-dom": "16.13.1",
-    "react-loadable": "^5.3.1",
+    "react-helmet": "^6.1.0",
     "react-redux": "^7.2.0",
     "react-router-dom": "5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.3",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "serialize-javascript": "^4.0.0",
     "webfontloader": "^1.6.28"
   },
   "resolutions": {
@@ -34,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "NODE_ENV=production nodemon server/config.js"
+    "postbuild": "react-snap"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -52,12 +46,16 @@
     ]
   },
   "devDependencies": {
-    "nodemon": "^2.0.4",
     "postcss-bem-linter": "^3.3.0",
+    "react-snap": "^1.23.0",
     "stylelint": "^13.6.1",
-    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-declaration-use-variable": "^1.7.2",
     "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0",
     "stylelint-selector-bem-pattern": "^2.1.0",
     "stylelint-webpack-plugin": "^2.1.0"
+  },
+  "reactSnap": {
+    "cacheAjaxRequests": true
   }
 }
