@@ -1,0 +1,36 @@
+@import './../../styles/utilities/fonts.scss';
+@import './../../styles/breakpoints.scss';
+@import './../../styles/alignment.scss';
+
+/* stylelint-disable */
+.cards--large {
+  padding: 60px 90px;
+  // margin: 10px;
+  background-color: #F2EDF8;
+}
+.cards--large > * {
+  margin: 20px;
+  // margin: 10px;
+  // background-color: #F2EDF8;
+}
+
+.cards--small {
+  padding: 60px 90px;
+}
+
+.cards--square {
+  padding: 60px 90px;
+  background-color: #F2EDF8;
+}
+
+.card-large {
+  margin: 10px;
+}
+
+.card-small {
+  margin: 10px;
+}
+
+.card-square {
+  margin: 10px;
+}
