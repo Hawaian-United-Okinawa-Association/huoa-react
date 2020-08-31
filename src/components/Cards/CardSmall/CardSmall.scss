@@ -23,25 +23,25 @@ $card-image-height: 157px;
 /* stylelint-enable */
 
 .card-small__image {
+  grid-area: image;
+  object-fit: cover;
   width: 100%;
   height: $card-image-height;
   margin-right: auto;
   margin-left: auto;
-  grid-area: image;
-  object-fit: cover;
 }
 
 .card-small__text {
-  padding: 0 25px;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
   grid-area: text;
+  padding: 0 25px;
+  font-weight: normal;
+  font-style: normal;
+  font-family: Poppins;
 }
 
 .card-small__header {
-  font-size: 21px;
   font-weight: medium;
+  font-size: 21px;
   line-height: 30px;
 }
 
@@ -52,15 +52,15 @@ $card-image-height: 157px;
 }
 
 .card-small__button {
+  grid-area: button;
   align-self: center;
-  padding: 0;
-  border-style: none;
+  justify-self: left;
   margin-left: 25px;
+  border-style: none;
+  padding: 0;
   background: $light-grey;
   color: $purple;
-  font-size: 18px;
-  font-style: normal;
   font-weight: 500;
-  grid-area: button;
-  justify-self: left;
+  font-style: normal;
+  font-size: 18px;
 }

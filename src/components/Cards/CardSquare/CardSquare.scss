@@ -24,25 +24,25 @@ $card-image-height: 330px;
 /* stylelint-enable */
 
 .card-square__text {
-  padding-top: 57px;
-  margin-bottom: 10px;
-  color: $black;
-  font-family: Poppins;
-  font-style: normal;
   grid-area: text;
+  margin-bottom: 10px;
+  padding-top: 57px;
+  color: $black;
+  font-style: normal;
+  font-family: Poppins;
 }
 
 .card-square__header {
   margin: 0;
-  font-size: 25px;
   font-weight: 500;
+  font-size: 25px;
   line-height: 37px;
 }
 
 .card-square__subheader {
   margin: 0 0 17px 0;
-  font-size: 17px;
   font-weight: normal;
+  font-size: 17px;
   line-height: 25px;
   text-align: center;
 }
@@ -54,12 +54,12 @@ $card-image-height: 330px;
 }
 
 .card-square__button {
+  grid-area: button;
   width: 120px;
   height: 45px;
-  border-style: none;
   margin: 0 auto 35px auto;
-  background: $purple;
+  border-style: none;
   border-radius: 120px;
+  background: $purple;
   color: $light-grey;
-  grid-area: button;
 }
