@@ -1,17 +1,16 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import { render } from '@testing-library/react'
 
 import Button from './Button';
 
-test('loads button properly', async () => {
-  const button = render(<Button link='facebook.com'>Click me!</Button>);
-
-  expect(button).toBeDefined();
+test('button loads properly with a link', async () => {
+  expect(() => render(<Button link='www.facebook.com/huoa'>Visit HUOA'S FB</Button>)).toBeDefined();
 });
 
-test('throws error', async() => {
-  const button = render(<Button>Click me!</Button>);
-  
-  expect(button).toThrow();
-})
+test('button loads property with an onClick', async () => {
+  expect(() => render(<Button onClick={() => console.log('Hello')}>Say Hello</Button>)).toBeDefined();
+});
+
+test('button throws error without link or onClick', async () => {
+  expect(() => render(<Button>Click me!</Button>)).toThrowError(new Error('Button requires a link or an onClick attribute'));
+});
