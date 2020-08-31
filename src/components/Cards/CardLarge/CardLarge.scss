@@ -24,20 +24,20 @@ $card-image-height: 330px;
 /* stylelint-enable */
 
 .card-large__image {
+  grid-area: image;
+  object-fit: cover;
   width: 100%;
   height: $card-image-height;
   margin-right: auto;
   margin-left: auto;
-  grid-area: image;
-  object-fit: cover;
 }
 
 .card-large__text {
-  padding-top: 20px;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
   grid-area: text;
+  padding-top: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-family: Poppins;
 }
 
 .card-large__header {
@@ -47,22 +47,22 @@ $card-image-height: 330px;
 }
 
 .card-large__paragraph {
-  padding-bottom: 15px;
   margin: 0 60px;
+  padding-bottom: 15px;
   font-size: 17px;
   line-height: 25px;
 }
 
 .card-large__button {
+  grid-area: button;
+  grid-row: 50px;
   width: 120px;
   height: 45px;
-  border-style: none;
   margin-right: auto;
   margin-bottom: 35px;
   margin-left: auto;
-  background: $purple;
+  border-style: none;
   border-radius: 120px;
+  background: $purple;
   color: $light-grey;
-  grid-area: button;
-  grid-row: 50px;
 }
