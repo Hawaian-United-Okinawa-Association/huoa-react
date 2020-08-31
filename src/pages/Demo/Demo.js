@@ -5,6 +5,7 @@ import { openModal } from 'actions/index';
 import Container from 'components/Container/Container';
 import Button from 'components/Button/Button';
 import CustomThankYou from 'components/Custom/CustomThankYou/CustomThankYou';
+import CardDemo from '../../components/Cards/CardDemo';
 
 import './Demo.scss';
 
@@ -25,6 +26,7 @@ const Demo = () => {
           <Button type='outlined' link='/donate'>Int Link (Donate)</Button>
         </div>
       </Container>
+      <CardDemo></CardDemo>
     </section>
   );
 };
