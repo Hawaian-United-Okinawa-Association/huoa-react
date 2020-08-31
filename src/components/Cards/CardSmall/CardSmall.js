@@ -7,7 +7,7 @@ const CardSmall = ({ image, imageAlt, header, paragraph, button }) => {
     <div className='card-small'>
       <img className='card-small__image' src={image} alt={`${imageAlt}`}/>
       <div className='card-small__text'>
-        <h3 className='card-small__header'>{header}</h3>
+        <h1 className='card-small__header'>{header}</h1>
         <p className='card-small__paragraph'>{paragraph}</p>
       </div>
       <button className='card-small__button'>{button}</button>
