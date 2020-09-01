@@ -1,0 +1,66 @@
+@import 'styles/fonts';
+@import 'styles/utilities/colors';
+@import 'styles/utilities/breakpoints';
+
+.donate-section-one {
+  margin: 64px auto 32px;
+  
+  &__title {
+    margin: 0 auto 48px;;
+    padding: 0 30px;
+    color: $black;
+    font-weight: 600;
+    font-size: 32px;
+    font-family: $open-sans;
+    line-height: 48px;
+    text-align: center;
+  }
+
+  &__body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    @media(max-width: $breakpoint-mobile-large) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__col {
+    max-width: 300px;
+    padding: 8px;
+    text-align: center;
+
+    @media(max-width: $breakpoint-mobile-large) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__icon-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: $light-grey;
+  }
+
+  &__icon {
+    width: 85px;
+    height: 85px;
+    fill: $white;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__text {
+    font-size: 14px;
+  }
+}
