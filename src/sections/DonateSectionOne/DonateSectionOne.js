@@ -17,7 +17,7 @@ const DonateSectionOne = ({ data }) => {
     }
 
     return (
-      <div className='donate-section-one__col'>
+      <div className='donate-section-one__col' key={i}>
         <div className='donate-section-one__icon-bg'>{icons[col.icon]}</div>
         <h4 className='donate-section-one__subtitle'>{col.subtitle}</h4>
         <p className='donate-section-one__text'>{col.text}</p>
