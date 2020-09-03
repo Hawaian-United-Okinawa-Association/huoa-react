@@ -10,15 +10,15 @@ import { ReactComponent as Car } from 'assets/car.svg';
 const DonateSectionOne = ({ data }) => {
   const columnArray = Object.keys(data.body).map(i => data.body[i]);
   const cols = columnArray.map((col, i) => {
-    const icons = [
-      <TreePlanting className='donate-section-one__icon'/>, 
-      <CoinInHand className='donate-section-one__icon'/>, 
-      <Car className='donate-section-one__icon'/>
-    ]
+    const icons = {
+      'tree-planting': <TreePlanting className='donate-section-one__icon'/>,
+      'coin-in-hand': <CoinInHand className='donate-section-one__icon'/>,
+      'car': <Car className='donate-section-one__icon'/>
+    }
 
     return (
       <div className='donate-section-one__col'>
-        <div className='donate-section-one__icon-bg'>{icons[i]}</div>
+        <div className='donate-section-one__icon-bg'>{icons[col.icon]}</div>
         <h4 className='donate-section-one__subtitle'>{col.subtitle}</h4>
         <p className='donate-section-one__text'>{col.text}</p>
         <Button type='text' link={col.link}>Learn More</Button>
