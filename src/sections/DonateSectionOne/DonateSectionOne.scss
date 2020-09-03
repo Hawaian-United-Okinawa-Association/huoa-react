@@ -29,11 +29,11 @@
 
   &__col {
     max-width: 300px;
-    padding: 8px;
+    margin: 0 30px;
     text-align: center;
 
     @media(max-width: $breakpoint-mobile-large) {
-      margin-bottom: 16px;
+      margin-bottom: 32px;
     }
   }
 
