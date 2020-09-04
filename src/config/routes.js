@@ -49,7 +49,7 @@ const Routes = () => {
         </Route>
         <Route path="/donate">
           <Header props={ pageState.donate } />
-          <Donate />
+          <Donate data={pageState.donate} />
         </Route>
         <Route path="/ogsh">
           <Header props={ pageState.ogsh } />
