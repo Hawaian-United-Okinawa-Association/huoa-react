@@ -1,11 +1,15 @@
 import React from 'react';
 
-const Donate = () => {
+import DonateSectionOne from 'sections/DonateSectionOne/DonateSectionOne';
+
+const Donate = ({ data }) => {
+  if (!data) return null;
+
   return (
-    <div>
-      <h4>Donate</h4>
+    <div className='page-donate'>
+      <DonateSectionOne data={data.donate_section_one} />
     </div>
-  )
+    )
 }
 
 export default Donate;
