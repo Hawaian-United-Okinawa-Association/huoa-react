@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
+// import { useDispatch } from 'react-redux';
 
+import Button from '../../Button/Button';
 import './CardSquare.scss';
 
-const CardSquare = ({ header, subheader, paragraph, button }) => {
+const CardSquare = ({ header, subheader, paragraph, button, onClick }) => {
+  const ref = useRef();
   return (
     <div className='card-square'>
       <div className='card-square__text'>
@@ -10,7 +13,11 @@ const CardSquare = ({ header, subheader, paragraph, button }) => {
         <h3 className='card-square__subheader'>{subheader}</h3>
         <p className='card-square__paragraph'>{paragraph}</p>
       </div>
-      <button className='card-square__button'>{button}</button>
+      <button className='card-square__button'>
+        <Button type='filled' ref={ref} onClick={onClick}>
+          {button}
+        </Button>
+      </button>
     </div>
   );
 };
