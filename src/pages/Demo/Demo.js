@@ -51,7 +51,7 @@ const Demo = () => {
           </Button>
         </div>
       </Container>
-      <CardDemo></CardDemo>
+      <CardDemo />
     </section>
   );
 };
