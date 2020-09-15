@@ -1,9 +1,8 @@
-@import './../../../styles/utilities/colors.scss';
-@import './../../../styles/fonts.scss';
-@import './../../../styles/utilities/typography.scss';
+@import 'styles/utilities/colors.scss';
+@import 'styles/fonts.scss';
+@import 'styles/utilities/typography.scss';
 
 $card-image-height: 330px;
-
 
 /* stylelint-disable */
 .card-square {
@@ -14,9 +13,9 @@ $card-image-height: 330px;
   background: $light-grey;
   border-radius: 5px;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.14), 0px 4px 5px rgba(0, 0, 0, 0.12);
-  grid-template-areas: 
-    "text"
-    "button";
+  grid-template-areas:
+    'text'
+    'button';
   grid-template-rows: auto auto;
   text-align: center;
   justify-self: center;
