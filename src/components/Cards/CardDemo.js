@@ -10,7 +10,7 @@ import './CardDemo.scss';
 const CardDemo = props => {
   return (
     <>
-      <div className='cards--large'>
+      <div className='card-demo--large'>
         <Container col='2'>
           <CardLarge
             image='https://huoa.org/nuuzi/banquetfacility/hoc.jpg'
@@ -26,7 +26,7 @@ const CardDemo = props => {
             button='SCHEDULE'></CardLarge>
         </Container>
       </div>
-      <div className='cards--small'>
+      <div className='card-demo--small'>
         <h2 style={{ textAlign: 'center' }}>What's New</h2>
         <Container col='4'>
           <CardSmall
@@ -55,7 +55,7 @@ const CardDemo = props => {
             button='Button Text'></CardSmall>
         </Container>
       </div>
-      <div className='cards--square'>
+      <div className='card-demo--square'>
         <h2 style={{ textAlign: 'center' }}>Support Your Community</h2>
         <Container col='3'>
           <CardSquare

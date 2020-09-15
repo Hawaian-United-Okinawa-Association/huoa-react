@@ -1,29 +1,19 @@
 @import 'styles/fonts.scss';
 @import 'styles/utilities/breakpoints.scss';
+@import 'styles/utilities/colors.scss';
 
-/* stylelint-disable */
-.cards--large {
-  padding: 30px;
-  background-color: #f2edf8;
-}
+.card-demo {
+  &--large {
+    padding: 30px;
+    background-color: $light-grey;
+  }
 
-.cards--small {
-  padding: 30px;
-}
+  &--small {
+    padding: 30px;
+  }
 
-.cards--square {
-  padding: 30px;
-  background-color: #f2edf8;
-}
-
-.card-large {
-  margin: 10px;
-}
-
-.card-small {
-  margin: 10px;
-}
-
-.card-square {
-  margin: 10px;
+  &--square {
+    padding: 30px;
+    background-color: $light-grey;
+  }
 }
