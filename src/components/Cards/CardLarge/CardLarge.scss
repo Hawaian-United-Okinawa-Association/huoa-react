@@ -8,6 +8,7 @@ $card-image-height: 330px;
   display: grid;
   grid-template-areas: 'image' 'text' 'button';
   grid-template-rows: $card-image-height auto 74px;
+  overflow: hidden;
   border-radius: 5px;
   background: $light-grey;
   box-shadow: $card-large-shadow;
