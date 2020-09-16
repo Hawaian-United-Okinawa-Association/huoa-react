@@ -5,7 +5,7 @@
 .card-demo {
   &--large {
     padding: 30px;
-    background-color: $light-grey;
+    background-color: $light-purple;
   }
 
   &--small {
@@ -14,18 +14,24 @@
 
   &--square {
     padding: 30px;
-    background-color: $light-grey;
+    background-color: $light-purple;
   }
 }
 
-// .card-large {
-//   margin: 10px;
-// }
+.card-demo {
+  &--large-card {
+    justify-self: center;
+    max-width: 600px;
+    margin: 10px;
+  }
 
-// .card-small {
-//   margin: 10px;
-// }
+  &--small-card {
+    justify-self: center;
+    margin: 10px;
+  }
 
-// .card-square {
-//   margin: 10px;
-// }
+  &--square-card {
+    justify-self: center;
+    margin: 10px;
+  }
+}
