@@ -10,7 +10,7 @@ $card-image-height: 330px;
   grid-template-rows: $card-image-height auto 74px;
   border-radius: 5px;
   background: $light-grey;
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.14), 0px 4px 5px rgba(0, 0, 0, 0.12);
+  box-shadow: $card-large-shadow;
   text-align: center;
 }
 
@@ -19,8 +19,7 @@ $card-image-height: 330px;
   object-fit: cover;
   width: 100%;
   height: $card-image-height;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
 }
 
 .card-large__text {
@@ -32,12 +31,12 @@ $card-image-height: 330px;
 }
 
 .card-large__header {
-  margin: 20px 0;
+  margin: 24px auto;
   font-size: 27px;
   line-height: 37px;
 }
 
-.card-large__paragraph {
+.card-large__body {
   margin: 0 60px;
   padding-bottom: 15px;
   font-size: 17px;
@@ -51,9 +50,5 @@ $card-image-height: 330px;
   margin-right: auto;
   margin-bottom: 35px;
   margin-left: auto;
-  border-style: none;
-  border-radius: 120px;
-  background: $purple;
-  color: $light-grey;
 }
 
