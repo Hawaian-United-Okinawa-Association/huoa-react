@@ -30,6 +30,53 @@ The objective is to redesign the current website for HUOA to give the associatio
 
 **Note** Nodemon is installed thus running server you will have a reloading state of the server
 
+## Styling
+
+This project contains `StyleLint` which checks for property order and BEM format styling. See below for allowable formats:
+
+Allowed class naming:
+```
+// Block.js
+.block {
+  // Styling...
+  &__element {
+    // Styling...
+    &--modifier {
+      // Styling...
+    }
+  }
+}
+```
+```
+.block .card {
+  // Styling...
+}
+```
+
+Unallowed class naming (these will throw errors):
+```
+// Must follow Component name
+.block-demo {
+  // Styling...
+}
+```
+```
+// Must be camel-case
+.Block {
+  // Styling...
+}
+```
+```
+// Must follow block -> element -> modifier -> attribute format
+.block {
+  &--modifier {
+    &__element{
+      // Styling...
+    }
+  }
+}
+```
+
 ## User Stories
 
 Pending...
