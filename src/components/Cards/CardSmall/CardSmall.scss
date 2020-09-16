@@ -7,16 +7,16 @@ $card-image-height: 157px;
 /* stylelint-disable */
 .card-small {
   display: grid;
-  background: $light-grey;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14), 0px 4px 5px rgba(0, 0, 0, 0.12),
-    0px 1px 10px rgba(0, 0, 0, 0.2);
   grid-template-areas:
     'image'
     'text'
     'button';
   grid-template-rows: $card-image-height auto 74px;
-  text-align: left;
   align-items: left;
+  background: $light-grey;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14), 0px 4px 5px rgba(0, 0, 0, 0.12),
+  0px 1px 10px rgba(0, 0, 0, 0.2);
+  text-align: left;
 }
 /* stylelint-enable */
 
