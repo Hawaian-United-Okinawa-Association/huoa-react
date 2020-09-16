@@ -7,8 +7,6 @@ $card-image-height: 330px;
 /* stylelint-disable */
 .card-large {
   display: grid;
-  max-width: 600px;
-  min-height: 610px;
   background: $light-grey;
   border-radius: 5px;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.14), 0px 4px 5px rgba(0, 0, 0, 0.12);
@@ -18,8 +16,6 @@ $card-image-height: 330px;
     'button';
   grid-template-rows: $card-image-height auto 74px;
   text-align: center;
-  overflow: hidden;
-  justify-self: center;
 }
 /* stylelint-enable */
 

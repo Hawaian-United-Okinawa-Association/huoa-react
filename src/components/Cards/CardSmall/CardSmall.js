@@ -13,11 +13,11 @@ const CardSmall = ({ image, imageAlt, header, paragraph, button, onClick }) => {
         <h1 className='card-small__header'>{header}</h1>
         <p className='card-small__paragraph'>{paragraph}</p>
       </div>
-      <button className='card-small__button'>
+      <div className='card-small__button'>
         <Button type='text' ref={ref} onClick={onClick}>
           {button}
         </Button>
-      </button>
+      </div>
     </div>
   );
 };
