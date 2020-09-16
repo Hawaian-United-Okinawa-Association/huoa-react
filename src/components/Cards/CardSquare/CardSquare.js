@@ -13,11 +13,11 @@ const CardSquare = ({ header, subheader, paragraph, button, onClick }) => {
         <h3 className='card-square__subheader'>{subheader}</h3>
         <p className='card-square__paragraph'>{paragraph}</p>
       </div>
-      <button className='card-square__button'>
+      <div className='card-square__button'>
         <Button type='filled' ref={ref} onClick={onClick}>
           {button}
         </Button>
-      </button>
+      </div>
     </div>
   );
 };
