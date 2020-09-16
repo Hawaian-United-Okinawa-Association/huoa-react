@@ -2,8 +2,6 @@
 @import 'styles/fonts.scss';
 @import 'styles/utilities/typography.scss';
 
-$card-image-height: 330px;
-
 .card-square {
   display: grid;
   grid-template-areas: 'text' 'button';
