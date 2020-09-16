@@ -4,13 +4,9 @@
 
 $card-image-height: 157px;
 
-/* stylelint-disable */
 .card-small {
   display: grid;
-  grid-template-areas:
-    'image'
-    'text'
-    'button';
+  grid-template-areas: 'image' 'text' 'button';
   grid-template-rows: $card-image-height auto 74px;
   align-items: left;
   background: $light-grey;
@@ -18,7 +14,6 @@ $card-image-height: 157px;
   0px 1px 10px rgba(0, 0, 0, 0.2);
   text-align: left;
 }
-/* stylelint-enable */
 
 .card-small__image {
   grid-area: image;
