@@ -4,6 +4,8 @@ import React, { useRef } from 'react';
 import Button from '../../Button/Button';
 import './CardLarge.scss';
 
+//TODO when the Image Component is done, add it to this card.
+
 const CardLarge = ({ image, altTag, header, body, button, onClick }) => {
   const ref = useRef();
   return (
