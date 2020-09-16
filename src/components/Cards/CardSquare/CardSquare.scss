@@ -10,7 +10,7 @@ $card-image-height: 330px;
   grid-template-rows: auto auto;
   border-radius: 5px;
   background: $light-grey;
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.14), 0px 4px 5px rgba(0, 0, 0, 0.12);
+  box-shadow: $card-square-shadow;
   text-align: center;
 }
 
@@ -38,7 +38,7 @@ $card-image-height: 330px;
   text-align: center;
 }
 
-.card-square__paragraph {
+.card-square__body {
   margin: 0 15px;
   font-size: 17px;
   line-height: 25px;
@@ -47,9 +47,5 @@ $card-image-height: 330px;
 .card-square__button {
   grid-area: button;
   height: 45px;
-  margin: 0 auto 35px auto;
-  border-style: none;
-  border-radius: 120px;
-  background: $purple;
-  color: $light-grey;
+  margin: 0 auto 30px auto;
 }

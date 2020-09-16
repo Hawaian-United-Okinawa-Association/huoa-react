@@ -14,17 +14,17 @@ const CardDemo = props => {
         <Container col='2'>
           <CardLarge
             image='https://huoa.org/nuuzi/banquetfacility/hoc.jpg'
-            imageAlt='banquet facility'
+            altTag='banquet facility'
             header='Banquet Facility'
-            paragraph='Description and it its a bit longer because it is giving more detailed information about the event. It will probably be a few sentences.'
+            body='Description and it its a bit longer because it is giving more detailed information about the event. It will probably be a few sentences.'
             button='SCHEDULE'
             onClick={() => console.log('you clicked a button')}
           />
           <CardLarge
             image='https://huoa.org/nuuzi/banquetfacility/hoc.jpg'
-            imageAlt='banquet facility'
+            altTag='banquet facility'
             header='Banquet Facility'
-            paragraph='Description and it its a bit longer because it is giving more detailed information about the event. It will probably be a few sentences.'
+            body='Description and it its a bit longer because it is giving more detailed information about the event. It will probably be a few sentences.'
             button='SCHEDULE'
             onClick={() => console.log('you clicked a button')}
           />
@@ -35,33 +35,33 @@ const CardDemo = props => {
         <Container col='4'>
           <CardSmall
             image='https://huoa.org/nuuzi/data1/images/2018FestBonDanceGY.jpg'
-            imageAlt='dancing'
+            altTag='dancing'
             header='Headline Here'
-            paragraph='Description and it its a pretty short. Nothing too long here.'
+            body='Description and it its a pretty short. Nothing too long here.'
             button='Button Text'
             onClick={() => console.log('You clicked a button')}
           />
           <CardSmall
             image='https://huoa.org/nuuzi/data1/images/2018FestBonDanceGY.jpg'
-            imageAlt='dancing'
+            altTag='dancing'
             header='Headline Here'
-            paragraph='Description and it its a pretty short. Nothing too long here.'
+            body='Description and it its a pretty short. Nothing too long here.'
             button='Button Text'
             onClick={() => console.log('You clicked a button')}
           />
           <CardSmall
             image='https://huoa.org/nuuzi/data1/images/2018FestBonDanceGY.jpg'
-            imageAlt='dancing'
+            altTag='dancing'
             header='Headline Here'
-            paragraph='Description and it its a pretty short. Nothing too long here.'
+            body='Description and it its a pretty short. Nothing too long here.'
             button='Button Text'
             onClick={() => console.log('You clicked a button')}
           />
           <CardSmall
             image='https://huoa.org/nuuzi/data1/images/2018FestBonDanceGY.jpg'
-            imageAlt='dancing'
+            altTag='dancing'
             header='Headline Here'
-            paragraph='Description and it its a pretty short. Nothing too long here.'
+            body='Description and it its a pretty short. Nothing too long here.'
             button='Button Text'
             onClick={() => console.log('You clicked a button')}
           />
@@ -73,21 +73,21 @@ const CardDemo = props => {
           <CardSquare
             header='Kokua In Kind'
             subheader='Lorem Subhead Goes Here'
-            paragraph='Description and it its a bit longer because it is giving more detailed information about the event.'
+            body='Description and it its a bit longer because it is giving more detailed information about the event.'
             button='LEARN MORE'
             onClick={() => console.log('You clicked a button')}
           />
           <CardSquare
             header='Kokua In Kind'
             subheader='Lorem Subhead Goes Here'
-            paragraph='Description and it its a bit longer because it is giving more detailed information about the event.'
+            body='Description and it its a bit longer because it is giving more detailed information about the event.'
             button='LEARN MORE'
             onClick={() => console.log('You clicked a button')}
           />
           <CardSquare
             header='Kokua In Kind'
             subheader='Lorem Subhead Goes Here'
-            paragraph='Description and it its a bit longer because it is giving more detailed information about the event.'
+            body='Description and it its a bit longer because it is giving more detailed information about the event.'
             button='LEARN MORE'
             onClick={() => console.log('You clicked a button')}
           />
