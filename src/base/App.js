@@ -8,12 +8,14 @@ import Navbar from './../components/Navbar/Navbar';
 import Footer from './../components/Footer/Footer';
 import Routes from './../config/routes';
 
-import { getPages } from './../actions/index';
+import { getHeros, getPages } from './../actions/index';
 
 import './App.scss';
 
 const App = (props) => {
   const dispatch = useDispatch();
+
+  dispatch(getHeros());
   dispatch(getPages());
 
   return (

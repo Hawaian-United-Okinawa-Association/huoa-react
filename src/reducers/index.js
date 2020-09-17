@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import eventReducer from './eventReducer';
-import donationReducer from './donationReducer';
+import heroReducer from './heroReducer';
 import volunteerReducer from './volunteerReducer';
 import subscribeReducer from './subscribeReducer';
 import newsReducer from './newsReducer';
@@ -10,7 +10,7 @@ import pagesReducer from './pagesReducer';
 import routerReducer from './routerReducer';
 
 export default combineReducers({
-  donation: donationReducer,
+  heros: heroReducer,
   event: eventReducer,
   volunteer: volunteerReducer,
   subscribe: subscribeReducer,
