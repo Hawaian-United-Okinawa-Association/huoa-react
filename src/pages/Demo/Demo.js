@@ -5,6 +5,7 @@ import { openModal } from 'actions/index';
 import Container from 'components/Container/Container';
 import Button from 'components/Button/Button';
 import CustomThankYou from 'components/Custom/CustomThankYou/CustomThankYou';
+import Image from 'components/Image/Image';
 
 import './Demo.scss';
 
@@ -16,6 +17,8 @@ const Demo = () => {
   return (
     <section>
       <h1>Demo Page</h1>
+      <Image webp="https://mateodevelops-api.imgix.net/image-2.webp" img="https://mateodevelops-api.imgix.net/11.png" className="image-class" />
+
       <Container>
         <div className='demo__buttons'>
           <Button type='filled' onClick={() => dispatch(openModal(thankYou))}>Opens Modal</Button>
