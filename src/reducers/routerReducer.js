@@ -20,7 +20,7 @@ const INITIAL_STATE = {
           linkTo: '/about/history'
         },
         {
-          name: 'Hawaii Okinawan Center',
+          name: 'HO Center',
           linkTo: '/about/hawaii-okinawan-center'
         },
         {
@@ -54,7 +54,7 @@ const INITIAL_STATE = {
           linkTo: '/join/sports'
         },
         {
-          name: 'Scholarships & Grants',
+          name: 'Scholarships & Awards',
           linkTo: '/join/scholarships'
         },
         {
@@ -76,11 +76,7 @@ const INITIAL_STATE = {
           linkTo: '/events/calendar'
         },
         {
-          name: 'Student Exchange Program',
-          linkTo: '/events/student-exchange-program'
-        },
-        {
-          name: 'Okinawan Classes',
+          name: 'Class Schedule',
           linkTo: '/events/classes'
         }
       ]
@@ -94,16 +90,12 @@ const INITIAL_STATE = {
       linkTo: '/news',
       children: [
         {
-          name: 'Uchinanchu Newsletter',
+          name: 'Join Our Newsletter',
           linkTo: '/news/newsletter'
         },
         {
-          name: 'Purple Blast',
-          linkTo: '/news/purple-blast'
-        },
-        {
-          name: 'HOT Schedule & KZOO Radio',
-          linkTo: '/news/hot-schedule-kzoo-radio'
+          name: 'Watch and Listen',
+          linkTo: '/news/watch-and-listen'
         }
       ]
     },
