@@ -1,11 +1,7 @@
-// Transform from PascalCase to kebab-case
-const pascalToKebabCase = str => str.replace(/\.?([A-Z])/g, (char) =>  "-" + char.toLowerCase()).replace(/^-/, "");
-// Given a component name in PascalCase, returns a regex. The regex
-// must match CSS selectors conforming to the BEM naming conventions
-// you want to enforce.
-const customBemSelector = component => {
-  const block = pascalToKebabCase(component);
+// BEM Selector Class Configs
+const customBemSelector = () => {
   const kebabCase = "[a-z#{}$]+(?:-[a-zA-Z0-9#{}$]+)*";
+  let block = `(?:${kebabCase})?`;
   const element = `(?:__${kebabCase})?`;
   const modifier = `(?:--${kebabCase})?`;
   const attribute = "(?:\\[.+\\])?";
@@ -24,7 +20,7 @@ module.exports = {
     "sh-waqar/declaration-use-variable": [["color", "background-color", { ignoreValues: ["inherit"] }]],
     "plugin/selector-bem-pattern": {
       preset: "bem",
-      implicitComponents: "src/components/**/*.scss",
+      implicitComponents: true,
       componentSelectors: {
         initial: customBemSelector
       }
@@ -278,7 +274,7 @@ module.exports = {
       "ignore": ["stylelint-commands", "after-comment"]
     } ],
     "declaration-colon-space-after": "always",
-    "max-empty-lines": 2,
+    "max-empty-lines": 1,
     "rule-empty-line-before": [ "always", {
       "except": ["first-nested"],
       "ignore": ["after-comment"]

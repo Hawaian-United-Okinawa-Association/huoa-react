@@ -1,19 +1,15 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { openModal } from './../../actions/index';
 
-import CustomThankYou from './../../components/Custom/CustomThankYou/CustomThankYou';
+import DonateSectionOne from 'sections/DonateSectionOne/DonateSectionOne';
 
-const Donate = () => {
-  const dispatch = useDispatch();
-  const thankYou = <CustomThankYou />
+const Donate = ({ data }) => {
+  if (!data) return null;
 
   return (
-    <div>
-      <h4>Donate</h4>
-      <button onClick={() => dispatch(openModal(thankYou))}>Donate here!</button>
+    <div className='page-donate'>
+      <DonateSectionOne data={data.donate_section_one} />
     </div>
-  )
+    )
 }
 
 export default Donate;
