@@ -7,6 +7,7 @@ import newsReducer from './newsReducer';
 import rentReducer from './rentReducer';
 import modalReducer from './modalReducer';
 import pagesReducer from './pagesReducer';
+import routerReducer from './routerReducer';
 
 export default combineReducers({
   donation: donationReducer,
@@ -15,6 +16,7 @@ export default combineReducers({
   subscribe: subscribeReducer,
   news: newsReducer,
   rent: rentReducer,
+  router: routerReducer,
   modals: modalReducer,
   pages: pagesReducer
 });
