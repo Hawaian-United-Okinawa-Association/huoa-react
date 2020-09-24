@@ -38,6 +38,7 @@
     width: 7rem;
     height: 7rem;
     margin-left: -.5rem;
+    fill: $darkest-purple;
   }
 
   &__title {
@@ -99,7 +100,7 @@
       visibility: hidden;
       pointer-events: none;
       user-select: none;
-      
+
       @media speech {
         display: none;
       }
@@ -142,7 +143,7 @@
         visibility: hidden;
         pointer-events: none;
         user-select: none;
-        
+
         @media speech {
           display: none;
         }

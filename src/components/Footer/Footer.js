@@ -2,9 +2,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { ReactComponent as Twitter } from './../../assets/twitter.svg';
-import { ReactComponent as Instagram } from './../../assets/instagram.svg';
-import { ReactComponent as Facebook } from './../../assets/facebook.svg';
+import { ReactComponent as Logo } from 'assets/huoa-logo.svg';
+import { ReactComponent as Twitter } from 'assets/twitter.svg';
+import { ReactComponent as Instagram } from 'assets/instagram.svg';
+import { ReactComponent as Facebook } from 'assets/facebook.svg';
 
 import './Footer.scss';
 
@@ -21,7 +22,9 @@ const Footer = () => {
           <Link to="/news" className="footer__link">News</Link>
           <Link to="/donate" className="footer__link">Donate</Link>
         </div>
-        <div className="footer__logo">Logo</div>
+        <Link to="/">
+          <Logo className="footer__logo" />
+        </Link>
         <div className="footer__contact">
           <div className="footer__contact--col">
             <a href="https://goo.gl/maps/vPeokXPRG2e59jPS7" target="_blank" rel="noopener noreferrer">
