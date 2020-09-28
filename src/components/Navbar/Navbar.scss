@@ -109,7 +109,7 @@
   &__dropdown {
     position: absolute;
     top: 7rem;
-    z-index: 10;
+    z-index: 999;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.09);
     padding: .5rem;
