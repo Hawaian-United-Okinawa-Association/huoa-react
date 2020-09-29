@@ -9,7 +9,7 @@ $card-image-height: 157px;
   grid-template-areas: 'image' 'text' 'button';
   grid-template-rows: $card-image-height auto 74px;
   align-items: left;
-  background: $light-grey;
+  background: $lighter-grey;
   box-shadow: $card-small-shadow;
   text-align: left;
 }
