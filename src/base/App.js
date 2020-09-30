@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 //Components
 import Modal from './../components/Modal/Modal';
 import Navbar from './../components/Navbar/Navbar';
+import NavMobile from './../components/NavMobile/NavMobile';
 import Footer from './../components/Footer/Footer';
 import Routes from './../config/routes';
 
@@ -20,6 +21,7 @@ const App = (props) => {
     <main>
       <Modal />
       <Navbar />
+      <NavMobile />
       <Routes />
       <Footer />
     </main>
