@@ -1,0 +1,12 @@
+@import 'styles/utilities/colors.scss';
+// @import 'styles/fonts.scss';
+// @import 'styles/utilities/typography.scss';
+
+.card-blank {
+  // display: grid;
+  // overflow: hidden;
+  border-radius: 5px;
+  background: $lighter-grey;
+  box-shadow: $card-large-shadow;
+  text-align: center;
+}
