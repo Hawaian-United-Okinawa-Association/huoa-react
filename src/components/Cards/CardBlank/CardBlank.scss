@@ -3,10 +3,31 @@
 // @import 'styles/utilities/typography.scss';
 
 .card-blank {
-  // display: grid;
-  // overflow: hidden;
   border-radius: 5px;
   background: $lighter-grey;
   box-shadow: $card-large-shadow;
   text-align: center;
+}
+
+.button {
+  width: 100%;
+}
+
+.card-blank--subscribe {
+  padding: 50px 80px;
+  text-align: left;
+}
+
+.card-blank--newsletter {
+  padding: 50px 80px;
+  text-align: left;
+}
+
+.card-blank--input {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 15px;
+  border-style: solid;
+  border-radius: 4px;
+  padding: 10px;
 }
