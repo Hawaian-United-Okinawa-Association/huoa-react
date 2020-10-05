@@ -9,13 +9,13 @@
   text-align: center;
 }
 
-.button {
-  width: 100%;
-}
-
 .card-blank--subscribe {
   padding: 50px 80px;
   text-align: left;
+
+  .button {
+    width: 100%
+  }
 }
 
 .card-blank--newsletter {
