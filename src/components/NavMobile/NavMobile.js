@@ -13,6 +13,7 @@ import './NavMobile.scss';
 
 const NavMobile = () => {
   const [ navState, setNavState ] = useState(false);
+  const [ activeDropdown, setActiveDropdown ] = useState(null);
   const { routes } = useSelector((state) => state.router);
 
   const mobileRoutes = routes.filter((item) => item.name !== 'Donate');
@@ -22,19 +23,34 @@ const NavMobile = () => {
     console.log(`NavState is now ${navState}`);
   });
 
+  const renderDropdown = (items) => {
+    return items.map((item) => {
+      return (
+        <Link to={item.linkTo}>
+          <li className="nav-mobile__sidebar--dropdown">{item.name}</li>
+        </Link>
+      );
+    });
+  };
+
   const renderSideItems = (items) => {
     return items.map((item) => {
       return (
-        <Link
-          to={item.linkTo}
-          key={item.linkTo}
-          navState={navState}
-          setNavState={setNavState}
-          className="nav-mobile__sidebar--item"
-        >
-          <li>{item.name}</li>
-          {item.children ? <Carrot /> : null}
-        </Link>
+        <React.Fragment>
+          <Link
+            to={item.children ? '#!' : item.linkTo}
+            key={item.linkTo}
+            navState={navState}
+            setNavState={setNavState}
+            className="nav-mobile__sidebar--item"
+          >
+            <li>{item.name}</li>
+            {item.children ? (
+              <Carrot onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)} />
+            ) : null}
+          </Link>
+          {activeDropdown === item.name ? renderDropdown(item.children) : null}
+        </React.Fragment>
       );
     });
   };
@@ -69,7 +85,7 @@ const NavMobile = () => {
           </div>
         </div>
         <Hamburger onClick={() => setNavState(!navState)} />
-        {navState === true && renderSideNav()}
+        {navState && renderSideNav()}
       </nav>
     </React.Fragment>
   );
