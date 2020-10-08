@@ -69,6 +69,8 @@ Now when you run `npm start`, Firefox will open instead of Chrome.
 ### Working with the CSS Linter
 The [StyleLint](https://stylelint.io/) we have running will provide direct feedback and error messages in your browser window. If errors appear, they will need to be fixed before the site becomes previewable again.
 
+For our SCSS methodology we are using bem with syntax being `.block__element--modifier` if you'd like to learn more checkout: http://getbem.com/introduction/
+
 If the errors don't make sense, refer back to the README file and checkout how the *Block Element Modifier* (BEM) styling works. If you still aren't sure what to make of the error messages, ask a teammate on Slack.
 
 ## Committing Your Work
