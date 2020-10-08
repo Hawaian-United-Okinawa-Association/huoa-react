@@ -3,7 +3,7 @@
 We are a collaborative team of engineers helping out the Hawaii United Okinawa Association organization by building a React site with a headless CMS, built on the Wordpress platform.
 
 ## Index
-- [Tasks & Teamwork](#tasks-&-teamwork)
+- [Tasks And Teamwork](#tasks-and-teamwork)
   - [Meetings](#meetings)
   - [Chat](#chat)
   - [Tracking Your Tasks](#tracking-your-tasks)
@@ -19,7 +19,7 @@ We are a collaborative team of engineers helping out the Hawaii United Okinawa A
 
 >If you haven't yet, checkout our [Readme](https://github.com/Hawaian-United-Okinawa-Association/huoa-react/blob/main/README.md) for an overview of the project, and follow the *installation instructions* to install the project dependencies before running the project locally.
 
-# Tasks & Teamwork
+# Tasks and Teamwork
 
 ## Meetings
 - The **dev team meets** up *weekly* to discuss our work on the site, usually on *Tuesdays*. 
