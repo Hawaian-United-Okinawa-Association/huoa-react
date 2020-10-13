@@ -72,7 +72,7 @@ Within that json file, you should add this, and it should configure your setting
   "prettier.useTabs": false,
 }
 ```
-> The .vscode folder and settings.json file is not tracked in git, so any changes you make should not be added to a commit.
+> The .vscode folder and settings.json file are not tracked in git, so any changes you make should not be added to a commit.
 
 ## Run the Site Locally While Coding
 When you're ready to contribute, make sure you are running the site locally with `npm start`, so you can see in real-time how your code is working.
