@@ -96,7 +96,17 @@ For our SCSS methodology we are using bem with syntax being `.block__element--mo
 
 If the errors don't make sense, refer back to the README file and checkout how the *Block Element Modifier* (BEM) styling works. If you still aren't sure what to make of the error messages, ask a teammate on Slack.
 
+## Creating your Feature Branch
+
+When you are working on a ticket, it's good to switch to main, and then make your feature branch off of that. 
+
+Say you are working on a Notion task ticket for a layout, you would name the branch after the layout, and work from your branch.
+
+You would commit your work to the branch following the outline in the next section.
+
 ## Committing Your Work
+
+> **Please don't commit directly to the main branch.** Undoing commits is time consuming. Make sure when you are working that you *check which branch you are working in locally*.
 
 When committing your work, please use these prefixes:
 
@@ -130,8 +140,12 @@ Now that you've completed your task, and you are ready to open a Pull Request to
 
 We have a PR template that will be shown whenever you open a pull request. So just fill out the form, and include a link to your Notion ticket and if there are any Figma design mockups that are associated with your work.
 
+When you are done with your pull request, we require *at least* one engineer to review it before approving it to be merged into the main branch. 
+
+Grab the link of the PR, and paste it into our #huoa-dev Slack channel, and get someone to review it.
+
 ## After Your Branch Has Been Merged to Main
-Please delete your branches once they are merged to the main branch.
+Please delete your feature branches once they are merged to the main branch.
 
 Check for [all active branches](https://github.com/Hawaian-United-Okinawa-Association/huoa-react/branches/active).
 
