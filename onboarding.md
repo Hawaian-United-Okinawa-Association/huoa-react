@@ -9,7 +9,7 @@ We are a collaborative team of engineers helping out the Hawaii United Okinawa A
   - [Tracking Your Tasks](#tracking-your-tasks)
   - [Design](#design)
 - [Setup](#setup)
-  - [VSCode Settings](#setting-up-vscode)
+  - [VSCode Settings](#vscode-settings)
   - [Run the Site Locally While Coding](#run-the-site-locally-while-coding)
     - [Setting Your Default Browser for the Project](#setting-your-default-browser-for-the-project)
 - [Your Work](#your-work)
