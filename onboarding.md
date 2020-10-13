@@ -8,9 +8,12 @@ We are a collaborative team of engineers helping out the Hawaii United Okinawa A
   - [Chat](#chat)
   - [Tracking Your Tasks](#tracking-your-tasks)
   - [Design](#design)
-- [Your Work](#your-work)
+- [Setup](#setup)
+  - [VSCode Settings](#setting-up-vscode)
   - [Run the Site Locally While Coding](#run-the-site-locally-while-coding)
     - [Setting Your Default Browser for the Project](#setting-your-default-browser-for-the-project)
+- [Your Work](#your-work)
+  - [Creating Your Feature Branch](#creating-your-feature-branch)
   - [Working With The CSS Linter](#working-with-the-css-linter)
   - [Committing Your Work](#committing-your-work)
   - [Your Work is Ready for a Pull Request](#your-work-is-ready-for-a-pull-request)
@@ -45,13 +48,11 @@ We are working with [Figma](https://www.figma.com/downloads/) to preview the des
 Here is the [Figma Board for HUOA](https://www.figma.com/file/fUItcdy9fKRHPggnncr2zl/HUOA-Team?node-id=6329%3A9240&viewport=-2671%2C926%2C0.420560747385025).
 There are many pages so get aquainted with the design systems and various mockup (hi-fi/lo-fi) pages. 
 
-# Your Work
-
-Locally in your repo, change your local branch to `main`, and create a **feature branch** from main that's short & semantic and describes the work you are doing on your ticket. 
+# Setup
 
 It's a good idea to understand what's needed from your task and discuss your approach with the team before digging in and writing a bunch of code.
 
-## Setting Up VSCode
+## VSCode Settings
 
 If you are using VSCode, we use **tab size 2** and **tab width 2**. 
 
@@ -89,20 +90,24 @@ Now when you run `npm start`, Firefox will open instead of Chrome.
 
 **.env.local** files are not tracked by git, so you don't have to worry about it being included in your commits or to the project.
 
-### Working with the CSS Linter
+# Your Work
+
+## Creating your Feature Branch
+
+When you are working on a ticket, it's good to switch to main, and then make your feature branch off of that.
+
+Locally in your repo, change your local branch to `main`, and create a **feature branch** from main that's short & semantic and describes the work you are doing on your ticket. 
+
+Say you are working on a Notion task ticket for a layout, you would name the branch after the layout, and work from your branch.
+
+You would commit your work to your branch following the outline in the next section.
+
+## Working with the CSS Linter
 The [StyleLint](https://stylelint.io/) we have running will provide direct feedback and error messages in your browser window. If errors appear, they will need to be fixed before the site becomes previewable again.
 
 For our SCSS methodology we are using bem with syntax being `.block__element--modifier` if you'd like to learn more checkout: http://getbem.com/introduction/
 
 If the errors don't make sense, refer back to the README file and checkout how the *Block Element Modifier* (BEM) styling works. If you still aren't sure what to make of the error messages, ask a teammate on Slack.
-
-## Creating your Feature Branch
-
-When you are working on a ticket, it's good to switch to main, and then make your feature branch off of that. 
-
-Say you are working on a Notion task ticket for a layout, you would name the branch after the layout, and work from your branch.
-
-You would commit your work to the branch following the outline in the next section.
 
 ## Committing Your Work
 
