@@ -51,6 +51,29 @@ Locally in your repo, change your local branch to `main`, and create a **feature
 
 It's a good idea to understand what's needed from your task and discuss your approach with the team before digging in and writing a bunch of code.
 
+## Setting Up VSCode
+
+If you are using VSCode, we use **tab size 2** and **tab width 2**. 
+
+Turn off any prettier formatting for this project, if you use it.
+
+After you clone the repo, and open it in VSCode, you should see a `.vscode` folder in the root of the project, and possibly a `settings.json` file. 
+
+If the settings.json file is not there, create one.
+
+Within that json file, you should add this, and it should configure your settings for the project.
+
+```
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+}
+```
+> The .vscode folder and settings.json file is not tracked in git, so any changes you make should not be added to a commit.
+
 ## Run the Site Locally While Coding
 When you're ready to contribute, make sure you are running the site locally with `npm start`, so you can see in real-time how your code is working.
 
