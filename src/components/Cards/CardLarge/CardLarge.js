@@ -8,7 +8,7 @@ const CardLarge = ({ image, altTag, header, body, button, onClick }) => {
   const ref = useRef();
   return (
     <div className='card-large'>
-      <Image className='card-large__image' img={image} alt={altTag} />
+      <Image className='card-large__image' webp={image} alt={altTag} />
       <div className='card-large__text'>
         <p className='card-large__header'>{header}</p>
         <p className='card-large__body'>{body}</p>

@@ -1,7 +1,5 @@
 import React from 'react';
 
-// import Image from '../../Image/Image';
-// import Button from '../../Button/Button';
 import './CardBlank.scss';
 
 const CardBlank = ({ children }) => {
