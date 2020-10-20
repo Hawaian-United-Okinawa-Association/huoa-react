@@ -1,12 +1,13 @@
 @import 'styles/utilities/colors.scss';
 @import 'styles/fonts.scss';
 @import 'styles/utilities/typography.scss';
+@import 'styles/utilities/borders.scss';
 
 .card-square {
   display: grid;
   grid-template-areas: 'text' 'button';
   grid-template-rows: auto auto;
-  border-radius: 5px;
+  border-radius: $card-border-radius;
   background: $lighter-grey;
   box-shadow: $card-square-shadow;
   text-align: center;

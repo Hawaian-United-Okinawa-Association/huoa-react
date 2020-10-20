@@ -1,7 +1,8 @@
 @import 'styles/utilities/colors.scss';
+@import 'styles/utilities/borders.scss';
 
 .card-blank {
-  border-radius: 5px;
+  border-radius: $card-border-radius;
   background: $white;
   box-shadow: $card-blank-shadow;
   text-align: center;
