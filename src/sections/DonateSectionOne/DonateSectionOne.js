@@ -13,7 +13,6 @@ const DonateSectionOne = ({ data }) => {
           <p>{data.text}</p>
           <Button link={data.button_link}>{data.button_text}</Button>
         </div>
-        <img src={data.image_link} />
       </div>
     </div>
   )
