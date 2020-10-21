@@ -1,6 +1,7 @@
 @import 'styles/utilities/colors.scss';
 @import 'styles/fonts.scss';
 @import 'styles/utilities/typography.scss';
+@import 'styles/utilities/borders.scss';
 
 $card-image-height: 157px;
 
@@ -9,6 +10,8 @@ $card-image-height: 157px;
   grid-template-areas: 'image' 'text' 'button';
   grid-template-rows: $card-image-height auto 74px;
   align-items: left;
+  overflow: hidden;
+  border-radius: $card-border-radius;
   background: $lighter-grey;
   box-shadow: $card-small-shadow;
   text-align: left;
