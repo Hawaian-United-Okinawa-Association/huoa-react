@@ -1,0 +1,8 @@
+.layout {
+  display: grid;
+  grid-template-columns: 25% auto;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+  column-gap: 24px;
+}
