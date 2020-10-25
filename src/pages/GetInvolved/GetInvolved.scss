@@ -1,0 +1,53 @@
+@import "../../styles//utilities/colors.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/utilities/breakpoints.scss";
+
+.getinvolved {
+  &__title {
+    top: 216px;
+    left: 426px;
+    width: 891px;
+    height: 69px;
+    border-radius: nullpx;
+
+    font-weight: 400;
+    font-style: normal;
+    font-size: 42px;
+    font-family: Lora;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  &__description {
+    top: 288px;
+    left: 427px;
+    width: 898px;
+    height: 65px;
+    border-radius: nullpx;
+
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    font-family: Poppins;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  &__items {
+    
+    list-style: none;
+    text-decoration-line: underline;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    font-family: Poppins;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    column-count: 2;
+    
+    
+  }
+}
