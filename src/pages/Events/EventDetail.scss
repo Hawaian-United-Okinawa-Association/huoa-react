@@ -1,10 +1,18 @@
-.event-details { 
+@import './../../styles/fonts';
+@import './../../styles/utilities/colors.scss';
+@import './../../styles/utilities/typography.scss';
+
+.eventdetail { 
   &__image {
-    width: 486px;
-    height: 352px;
+    width: 66%;
+    height: 50%;
   }
 
   &__div {
     text-align: left;
+  }
+
+  &__span {
+    color: $purple;
   }
 }
