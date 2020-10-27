@@ -26,8 +26,8 @@ const NavMobile = () => {
   const renderDropdown = (items) => {
     return items.map((item) => {
       return (
-        <Link to={item.linkTo}>
-          <li className="nav-mobile__sidebar--dropdown">{item.name}</li>
+        <Link to={item.linkTo} key={item.linkTo}>
+          <li className="nav-mobile__sidebar--dropdown-item">{item.name}</li>
         </Link>
       );
     });
@@ -36,20 +36,16 @@ const NavMobile = () => {
   const renderSideItems = (items) => {
     return items.map((item) => {
       return (
-        <React.Fragment>
-          <Link
-            to={item.children ? '#!' : item.linkTo}
-            key={item.linkTo}
-            navState={navState}
-            setNavState={setNavState}
-            className="nav-mobile__sidebar--item"
-          >
+        <React.Fragment key={item.linkTo}>
+          <Link to={item.children ? '#!' : item.linkTo} className="nav-mobile__sidebar--item">
             <li>{item.name}</li>
-            {item.children ? (
+            {item.children && (
               <Carrot onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)} />
-            ) : null}
+            )}
           </Link>
-          {activeDropdown === item.name ? renderDropdown(item.children) : null}
+          {activeDropdown === item.name ? (
+            <div className="nav-mobile__sidebar--dropdown">{renderDropdown(item.children)}</div>
+          ) : null}
         </React.Fragment>
       );
     });
