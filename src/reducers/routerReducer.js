@@ -82,6 +82,10 @@ const INITIAL_STATE = {
       ]
     },
     {
+      name: 'Shop',
+      linkTo: '/shop'
+    },
+    {
       name: 'Geneology',
       linkTo: '/geneology'
     },
