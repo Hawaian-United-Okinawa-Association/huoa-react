@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Axios from "axios";
 import './GetInvolved.scss';
 
-//QUESTIONS: OnHover what do? sidebar? pagination? new api call?
+//QUESTIONS: OnHover what do? sidebar? pagination? new api call? column breakpoints?
 
 
 var APIClubRoute = `https://dev.huoa.org/wp-json/wp/v2/clubs`;
@@ -12,7 +12,7 @@ var APIClubRoute = `https://dev.huoa.org/wp-json/wp/v2/clubs`;
 const GetInvolved = () => {
   const [items, setItems] = useState([]);
 
-  //why use useEffect? Why not something else?
+  //using useEffect to preempt pagination
   useEffect(() => {
     Axios.get(APIClubRoute).then((res) => {
       setItems(res.data);
