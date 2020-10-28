@@ -1,30 +1,12 @@
-// BEM Selector Class Configs
-const customBemSelector = () => {
-  const kebabCase = "[a-z#{}$]+(?:-[a-zA-Z0-9#{}$]+)*";
-  let block = `(?:${kebabCase})?`;
-  const element = `(?:__${kebabCase})?`;
-  const modifier = `(?:--${kebabCase})?`;
-  const attribute = "(?:\\[.+\\])?";
-  return new RegExp(`^\\.${block}${element}${modifier}${attribute}$`);
-};
-
 module.exports = {
   plugins: [
     "stylelint-order", 
-    "stylelint-selector-bem-pattern",
     "stylelint-scss",
     "stylelint-declaration-use-variable",
   ],
   rules: {
     "scss/media-feature-value-dollar-variable": "always",
     "sh-waqar/declaration-use-variable": [["color", "background-color", { ignoreValues: ["inherit"] }]],
-    "plugin/selector-bem-pattern": {
-      preset: "bem",
-      implicitComponents: true,
-      componentSelectors: {
-        initial: customBemSelector
-      }
-    },
     "order/order": [
       [
 				"dollar-variables",
