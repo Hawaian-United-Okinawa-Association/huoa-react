@@ -8,20 +8,26 @@ import Layout from 'components/Layout/Layout'
 
 import './EventDetail.scss'
 
+let eventTitle = "Event Title";
+let eventDescription = 'Event Description';
+
+
+
+
 const EventDetail = () => {
   return (
     <Layout>
       <Container className='eventdetail__container'>
         <div className='eventdetail__div'>
-          <h4>Home / Events /<span className='eventdetail__span'> Event Details</span></h4>
-          <h2>Event Title</h2>
+          <h4>Home / Events /<span className='eventdetail__span'> {eventTitle}</span></h4>
+          <h2>{eventTitle}</h2>
           <Image
             className='eventdetail__image'
             webp='https://mateodevelops-api.imgix.net/image-2.webp'
             img='https://mateodevelops-api.imgix.net/11.png'
           />
           <h4>Month Day, Year | Time</h4>
-          <h5>Description</h5>
+          <h5>{eventDescription}</h5>
           <h5>Location</h5>
           <Button type='filled' link='https:www.google.com'>
             Application Form
