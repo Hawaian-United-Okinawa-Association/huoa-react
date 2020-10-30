@@ -1,6 +1,4 @@
-import React, { useRef } from 'react'
-import { useDispatch } from 'react-redux'
-
+import React from 'react'
 import Container from 'components/Container/Container'
 import Button from 'components/Button/Button'
 import Image from 'components/Image/Image'
@@ -8,15 +6,14 @@ import Layout from 'components/Layout/Layout'
 
 import './EventDetail.scss'
 
+// TODO add api calls
 let eventTitle = "Event Title";
 let eventDescription = 'Event Description';
 
 
-
-
 const EventDetail = () => {
   return (
-    <Layout>
+    <Layout sideNav>
       <Container className='eventdetail__container'>
         <div className='eventdetail__div'>
           <h4>Home / Events /<span className='eventdetail__span'> {eventTitle}</span></h4>
