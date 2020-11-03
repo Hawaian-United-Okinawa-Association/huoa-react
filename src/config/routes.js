@@ -16,6 +16,7 @@ import Donate from 'pages/Donate/Donate';
 import Geneology from 'pages/Geneology/Geneology';
 import GetInvolved from 'pages/GetInvolved/GetInvolved';
 import Demo from 'pages/Demo/Demo';
+import AboutMissionAndPurpose from 'pages/About/MissionAndPurpose/MissionAndPurpose';
 
 
 const Routes = () => {
@@ -30,6 +31,10 @@ const Routes = () => {
       <Route path="/about">
         <Header props={ pageState.about } />
         <About />
+      </Route>
+      <Route path="/about/mission-purpose">
+        <Header data={ pageState.about } />
+        <AboutMissionAndPurpose />
       </Route>
       <Route path="/events">
         <Header props={ pageState.events } />
