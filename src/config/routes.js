@@ -32,9 +32,9 @@ const Routes = () => {
         <Header props={ pageState.about } />
         <About />
       </Route>
-      <Route path="/about-mission-purpose">
-        <Header props={ pageState.about } />
-        <AboutMissionAndPurpose data={ pageState.about }/>
+      <Route path="/about-mission-and-purpose">
+        <Header props={ pageState["mission-purpose"]} />
+        <AboutMissionAndPurpose data={ pageState["mission-purpose"]}/>
       </Route>
       <Route path="/events">
         <Header props={ pageState.events } />

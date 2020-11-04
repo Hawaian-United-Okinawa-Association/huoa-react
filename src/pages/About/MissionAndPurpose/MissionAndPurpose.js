@@ -5,13 +5,13 @@ import Container from '../../../components/Container/Container.js'
 import './MissionAndPurpose.scss';
 
 export const AboutMissionTemplate = ({
-    section_one,
+    section_uno,
     section_two,
     section_three,
     }) => (
         <div className="about-mission-purpose--content" style= {{textAlign:"left"}}>
-            <h1 className="title section-one__title">{section_one.title}</h1>
-            <div className="body section-one__body" dangerouslySetInnerHTML = {createMarkup(section_one.body)}/>
+            <h1 className="title section-one__title">{section_uno.title}</h1>
+            <div className="body section-one__body" dangerouslySetInnerHTML = {createMarkup(section_uno.body)}/>
             <h1 className="title section-two__title">{section_two.title}</h1>
             <div className="body section-two__body" dangerouslySetInnerHTML = {createMarkup(section_two.body)}/>
             <h1 className="title section-three__title">{section_three.title}</h1>
@@ -25,17 +25,19 @@ function createMarkup(body) {
 
 const aboutMission = ({ data }) =>{
 
-    const  mission_and_purpose  = data.acf.mission_and_purpose;
+    if (!data) return null;
 
     return(
-    <Container>
-        <AboutMissionTemplate
-            section_one = {mission_and_purpose.section_one} 
-            section_two = {mission_and_purpose.section_two}
-            section_three = {mission_and_purpose.section_three}
-        />
-    </Container>
+        <Container>
+            <AboutMissionTemplate
+                section_uno = {data.mission_and_purpose.section_one} 
+                section_two = {data.mission_and_purpose.section_two}
+                section_three = {data.mission_and_purpose.section_three}
+            />
+        </Container>
     )
+    
+    
 
 }
 
