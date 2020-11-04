@@ -10,7 +10,7 @@ import Header from './header';
 import Home from 'pages/Home/Home';
 import About from 'pages/About/About';
 import Events from 'pages/Events/Events';
-import EventDetail from 'pages/Events/EventDetail';
+// import EventDetail from 'pages/Events/EventDetail';
 import News from 'pages/News/News';
 import Contact from 'pages/Contact/Contact';
 import Donate from 'pages/Donate/Donate';
@@ -35,10 +35,6 @@ const Routes = () => {
       <Route exact path="/events">
         <Header props={ pageState.events } />
         <Events />
-      </Route>
-      <Route path ="/events/event-details">
-        <Header props= {pageState.eventDetails} />
-        <EventDetail />
       </Route>
       <Route path="/join">
         <Header props={ pageState.join } />
