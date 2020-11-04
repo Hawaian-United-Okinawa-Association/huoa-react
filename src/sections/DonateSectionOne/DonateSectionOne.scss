@@ -1,0 +1,57 @@
+@import 'styles/utilities/breakpoints.scss';
+
+.donate-section-one {
+  max-width: 900px;
+  margin-top: 60px;
+  margin-bottom: 96px;
+
+  @media (max-width: $breakpoint-tablet) {
+    margin: 0 30px;
+  }
+
+  &__title {
+    margin-bottom: 32px;
+
+    @media (max-width: $breakpoint-mobile) {
+      text-align: center;
+    }
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $breakpoint-tablet-large) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__content {
+    @media (max-width: $breakpoint-mobile) {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    margin-bottom: 32px;
+    @media (max-width: $breakpoint-mobile) {
+      text-align: left;
+    }
+  }
+
+  &__image {
+    width: 280px;
+    height: 280px;
+    margin-left: 36px;
+
+    @media (max-width: $breakpoint-tablet-large) {
+      margin-bottom: 32px;
+      margin-left: 0;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
