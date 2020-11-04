@@ -1,10 +1,11 @@
 import React from 'react';
+import Layout from 'components/Layout/Layout';
 
 const GetInvolved = () => {
   return (
-    <div>
+    <Layout>
       <h4>GetInvolved</h4>
-    </div>
+    </Layout>
   );
 };
 
