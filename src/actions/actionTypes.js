@@ -17,6 +17,10 @@ export const FETCH_RENT_REQUEST = 'FETCH_RENT_REQUEST';
 export const DELETE_RENT_REQUEST = 'DELETE_RENT_REQUEST';
 export const EDIT_RENT_REQUEST = 'EDIT_RENT_REQUEST';
 
+// CLUBS
+export const FETCH_CLUBS = 'FETCH_CLUBS';
+
+
 //News
 export const CREATE_NEWS = 'CREATE_NEWS';
 export const FETCH_ALL_NEWS = 'FETCH_ALL_NEWS';
@@ -41,3 +45,5 @@ export const MODAL_OPEN = 'MODAL_OPEN';
 export const MODAL_CLOSE = 'MODAL_CLOSE';
 
 export const GET_PAGES = 'GET_PAGES';
+
+

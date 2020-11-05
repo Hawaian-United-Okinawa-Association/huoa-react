@@ -9,13 +9,14 @@ import Footer from './../components/Footer/Footer';
 import Routes from './../config/routes';
 
 import { getPages } from './../actions/index';
+import { getClubs } from 'actions/ClubActions';
 
 import './App.scss';
 
 const App = (props) => {
   const dispatch = useDispatch();
   dispatch(getPages());
-
+  dispatch(getClubs());
   return (
     <main>
       <Modal />
