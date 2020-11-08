@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Image from 'components/Image/Image';
 import Button from 'components/Button/Button';
 import './DonateSectionOne.scss';
 
@@ -17,7 +18,7 @@ const DonateSectionOne = ({ data }) => {
           <div className='donate-section-one__text' dangerouslySetInnerHTML={createTextMarkup()} />
           <Button link={data.button_link} type='filled'>{data.button_text}</Button>
         </div>
-        <img className='donate-section-one__image' src={data.image_link} alt='Giving To HUOA'/>
+        <Image className='donate-section-one__image' img={data.image_link} alt='Giving To HUOA'/>
       </div>
     </div>
   )
