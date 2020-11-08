@@ -3,16 +3,34 @@
 @import "../../styles/utilities/breakpoints.scss";
 
 .get-involved {
+  &__title {
+    width: 60vw;
+    font-size: 2rem;
+  }
+
   &__description {
-    height: 65px;
+    width: 60vw;
+    font-size: 1.2rem;
   }
 
   &__items {
+    width: 60vw;
     list-style: none;
+    font-size: 1rem;
     text-decoration-line: underline;
-    line-height: 24px;
     column-count: 2;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      padding-left: 0;
+      font-size: 0.8rem;
+      column-count: 1;
       
+    }  
+    
+      &--link {
+        margin-bottom: 10px;
+      }
+
       &--link:hover {
         color: $dark-purple;
         font-weight: 800;

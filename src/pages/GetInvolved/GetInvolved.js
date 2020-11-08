@@ -1,24 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux"
 import Layout from "components/Layout/Layout";
 import { Link } from "react-router-dom";
 import './GetInvolved.scss';
 
 const GetInvolved = () => {
-  // const [items, setItems] = useState([]);
 
-  // useEffect(() => {
-    // Axios.get(APIClubRoute).then((res) => {
-    //   setItems(res.data);
-    // });
-  // });
-
-
-  ///////////////////////////////////////////////////REDUX/////////////////////////////////////////////////////////  
   const clubDataAll = useSelector(state => state.clubs)
-
-  console.log(clubDataAll)
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////  
 
   const renderClubs = clubs => {
     return clubs.map((club) => {
@@ -48,7 +36,7 @@ const GetInvolved = () => {
         </div>
       </div>
     </Layout>
-  // );
-  )};
+  )
+};
 
 export default GetInvolved;
