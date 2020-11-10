@@ -2,11 +2,6 @@
 @import '../../styles/fonts.scss';
 @import '../../styles/utilities/breakpoints.scss';
 
-@mixin active {
-  top: 0;
-  right: 0;
-}
-
 .nav-mobile {
   display: flex;
   flex-direction: row;
@@ -63,7 +58,7 @@
     padding: 2rem;
     background-color: $white;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    animation: slideOut 0.4s ease-in-out;
+    animation: slideOut 200ms ease-in;
 
     &--active {
       @keyframes slideIn {
@@ -80,7 +75,7 @@
       position: absolute;
       top: 0;
       right: 0;
-      animation: slideIn 0.4s ease-in-out;
+      animation: slideIn 200ms ease-out;
     }
 
     &--close {
@@ -106,6 +101,25 @@
     }
 
     &--dropdown{
+      &--active {
+        @keyframes dropDown {
+          0% {
+            transform: scaleY(0)
+          }
+
+          80% {
+              transform: scaleY(1.1)
+          }
+
+          100% {
+              transform: scaleY(1)
+          }
+        }
+
+        transform-origin: top center;
+        animation: dropDown 200ms ease-in-out forwards;
+      }
+
       &-item {
       display: flex;
       margin: 0 -2rem;

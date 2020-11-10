@@ -1,5 +1,5 @@
 //Dependencies
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -19,10 +19,6 @@ const NavMobile = () => {
   const mobileRoutes = routes.filter((item) => item.name !== 'Donate');
   mobileRoutes.unshift({ name: 'Home', linkTo: '/' });
 
-  useEffect(() => {
-    console.log(`NavState is now ${navState}`);
-  });
-
   const renderDropdown = (items) => {
     return items.map((item) => {
       return (
@@ -35,40 +31,26 @@ const NavMobile = () => {
 
   const renderSideItems = (items) => {
     return items.map((item) => {
+      const dropBool = activeDropdown === item.name;
+
       return (
         <React.Fragment key={item.linkTo}>
           <Link to={item.children ? '#!' : item.linkTo} className="nav-mobile__sidebar--item">
             <li>{item.name}</li>
             {item.children && (
-              <Carrot onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)} />
+              <Carrot
+                className={`nav-mobile__sidebar--carrot${dropBool ? '--active' : ''}`}
+                onClick={() => setActiveDropdown(dropBool ? null : item.name)}
+              />
             )}
           </Link>
-          {activeDropdown === item.name ? (
-            <div className="nav-mobile__sidebar--dropdown">{renderDropdown(item.children)}</div>
-          ) : null}
+          <div className={`nav-mobile__sidebar--dropdown${dropBool ? '--active' : ''}`}>
+            {dropBool && renderDropdown(item.children)}
+          </div>
         </React.Fragment>
       );
     });
   };
-
-  // const renderSideNav = () => {
-  //   return (
-  //     <div className={`nav-mobile__sidebar`}>
-  //       <ButtonClose onClick={() => setNavState(!navState)} className="nav-mobile__sidebar--close" />
-  //       <ul className="nav-mobile__sidebar--items">{renderSideItems(mobileRoutes)}</ul>
-  //       <hr className="nav-mobile__sidebar--break" />
-  //       <div className="nav-mobile__sidebar--footer">
-  //         <small className="nav-mobile__sidebar--footer-link">Rent Our Ballroom</small>
-  //         <small className="nav-mobile__sidebar--footer-link">Join our Newsletter</small>
-  //         <div className="nav-mobile__sidebar--footer-button">
-  //           <Button type="filled" link="donate">
-  //             Donate
-  //           </Button>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // };
 
   return (
     <React.Fragment>
