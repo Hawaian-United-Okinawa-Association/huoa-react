@@ -12,9 +12,11 @@ import { ReactComponent as Carrot } from '../../assets/carrot.svg';
 import './NavMobile.scss';
 
 const NavMobile = () => {
-  const [ navState, setNavState ] = useState(false);
+  const [ navState, setNavState ] = useState('init');
   const [ activeDropdown, setActiveDropdown ] = useState(null);
   const { routes } = useSelector((state) => state.router);
+
+  console.log(navState);
 
   const mobileRoutes = routes.filter((item) => item.name !== 'Donate');
   mobileRoutes.unshift({ name: 'Home', linkTo: '/' });
@@ -56,14 +58,14 @@ const NavMobile = () => {
     <React.Fragment>
       <nav className="nav-mobile">
         <div className="nav-mobile__header">
-          <HUOALogo height="90" width="90" />
+          <HUOALogo className="nav-mobile__logo" height="90" width="90" />
           <div className="nav-mobile__titles">
             <h2 className="nav-mobile__title">Hawaii United Okinawa Association</h2>
             <h5 className="nav-mobile__title--sm">Celebrating 120 years of Uchinanchu in Hawaii</h5>
           </div>
         </div>
-        <Hamburger onClick={() => setNavState(!navState)} />
-        <div className={`nav-mobile__sidebar${navState ? '--active' : ''}`}>
+        <Hamburger onClick={() => setNavState(true)} />
+        <div className={`nav-mobile__sidebar${navState === 'init' ? '' : navState ? '--active' : '--inactive'}`}>
           <ButtonClose onClick={() => setNavState(!navState)} className="nav-mobile__sidebar--close" />
           <ul className="nav-mobile__sidebar--items">{renderSideItems(mobileRoutes)}</ul>
           <hr className="nav-mobile__sidebar--break" />
