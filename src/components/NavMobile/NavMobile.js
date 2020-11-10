@@ -51,24 +51,24 @@ const NavMobile = () => {
     });
   };
 
-  const renderSideNav = () => {
-    return (
-      <div className="nav-mobile__sidebar">
-        <ButtonClose onClick={() => setNavState(!navState)} className="nav-mobile__sidebar--close" />
-        <ul className="nav-mobile__sidebar--items">{renderSideItems(mobileRoutes)}</ul>
-        <hr className="nav-mobile__sidebar--break" />
-        <div className="nav-mobile__sidebar--footer">
-          <small className="nav-mobile__sidebar--footer-link">Rent Our Ballroom</small>
-          <small className="nav-mobile__sidebar--footer-link">Join our Newsletter</small>
-          <div className="nav-mobile__sidebar--footer-button">
-            <Button type="filled" link="donate">
-              Donate
-            </Button>
-          </div>
-        </div>
-      </div>
-    );
-  };
+  // const renderSideNav = () => {
+  //   return (
+  //     <div className={`nav-mobile__sidebar`}>
+  //       <ButtonClose onClick={() => setNavState(!navState)} className="nav-mobile__sidebar--close" />
+  //       <ul className="nav-mobile__sidebar--items">{renderSideItems(mobileRoutes)}</ul>
+  //       <hr className="nav-mobile__sidebar--break" />
+  //       <div className="nav-mobile__sidebar--footer">
+  //         <small className="nav-mobile__sidebar--footer-link">Rent Our Ballroom</small>
+  //         <small className="nav-mobile__sidebar--footer-link">Join our Newsletter</small>
+  //         <div className="nav-mobile__sidebar--footer-button">
+  //           <Button type="filled" link="donate">
+  //             Donate
+  //           </Button>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // };
 
   return (
     <React.Fragment>
@@ -81,7 +81,20 @@ const NavMobile = () => {
           </div>
         </div>
         <Hamburger onClick={() => setNavState(!navState)} />
-        {navState && renderSideNav()}
+        <div className={`nav-mobile__sidebar${navState ? '--active' : ''}`}>
+          <ButtonClose onClick={() => setNavState(!navState)} className="nav-mobile__sidebar--close" />
+          <ul className="nav-mobile__sidebar--items">{renderSideItems(mobileRoutes)}</ul>
+          <hr className="nav-mobile__sidebar--break" />
+          <div className="nav-mobile__sidebar--footer">
+            <small className="nav-mobile__sidebar--footer-link">Rent Our Ballroom</small>
+            <small className="nav-mobile__sidebar--footer-link">Join our Newsletter</small>
+            <div className="nav-mobile__sidebar--footer-button">
+              <Button type="filled" link="donate">
+                Donate
+              </Button>
+            </div>
+          </div>
+        </div>
       </nav>
     </React.Fragment>
   );
