@@ -1,8 +1,6 @@
 import React from 'react';
 
-const Home = ({ props }) => {
-
-
+const Home = () => {
   return (
     <section>
       <h4>Landing</h4>
