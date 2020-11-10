@@ -100,6 +100,34 @@
       font-weight: 600;
     }
 
+    &--carrot {
+      @keyframes derotateCarrot {
+        0%   {
+          transform: rotate(180deg);
+        }
+
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+      
+      animation: derotateCarrot 200ms ease-in-out forwards;
+
+      &--active {
+        @keyframes rotateCarrot {
+          0%   {
+            transform: rotate(0deg);
+          }
+
+          100% {
+            transform: rotate(180deg);
+          }
+        }
+
+        animation: rotateCarrot 200ms ease-in-out forwards;
+      }
+    }
+
     &--dropdown{
       &--active {
         @keyframes dropDown {
