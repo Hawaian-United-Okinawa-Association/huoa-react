@@ -1,0 +1,37 @@
+.about-mission-purpose{
+  font-weight: 400; 
+  text-align: left;
+
+  &__body{
+    margin-bottom: 75px;
+    font-size: 16px;
+    font-family: Poppins;
+    line-height: 24px;
+
+    h4 {
+      margin-top: 38px;
+      font-weight: bold;
+      font-style: normal;
+      font-size: 24px;
+      text-transform: uppercase;
+      }
+
+    li {
+      font-weight: normal;
+      font-style: normal;
+      font-size: 16px;
+      font-family: Poppins;
+      }
+
+    li + li{
+      padding-top: 12px;
+      } 
+  }
+
+  &__title{
+    font-weight: 400; 
+    font-size: 42px;
+    font-family: Lora;
+    line-height: 48px;
+  }
+}

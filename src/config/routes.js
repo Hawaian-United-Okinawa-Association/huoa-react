@@ -16,7 +16,7 @@ import Donate from 'pages/Donate/Donate';
 import Geneology from 'pages/Geneology/Geneology';
 import GetInvolved from 'pages/GetInvolved/GetInvolved';
 import Demo from 'pages/Demo/Demo';
-import AboutMissionAndPurpose from 'pages/About/MissionAndPurpose/MissionAndPurpose';
+import AboutMissionAndPurpose from 'pages/MissionAndPurpose/MissionAndPurpose';
 
 
 const Routes = () => {
