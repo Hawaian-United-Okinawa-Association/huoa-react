@@ -7,7 +7,7 @@ $total-columns: 12;
 .container {
   display: grid;
   max-width: $breakpoint-laptop-large;
-  margin: 0 16px;
+  margin: 0 auto;
   text-align: center;
 }
 /* stylelint-disable */
