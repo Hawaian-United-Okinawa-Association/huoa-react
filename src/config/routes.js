@@ -18,6 +18,9 @@ import Geneology from 'pages/Geneology/Geneology';
 import GetInvolved from 'pages/GetInvolved/GetInvolved';
 import Demo from 'pages/Demo/Demo';
 
+//for testing layout
+import Layout from 'components/Layout/Layout';
+
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
