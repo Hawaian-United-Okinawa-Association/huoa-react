@@ -1,23 +1,8 @@
 .layout {
   display: grid;
-  grid-template-columns: .25fr .25fr .25fr .25fr;
+  grid-template-columns: 25% auto;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 16px 16px;
+  padding: 0px 16px;
   column-gap: 24px;
-}
-
-.layout__sidenav {
-  grid-column-start: 1;
-  grid-column-end: 1;
-}
-
-.layout__body {
-  grid-column-start: 2;
-  grid-column-end: 5;
-}
-
-.layout__full {
-  grid-column-start: 1;
-  grid-column-end: 5;
 }
