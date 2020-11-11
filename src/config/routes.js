@@ -1,4 +1,4 @@
-//Dependencies
+// Dependencies
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 // Config
 import Header from './header';
 
-//Components
+// Components
 import Home from 'pages/Home/Home';
 import About from 'pages/About/About';
 import Events from 'pages/Events/Events';
@@ -16,7 +16,6 @@ import Donate from 'pages/Donate/Donate';
 import Geneology from 'pages/Geneology/Geneology';
 import GetInvolved from 'pages/GetInvolved/GetInvolved';
 import Demo from 'pages/Demo/Demo';
-
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
@@ -31,7 +30,7 @@ const Routes = () => {
         <Header props={ pageState.about } />
         <About />
       </Route>
-      <Route path="/events">
+      <Route exact path="/events">
         <Header props={ pageState.events } />
         <Events />
       </Route>
