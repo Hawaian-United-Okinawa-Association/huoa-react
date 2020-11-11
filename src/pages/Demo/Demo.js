@@ -18,11 +18,11 @@ const Demo = () => {
   return (
     <section>
       <h1>Demo Page</h1>
-      <Image
+      {/* <Image
         webp='https://mateodevelops-api.imgix.net/image-2.webp'
         img='https://mateodevelops-api.imgix.net/11.png'
         className='image-class'
-      />
+      /> */}
 
       <Container>
         <div className='demo__buttons'>
