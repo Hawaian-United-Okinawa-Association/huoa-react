@@ -10,17 +10,12 @@ import Header from './header';
 import Home from 'pages/Home/Home';
 import About from 'pages/About/About';
 import Events from 'pages/Events/Events';
-// import EventDetail from 'pages/Events/EventDetail';
 import News from 'pages/News/News';
 import Contact from 'pages/Contact/Contact';
 import Donate from 'pages/Donate/Donate';
 import Geneology from 'pages/Geneology/Geneology';
 import GetInvolved from 'pages/GetInvolved/GetInvolved';
 import Demo from 'pages/Demo/Demo';
-
-// for testing layout
-// import Layout from 'components/Layout/Layout';
-
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
