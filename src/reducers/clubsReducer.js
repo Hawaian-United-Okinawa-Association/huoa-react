@@ -1,4 +1,4 @@
-import {FETCH_CLUBS} from '../actions/actionTypes' 
+import {FETCH_CLUBS} from '../actions/actionTypes';
 
 // '../actions/types';
 const INITIAL_STATE = [];

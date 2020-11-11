@@ -8,10 +8,10 @@ import rentReducer from './rentReducer';
 import modalReducer from './modalReducer';
 import pagesReducer from './pagesReducer';
 import routerReducer from './routerReducer';
-import ClubsReducer from './clubsReducer';
+import clubsReducer from './clubsReducer';
 
 export default combineReducers({
-  clubs: ClubsReducer,
+  clubs: clubsReducer,
   donation: donationReducer,
   event: eventReducer,
   volunteer: volunteerReducer,

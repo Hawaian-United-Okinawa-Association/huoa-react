@@ -1,39 +1,35 @@
-@import "../../styles//utilities/colors.scss";
-@import "../../styles/fonts.scss";
-@import "../../styles/utilities/breakpoints.scss";
+@import '../../styles//utilities/colors.scss';
+@import './../../styles/utilities/breakpoints.scss';
 
 .get-involved {
   &__title {
     width: 60vw;
-    font-size: 2rem;
   }
 
   &__description {
     width: 60vw;
-    font-size: 1.2rem;
+    margin-bottom: 50px;
   }
 
   &__items {
     width: 60vw;
+    padding-left: 0;
     list-style: none;
-    font-size: 1rem;
-    text-decoration-line: underline;
-    column-count: 2;
-
-    @media screen and (max-width: $breakpoint-mobile) {
-      padding-left: 0;
-      font-size: 0.8rem;
-      column-count: 1;
-      
-    }  
+    columns: 2;
     
-      &--link {
-        margin-bottom: 10px;
-      }
+    @media screen and (max-width: $breakpoint-mobile) {
+      columns: 1;
+    }
+  }
 
-      &--link:hover {
-        color: $dark-purple;
-        font-weight: 800;
-      }
+  &__item-link {
+    display: inline-block;
+    padding-bottom: 15px;
+    text-decoration-line: underline;
+  }
+
+  &__item-link:hover {
+    color: $dark-purple;
+    font-weight: 800;
   }
 }

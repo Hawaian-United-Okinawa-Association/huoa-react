@@ -1,6 +1,5 @@
 //Dependencies
 import React from 'react';
-import { useDispatch } from 'react-redux';
 
 //Components
 import Modal from './../components/Modal/Modal';
@@ -8,15 +7,13 @@ import Navbar from './../components/Navbar/Navbar';
 import Footer from './../components/Footer/Footer';
 import Routes from './../config/routes';
 
-import { getPages } from './../actions/index';
-import { getClubs } from 'actions/ClubActions';
+// Actions Initializer Function
+import { Initialize } from '../actions/index';
 
 import './App.scss';
 
 const App = (props) => {
-  const dispatch = useDispatch();
-  dispatch(getPages());
-  dispatch(getClubs());
+  Initialize();
   return (
     <main>
       <Modal />
