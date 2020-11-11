@@ -13,7 +13,7 @@ let eventDescription = 'Event Description';
 
 const EventDetail = () => {
   return (
-    <Layout sideNav>
+    <Layout>
       <Container className='eventdetail__container'>
         <div className='eventdetail__div'>
           <h4>Home / Events /<span className='eventdetail__span'> {eventTitle}</span></h4>
