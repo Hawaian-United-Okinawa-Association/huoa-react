@@ -1,0 +1,23 @@
+@import 'styles/fonts.scss';
+@import 'styles/utilities/breakpoints.scss';
+@import 'styles/utilities/colors.scss';
+
+.home-cards {
+  &--large {
+    padding: 30px;
+    background-color: $light-purple;
+  }
+
+  &--small {
+    padding: 30px;
+  }
+
+  &--square {
+    padding: 30px;
+    background-color: $light-purple;
+  }
+
+  &--blank {
+    padding: 30px;
+  }
+}
