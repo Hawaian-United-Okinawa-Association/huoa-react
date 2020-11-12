@@ -10,6 +10,7 @@ $card-image-height: 330px;
   display: grid;
   grid-template-areas: 'image' 'text' 'button';
   grid-template-rows: $card-image-height auto 74px;
+  justify-self: center;
   overflow: hidden;
   max-width: 600px;
   border-radius: $card-border-radius;
