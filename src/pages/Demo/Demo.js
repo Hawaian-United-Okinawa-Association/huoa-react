@@ -5,7 +5,7 @@ import { openModal } from 'actions/index';
 import Container from 'components/Container/Container';
 import Button from 'components/Button/Button';
 import CustomThankYou from 'components/Custom/CustomThankYou/CustomThankYou';
-import Image from 'components/Image/Image';
+// import Image from 'components/Image/Image';
 import CardDemo from '../../components/Cards/CardDemo';
 
 import './Demo.scss';
