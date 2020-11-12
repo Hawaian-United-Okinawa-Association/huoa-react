@@ -2,6 +2,7 @@
 @import 'styles/utilities/borders.scss';
 
 .card-blank {
+  min-width: 280px;
   border-radius: $card-border-radius;
   background: $white;
   box-shadow: $card-blank-shadow;
