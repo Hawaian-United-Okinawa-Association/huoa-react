@@ -16,25 +16,9 @@ const INITIAL_STATE = {
           linkTo: '/about/mission-and-values'
         },
         {
-          name: 'History',
-          linkTo: '/about/history'
-        },
-        {
-          name: 'HO Center',
-          linkTo: '/about/hawaii-okinawan-center'
-        },
-        {
           name: 'Banquet Facility',
           linkTo: '/about/banquet-facility'
         },
-        {
-          name: 'HUOA Team',
-          linkTo: '/about/team'
-        },
-        {
-          name: 'Gallery',
-          linkTo: '/about/gallery'
-        }
       ]
     },
     {
