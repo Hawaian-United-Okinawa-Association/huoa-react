@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { closeModal } from './../../actions/index';
 
 import { ReactComponent as ButtonClose } from './../../assets/button-close.svg';
-import './Modal.scss';
 
 const Modal = (props) => {
   const dispatch = useDispatch();
