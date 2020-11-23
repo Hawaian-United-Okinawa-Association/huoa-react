@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 //Components, assets, actions, styles etc..
 import NavItem from './NavItem';
 import { ReactComponent as HUOALogo } from '../../assets/huoa-logo.svg';
-import './Navbar.scss';
 
 const Navbar = () => {
   const [ navState, setNavState ] = useState(false);

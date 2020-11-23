@@ -12,7 +12,9 @@ import './index.scss';
 
 const preloadedState = window.__REDUX_STATE__;
 // Allow the passed state to be garbage-collected
-delete window.__REDUX_STATE__;
+if (process.env.NODE_ENV !== 'production') {
+  delete window.__REDUX_STATE__;
+}
 
 const store = configureStore(preloadedState || {});
 

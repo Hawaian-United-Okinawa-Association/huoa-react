@@ -7,8 +7,6 @@ import { ReactComponent as Twitter } from 'assets/twitter.svg';
 import { ReactComponent as Instagram } from 'assets/instagram.svg';
 import { ReactComponent as Facebook } from 'assets/facebook.svg';
 
-import './Footer.scss';
-
 const Footer = () => {
   return (
     <footer className="footer">
