@@ -1,10 +1,14 @@
 import React from 'react';
+import Hero from 'components/Hero/Hero';
 
-const Home = () => {
+const Home = ({ data }) => {
+  if (!data) return null;
+
   return (
-    <section>
+    <>
+      <Hero />
       <h4>Landing</h4>
-    </section>
+    </>
   );
 };
 

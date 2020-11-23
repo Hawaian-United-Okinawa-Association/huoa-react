@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import donationReducer from './donationReducer';
+import heroReducer from './heroReducer';
 import eventReducer from './eventReducer';
 import modalReducer from './modalReducer';
 import pagesReducer from './pagesReducer';
 import routerReducer from './routerReducer';
 
 export default combineReducers({
-  donation: donationReducer,
+  heros: heroReducer,
   event: eventReducer,
   router: routerReducer,
   modals: modalReducer,
