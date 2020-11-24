@@ -5,12 +5,20 @@ import { Link } from "react-router-dom";
 import "./GetInvolved.scss";
 
 const GetInvolved = () => {
-  const clubDataAll = useSelector((state) => state.clubs);
+  let clubDataAll = useSelector((state) => state.clubs);
+  let pageInfo = useSelector((state) => state.pages["join-a-club"]);
+
+  if (!pageInfo) {
+    return null;
+  } else {
+    pageInfo = pageInfo.join_a_club_page;
+    pageInfo.body = pageInfo.body.replace(/(<([^>]+)>)/gi, ""); // API object contains html tags here (only). This removes them.
+  };
 
   const renderClubs = clubDataAll.map((club) => {
     return (
-      <li>
-        <Link className="get-involved__item-link" key={club.id} to={club.link}>
+      <li key={club.id}>
+        <Link className="get-involved__item-link" to={club.link}>
           {club.title.rendered}
         </Link>
       </li>
@@ -21,21 +29,14 @@ const GetInvolved = () => {
     <Layout>
       <div className="get-involved__container">
         <div className="get-involved__title">
-          <h2>HUOA Club Listing</h2>
+          <h2>{pageInfo.title}</h2>
         </div>
-        <div className="get-involved__description">
-          <p>
-            Please contact HUOA if you are interested in joining and finding out
-            more about the HUOA clubs. Contact us at 676-5400.
-          </p>
-        </div>
+        <div className="get-involved__description">{pageInfo.body}</div>
         <div className="get-involved__body">
-          {clubDataAll.length < 1 ? (
-            <h4>Loading Clubs...</h4>
+          {!!clubDataAll ? (
+            <ul className="get-involved__items">{renderClubs}</ul>
           ) : (
-            <ul className="get-involved__items">
-              {renderClubs}
-            </ul>
+            <h4>Loading Clubs...</h4>
           )}
         </div>
       </div>
