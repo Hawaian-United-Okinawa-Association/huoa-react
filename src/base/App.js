@@ -8,12 +8,12 @@ import Footer from './../components/Footer/Footer';
 import Routes from './../config/routes';
 
 // Actions Initializer Function
-import { Initialize } from '../actions/index';
+import { Init } from './Init';
 
 import './App.scss';
 
 const App = (props) => {
-  Initialize();
+  Init();
   return (
     <main>
       <Modal />
