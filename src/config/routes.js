@@ -17,11 +17,10 @@ import Geneology from 'pages/Geneology/Geneology';
 import GetInvolved from 'pages/GetInvolved/GetInvolved';
 import Demo from 'pages/Demo/Demo';
 import AboutMissionAndPurpose from 'pages/MissionAndPurpose/MissionAndPurpose';
-
+import BanquetFacility from 'pages/BanquetFacility/BanquetFacility';
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
-
   return (
     <Switch>
       <Route exact path="/">
@@ -35,6 +34,10 @@ const Routes = () => {
       <Route path="/about/mission-and-values">
         <Header props={ pageState["mission-purpose"]} />
         <AboutMissionAndPurpose data={ pageState["mission-purpose"]}/>
+      </Route>
+      <Route path="/about/banquet-facility">
+        <Header props={ pageState["banquet-facility"]}/>
+        <BanquetFacility data={ pageState["banquet-facility"]}/>
       </Route>
       <Route path="/events">
         <Header props={ pageState.events } />
