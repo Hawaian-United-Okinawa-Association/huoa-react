@@ -23,6 +23,6 @@ const MissionAndPurpose = ({data}) => {
         <div className="about-mission-purpose__body" dangerouslySetInnerHTML = {createMarkup(section_three.body)}/>
       </div>
     </Container>
-  )
+  );
   }
 export default MissionAndPurpose;
