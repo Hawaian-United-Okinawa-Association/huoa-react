@@ -12,7 +12,7 @@ const MissionAndPurpose = ({data}) => {
   if (!data) return null;
 
   let {section_one, section_two, section_three} = data.mission_and_purpose;
-  return(
+  return (
     <Container>
       <div className="about-mission-purpose">
         <h1 className="about-mission-purpose__title">{section_one.title}</h1>
