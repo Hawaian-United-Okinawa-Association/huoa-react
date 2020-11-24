@@ -20,12 +20,12 @@ export const getClubs = () => async (dispatch) => {
 export const openModal = (modalContent) => {
   return {
     type: MODAL_OPEN,
-    payload: modalContent,
+    payload: modalContent
   };
 };
 
 export const closeModal = () => {
   return {
-    type: MODAL_CLOSE,
+    type: MODAL_CLOSE
   };
 };
