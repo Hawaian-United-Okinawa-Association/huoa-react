@@ -31,7 +31,7 @@ const Routes = () => {
         <Header props={ pageState.about } />
         <About />
       </Route>
-      <Route path="/about/mission-and-values">
+      <Route path="/about/mission-and-purpose">
         <Header props={ pageState["mission-purpose"]} />
         <AboutMissionAndPurpose data={ pageState["mission-purpose"]}/>
       </Route>

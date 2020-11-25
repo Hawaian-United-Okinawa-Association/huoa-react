@@ -12,12 +12,20 @@ const INITIAL_STATE = {
       linkTo: '/about',
       children: [
         {
-          name: 'Mission and Values',
-          linkTo: '/about/mission-and-values'
+          name: 'Mission and Purpose',
+          linkTo: '/about/mission-and-purpose'
         },
         {
           name: 'Banquet Facility',
           linkTo: '/about/banquet-facility'
+        },
+        {
+          name: 'History',
+          linkTo: '/about/history'
+        },
+        {
+          name: 'HO Center',
+          linkTo: '/about/hawaii-okinawan-center'
         },
       ]
     },
