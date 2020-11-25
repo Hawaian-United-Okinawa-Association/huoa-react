@@ -8,14 +8,14 @@ const createMarkup = (body) => {
   return {__html: body};
 }
 
-const GetInvolved = () => {
+const GetInvolved = ({data}) => {
   let clubDataAll = useSelector((state) => state.clubs);
-  let pageInfo = useSelector((state) => state.pages["join-a-club"]);
+  // let pageInfo = useSelector((state) => state.pages["join-a-club"]);
 
-  if (!pageInfo) {
+  if (!data) {
     return null;
   } else {
-    pageInfo = pageInfo.join_a_club_page;
+    data = data.join_a_club_page;
   };
 
   const renderClubs = clubDataAll.map((club) => {
@@ -32,9 +32,9 @@ const GetInvolved = () => {
     <Layout>
       <div className="get-involved__container">
         <div className="get-involved__title">
-          <h2>{pageInfo.title}</h2>
+          <h2>{data.title}</h2>
         </div>
-        <div className="get-involved__description" dangerouslySetInnerHTML={createMarkup(pageInfo.body)} />
+        <div className="get-involved__description" dangerouslySetInnerHTML={createMarkup(data.body)} />
         <div className="get-involved__body">
           {!!clubDataAll ? (
             <ul className="get-involved__items">{renderClubs}</ul>

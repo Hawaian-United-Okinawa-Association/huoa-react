@@ -19,6 +19,7 @@ import Demo from 'pages/Demo/Demo';
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
+  const clubState = useSelector((state) => state.clubs);
 
   return (
     <Switch>
@@ -36,7 +37,7 @@ const Routes = () => {
       </Route>
       <Route path="/join">
         <Header props={ pageState.join } />
-        <GetInvolved />
+        <GetInvolved data={ pageState["join-a-club"] }/>
       </Route>
       <Route path="/news">
         <Header props={ pageState.news } />

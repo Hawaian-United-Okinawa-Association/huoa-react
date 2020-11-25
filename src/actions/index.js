@@ -18,8 +18,15 @@ export const getPages = () => async (dispatch) => {
 };
 
 export const getClubs = () => async (dispatch) => {
-  const response = await axios.get(`${api}/wp/v2/clubs`);
-  dispatch({ type: FETCH_CLUBS, payload: response.data });
+  if (process.env.NODE_ENV === "production" && navigator.userAgent !== "ReactSnap") {
+    let cache = window.__REDUX_STATE__;
+
+    dispatch({ type: FETCH_CLUBS, payload: cache.clubs })
+  } else {
+    const response = await axios.get(`${api}/wp/v2/clubs`);
+    
+    dispatch({ type: FETCH_CLUBS, payload: response.data });
+  }
 };
 
 export const getHeros = () => async (dispatch) => {
