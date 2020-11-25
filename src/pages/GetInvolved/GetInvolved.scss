@@ -2,18 +2,11 @@
 @import './../../styles/utilities/breakpoints.scss';
 
 .get-involved {
-  &__title {
-    width: 60vw;
-    
-  }
-
   &__description {
-    width: 60vw;
     margin-bottom: 50px;
   }
 
   &__items {
-    width: 60vw;
     padding-left: 0;
     list-style: none;
     columns: 2;
