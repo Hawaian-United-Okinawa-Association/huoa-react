@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './Layout.scss'
-
 const Layout = ({ noNav, children }) => {
   if (noNav) {
     return (
