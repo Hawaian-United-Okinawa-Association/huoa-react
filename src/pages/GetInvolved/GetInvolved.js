@@ -10,7 +10,6 @@ const createMarkup = (body) => {
 
 const GetInvolved = ({data}) => {
   let clubDataAll = useSelector((state) => state.clubs);
-  // let pageInfo = useSelector((state) => state.pages["join-a-club"]);
 
   if (!data) {
     return null;
