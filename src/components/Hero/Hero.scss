@@ -1,0 +1,143 @@
+@import 'styles/utilities/colors';
+@import 'styles/utilities/breakpoints';
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 38rem;
+
+  @media (max-width: $breakpoint-mobile-large) {
+    height: auto;
+  }
+
+  &__wrapper {
+    position: relative;
+    height: 100%;
+    background-color: $dark-grey;
+
+    @media (max-width: $breakpoint-mobile-large) {
+      overflow: hidden;
+      height: 30rem;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+    @media (max-width: $breakpoint-mobile-large) {
+      position: relative;
+      height: 20rem;
+    }
+
+    .container {
+      align-content: center;
+      height: 100%;
+      margin: auto;
+      padding: 0 24px;
+
+      @media (max-width: $breakpoint-tablet) {
+        grid-template-columns: 1fr;
+      }
+
+      @media (max-width: $breakpoint-mobile-large) {
+        padding: 0;
+        background-color: $overlay-light-grey;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    grid-column-start: 2;
+    grid-column-end: 8;
+
+    padding: 3rem;
+    background-color: $overlay-light-grey;
+
+    @media (max-width: $breakpoint-laptop) {
+      padding: 2rem;
+    }
+
+    @media (max-width: $breakpoint-mobile-large) {
+      height: 100%;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    margin: 1.5rem auto 1rem;
+    font-weight: 300;
+    line-height: 1.1;
+
+    @media (max-width: $breakpoint-laptop) {
+      font-size: 28px;
+      line-height: 1.4;
+    }
+  }
+
+  &__description {
+    font-weight: 100;
+    font-size: 18px;
+
+    @media (max-width: $breakpoint-laptop) {
+      font-size: 16px;
+    }
+  }
+
+  &__button {
+    border: 1px solid $white;
+  }
+
+  &__slide {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .8s ease-in-out;
+
+    &[data-active=true] {
+      opacity: 1;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+
+    @media (min-width: $breakpoint-laptop) {
+      width: 100vw
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    bottom: 16px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__selector {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: $white;
+    cursor: pointer;
+
+    &[data-active=true] {
+      background-color: $purple;
+    }
+  }
+}

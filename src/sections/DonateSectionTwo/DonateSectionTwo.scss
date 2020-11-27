@@ -1,17 +1,13 @@
-@import 'styles/fonts';
-@import 'styles/utilities/colors';
-@import 'styles/utilities/breakpoints';
-
 .donate-section-two {
   margin: 64px auto 32px;
-  
+
   &__title {
     margin: 0 auto 48px;
     padding: 0 30px;
     color: $black;
     font-weight: 600;
     font-size: 32px;
-    font-family: $open-sans;
+    font-family: $lora;
     line-height: 48px;
     text-align: center;
   }

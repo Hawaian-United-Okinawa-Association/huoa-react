@@ -1,8 +1,24 @@
-.layout {
-  display: grid;
-  grid-template-columns: 25% auto;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 16px;
-  column-gap: 24px;
+@media (min-width: $breakpoint-laptop) {
+  .layout {
+    display: grid;
+    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+    max-width: 1440px;
+    margin: 0 auto;
+    column-gap: 24px;
+  }
+
+  .layout__sidenav {
+    grid-column-start: 1;
+    grid-column-end: 1;
+  }
+
+  .layout__body {
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+
+  .layout__full {
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
 }

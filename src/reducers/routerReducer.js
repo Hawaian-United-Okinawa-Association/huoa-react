@@ -10,14 +10,12 @@ const INITIAL_STATE = {
     {
       name: 'About',
       linkTo: '/about',
+      phase1: true,
       children: [
         {
           name: 'Mission and Purpose',
-          linkTo: '/about/mission-and-purpose'
-        },
-        {
-          name: 'Banquet Facility',
-          linkTo: '/about/banquet-facility'
+          linkTo: '/about/mission-and-purpose',
+          phase1: true
         },
         {
           name: 'History',
@@ -27,15 +25,30 @@ const INITIAL_STATE = {
           name: 'HO Center',
           linkTo: '/about/hawaii-okinawan-center'
         },
+        {
+          name: 'Banquet Facility',
+          linkTo: '/about/banquet-facility',
+          phase1: true
+        },
+        {
+          name: 'HUOA Team',
+          linkTo: '/about/team'
+        },
+        {
+          name: 'Gallery',
+          linkTo: '/about/gallery'
+        }
       ]
     },
     {
       name: 'Get Involved',
       linkTo: '/join',
+      phase1: true,
       children: [
         {
           name: 'Join a HUOA Club',
-          linkTo: '/join/clubs'
+          linkTo: '/join/clubs',
+          phase1: true
         },
         {
           name: 'Okinawan Performing Arts Directory',
@@ -55,23 +68,26 @@ const INITIAL_STATE = {
         },
         {
           name: 'Donate',
-          linkTo: '/donate'
+          linkTo: '/donate',
+          phase1: true
         }
       ]
     },
     {
       name: 'Events',
       linkTo: '/events',
-      children: [
-        {
-          name: 'Calendar',
-          linkTo: '/events/calendar'
-        },
-        {
-          name: 'Class Schedule',
-          linkTo: '/events/classes'
-        }
-      ]
+      phase1: true,
+      // TODO: this is commented out for Phase 1
+      // children: [
+      //   {
+      //     name: 'Calendar',
+      //     linkTo: '/events/calendar'
+      //   },
+      //   {
+      //     name: 'Class Schedule',
+      //     linkTo: '/events/classes'
+      //   }
+      // ]
     },
     {
       name: 'Geneology',
@@ -93,11 +109,13 @@ const INITIAL_STATE = {
     },
     {
       name: 'Contact Us',
-      linkTo: '/contact'
+      linkTo: '/contact',
+      phase1: true
     },
     {
       name: 'Donate',
-      linkTo: '/donate'
+      linkTo: '/donate',
+      phase1: true
     }
   ]
 };

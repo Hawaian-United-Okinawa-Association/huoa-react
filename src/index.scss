@@ -1,5 +1,25 @@
 // Import Normalize Stylesheet
-@import 'styles/normalize.scss';
+@import 'styles/normalize';
 
-// Import Typography Stylesheet
-@import 'styles/utilities/typography.scss';
+// Import Utilities
+@import
+  'styles/utilities/alignment',
+  'styles/utilities/breakpoints',
+  'styles/utilities/colors',
+  'styles/utilities/fonts',
+  'styles/utilities/typography';
+
+// Import pages
+// TODO: need to add pages import
+@import 
+  'pages/Contact/Contact',
+  'pages/MissionAndPurpose/MissionAndPurpose';
+
+// Import Sectionsgit st
+// TODO: refactor this though
+@import
+  'sections/DonateSectionOne/DonateSectionOne',
+  'sections/DonateSectionTwo/DonateSectionTwo';
+
+// Import components
+@import 'components/components';

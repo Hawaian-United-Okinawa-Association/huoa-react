@@ -1,4 +1,4 @@
-//Dependencies
+// Dependencies
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 // Config
 import Header from './header';
 
-//Components
+// Components
 import Home from 'pages/Home/Home';
 import About from 'pages/About/About';
 import Events from 'pages/Events/Events';
@@ -53,7 +53,7 @@ const Routes = () => {
       </Route>
       <Route path="/contact">
         <Header props={ pageState.contact } />
-        <Contact />
+        <Contact data={pageState.contact} />
       </Route>
       <Route path="/donate">
         <Header props={ pageState.donate } />

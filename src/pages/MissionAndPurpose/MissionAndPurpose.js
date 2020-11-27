@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from 'components/Container/Container.js';
 import Layout from 'components/Layout/Layout.js';
-import './MissionAndPurpose.scss';
+
 
 function createMarkup(body) {
   return {__html: body};
@@ -15,11 +15,11 @@ const MissionAndPurpose = ({data}) => {
     <Layout>
       <Container>
         <div className="about-mission-purpose">
-          <h1 className="about-mission-purpose__title">{section_one.title}</h1>
+          <h2 className="about-mission-purpose__title">{section_one.title}</h2>
           <div className="about-mission-purpose__body" dangerouslySetInnerHTML = {createMarkup(section_one.body)}/>
-          <h1 className="about-mission-purpose__title">{section_two.title}</h1>
+          <h2 className="about-mission-purpose__title">{section_two.title}</h2>
           <div className="about-mission-purpose__body" dangerouslySetInnerHTML = {createMarkup(section_two.body)}/>
-          <h1 className="about-mission-purpose__title">{section_three.title}</h1>
+          <h2 className="about-mission-purpose__title">{section_three.title}</h2>
           <div className="about-mission-purpose__body" dangerouslySetInnerHTML = {createMarkup(section_three.body)}/>
         </div>
       </Container>
