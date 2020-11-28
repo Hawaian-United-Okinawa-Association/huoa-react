@@ -6,7 +6,7 @@
   max-width: 900px;
   margin: 64px auto 152px 0;
 
-  @media(max-width: $breakpoint-mobile-large) {
+  @media (max-width: $breakpoint-tablet) {
     margin: 64px 30px 48px;
   }
   
@@ -50,10 +50,18 @@
 
     &:first-child {
       margin-left: 0;
+      @media(max-width: $breakpoint-mobile-large) {
+        margin-right: auto;
+        margin-left: auto;
+      }
     }
 
     &:last-child {
       margin-right: 0;
+      @media(max-width: $breakpoint-mobile-large) {
+        margin-right: auto;
+        margin-left: auto;
+      }
     }
   }
 

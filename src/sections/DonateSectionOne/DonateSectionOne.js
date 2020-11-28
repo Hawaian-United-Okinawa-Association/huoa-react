@@ -6,7 +6,7 @@ import './DonateSectionOne.scss';
 
 const DonateSectionOne = ({ data }) => {
   
-  function createTextMarkup() {
+  const createTextMarkup = () => {
     return {__html: data.text};
   }
 
