@@ -2,7 +2,6 @@ import React from 'react';
 
 import Image from 'components/Image/Image';
 import Button from 'components/Button/Button';
-import './DonateSectionOne.scss';
 
 const DonateSectionOne = ({ data }) => {
   
