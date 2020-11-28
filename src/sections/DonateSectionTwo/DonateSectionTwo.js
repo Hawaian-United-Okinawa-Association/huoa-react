@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Button from 'components/Button/Button';
-import './DonateSectionTwo.scss';
 import { ReactComponent as TreePlanting } from 'assets/tree-planting.svg';
 import { ReactComponent as CoinInHand } from 'assets/coin-in-hand.svg';
 import { ReactComponent as Car } from 'assets/car.svg';

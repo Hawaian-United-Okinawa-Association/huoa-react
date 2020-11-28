@@ -13,6 +13,6 @@ module.exports = {
         emitErrors: true
       })
     )
-    return config
+    return config;
   }
 }

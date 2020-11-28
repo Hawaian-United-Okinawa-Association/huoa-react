@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import 'styles/utilities/breakpoints.scss';
 
 .layout {
@@ -16,5 +17,29 @@
     @media (max-width: $breakpoint-tablet) {
       display: none;
     }
+=======
+@media (min-width: $breakpoint-laptop) {
+  .layout {
+    display: grid;
+    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+    max-width: 1380px;
+    margin: 0 auto;
+    column-gap: 24px;
+  }
+
+  .layout__sidenav {
+    grid-column-start: 1;
+    grid-column-end: 1;
+  }
+
+  .layout__body {
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+
+  .layout__full {
+    grid-column-start: 1;
+    grid-column-end: 5;
+>>>>>>> origin
   }
 }
