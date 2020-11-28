@@ -1,4 +1,5 @@
 import React from 'react';
+import Sidebar from 'components/Sidebar/Sidebar';
 
 const Layout = ({ noNav, children }) => {
   if (noNav) {
@@ -10,7 +11,9 @@ const Layout = ({ noNav, children }) => {
   } else {
     return (
       <div className='layout'>
-        <div className='layout__sidenav'>Sidebar Component</div>
+        <div className='layout__sidenav'>
+          <Sidebar />
+        </div>
         <div className='layout__body'>{children}</div>
       </div>
     )
