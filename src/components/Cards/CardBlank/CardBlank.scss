@@ -1,6 +1,11 @@
 @import 'styles/utilities/colors.scss';
 @import 'styles/utilities/borders.scss';
 
+// TODO:
+//  - add mobile styling
+//  - our way of bem is card-blank__subscribe
+//  - we shouldn't be styling subscribe | newsletter | input in this file this should only be styling the blank card
+
 .card-blank {
   min-width: 280px;
   border-radius: $card-border-radius;

@@ -17,6 +17,7 @@ const Home = ({ data }) => {
       <TextArea props={ data.builder[0] }/>
       <section className="home__section">
         <Container col='2'>
+          {/* TODO: this needs to be refactored to only pass in one object like TextArea */}
           <CardLarge
             image='https://huoa.org/nuuzi/banquetfacility/hoc.jpg'
             altTag='banquet facility'
@@ -41,6 +42,7 @@ const Home = ({ data }) => {
           <h2 className="home__title">Support Your Community</h2>
         </Container>
         <Container col='3'>
+          {/* TODO: this needs to be refactored to only pass in one object like TextArea */}
           <CardSquare
             header='Kokua In Kind'
             subheader='Lorem Subhead Goes Here'
@@ -71,6 +73,7 @@ const Home = ({ data }) => {
         </Container>
         <Container col='2'>
           <CardBlank>
+            {/* TODO: refactor this is not how we should be styling inner card elements. They should be styled in the Home.scss file. */}
             <div className='card-blank--subscribe'>
               <h3>Purple Blast</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
@@ -81,6 +84,7 @@ const Home = ({ data }) => {
           <CardBlank>
           <div className='card-blank--newsletter'>
               <h3>Uchinanchu Newsletter</h3>
+              {/* TODO: we should never do inline styling */}
               <p style={{marginBottom: '24px'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
               <div style={{width: '100px'}}>
                 <Button type='filled' onClick={() => console.log('You clicked a button')}>SIGNUP</Button>
