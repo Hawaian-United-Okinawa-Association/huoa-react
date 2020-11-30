@@ -1,0 +1,38 @@
+@import 'styles/utilities/colors.scss';
+@import 'styles/utilities/borders.scss';
+
+// TODO:
+//  - add mobile styling
+//  - our way of bem is card-blank__subscribe
+//  - we shouldn't be styling subscribe | newsletter | input in this file this should only be styling the blank card
+
+.card-blank {
+  min-width: 280px;
+  border-radius: $card-border-radius;
+  background: $white;
+  box-shadow: $card-blank-shadow;
+  text-align: center;
+}
+
+.card-blank--subscribe {
+  padding: 50px 80px;
+  text-align: left;
+
+  .button {
+    width: 100%
+  }
+}
+
+.card-blank--newsletter {
+  padding: 50px 80px;
+  text-align: left;
+}
+
+.card-blank--input {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 15px;
+  border-style: solid;
+  border-radius: 4px;
+  padding: 10px;
+}

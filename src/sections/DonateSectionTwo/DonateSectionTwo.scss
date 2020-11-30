@@ -1,22 +1,30 @@
 .donate-section-two {
-  margin: 64px auto 32px;
+  max-width: 900px;
+  margin: 64px auto 152px 0;
 
+  @media (max-width: $breakpoint-tablet) {
+    margin: 64px 30px 48px;
+  }
+  
   &__title {
-    margin: 0 auto 48px;
-    padding: 0 30px;
+    margin: 0 auto 72px;
     color: $black;
     font-weight: 600;
     font-size: 32px;
     font-family: $lora;
     line-height: 48px;
-    text-align: center;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: 32px;
+      text-align: center;
+    }
   }
 
   &__body {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-
+    
     @media(max-width: $breakpoint-mobile-large) {
       flex-direction: column;
       align-items: center;
@@ -25,11 +33,31 @@
 
   &__col {
     max-width: 300px;
-    margin: 0 30px;
+    margin: 0 24px;
     text-align: center;
 
     @media(max-width: $breakpoint-mobile-large) {
       margin-bottom: 32px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      margin: 0 auto 32px;
+    }
+
+    &:first-child {
+      margin-left: 0;
+      @media(max-width: $breakpoint-mobile-large) {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+      @media(max-width: $breakpoint-mobile-large) {
+        margin-right: auto;
+        margin-left: auto;
+      }
     }
   }
 
