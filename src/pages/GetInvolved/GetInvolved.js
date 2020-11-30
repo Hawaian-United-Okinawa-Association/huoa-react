@@ -20,7 +20,7 @@ const GetInvolved = ({data}) => {
   const renderClubs = clubDataAll.map((club) => {
     return (
       <li key={club.id}>
-        <Link className="get-involved__item-link" to={club.link}>
+        <Link className="get-involved__item-link" to={'/clubs/' + club.slug}>
           {club.title.rendered}
         </Link>
       </li>

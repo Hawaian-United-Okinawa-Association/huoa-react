@@ -42,29 +42,29 @@ const INITIAL_STATE = {
     },
     {
       name: 'Get Involved',
-      linkTo: '/join',
+      linkTo: '/clubs',
       phase1: true,
       children: [
         {
           name: 'Join a HUOA Club',
-          linkTo: '/join/clubs',
+          linkTo: '/clubs',
           phase1: true
         },
         {
           name: 'Okinawan Performing Arts Directory',
-          linkTo: '/join/performing-arts-directory'
+          linkTo: '/performing-arts-directory'
         },
         {
           name: 'Club Sports',
-          linkTo: '/join/sports'
+          linkTo: '/sports'
         },
         {
           name: 'Scholarships & Awards',
-          linkTo: '/join/scholarships'
+          linkTo: '/scholarships'
         },
         {
           name: 'Volunteer',
-          linkTo: '/join/volunteer'
+          linkTo: '/volunteer'
         },
         {
           name: 'Donate',

@@ -35,9 +35,13 @@ const Routes = () => {
         <Header props={ pageState.events } />
         <Events />
       </Route>
-      <Route path="/join">
+      <Route exact path="/clubs">
         <Header props={ pageState.join } />
         <GetInvolved data={ pageState["join-a-club"] }/>
+      </Route>
+      <Route path="/clubs/:clubId">
+        <Header props={ pageState.join } />
+        <News />
       </Route>
       <Route path="/news">
         <Header props={ pageState.news } />
