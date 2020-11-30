@@ -1,6 +1,4 @@
 .banquet-facility{
-  text-align: left;
-
   &__body{
     margin-bottom: 4.5rem;
   }
@@ -23,7 +21,7 @@
   &__container{
     display: grid;
     grid-template-columns: 5fr 4fr;
-    gap: 27px;
+    gap: 28px;
 
     @media screen and (max-width: $breakpoint-tablet){
       display: block;
