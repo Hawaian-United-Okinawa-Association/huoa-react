@@ -19,7 +19,6 @@ import Demo from 'pages/Demo/Demo';
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
-  const clubState = useSelector((state) => state.clubs);
 
   return (
     <Switch>
