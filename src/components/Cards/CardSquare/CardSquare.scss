@@ -1,8 +1,3 @@
-@import 'styles/utilities/colors.scss';
-@import 'styles/fonts.scss';
-@import 'styles/utilities/typography.scss';
-@import 'styles/utilities/borders.scss';
-
 .card-square {
   display: grid;
   grid-template-areas: 'text' 'button';

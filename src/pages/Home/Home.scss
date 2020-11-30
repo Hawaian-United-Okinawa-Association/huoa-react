@@ -1,23 +1,15 @@
-@import 'styles/fonts.scss';
-@import 'styles/utilities/breakpoints.scss';
-@import 'styles/utilities/colors.scss';
+.home {
+  &__section {
+    padding: 6rem 0;
 
-.home-cards {
-  &--large {
-    padding: 30px;
-    background-color: $light-purple;
+    &:nth-child(even) {
+      background-color: $lighter-purple;
+    }
   }
 
-  &--small {
-    padding: 30px;
-  }
-
-  &--square {
-    padding: 30px;
-    background-color: $light-purple;
-  }
-
-  &--blank {
-    padding: 30px;
+  &__title {
+    margin-top: 0;
+    margin-bottom: 4rem;
+    text-align: center;
   }
 }

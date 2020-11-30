@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 
 import Image from '../../Image/Image';
 import Button from '../../Button/Button';
-import './CardLarge.scss';
 
 const CardLarge = ({ image, altTag, header, body, button, onClick }) => {
   const ref = useRef();

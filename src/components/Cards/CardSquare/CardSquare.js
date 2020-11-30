@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 
 import Button from '../../Button/Button';
-import './CardSquare.scss';
 
 const CardSquare = ({ header, subheader, body, button, onClick }) => {
   const ref = useRef();
