@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Hero from 'components/Hero/Hero';
+import TextArea from 'components/TextArea/TextArea';
 import CardLarge from '../../components/Cards/CardLarge/CardLarge';
 import CardSmall from '../../components/Cards/CardSmall/CardSmall';
 import CardSquare from '../../components/Cards/CardSquare/CardSquare';
@@ -7,9 +9,12 @@ import CardBlank from '../../components/Cards/CardBlank/CardBlank';
 import Container from '../../components/Container/Container';
 import Button from '../../components/Button/Button';
 
-const Home = () => {
+const Home = ({ data }) => {
+  if (!data) return null;
   return (
-    <section>
+    <>
+      <Hero />
+      <TextArea props={ data.builder[0] }/>
       <div className='home-cards--large'>
         <Container col='2'>
           <CardLarge
@@ -115,7 +120,7 @@ const Home = () => {
           </CardBlank>
         </Container>
       </div>
-    </section>
+    </>
   );
 };
 

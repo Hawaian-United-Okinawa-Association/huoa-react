@@ -6,14 +6,13 @@ import { useSelector } from 'react-redux';
 //Components, assets, actions, styles etc..
 import NavItem from './NavItem';
 import { ReactComponent as HUOALogo } from '../../assets/huoa-logo.svg';
-import './Navbar.scss';
 
 const Navbar = () => {
   const [ navState, setNavState ] = useState(false);
   const { routes } = useSelector((state) => state.router);
 
   const renderMenuItems = (children) => {
-    return children.map((item) => (
+    return children.map((item) => item.phase1 && (
       <Link
         className="navbar__dropdown--link"
         to={item.linkTo}
@@ -28,7 +27,7 @@ const Navbar = () => {
 
   const renderNavItems = (items) => {
     return items.map((item) => {
-      return (
+      return item.phase1 && (
         <NavItem name={item.name} linkTo={item.linkTo} key={item.linkTo} navState={navState} setNavState={setNavState}>
           {!!item.children && (
             <div className="navbar__dropdown">
