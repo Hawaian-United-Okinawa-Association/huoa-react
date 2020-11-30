@@ -6,20 +6,24 @@ $container-width: 1260px;
   max-width: $container-width;
   margin: 0 auto;
 }
-/* stylelint-disable */
 
 @for $i from 1 through $total-columns {
-  .col__#{$i} {
-    grid-auto-flow: row;
+  .container__col--#{$i} {
     grid-template-columns: repeat(#{$i}, 1fr);
+    grid-auto-flow: row;
+    row-gap: 3rem;
+    column-gap: 3rem;
 
     @media screen and (max-width: $breakpoint-tablet) {
-      grid-template-columns: repeat(#{calc(#{$i}/ 2)}, 1fr);
+      grid-template-columns: repeat(ceil($i/2), 1fr);
+      row-gap: 2rem;
+      column-gap: 2rem;
     }
 
     @media screen and (max-width: $breakpoint-mobile) {
       grid-template-columns: 1fr;
+      row-gap: 1rem;
+      column-gap: 1rem;
     }
   }
 }
-/* stylelint-enable */

@@ -4,6 +4,7 @@
 // Import Utilities
 @import
   'styles/utilities/alignment',
+  'styles/utilities/borders',
   'styles/utilities/breakpoints',
   'styles/utilities/colors',
   'styles/utilities/fonts',
@@ -11,7 +12,9 @@
 
 // Import pages
 // TODO: need to add pages import
-@import 'pages/Contact/Contact';
+@import
+  'pages/Contact/Contact',
+  'pages/Home/Home';
 
 // Import Sections
 // TODO: refactor this though
