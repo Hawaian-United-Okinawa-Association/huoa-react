@@ -1,0 +1,60 @@
+$card-image-height: 330px;
+
+// TODO: Mobile Styles
+
+.card-large {
+  display: grid;
+  grid-template-areas: 'image' 'text' 'button';
+  grid-template-rows: $card-image-height auto 74px;
+  justify-self: center;
+  overflow: hidden;
+  max-width: 600px;
+  border-radius: $card-border-radius;
+  background: $lighter-grey;
+  box-shadow: $card-large-shadow;
+  text-align: center;
+}
+
+.card-large__image {
+  grid-area: image;
+  object-fit: cover;
+  width: 100%;
+  height: $card-image-height;
+  margin: 0 auto;
+}
+
+.card-large__text {
+  grid-area: text;
+  padding-top: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-family: Poppins;
+}
+
+.card-large__header {
+  margin: 24px auto;
+  font-size: 27px;
+  line-height: 37px;
+}
+
+.card-large__body {
+  margin: 0 60px;
+  padding-bottom: 15px;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+.card-large__button {
+  grid-area: button;
+  grid-row: 50px;
+  height: 45px;
+  margin-right: auto;
+  margin-bottom: 35px;
+  margin-left: auto;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .card-large__body{
+    margin: 0 30px;
+  }
+}

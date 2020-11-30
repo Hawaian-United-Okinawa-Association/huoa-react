@@ -1,0 +1,48 @@
+$card-image-height: 157px;
+
+// TODO: Mobile Styles
+
+.card-small {
+  display: grid;
+  grid-template-areas: 'image' 'text' 'button';
+  grid-template-rows: $card-image-height auto 74px;
+  justify-self: center;
+  overflow: hidden;
+  border-radius: $card-border-radius;
+  background: $lighter-grey;
+  box-shadow: $card-small-shadow;
+  text-align: left;
+}
+
+.card-small__image {
+  grid-area: image;
+  object-fit: cover;
+  width: 100%;
+  height: $card-image-height;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card-small__text {
+  grid-area: text;
+  padding: 0 25px;
+  font-family: Poppins;
+}
+
+.card-small__header {
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 30px;
+}
+
+.card-small__body {
+  font-size: 17px;
+  line-height: 25px;
+}
+
+.card-small__button {
+  grid-area: button;
+  align-self: center;
+  justify-self: left;
+  margin-left: 7px;
+}

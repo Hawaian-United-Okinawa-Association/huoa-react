@@ -4,6 +4,7 @@
 // Import Utilities
 @import
   'styles/utilities/alignment',
+  'styles/utilities/borders',
   'styles/utilities/breakpoints',
   'styles/utilities/colors',
   'styles/utilities/fonts',
@@ -14,8 +15,9 @@
 @import 
   'pages/Contact/Contact',
   'pages/MissionAndPurpose/MissionAndPurpose',
-  'pages/BanquetFacility/BanquetFacility';
-  
+  'pages/BanquetFacility/BanquetFacility',
+  'pages/Home/Home';
+
 // Import Sections
 // TODO: refactor this though
 @import
