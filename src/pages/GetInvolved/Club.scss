@@ -1,0 +1,51 @@
+.club {
+  &__nav {
+    margin-top: 6vh;
+  }
+
+  &__nav--item:hover {
+    color: $dark-purple;
+    font-weight: 800;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    height: 90px;
+    margin-bottom: 10vh;
+
+    &--image {
+      max-width: 90px;
+      max-height: 90px;
+      margin-right: 2vw;
+    }
+
+    &--title {
+      align-items: center;
+      max-width: 40vw;
+      font-weight: bold;
+      font-size: 2.5vw;
+      font-family: Lora;
+    }
+  }
+
+  &__description {
+    width: 50px;
+  }
+
+  &__contact {
+    width: 20vw;
+    margin-top: 10vh;
+
+    &--title {
+      font-weight: bold;
+      font-size: 1.5vw;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+  }
+}

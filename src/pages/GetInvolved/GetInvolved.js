@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Layout from "components/Layout/Layout";
-import "./GetInvolved.scss";
 
 const createMarkup = (body) => {
   return {__html: body};

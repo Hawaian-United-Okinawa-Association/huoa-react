@@ -15,6 +15,7 @@ import Contact from 'pages/Contact/Contact';
 import Donate from 'pages/Donate/Donate';
 import Geneology from 'pages/Geneology/Geneology';
 import GetInvolved from 'pages/GetInvolved/GetInvolved';
+import Club from 'pages/GetInvolved/Club'
 import Demo from 'pages/Demo/Demo';
 
 const Routes = () => {
@@ -40,7 +41,7 @@ const Routes = () => {
       </Route>
       <Route path="/clubs/:clubId">
         <Header props={ pageState.join } />
-        <News />
+        <Club />
       </Route>
       <Route path="/news">
         <Header props={ pageState.news } />
