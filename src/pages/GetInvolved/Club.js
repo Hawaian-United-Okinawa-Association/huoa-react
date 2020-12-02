@@ -35,7 +35,7 @@ const Club = ({ match }) => {
               <img
                 className="club__header--image"
                 src={`${clubData.acf.club.club_image}`}
-                alt="club image"
+                alt="club logo"
               />
             )}
             <div className="club__header--title">{clubData.acf.seo.title}</div>
