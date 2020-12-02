@@ -7,7 +7,7 @@ import routerReducer from './routerReducer';
 
 export default combineReducers({
   heros: heroReducer,
-  event: eventReducer,
+  events: eventReducer,
   router: routerReducer,
   modals: modalReducer,
   pages: pagesReducer

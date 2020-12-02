@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_PAGES, GET_HEROS, MODAL_OPEN, MODAL_CLOSE } from './actionTypes';
+import { GET_PAGES, GET_HEROS, GET_EVENTS, MODAL_OPEN, MODAL_CLOSE } from './actionTypes';
 
 const api = 'https://dev.huoa.org/wp-json';
 
@@ -26,6 +26,18 @@ export const getHeros = () => async (dispatch) => {
     const { data } = await axios.get(`${api}/wp/v2/heros?page=1&per_page=100`);
 
     dispatch({ type: GET_HEROS, payload: data });
+  }
+};
+
+export const getEvents = () => async (dispatch) => {
+  if (process.env.NODE_ENV === "production" && navigator.userAgent !== "ReactSnap") {
+    let cache = window.__REDUX_STATE__;
+
+    dispatch({ type: GET_EVENTS, payload: cache.events });
+  } else {
+    const { data } = await axios.get(`${api}/wp/v2/events?page=1&per_page=100`);
+
+    dispatch({ type: GET_EVENTS, payload: data });
   }
 };
 

@@ -5,8 +5,6 @@ import Image from 'components/Image/Image';
 import Container from 'components/Container/Container';
 import Button from 'components/Button/Button';
 
-import './Hero.scss'
-
 const Hero = () => {
   const heroImages = useSelector(state => state.heros);
 
