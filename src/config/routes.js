@@ -44,7 +44,7 @@ const Routes = () => {
       </Route>
       <Route path="/contact">
         <Header props={ pageState.contact } />
-        <Contact />
+        <Contact data={pageState.contact} />
       </Route>
       <Route path="/donate">
         <Header props={ pageState.donate } />
