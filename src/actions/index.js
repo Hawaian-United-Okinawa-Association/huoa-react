@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_PAGES, MODAL_OPEN, MODAL_CLOSE } from './actionTypes';
+import { FETCH_EVENTS, GET_PAGES, MODAL_OPEN, MODAL_CLOSE } from './actionTypes';
 
 const api = 'https://dev.huoa.org/wp-json';
 
@@ -10,6 +10,13 @@ export const getPages = () => async (dispatch) => {
 
   dispatch({ type: GET_PAGES, payload: data });
 };
+
+export const getEvents = () => async (dispatch) => {
+  const response = await axios.get(`${api}/wp/v2/events`);
+  const data = response.data.reduce((allData, {slug, title, acf }) => ({...allData, [slug]: { title: title.rendered, ...acf }}), {});
+
+  dispatch({ type: FETCH_EVENTS, payload: data});
+}
 
 export const openModal = (modalContent) => {
   return {

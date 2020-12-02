@@ -1,9 +1,10 @@
 import React from 'react';
+import EventDetail from './EventDetail';
 
 const Events = () => {
   return (
     <div>
-      <h4>Events</h4>
+      <EventDetail></EventDetail>
     </div>
   );
 };
