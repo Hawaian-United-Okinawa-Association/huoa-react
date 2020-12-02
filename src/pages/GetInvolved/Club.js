@@ -7,16 +7,15 @@ const Club = ({ match }) => {
   let clubDataAll = useSelector((state) => state.clubs);
   let currentClub = `${match.params.clubId}`;
   let clubData = useSelector((state) =>
-    clubDataAll.find((object) => object.slug == currentClub)
+    clubDataAll.find((object) => object.slug === currentClub)
   );
-
-  const createMarkup = () => {
-    return { __html: clubData.acf.club.club_description };
-  };
 
   if (!clubData) {
     return null;
   } else {
+    const createMarkup = () => {
+      return { __html: clubData.acf.club.club_description };
+    };
     return (
       <Layout>
         <div className="club__container">
@@ -76,7 +75,7 @@ const Club = ({ match }) => {
                 to={clubData.acf.club.club_social_media.website}
               >
                 {/* NOTE: need a website svg */}
-                <img src="../../../assets/facebook.svg" />
+                <img src="../../../assets/facebook.svg" alt="website" />
               </Link>
             )}
             {!clubData.acf.club.club_social_media.facebook ? null : (
@@ -84,7 +83,7 @@ const Club = ({ match }) => {
                 className="club__social--facebook"
                 to={clubData.acf.club.club_social_media.facebook}
               >
-                <img src="../../../assets/facebook.svg" />
+                <img src="../../../assets/facebook.svg" alt="facebook" />
               </Link>
             )}
             {!clubData.acf.club.club_social_media.instagram ? null : (
@@ -92,7 +91,7 @@ const Club = ({ match }) => {
                 className="club__social--instagram"
                 to={clubData.acf.club.club_social_media.instagram}
               >
-                <img src="../../../assets/instagram.svg" />
+                <img src="../../../assets/instagram.svg" alt="instagram" />
               </Link>
             )}
             {!clubData.acf.club.club_social_media.twitter ? null : (
@@ -100,7 +99,7 @@ const Club = ({ match }) => {
                 className="club__social--twitter"
                 to={clubData.acf.club.club_social_media.twitter}
               >
-                <img src="../../../assets/twitter.svg" />
+                <img src="../../../assets/twitter.svg" alt="twitter" />
               </Link>
             )}
           </div>
