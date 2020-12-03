@@ -2,104 +2,105 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
 import Layout from "components/Layout/Layout";
+import { ReactComponent as Website } from "../../assets/website.svg";
+import { ReactComponent as Facebook } from "../../assets/facebook.svg";
+import { ReactComponent as Instagram } from "../../assets/instagram.svg";
+import { ReactComponent as Twitter } from "../../assets/twitter.svg";
 
 const Club = ({ match }) => {
   let clubDataAll = useSelector((state) => state.clubs);
-  let currentClub = `${match.params.clubId}`;
-  let clubData = useSelector((state) =>
-    clubDataAll.find((object) => object.slug === currentClub)
-  );
+  let currentClub = match.params.clubId;
+  let clubData = clubDataAll.find((object) => object.slug === currentClub);
 
   if (!clubData) {
     return null;
   } else {
-    const createMarkup = () => {
-      return { __html: clubData.acf.club.club_description };
-    };
+    let { club_description,club_image,club_contact,club_social_media } = clubData.acf.club;
+    let { title } = clubData.acf.seo;
     return (
       <Layout>
         <div className="club__container">
-          <p className="club__nav">
-            <Link className="club__nav--item" to="/">
+          <p className="club__breadcrumb">
+            <Link className="club__breadcrumb--item" to="/">
               Home
-            </Link>{" "}
-            /{" "}
-            <Link className="club__nav--item" to="/clubs">
+            </Link>
+            /
+            <Link className="club__breadcrumb--item" to="/clubs">
               Join a HUOA Club
-            </Link>{" "}
-            / {clubData.acf.seo.title}
+            </Link>
+            /<Link className="club__breadcrumb--item">{title}</Link>
           </p>
           <br />
           <div className="club__header">
-            {!clubData.acf.club.club_image ? null : (
+            {!club_image ? null : (
               <img
                 className="club__header--image"
-                src={`${clubData.acf.club.club_image}`}
+                src={club_image}
                 alt="club logo"
               />
             )}
-            <div className="club__header--title">{clubData.acf.seo.title}</div>
+            <div className="club__header--title">{title}</div>
           </div>
-          {!clubData.acf.club.club_description ? null : (
+          {!club_description ? null : (
             <div
               classname="club__description"
-              dangerouslySetInnerHTML={createMarkup()}
+              dangerouslySetInnerHTML={{ __html: club_description }}
             />
           )}
 
-          {!clubData.acf.club.club_contact.address &&
-          !clubData.acf.club.club_contact.email &&
-          !clubData.acf.club.club_contact.phone ? null : (
+          {!club_contact.address &&
+          !club_contact.email &&
+          !club_contact.phone ? null : (
             <div className="club__contact">
               <div className="club__contact--title">Contact Information</div>
-              <div className="club__contact--address">
-                {!clubData.acf.club.club_contact.address ? null : (
-                  <div>{clubData.acf.club.club_contact.address}</div>
-                )}
-              </div>
-              <div className="club__contact--email">
-                {!clubData.acf.club.club_contact.email ? null : (
-                  <div>{clubData.acf.club.club_contact.email}</div>
-                )}
-              </div>
-              <div className="club__contact--phone">
-                {!clubData.acf.club.club_contact.phone ? null : (
-                  <div>P: {clubData.acf.club.club_contact.phone}</div>
-                )}
-              </div>
+              {!!club_contact.address && (
+                <div className="club__contact--address">
+                  <div>{club_contact.address}</div>
+                </div>
+              )}
+              {!!club_contact.email && (
+                <div className="club__contact--email">
+                  <div>{club_contact.email}</div>
+                </div>
+              )}
+              {!!club_contact.phone && (
+                <div className="club__contact--phone">
+                  <div>P: {club_contact.phone}</div>
+                </div>
+              )}
             </div>
           )}
           <div className="club__social">
-            {!clubData.acf.club.club_social_media.website ? null : (
+            {!club_social_media.website ? null : (
               <Link
-                className="club__social--website"
-                to={clubData.acf.club.club_social_media.website}
+                className="club__social--item"
+                to={club_social_media.website}
               >
-                <img src="../../../assets/website.svg" alt="website" />
+                <Website />
               </Link>
             )}
-            {!clubData.acf.club.club_social_media.facebook ? null : (
+            {!club_social_media.facebook ? null : (
               <Link
-                className="club__social--facebook"
-                to={clubData.acf.club.club_social_media.facebook}
+                className="club__social--item"
+                to={club_social_media.facebook}
               >
-                <img src="../../../assets/facebook.svg" alt="facebook" />
+                <Facebook />
               </Link>
             )}
-            {!clubData.acf.club.club_social_media.instagram ? null : (
+            {!club_social_media.instagram ? null : (
               <Link
-                className="club__social--instagram"
-                to={clubData.acf.club.club_social_media.instagram}
+                className="club__social--item"
+                to={club_social_media.instagram}
               >
-                <img src="../../../assets/instagram.svg" alt="instagram" />
+                <Instagram />
               </Link>
             )}
-            {!clubData.acf.club.club_social_media.twitter ? null : (
+            {!club_social_media.twitter ? null : (
               <Link
-                className="club__social--twitter"
-                to={clubData.acf.club.club_social_media.twitter}
+                className="club__social--item"
+                to={club_social_media.twitter}
               >
-                <img src="../../../assets/twitter.svg" alt="twitter" />
+                <Twitter />
               </Link>
             )}
           </div>

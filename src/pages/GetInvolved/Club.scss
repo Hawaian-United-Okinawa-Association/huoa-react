@@ -1,9 +1,13 @@
 .club {
-  &__nav {
+  &__breadcrumb {
     margin-top: 6vh;
   }
 
-  &__nav--item:hover {
+  &__breadcrumb--item {
+    margin: 10px;
+  }
+
+  &__breadcrumb--item:hover {
     color: $dark-purple;
   }
 
@@ -45,6 +49,12 @@
   &__social {
     display: flex;
     justify-content: space-between;
-    width: 25%;
+    max-width: 60vw;
+
+    &--item {
+      display: inline-flex;
+      max-width: 30px;
+      max-height: 30px;
+    }
   }
 }
