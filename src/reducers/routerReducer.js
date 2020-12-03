@@ -13,8 +13,8 @@ const INITIAL_STATE = {
       phase1: true,
       children: [
         {
-          name: 'Mission and Values',
-          linkTo: '/about/mission-and-values',
+          name: 'Mission and Purpose',
+          linkTo: '/about/mission-and-purpose',
           phase1: true
         },
         {

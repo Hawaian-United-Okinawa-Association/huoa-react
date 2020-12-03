@@ -1,0 +1,14 @@
+.about-mission-purpose{
+  &__body{
+    margin-bottom: 4.5rem;
+
+    h4 {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    li + li{
+      padding-top: 0.75em;
+    } 
+  }
+}
