@@ -6,9 +6,7 @@ import Layout from "components/Layout/Layout";
 const GetInvolved = ({ data }) => {
   let clubDataAll = useSelector((state) => state.clubs);
 
-  if (!data) {
-    return null;
-  } else {
+  if (!!data) {
     const { title, body } = data.join_a_club_page;
     const renderClubs = clubDataAll.map((club) => {
       return (
@@ -30,10 +28,8 @@ const GetInvolved = ({ data }) => {
             dangerouslySetInnerHTML={{ __html: body }}
           />
           <div className="get-involved__body">
-            {!!clubDataAll ? (
+            {!!clubDataAll && (
               <ul className="get-involved__items">{renderClubs}</ul>
-            ) : (
-              <h4>Loading Clubs...</h4>
             )}
           </div>
         </div>
