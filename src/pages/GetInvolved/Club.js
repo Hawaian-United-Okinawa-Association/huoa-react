@@ -75,8 +75,7 @@ const Club = ({ match }) => {
                 className="club__social--website"
                 to={clubData.acf.club.club_social_media.website}
               >
-                {/* NOTE: need a website svg */}
-                <img src="../../../assets/facebook.svg" alt="website" />
+                <img src="../../../assets/website.svg" alt="website" />
               </Link>
             )}
             {!clubData.acf.club.club_social_media.facebook ? null : (

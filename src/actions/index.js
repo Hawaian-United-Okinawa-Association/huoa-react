@@ -23,7 +23,7 @@ export const getClubs = () => async (dispatch) => {
 
     dispatch({ type: FETCH_CLUBS, payload: cache.clubs })
   } else {
-    const response = await axios.get(`${api}/wp/v2/clubs`);
+    const response = await axios.get(`${api}/wp/v2/clubs?&page=1&per_page=100`);
     
     dispatch({ type: FETCH_CLUBS, payload: response.data });
   }
