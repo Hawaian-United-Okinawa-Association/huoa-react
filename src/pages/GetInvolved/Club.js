@@ -13,7 +13,7 @@ const Club = ({ match }) => {
   let clubData = clubDataAll.find((object) => object.slug === currentClub);
 
   if (!clubData) {
-    return;
+    return null;
   } else {
     let { club_description,club_image,club_contact,club_social_media } = clubData.acf.club;
     let { rendered } = clubData.title;

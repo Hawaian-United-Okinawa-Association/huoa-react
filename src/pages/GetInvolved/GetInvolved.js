@@ -6,7 +6,7 @@ import Layout from "components/Layout/Layout";
 const GetInvolved = ({ data }) => {
   let clubDataAll = useSelector((state) => state.clubs);
 
-  if (!data) return;
+  if (!data) return null;
   else {
     const { title, body } = data.join_a_club_page;
     const renderClubs = clubDataAll.map((club) => {
