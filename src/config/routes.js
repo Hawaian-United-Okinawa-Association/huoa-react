@@ -15,28 +15,42 @@ import Contact from 'pages/Contact/Contact';
 import Donate from 'pages/Donate/Donate';
 import Geneology from 'pages/Geneology/Geneology';
 import GetInvolved from 'pages/GetInvolved/GetInvolved';
+import Club from 'pages/GetInvolved/Club'
 import Demo from 'pages/Demo/Demo';
+import AboutMissionAndPurpose from 'pages/MissionAndPurpose/MissionAndPurpose';
+import BanquetFacility from 'pages/BanquetFacility/BanquetFacility';
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
-  
   return (
     <Switch>
       <Route exact path="/">
         <Header props={ pageState.home } />
         <Home data={pageState.home} />
       </Route>
-      <Route path="/about">
+      <Route exact path="/about">
         <Header props={ pageState.about } />
         <About />
       </Route>
-      <Route exact path="/events">
+      <Route path="/about/mission-and-purpose">
+        <Header props={ pageState["mission-purpose"]} />
+        <AboutMissionAndPurpose data={ pageState["mission-purpose"]}/>
+      </Route>
+      <Route path="/about/banquet-facility">
+        <Header props={ pageState["banquet-facility"]}/>
+        <BanquetFacility data={ pageState["banquet-facility"]}/>
+      </Route>
+      <Route path="/events">
         <Header props={ pageState.events } />
         <Events />
       </Route>
-      <Route path="/join">
+      <Route exact path="/clubs">
         <Header props={ pageState.join } />
         <GetInvolved data={ pageState["join-a-club"] }/>
+      </Route>
+      <Route path="/clubs/:clubId">
+        <Header props={ pageState.join } />
+        <Club />
       </Route>
       <Route path="/news">
         <Header props={ pageState.news } />

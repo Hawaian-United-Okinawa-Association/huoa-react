@@ -8,7 +8,6 @@ import clubsReducer from './clubsReducer';
 
 export default combineReducers({
   clubs: clubsReducer,
-  // donation: donationReducer,
   heros: heroReducer,
   event: eventReducer,
   router: routerReducer,
