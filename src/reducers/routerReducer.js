@@ -76,7 +76,7 @@ const INITIAL_STATE = {
     {
       name: 'Events',
       linkTo: '/events',
-      phase1: true,
+      phase1: true
       // TODO: this is commented out for Phase 1
       // children: [
       //   {
@@ -106,6 +106,11 @@ const INITIAL_STATE = {
           linkTo: '/news/watch-and-listen'
         }
       ]
+    },
+    {
+      name: 'Shop',
+      linkTo: 'https://shophuoa.com/',
+      phase1: true
     },
     {
       name: 'Contact Us',
