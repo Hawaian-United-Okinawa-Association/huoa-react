@@ -11,6 +11,8 @@ const Navbar = () => {
   const [ navState, setNavState ] = useState(false);
   const { routes } = useSelector((state) => state.router);
 
+  console.log(routes);
+
   const renderMenuItems = (children) => {
     return children.map((item) => item.phase1 && (
       <Link

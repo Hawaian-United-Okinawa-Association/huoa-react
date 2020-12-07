@@ -8,13 +8,14 @@ import Navbar from 'components/Navbar/Navbar';
 import Footer from 'components/Footer/Footer';
 import Routes from 'config/routes';
 
-import { getHeros, getPages } from 'actions/index';
+import { getHeros, getPages, getNav } from 'actions/index';
 
 const App = () => {
   const dispatch = useDispatch();
 
   dispatch(getHeros());
   dispatch(getPages());
+  dispatch(getNav());
 
   return (
     <main>

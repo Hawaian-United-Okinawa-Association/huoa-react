@@ -42,3 +42,4 @@ export const MODAL_CLOSE = 'MODAL_CLOSE';
 
 export const GET_PAGES = 'GET_PAGES';
 export const GET_HEROS = 'GET_HEROS';
+export const GET_NAV = 'GET_NAV';
