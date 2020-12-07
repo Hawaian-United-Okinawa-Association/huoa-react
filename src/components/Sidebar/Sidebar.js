@@ -20,9 +20,11 @@ const Sidebar = () => {
         <div className="sidebar__card">
         <div className="sidebar__parent">{ current.name }</div>
         { children.map((child, i) =>
-          <Link to={ child.linkTo } key={ i }>
-            <div className="sidebar__link">{ child.name }</div>
-          </Link>
+          !!child.phase1 && (
+            <Link to={ child.linkTo } key={ i }>
+              <div className="sidebar__link">{ child.name }</div>
+            </Link>            
+          )
         )}
       </div>
       ) }
