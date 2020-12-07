@@ -15,9 +15,19 @@ const DonateSectionOne = ({ data }) => {
       <div className='donate-section-one__body'>
         <div className='donate-section-one__content'>
           <div className='donate-section-one__text' dangerouslySetInnerHTML={createTextMarkup()} />
-          <Button link={data.button_link} type='filled'>{data.button_text}</Button>
+          <Button 
+            link={data.button_link} 
+            shouldOpenNewTab
+            type='filled' 
+          >
+            {data.button_text}
+          </Button>
         </div>
-        <Image className='donate-section-one__image' img={data.image_link} alt='Giving To HUOA'/>
+        <Image 
+          alt='Giving To HUOA'
+          className='donate-section-one__image' 
+          img={data.image_link} 
+        />
       </div>
     </div>
   )
