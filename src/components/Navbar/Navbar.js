@@ -9,27 +9,27 @@ import { ReactComponent as HUOALogo } from '../../assets/huoa-logo.svg';
 
 const Navbar = () => {
   const [ navState, setNavState ] = useState(false);
-  const { routes } = useSelector((state) => state.router);
-
-  console.log(routes);
+  const navRoutes = useSelector((state) => state.nav);
 
   const renderMenuItems = (children) => {
-    return children.map((item) => item.phase1 && (
-      <Link
-        className="navbar__dropdown--link"
-        to={item.linkTo}
-        onClick={() => setNavState(false)}
-        key={item.linkTo}
-        data-text={item.name}
-      >
-        {item.name}
-      </Link>
-    ));
+    return children.map(item => {
+      return (
+        <Link
+          className="navbar__dropdown--link"
+          to={item.linkTo}
+          onClick={() => setNavState(false)}
+          key={item.linkTo}
+          data-text={item.name}
+        >
+          {item.name}
+        </Link>
+      )
+    })
   };
 
   const renderNavItems = (items) => {
-    return items.map((item) => {
-      return item.phase1 && (
+    return items.map(item => {
+      return (
         <NavItem name={item.name} linkTo={item.linkTo} key={item.linkTo} navState={navState} setNavState={setNavState}>
           {!!item.children && (
             <div className="navbar__dropdown">
@@ -54,7 +54,7 @@ const Navbar = () => {
           </div>
         </Link>
         <ul className="navbar__items" onMouseLeave={() => setNavState(false)}>
-          {renderNavItems(routes)}
+          {renderNavItems(navRoutes)}
         </ul>
       </div>
     </nav>

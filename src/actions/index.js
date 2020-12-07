@@ -36,15 +36,24 @@ export const getNav = () => async (dispatch) => {
     dispatch({ type: GET_NAV, payload: cache.nav });
   } else {
     const response = await axios.get(`${api}/menus/v1/menus/main-navigation`);
-    const data = response.data.items;
-    const dataTwo = response.data.items.map(item => {
-      return {
-        'name': item.title,
-        'linkTo': '/' + item.slug,
-        'children': item.children
+    const data = response.data.items.map(item => {
+      let children = false;
+      if (item.child_items) {
+        children = item.child_items.map(child => {
+          return {
+            linkTo: child.url,
+            name: child.title,
+          }
+        })
       }
-    })
-    dispatch({ type: GET_NAV, payload: response });
+      return {
+        linkTo: item.url,
+        name: item.title,
+        children: children,
+      }
+    });
+
+    dispatch({ type: GET_NAV, payload: data });
   }
 };
 
