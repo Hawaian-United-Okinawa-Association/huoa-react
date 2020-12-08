@@ -6,14 +6,12 @@ import Layout from 'components/Layout/Layout';
 import Image from 'components/Image/Image';
 
 const Event = ({ match }) => {
-  const events = useSelector((state) => state.events);
+  const eventsData = useSelector((state) => state.events);
+  const event = eventsData.find((event) => event.slug === match.params.eventId);
 
-  if (!events.length) return null;
+  if (!event) return null;
 
-  const { acf } = events.find(event => event.slug === match.params.eventId);
-
-  let { event_title, event_details, event_location, event_date } = acf;
-
+  let { event_title, event_details, event_location, event_date } = event.acf;
   let splitEvent = event_date.split(' ');
   let month = splitEvent[0];
   let day = splitEvent[1].slice(0, -1);

@@ -14,8 +14,6 @@ const CardEvent = ({ props }) => {
   let year = splitEvent[2];
   let time =`${ splitEvent[3] } ${ splitEvent[4] }`;
 
-  console.log(splitEvent);
-
   return (
     <div className="card-event">
       <div className="card-event__date">{ month }<br />{ day }</div>

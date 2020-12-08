@@ -41,7 +41,7 @@ const Routes = () => {
         <Header props={ pageState["banquet-facility"]}/>
         <BanquetFacility data={ pageState["banquet-facility"]}/>
       </Route>
-      <Route path="/events">
+      <Route exact path="/events">
         <Header props={ pageState.events } />
         <Events />
       </Route>

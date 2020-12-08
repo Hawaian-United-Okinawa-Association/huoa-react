@@ -3,7 +3,7 @@ import Layout from 'components/Layout/Layout';
 
 const Contact = ({ data }) => {
   if (!data) return null;
-  console.log(data);
+
   return (
     <Layout>
       <div className="contact">
