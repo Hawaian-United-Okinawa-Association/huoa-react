@@ -8,7 +8,7 @@ import { ReactComponent as Ballroom } from 'assets/ballroom.svg';
 import { ReactComponent as Newsletter1 } from 'assets/purple-blast.svg';
 import { ReactComponent as Newsletter2 } from 'assets/uchinanchu.svg';
 
-const Sidebar = props => {
+const Sidebar = () => {
   const { routes } = useSelector((state) => state.router);
   const { pathname } = useLocation();
   const current = routes.find(route => route.linkTo === `/${pathname.split('/')[1]}`);
