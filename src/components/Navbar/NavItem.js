@@ -22,7 +22,13 @@ const NavItem = (props) => {
   const redirectItem = (name, linkTo, isActive) => {
     return (
       <div>
-        <a className={`navbar__link ${isActive}`} href={linkTo} data-text={name} onMouseEnter={() => setNavState(name)}>
+        <a
+          className={`navbar__link ${isActive}`}
+          href={linkTo}
+          data-text={name}
+          target="_blank"
+          onMouseEnter={() => setNavState(name)}
+        >
           {name}
         </a>
       </div>
