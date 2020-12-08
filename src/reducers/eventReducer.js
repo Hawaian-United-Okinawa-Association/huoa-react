@@ -1,14 +1,14 @@
-// import { CREATE_EVENT, FETCH_EVENT, FETCH_EVENTS, EDIT_EVENT, DELETE_EVENT } from '../actions/actionTypes';
+// TODO: need to add logic that handles past events and add logic where we are only passing data from ACF
 
-export default (state = {}, action) => {
-	switch (action.type) {
-    case 'FETCH_EVENTS':
-      return {
-        ...state,
-        events: action.events
-      }
+import { GET_EVENTS } from '../actions/actionTypes';
 
-  default:
-    return state;
+const getEventsReducer = (state = [], action) => {
+  switch (action.type) {
+    case GET_EVENTS:
+      return action.payload;
+    default:
+      return state;
   }
 };
+
+export default getEventsReducer;

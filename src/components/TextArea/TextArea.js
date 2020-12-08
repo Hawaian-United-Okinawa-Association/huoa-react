@@ -8,8 +8,8 @@ const TextArea = ({ props }) => {
   return (
     <Container>
       <div className="text-area">
-        <h2>{ title }</h2>
-        <p>{ body }</p>
+        <h2 className="text-area__title">{ title }</h2>
+        <p className="text-area__body">{ body }</p>
         <Button link={ button.link } type="filled">{ button.text }</Button>
       </div>
     </Container>

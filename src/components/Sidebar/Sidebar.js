@@ -8,7 +8,7 @@ import { ReactComponent as Ballroom } from 'assets/ballroom.svg';
 import { ReactComponent as Newsletter1 } from 'assets/purple-blast.svg';
 import { ReactComponent as Newsletter2 } from 'assets/uchinanchu.svg';
 
-const Sidebar = (props) => {
+const Sidebar = () => {
   const { routes } = useSelector((state) => state.router);
   const { pathname } = useLocation();
   const current = routes.find((route) => route.linkTo === `/${pathname.split('/')[1]}`);
@@ -18,17 +18,16 @@ const Sidebar = (props) => {
     <div className="sidebar">
       {!!children && (
         <div className="sidebar__card">
-          <div className="sidebar__parent">{current.name}</div>
-          {children.map(
-            (child, i) =>
-              !!child.phase1 && (
-                <Link to={child.linkTo} key={i}>
-                  <div className="sidebar__link">{child.name}</div>
-                </Link>
-              )
-          )}
-        </div>
-      )}
+        <div className="sidebar__parent">{ current.name }</div>
+        { children.map((child, i) =>
+          !!child.phase1 && (
+            <Link to={ child.linkTo } key={ i }>
+              <div className="sidebar__link">{ child.name }</div>
+            </Link>
+          )
+        )}
+      </div>
+      ) }
       <div className="sidebar__card sidebar__card--center">
         <h3>Rent Our Ballroom</h3>
         <Ballroom className="sidebar__icon" />
@@ -46,13 +45,11 @@ const Sidebar = (props) => {
       </div>
       <div className="sidebar__card sidebar__card--center">
         <h3>Join Our Newsletters</h3>
-        <Newsletter1 className="sidebar__icon" />
-        <p>Purple Blast</p>
-        <Newsletter2 className="sidebar__icon" />
-        <p>Uchinanchu Newsletter</p>
-        <Button className="sidebar__button" type="text" link="#">
-          Learn More
-        </Button>
+        <Newsletter1 />
+        <p className="sidebar__newsletters">Purple Blast</p>
+        <Newsletter2 />
+        <p className="sidebar__newsletters">Uchinanchu Newsletter</p>
+        <Button className="sidebar__button" type="text" link="#">Learn More</Button>
       </div>
     </div>
   );
