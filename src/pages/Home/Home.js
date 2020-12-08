@@ -76,7 +76,7 @@ const Home = ({ data }) => {
             {/* TODO: refactor this is not how we should be styling inner card elements. They should be styled in the Home.scss file. */}
             <div className='card-blank--subscribe'>
               <h3>Purple Blast</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+              <p>Our monthly online newsletter to keep up to date on what's happening in the Hawaii Okinawa community.</p>
               <input className='card-blank--input' type='text' placeholder='Email Address'></input>
               <Button type='filled' onClick={() => console.log('You clicked a button')}>Subscribe</Button>
             </div>
@@ -85,7 +85,7 @@ const Home = ({ data }) => {
           <div className='card-blank--newsletter'>
               <h3>Uchinanchu Newsletter</h3>
               {/* TODO: we should never do inline styling */}
-              <p style={{marginBottom: '24px'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+              <p style={{marginBottom: '24px'}}>Our official bi-monthly newsletter of HUOA, featuring the latest news and events of the organization as well as tidbits on Okinawan cultural activities and performing arts.</p>
               <div style={{width: '100px'}}>
                 <Button type='filled' onClick={() => console.log('You clicked a button')}>SIGNUP</Button>
               </div>
