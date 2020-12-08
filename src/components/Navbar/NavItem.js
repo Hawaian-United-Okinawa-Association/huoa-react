@@ -27,6 +27,7 @@ const NavItem = (props) => {
           href={linkTo}
           data-text={name}
           target="_blank"
+          rel="noopener"
           onMouseEnter={() => setNavState(name)}
         >
           {name}
