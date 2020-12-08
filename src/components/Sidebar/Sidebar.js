@@ -23,7 +23,7 @@ const Sidebar = () => {
           !!child.phase1 && (
             <Link to={ child.linkTo } key={ i }>
               <div className="sidebar__link">{ child.name }</div>
-            </Link>            
+            </Link>
           )
         )}
       </div>
@@ -42,9 +42,9 @@ const Sidebar = () => {
       <div className="sidebar__card sidebar__card--center">
         <h3>Join Our Newsletters</h3>
         <Newsletter1 />
-        <p>Purple Blast</p>
+        <p className="sidebar__newsletters">Purple Blast</p>
         <Newsletter2 />
-        <p>Uchinanchu Newsletter</p>
+        <p className="sidebar__newsletters">Uchinanchu Newsletter</p>
         <Button className="sidebar__button" type="text" link="#">Learn More</Button>
       </div>
     </div>

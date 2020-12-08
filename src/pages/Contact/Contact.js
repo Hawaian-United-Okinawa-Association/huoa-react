@@ -8,8 +8,10 @@ const Contact = ({ data }) => {
     <Layout>
       <div className="contact">
         <div className="contact__section">
+          <div className="contact__col">
           <h3>{ data.section_1.section_title }</h3>
-          <div className="contact__col" dangerouslySetInnerHTML={{ __html: data.section_1.section_body.left }}></div>
+          <div dangerouslySetInnerHTML={{ __html: data.section_1.section_body.left }} />
+          </div>
           <div className="contact__col"><iframe src={ data.section_1.section_body.right } className="contact__map" title="Google Maps" frameBorder="0" aria-hidden="false" tabIndex="0"></iframe></div>
         </div>
         <div className="contact__section">
