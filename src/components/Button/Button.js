@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { ReactComponent as PlusIcon } from 'assets/plus-icon.svg';
 
-const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled, shouldOpenNewTab }, ref) => {
+const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled }, ref) => {
   const hasIcon = () => icon ? <PlusIcon className='button__plus-icon'/> : null;
 
   const rootURL = new RegExp('huoa.org/')
@@ -45,8 +45,8 @@ const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled
       <a 
         className='button' 
         href={link} 
-        rel={shouldOpenNewTab ? "noopener noreferrer" : "external"}
-        target={shouldOpenNewTab ? "_blank" : "_self"} 
+        rel='noopener noreferrer'
+        target='_blank' 
         type={type} ref={ref} 
       >
         {hasIcon()}
