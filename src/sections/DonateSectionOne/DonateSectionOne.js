@@ -17,7 +17,6 @@ const DonateSectionOne = ({ data }) => {
           <div className='donate-section-one__text' dangerouslySetInnerHTML={createTextMarkup()} />
           <Button 
             link={data.button_link} 
-            shouldOpenNewTab
             type='filled' 
           >
             {data.button_text}
