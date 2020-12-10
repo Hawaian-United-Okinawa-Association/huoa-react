@@ -3,10 +3,10 @@ import Layout from 'components/Layout/Layout.js';
 import Container from 'components/Container/Container.js';
 import Button from 'components/Button/Button.js';
 import Image from 'components/Image/Image.js';
-import bfimg1 from 'assets/banquet-facility1.jpg';
-import bfimg2 from 'assets/banquet-facility2.jpg';
-import bfimg3 from 'assets/banquet-facility3.jpg';
-import bfimg4 from 'assets/banquet-facility4.jpg';
+import bfimg1 from 'assets/banquet-facility-1.webp';
+import bfimg2 from 'assets/banquet-facility-2.webp';
+import bfimg3 from 'assets/banquet-facility-3.webp';
+import bfimg4 from 'assets/banquet-facility-4.webp';
 
 function createMarkup(body) {
   return {__html: body};
@@ -23,15 +23,15 @@ const BanquetFacility = ({data}) => {
       <div className="banquet-facility">
         <div className="banquet-facility__triple">
           <Image className="banquet-facility__image--triple" img={bfimg1} alt=""></Image>
-          <Image className="banquet-facility__image--triple" img={bfimg4} alt=""></Image>
           <Image className="banquet-facility__image--triple" img={bfimg2} alt=""></Image>
+          <Image className="banquet-facility__image--triple" img={bfimg3} alt=""></Image>
         </div>
         <h2 className="banquet-facility__title">{section_one.title}</h2>
         <h4 className="banquet-facility__subtitle">{section_one.subtitle}</h4>
         <div className="banquet-facility__body" dangerouslySetInnerHTML = {createMarkup(section_one.body)}/>
         <h1 className="banquet-facility__section-heading">{section_two.title}</h1>
         <div className="banquet-facility__container">
-          <Image className="banquet-facility__image" img={bfimg3} alt=""/>
+          <Image className="banquet-facility__image" img={bfimg4} alt=""/>
           <div className="banquet-facility__section">
             <div className="banquet-facility__body--right" dangerouslySetInnerHTML= {createMarkup(section_two.body)}/>
             <Button type="filled" link={section_two.button.link}>{section_two.button.text}</Button>
