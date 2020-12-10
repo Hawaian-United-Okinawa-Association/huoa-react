@@ -1,0 +1,26 @@
+$max_event_content_width: 800px;
+
+.event {
+  margin: 2rem auto;
+
+  &__highlight {
+    color: $dark-purple;
+  }
+
+  &__image {
+    max-width: 600px;
+  }
+
+  &__details, &__date, &__location {
+    max-width: $max_event_content_width;
+  }
+
+  &__date {
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  &__spacer {
+    margin: auto .4rem;
+  }
+}

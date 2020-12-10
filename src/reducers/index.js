@@ -9,7 +9,7 @@ import clubsReducer from './clubsReducer';
 export default combineReducers({
   clubs: clubsReducer,
   heros: heroReducer,
-  event: eventReducer,
+  events: eventReducer,
   router: routerReducer,
   modals: modalReducer,
   pages: pagesReducer
