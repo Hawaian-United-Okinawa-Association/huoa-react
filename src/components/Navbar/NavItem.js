@@ -12,7 +12,7 @@ const NavItem = (props) => {
   const donateItem = () => {
     return (
       <div onMouseEnter={() => setNavState(null)}>
-        <Button type="outlined" link="donate">
+        <Button type="outlined" link="/donate">
           Donate
         </Button>
       </div>
