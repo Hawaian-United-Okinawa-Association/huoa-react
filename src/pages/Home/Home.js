@@ -27,11 +27,11 @@ const Home = ({ data }) => {
             onClick={() => console.log('you clicked a button')}
           />
           <CardLarge
-            image='https://huoa.org/nuuzi/banquetfacility/hoc.jpg'
-            altTag='join the community'
-            header='Join The Community'
+            image=' https://dev.huoa.org/wp-content/uploads/2020/12/dancegroup.webp'
+            altTag='join a club'
+            header='Join A Club'
             body='The HUOA is made up of 50 member clubs, whose combined member total exceeds 40,000.'
-            button='SCHEDULE'
+            button='JOIN'
             onClick={() => console.log('you clicked a button')}
           />
         </Container>
