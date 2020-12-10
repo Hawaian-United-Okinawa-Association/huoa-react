@@ -5,9 +5,9 @@
 
    &__triple{
     display: grid;
-    // grid-template-rows: repeat(8, 5vw);
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 24px;
+    margin-top: 24px;
   }
 
   &__image{
