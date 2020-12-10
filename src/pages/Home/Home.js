@@ -17,7 +17,7 @@ const Home = ({ data }) => {
       <TextArea props={ data.builder[0] }/>
       <section className="home__section">
         <Container col='2'>
-          {/* TODO: this needs to be refactored to only pass in one object like TextArea */}
+          {/* TODO: this needs to be refactored to only pass in one object like TextArea - the button functionality is only doing onclick when in reality these could be links */}
           <CardLarge
             image='https://huoa.org/nuuzi/banquetfacility/hoc.jpg'
             altTag='banquet facility'
@@ -67,7 +67,7 @@ const Home = ({ data }) => {
         </Container>
       </section>
 
-      <section className="home__section">
+      <section className="home__section" id="newsletters">
         <Container col='1'>
           <h2 className="home__title">Join Our Newsletter</h2>
         </Container>

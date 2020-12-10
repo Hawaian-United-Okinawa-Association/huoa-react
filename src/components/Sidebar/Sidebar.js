@@ -32,24 +32,24 @@ const Sidebar = () => {
         <h3>Rent Our Ballroom</h3>
         <Ballroom className="sidebar__icon" />
         <p>THE LEGACY BALLROOM is handled by A Catered Experience, a division of Zippy's Restaurants</p>
-        <Button className="sidebar__button" type="text" link="#">
+        <Button className="sidebar__button" type="text" link="/about/banquet-facility">
           Learn More
         </Button>
       </div>
       <div className="sidebar__card sidebar__card--center">
         <h3>Support HUOA</h3>
         <p>Your support is vital in promoting and preserving Okinawan culture.</p>
-        <Button className="sidebar__button" type="text" link="#">
+        <Button className="sidebar__button" type="text" link="/clubs">
           Learn More
         </Button>
       </div>
       <div className="sidebar__card sidebar__card--center">
         <h3>Join Our Newsletters</h3>
-        <Newsletter1 />
+        <Newsletter1 className="sidebar__icon" />
         <p className="sidebar__newsletters">Purple Blast</p>
-        <Newsletter2 />
+        <Newsletter2 className="sidebar__icon" />
         <p className="sidebar__newsletters">Uchinanchu Newsletter</p>
-        <Button className="sidebar__button" type="text" link="#">Learn More</Button>
+        <Button className="sidebar__button" type="text" link="/">Learn More</Button>
       </div>
     </div>
   );

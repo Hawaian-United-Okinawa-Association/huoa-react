@@ -3,7 +3,7 @@
 .card-square {
   display: grid;
   grid-template-areas: 'text' 'button';
-  grid-template-rows: auto auto;
+  grid-template-rows: auto 80px;
   min-width: 280px;
   border-radius: $card-border-radius;
   background: $lighter-grey;
@@ -36,7 +36,7 @@
 }
 
 .card-square__body {
-  margin: 0 15px;
+  margin: .8rem 15px;
   font-size: 17px;
   line-height: 25px;
 }

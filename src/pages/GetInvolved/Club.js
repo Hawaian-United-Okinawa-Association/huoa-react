@@ -28,7 +28,7 @@ const Club = ({ match }) => {
             <Link className="club__breadcrumb--item" to="/clubs">
               Join a HUOA Club
             </Link>
-            /<Link className="club__breadcrumb--item">{rendered}</Link>
+            /<span className="club__breadcrumb--item">{rendered}</span>
           </p>
           <br />
           <div className="club__header">
@@ -43,35 +43,31 @@ const Club = ({ match }) => {
           </div>
           {!!club_description &&
             <div
-              classname="club__description"
+              className="club__description"
               dangerouslySetInnerHTML={{ __html: club_description }}
             />
           }
 
-          {!!club_contact.address &&
-          !!club_contact.email &&
-          !!club_contact.phone &&
-            <div className="club__contact">
-              <div className="club__contact--title">Contact Information</div>
-              {!!club_contact.address && 
-                <div className="club__contact--address">
-                  <div>{club_contact.address}</div>
-                </div>
-              }
-              {!!club_contact.email && 
-                <div className="club__contact--email">
-                  <div>{club_contact.email}</div>
-                </div>
-              }
-              {!!club_contact.phone && 
-                <div className="club__contact--phone">
-                  <div>P: {club_contact.phone}</div>
-                </div>
-              }
-            </div>
-          }
+          <div className="club__contact">
+            <div className="club__contact--title">Contact Information</div>
+            {!!club_contact.address &&
+              <div className="club__contact--address">
+                <div>{club_contact.address}</div>
+              </div>
+            }
+            {!!club_contact.email &&
+              <div className="club__contact--email">
+                <div>{club_contact.email}</div>
+              </div>
+            }
+            {!!club_contact.phone &&
+              <div className="club__contact--phone">
+                <div>P: {club_contact.phone}</div>
+              </div>
+            }
+          </div>
           <div className="club__social">
-            {!!club_social_media.website && 
+            {!!club_social_media.website &&
               <Link
                 className="club__social--item"
                 to={club_social_media.website}
