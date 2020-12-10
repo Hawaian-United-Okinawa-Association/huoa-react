@@ -1,19 +1,26 @@
+// Official Figma Colors
+$primary-1: #4F2C80;
+$primary-2: #A183CC;
+$primary-3: #E2D8EF;
+$primary-4: #F5F0FC;
+$primary-5: #285F1A;
+
 // Default Colors
 $white: #FFFFFF;
 $black: #242728;
 $dark-grey: #494949;
 $grey: #646668;
 $lighter-grey: #F7F7F7;
-$light-grey: #DADADA;
+$light-grey: #F7F7F7;
 $danger: #FF0000;
 
 // Custom Colors
-$darkest-purple: #5E264E;
-$dark-purple: #763263;
-$purple: #9F4E8D;
-$light-purple: #EFE8F6;
-$lighter-purple: #F7F0F5;
-$dark-green: #194F1A;
+$darkest-purple: $primary-1;
+$dark-purple: $primary-1;
+$purple: $primary-2;
+$light-purple: $primary-3;
+$lighter-purple: $primary-4;
+$dark-green: $primary-5;
 
 // Box Shadows
 $card-blank-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14), 0px 4px 5px rgba(0, 0, 0, 0.12), 0px 1px 10px rgba(0, 0, 0, 0.2);

@@ -16,7 +16,12 @@ const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled
   }
   else if (onClick) {
     return (
-      <button className='button' type={type} ref={ref} onClick={onClick} disabled={disabled}>
+      <button 
+        className='button' 
+        disabled={disabled}
+        onClick={onClick} 
+        type={type} ref={ref} 
+      >
         {hasIcon()}
         {children}
       </button>
@@ -24,7 +29,12 @@ const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled
   }
   else if (link.charAt(0) === '/') {
     return (
-      <Link to={link} className='button' type={type} ref={ref}>
+      <Link 
+        className='button' 
+        ref={ref}
+        to={link} 
+        type={type} 
+      >
         {hasIcon()}
         {children}
       </Link>
@@ -32,7 +42,13 @@ const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled
   }
   else {
     return (
-      <a href={link} className='button' type={type} ref={ref}>
+      <a 
+        className='button' 
+        href={link} 
+        rel='noopener noreferrer'
+        target='_blank' 
+        type={type} ref={ref} 
+      >
         {hasIcon()}
         {children}
       </a>

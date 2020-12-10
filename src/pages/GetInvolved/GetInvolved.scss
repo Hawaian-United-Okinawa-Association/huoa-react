@@ -1,0 +1,26 @@
+.get-involved {
+  &__description {
+    margin-bottom: 50px;
+  }
+
+  &__items {
+    padding-left: 0;
+    list-style: none;
+    columns: 2;
+    
+    @media screen and (max-width: $breakpoint-mobile) {
+      columns: 1;
+    }
+  }
+
+  &__item-link {
+    display: inline-block;
+    padding-bottom: 15px;
+    text-decoration-line: underline;
+  }
+
+  &__item-link:hover {
+    color: $dark-purple;
+    font-weight: 800;
+  }
+}

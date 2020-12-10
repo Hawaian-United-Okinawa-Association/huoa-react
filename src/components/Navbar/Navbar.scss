@@ -60,6 +60,10 @@
     width: 55%;
     height: 50%;
     list-style: none;
+
+    .button {
+      margin-left: 32px;
+    }
   }
 
   &__titles {
@@ -76,6 +80,7 @@
     margin: auto 1rem;
     color: $black;
     font-size: 1.1rem;
+    cursor: pointer;
 
     &--active {
       color: $dark-purple;
