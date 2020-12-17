@@ -1,4 +1,7 @@
 .banquet-facility{
+
+  margin-bottom: 9rem;
+
   &__body{
     margin-bottom: 4.5rem;
   }
@@ -46,6 +49,7 @@
     @media screen and (min-width: $breakpoint-tablet){
       h4{
         margin-top: 0px;
+        margin-bottom: 0.5rem;
       }
     }
   }
