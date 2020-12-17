@@ -14,6 +14,9 @@ const Sidebar = () => {
   const current = routes.find((route) => route.linkTo === `/${pathname.split('/')[1]}`);
   const { children } = current;
 
+
+  console.log(pathname);
+
   return (
     <div className="sidebar">
       {!!children && (
@@ -22,7 +25,7 @@ const Sidebar = () => {
         { children.map((child, i) =>
           !!child.phase1 && (
             <Link to={ child.linkTo } key={ i }>
-              <div className="sidebar__link">{ child.name }</div>
+              <div className={`sidebar__link ${(pathname === child.linkTo)?'sidebar__link--active':''}`}>{ child.name }</div>
             </Link>
           )
         )}
