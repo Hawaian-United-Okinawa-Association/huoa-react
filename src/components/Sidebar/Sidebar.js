@@ -14,9 +14,6 @@ const Sidebar = () => {
   const current = routes.find((route) => route.linkTo === `/${pathname.split('/')[1]}`);
   const { children } = current;
 
-
-  console.log(pathname);
-
   return (
     <div className="sidebar">
       {!!children && (
