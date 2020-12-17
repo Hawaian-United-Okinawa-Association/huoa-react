@@ -60,7 +60,7 @@ const Club = ({ match }) => {
               <div className="club__contact--title">Contact Information</div>
               {!!club_contact.address && (
                 <div className="club__contact--address">
-                  <div>{club_contact.address}</div>
+                  <div dangerouslySetInnerHTML={{ __html: club_contact.address }} />
                 </div>
               )}
               {!!club_contact.email && (
