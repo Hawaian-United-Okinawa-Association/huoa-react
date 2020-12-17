@@ -31,7 +31,7 @@ const Hero = () => {
     <div className="hero">
       <div className="hero__wrapper">
         { heroImages.map((image, i) =>
-          <div key={i} className='hero__slide' data-active={ active === i } key={ i }>
+          <div className='hero__slide' data-active={ active === i } key={ i }>
             <Image className="hero__image"
               webp={ image.acf.hero_image }
             />
