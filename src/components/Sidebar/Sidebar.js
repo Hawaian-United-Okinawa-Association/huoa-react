@@ -22,7 +22,7 @@ const Sidebar = () => {
         { children.map((child, i) =>
           !!child.phase1 && (
             <Link to={ child.linkTo } key={ i }>
-              <div className={`sidebar__link ${(pathname === child.linkTo)?'sidebar__link--active':''}`}>{ child.name }</div>
+              <div className="sidebar__link" data-active={!!(pathname === child.linkTo)}>{ child.name }</div>
             </Link>
           )
         )}

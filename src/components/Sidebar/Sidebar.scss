@@ -23,7 +23,7 @@
   &__link {
     padding: .5rem 1rem;
 
-    &:hover, &--active {
+    &:hover, &[data-active='true'] {
       background-color: $purple;
       color: $white;
     }
