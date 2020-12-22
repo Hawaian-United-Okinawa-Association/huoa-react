@@ -1,12 +1,27 @@
 .banquet-facility{
+
+  margin-bottom: 15rem;
+
   &__body{
     margin-bottom: 4.5rem;
+  }
+
+   &__triple{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px;
+    margin-top: 24px;
   }
 
   &__image{
     grid-column-start: 1;
     grid-column-end: 2;
     width: 100%;
+
+    &--triple{
+      object-fit: cover;
+      width: 100%;
+    }
   }
   
   &__section-heading{
@@ -30,5 +45,11 @@
 
   &__body--right{
     padding-bottom: 2.5rem;
+    
+    @media screen and (min-width: $breakpoint-tablet){
+      h4{
+        margin-top: 0px;
+      }
+    }
   }
 }
