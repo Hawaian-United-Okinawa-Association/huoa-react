@@ -20,6 +20,7 @@ const Club = ({ match }) => {
       club_image,
       club_contact,
       club_social_media,
+      club_newsletter,
     } = clubData.acf.club;
     let { rendered } = clubData.title;
     return (
@@ -51,6 +52,12 @@ const Club = ({ match }) => {
               className="club__description"
               dangerouslySetInnerHTML={{ __html: club_description }}
             />
+          )}
+          
+          {!!club_newsletter && (
+            <div className="club__newsletter">
+              <a href={club_newsletter}>Optional Link</a>
+            </div>
           )}
 
           { !!club_contact.address || !!club_contact.city_zip || !!club_contact.email || !!club_contact.phone ? (

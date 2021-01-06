@@ -35,6 +35,16 @@
   &__description {
     max-width: 60vw;
   }
+  
+  &__newsletter {
+    max-width: 8vw;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: $dark-purple;
+    color: $white;
+    text-align: center;
+    cursor: pointer;
+  }
 
   &__contact {
     width: 20vw;
