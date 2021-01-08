@@ -64,7 +64,7 @@ const NavMobile = () => {
             <h5 className="nav-mobile__title--sm">Celebrating 120 years of Uchinanchu in Hawaii</h5>
           </div>
         </div>
-        <Hamburger onClick={() => setNavState(true)} />
+        <Hamburger className="nav-mobile__hamburger" onClick={() => setNavState(true)} />
         <div className={`nav-mobile__sidebar${navState === 'init' ? '' : navState ? '--active' : '--inactive'}`}>
           <ButtonClose onClick={() => setNavState(!navState)} className="nav-mobile__sidebar--close" />
           <ul className="nav-mobile__sidebar--items">{renderSideItems(mobileRoutes)}</ul>
