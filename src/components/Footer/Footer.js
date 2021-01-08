@@ -7,19 +7,20 @@ import { ReactComponent as Twitter } from 'assets/twitter.svg';
 import { ReactComponent as Instagram } from 'assets/instagram.svg';
 import { ReactComponent as Facebook } from 'assets/facebook.svg';
 
-import './Footer.scss';
-
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__links">
-          <Link to="/contact" className="footer__link">Contact</Link>
-          <Link to="/opportunities" className="footer__link">Opportunities</Link>
+          <Link to="/about" className="footer__link">About</Link>
           <Link to="/get-invloved" className="footer__link">Get Involved</Link>
           <Link to="/events" className="footer__link">Events</Link>
+          <Link to="/contact" className="footer__link">Contact</Link>
+          {/* TODO: this will be added back later so we'll comment these out for now */}
+          {/* <Link to="/opportunities" className="footer__link">Opportunities</Link>
+          <Link to="/events" className="footer__link">Events</Link>
           <Link to="/geneology" className="footer__link">Geneology</Link>
-          <Link to="/news" className="footer__link">News</Link>
+          <Link to="/news" className="footer__link">News</Link> */}
           <Link to="/donate" className="footer__link">Donate</Link>
         </div>
         <Link to="/">

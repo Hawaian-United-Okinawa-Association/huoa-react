@@ -10,10 +10,12 @@ const INITIAL_STATE = {
     {
       name: 'About',
       linkTo: '/about',
+      phase1: true,
       children: [
         {
-          name: 'Mission and Values',
-          linkTo: '/about/mission-and-values'
+          name: 'Mission and Purpose',
+          linkTo: '/about/mission-and-purpose',
+          phase1: true
         },
         {
           name: 'History',
@@ -25,7 +27,8 @@ const INITIAL_STATE = {
         },
         {
           name: 'Banquet Facility',
-          linkTo: '/about/banquet-facility'
+          linkTo: '/about/banquet-facility',
+          phase1: true
         },
         {
           name: 'HUOA Team',
@@ -39,47 +42,52 @@ const INITIAL_STATE = {
     },
     {
       name: 'Get Involved',
-      linkTo: '/join',
+      linkTo: '/clubs',
+      phase1: true,
       children: [
         {
           name: 'Join a HUOA Club',
-          linkTo: '/join/clubs'
+          linkTo: '/clubs',
+          phase1: true
         },
         {
           name: 'Okinawan Performing Arts Directory',
-          linkTo: '/join/performing-arts-directory'
+          linkTo: '/performing-arts-directory'
         },
         {
           name: 'Club Sports',
-          linkTo: '/join/sports'
+          linkTo: '/sports'
         },
         {
           name: 'Scholarships & Awards',
-          linkTo: '/join/scholarships'
+          linkTo: '/scholarships'
         },
         {
           name: 'Volunteer',
-          linkTo: '/join/volunteer'
+          linkTo: '/volunteer'
         },
         {
           name: 'Donate',
-          linkTo: '/donate'
+          linkTo: '/donate',
+          phase1: true
         }
       ]
     },
     {
       name: 'Events',
       linkTo: '/events',
-      children: [
-        {
-          name: 'Calendar',
-          linkTo: '/events/calendar'
-        },
-        {
-          name: 'Class Schedule',
-          linkTo: '/events/classes'
-        }
-      ]
+      phase1: true
+      // TODO: this is commented out for Phase 1
+      // children: [
+      //   {
+      //     name: 'Calendar',
+      //     linkTo: '/events/calendar'
+      //   },
+      //   {
+      //     name: 'Class Schedule',
+      //     linkTo: '/events/classes'
+      //   }
+      // ]
     },
     {
       name: 'Shop',
@@ -104,12 +112,19 @@ const INITIAL_STATE = {
       ]
     },
     {
+      name: 'Shop',
+      linkTo: 'https://shophuoa.com/',
+      phase1: true
+    },
+    {
       name: 'Contact Us',
-      linkTo: '/contact'
+      linkTo: '/contact',
+      phase1: true
     },
     {
       name: 'Donate',
-      linkTo: '/donate'
+      linkTo: '/donate',
+      phase1: true
     }
   ]
 };

@@ -1,9 +1,6 @@
-@import './../../styles/fonts';
-@import './../../styles/utilities/colors.scss';
-
 .button {
   display: inline-block;
-  border: 2px solid $purple;
+  border: 2px solid $primary-1;
   border-radius: 120px;
   padding: 8px 16px;
   font-weight: 500;
@@ -16,12 +13,13 @@
   transition-property: background-color, color, border-color, fill;
 
   &[type=filled] {
-    background-color: $purple;
+    background-color: $primary-1;
     color: $white;
     fill: $white;
-    
-    &:focus {
-      background-color: $purple;
+
+    &:hover {
+      border-color: $primary-2;
+      background-color: $primary-2;
     }
 
     &:disabled {
@@ -53,7 +51,7 @@
 
   &[type=text] {
     border-color: transparent;
-    background: $white;
+    background: transparent;
     color: $dark-purple;
     font-weight: 600;
     fill: $dark-purple;
@@ -66,7 +64,7 @@
 
     &:hover {
       border-color: transparent;
-      background: rgba(179, 112, 160, 0.32);
+      background: $primary-3;
       color: $dark-purple;
       fill: $dark-purple;
     }

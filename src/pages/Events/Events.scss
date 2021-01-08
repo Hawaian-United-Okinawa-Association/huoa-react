@@ -1,0 +1,17 @@
+.events {
+  margin: 3rem auto 4rem;
+
+  &__title {
+    margin-top: 3rem;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2rem;
+  }
+}
