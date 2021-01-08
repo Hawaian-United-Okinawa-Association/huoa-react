@@ -60,8 +60,8 @@ const NavMobile = () => {
         <div className="nav-mobile__header">
           <HUOALogo className="nav-mobile__logo" height="90" width="90" />
           <div className="nav-mobile__titles">
-            <h2 className="nav-mobile__title">Hawaii United Okinawa Association</h2>
-            <h5 className="nav-mobile__title--sm">Celebrating 120 years of Uchinanchu in Hawaii</h5>
+            <div className="nav-mobile__title">Hawaii United Okinawa Association</div>
+            <div className="nav-mobile__title--sm">Celebrating 120 years of Uchinanchu in Hawaii</div>
           </div>
         </div>
         <Hamburger className="nav-mobile__hamburger" onClick={() => setNavState(true)} />
