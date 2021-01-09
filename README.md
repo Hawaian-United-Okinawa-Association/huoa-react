@@ -20,15 +20,19 @@ The objective is to redesign the current website for HUOA to give the associatio
 ##### For testing coverage reporting
 - use `npm test -- --coverage --watchAll=false`
 
-#### Installation
+#### Installation when not using Docker
 - use `npm install` to install dependencies
 - use `npm ci` to use `package-lock.json`'s versioning
+
+#### Using Docker
+- Have Docker installed: https://docs.docker.com/get-docker/
+- Once Docker is installed you will need to build the image:
+  - Run: `docker build --tags huoa-app .`
+- Now you can use `npm run dev` to run the instance
 
 #### Production (WIP)
 - `npm run build` compiles and optimizes react
 - `npm run server` to run in `Production`
-
-**Note** Nodemon is installed thus running server you will have a reloading state of the server
 
 ## Styling
 
