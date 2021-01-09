@@ -17,9 +17,17 @@
     background-color: $dark-grey;
 
     @media (max-width: $breakpoint-mobile-large) {
-      overflow: hidden;
-      height: 30rem;
+      height: 20rem;
     }
+  }
+
+  &__slide {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
   }
 
   &__overlay {
@@ -31,8 +39,7 @@
     height: 100%;
 
     @media (max-width: $breakpoint-mobile-large) {
-      position: relative;
-      height: 20rem;
+      display: none;
     }
 
     .container {
@@ -55,11 +62,11 @@
 
   &__content {
     position: relative;
-    grid-column-start: 2;
-    grid-column-end: 8;
 
     padding: 3rem;
     background-color: $overlay-light-grey;
+
+    opacity: 0;
 
     @media (max-width: $breakpoint-laptop) {
       padding: 2rem;
@@ -69,6 +76,25 @@
       height: 100%;
       padding: 1.5rem 2rem;
       text-align: center;
+    }
+
+    [data-active=true] & {
+      opacity: 1;
+    }
+
+    &[data-placement="left"] {
+      grid-column-start: 2;
+      grid-column-end: 8;
+    }
+
+    &[data-placement="center"] {
+      grid-column-start: 4;
+      grid-column-end: 10;
+    }
+
+    &[data-placement="right"] {
+      grid-column-start: 6;
+      grid-column-end: 12;
     }
   }
 
@@ -96,26 +122,14 @@
     border: 1px solid $white;
   }
 
-  &__slide {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity .8s ease-in-out;
-
-    &[data-active=true] {
-      opacity: 1;
-    }
-  }
-
   &__image {
     object-fit: cover;
+    width: 100vw;
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
 
-    @media (min-width: $breakpoint-laptop) {
-      width: 100vw
+    [data-active=true] & {
+      opacity: 1;
     }
   }
 
