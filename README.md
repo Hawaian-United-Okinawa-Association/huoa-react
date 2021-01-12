@@ -27,7 +27,7 @@ The objective is to redesign the current website for HUOA to give the associatio
 #### Using Docker
 - Have Docker installed: https://docs.docker.com/get-docker/
 - Once Docker is installed you will need to build the image:
-  - Run: `docker build --tags huoa-app .`
+  - Run: `docker build --tag huoa-app .`
 - Now you can use `npm run dev` to run the instance
 
 #### Production (WIP)
