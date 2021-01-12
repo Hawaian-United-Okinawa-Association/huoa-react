@@ -1,3 +1,16 @@
+/*****************************
+  TODO: Refactor to use builder data instead
+  ###
+  First console.log(data); to see how the data is structured
+  Our new data is going to live under 'builder'
+  Second lets componentize these sections now, we should end up with 3 components
+    1. Image Banner
+    2. Title Subtitle Body
+    3. Image Title Body Button
+  NOTE: These components should be placed in folder name with leading name, exampled Title Subtitle Body should live in a title directory
+  Lastly, please delete this comment
+******************************/
+
 import React from 'react';
 import Layout from 'components/Layout/Layout.js';
 import Container from 'components/Container/Container.js';
@@ -10,31 +23,31 @@ function createMarkup(body) {
 
 const BanquetFacility = ({data}) => {
   if (!data) return null;
-  
+
   let {section_one, section_two} = data.banquet_facility_page;
 
   return(
     <Layout>
       <Container>
-      <div className="banquet-facility">
-        <div className="banquet-facility__triple">
-          <Image className="banquet-facility__image--triple" img={"https://dev.huoa.org/wp-content/uploads/2020/12/banquet-facility-1.webp"} alt=""></Image>
-          <Image className="banquet-facility__image--triple" img={"https://dev.huoa.org/wp-content/uploads/2020/12/banquet-facility-2.webp "} alt=""></Image>
-          <Image className="banquet-facility__image--triple" img={"https://dev.huoa.org/wp-content/uploads/2020/12/banquet-facility-3.webp"} alt=""></Image>
-        </div>
-        <h2 className="banquet-facility__title">{section_one.title}</h2>
-        <h4 className="banquet-facility__subtitle">{section_one.subtitle}</h4>
-        <div className="banquet-facility__body" dangerouslySetInnerHTML = {createMarkup(section_one.body)}/>
-        <h1 className="banquet-facility__section-heading">{section_two.title}</h1>
-        <div className="banquet-facility__container">
-          <Image className="banquet-facility__image" img={"https://dev.huoa.org/wp-content/uploads/2020/12/banquet-facility-4.webp"} alt=""/>
-          <div className="banquet-facility__section">
-            <div className="banquet-facility__body--right" dangerouslySetInnerHTML= {createMarkup(section_two.body)}/>
-            <Button type="filled" link={section_two.button.link}>{section_two.button.text}</Button>
+        <div className="banquet-facility">
+          <div className="banquet-facility__triple">
+            <Image className="banquet-facility__image--triple" img={"https://dev.huoa.org/wp-content/uploads/2020/12/banquet-facility-1.webp"} alt=""></Image>
+            <Image className="banquet-facility__image--triple" img={"https://dev.huoa.org/wp-content/uploads/2020/12/banquet-facility-2.webp "} alt=""></Image>
+            <Image className="banquet-facility__image--triple" img={"https://dev.huoa.org/wp-content/uploads/2020/12/banquet-facility-3.webp"} alt=""></Image>
+          </div>
+          <h2 className="banquet-facility__title">{section_one.title}</h2>
+          <h4 className="banquet-facility__subtitle">{section_one.subtitle}</h4>
+          <div className="banquet-facility__body" dangerouslySetInnerHTML = {createMarkup(section_one.body)}/>
+          <h1 className="banquet-facility__section-heading">{section_two.title}</h1>
+          <div className="banquet-facility__container">
+            <Image className="banquet-facility__image" img={"https://dev.huoa.org/wp-content/uploads/2020/12/banquet-facility-4.webp"} alt=""/>
+            <div className="banquet-facility__section">
+              <div className="banquet-facility__body--right" dangerouslySetInnerHTML= {createMarkup(section_two.body)}/>
+              <Button type="filled" link={section_two.button.link}>{section_two.button.text}</Button>
+            </div>
           </div>
         </div>
-      </div>
-      </Container>     
+      </Container>
     </Layout>
   )
 }
