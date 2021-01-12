@@ -16,7 +16,7 @@ export const getPages = () => async (dispatch) => {
   
       dispatch({ type: GET_PAGES, payload: data });
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
 };
@@ -32,7 +32,7 @@ export const getClubs = () => async (dispatch) => {
   
       dispatch({ type: FETCH_CLUBS, payload: response.data });
     } catch (error) {
-      console.log(error)
+        console.error(error)
     }
   }
 };
@@ -48,7 +48,7 @@ export const getHeros = () => async (dispatch) => {
   
       dispatch({ type: GET_HEROS, payload: data });
     } catch (error) {
-      console.log(error)
+        console.error(error)
     }
   }
 };
@@ -64,7 +64,7 @@ export const getEvents = () => async (dispatch) => {
   
       dispatch({ type: GET_EVENTS, payload: data });
     } catch (error) {
-      console.log(error)
+        console.error(error)
     }
   }
 };
