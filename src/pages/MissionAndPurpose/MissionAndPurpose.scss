@@ -1,5 +1,5 @@
-.about-mission-purpose{
-  &__body{
+.about-mission-purpose {
+  &__body {
     margin-bottom: 4.5rem;
 
     h4 {
@@ -7,8 +7,27 @@
       text-transform: uppercase;
     }
 
-    li + li{
-      padding-top: 0.75em;
+    li + li {
+      padding-top: 12px;
     } 
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet){
+  .about-mission-purpose {
+    h2 {
+      font-size: 22px;
+      text-align: center;
+    }
+
+    &__body {
+      h4 {
+        text-align: center;
+      }
+
+      li + li {
+        padding-top: 32px;
+      }
+    }
   }
 }
