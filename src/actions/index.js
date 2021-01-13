@@ -10,12 +10,11 @@ import {
 } from "./actionTypes";
 
 const api = "https://dev.huoa.org/wp-json";
+let isProd =
+  process.env.NODE_ENV === "production" && navigator.userAgent !== "ReactSnap";
 
 export const getPages = () => async (dispatch) => {
-  if (
-    process.env.NODE_ENV === "production" &&
-    navigator.userAgent !== "ReactSnap"
-  ) {
+  if (isProd) {
     let cache = window.__REDUX_STATE__;
 
     dispatch({ type: GET_PAGES, payload: cache.pages });
@@ -40,10 +39,7 @@ export const getPages = () => async (dispatch) => {
 };
 
 export const getClubs = () => async (dispatch) => {
-  if (
-    process.env.NODE_ENV === "production" &&
-    navigator.userAgent !== "ReactSnap"
-  ) {
+  if (isProd) {
     let cache = window.__REDUX_STATE__;
 
     dispatch({ type: FETCH_CLUBS, payload: cache.clubs });
@@ -61,10 +57,7 @@ export const getClubs = () => async (dispatch) => {
 };
 
 export const getHeros = () => async (dispatch) => {
-  if (
-    process.env.NODE_ENV === "production" &&
-    navigator.userAgent !== "ReactSnap"
-  ) {
+  if (isProd) {
     let cache = window.__REDUX_STATE__;
 
     dispatch({ type: GET_HEROS, payload: cache.heros });
@@ -82,10 +75,7 @@ export const getHeros = () => async (dispatch) => {
 };
 
 export const getEvents = () => async (dispatch) => {
-  if (
-    process.env.NODE_ENV === "production" &&
-    navigator.userAgent !== "ReactSnap"
-  ) {
+  if (isProd) {
     let cache = window.__REDUX_STATE__;
 
     dispatch({ type: GET_EVENTS, payload: cache.events });
