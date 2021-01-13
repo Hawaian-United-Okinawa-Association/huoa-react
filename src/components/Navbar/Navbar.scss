@@ -7,7 +7,7 @@
     justify-content: center;
     height: 10rem;
     background-color: $white;
-    filter: drop-shadow(0px -4px 10px rgba(0, 0, 0, 0.25));
+    filter: $navbar-container-shadow;
     @media (max-width: $breakpoint-laptop) {
       display: none;
     }
@@ -35,7 +35,7 @@
   &__logo {
     width: 7rem;
     height: 7rem;
-    margin-left: -.5rem;
+    margin-left: -0.5rem;
     fill: $darkest-purple;
   }
 
@@ -49,7 +49,7 @@
       margin: 0;
       padding: 0;
       color: $black;
-      font-size: .8rem;
+      font-size: 0.8rem;
     }
   }
 
@@ -113,9 +113,9 @@
     z-index: 999;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.09);
-    padding: .5rem;
+    padding: 0.5rem;
     background-color: $white;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    filter: $navbar-dropdown-shadow;
 
     &--link {
       display: flex;
@@ -123,7 +123,7 @@
       align-items: flex-start;
       justify-content: center;
       height: 100%;
-      padding: .4rem 1rem;
+      padding: 0.4rem 1rem;
       color: $black;
       font-weight: 100;
       font-size: 1rem;

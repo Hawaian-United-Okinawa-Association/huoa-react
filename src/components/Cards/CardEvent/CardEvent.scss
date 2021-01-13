@@ -1,7 +1,7 @@
 .card-event {
   position: relative;
   padding: .5rem;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: $card-event-shadow;
 
   &__title {
     font-weight: 500;
