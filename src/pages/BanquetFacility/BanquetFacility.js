@@ -21,31 +21,37 @@ function createMarkup(body) {
   return {__html: body};
   }
 
-const BanquetFacility = ({data}) => {
-  if (!data) return null;
+const BanquetFacility = ({ data }) => {
 
-  let {section_one, section_two} = data.banquet_facility_page;
+if (!data) return null;
+
+let { builder } = data;
+let [image_banner, title_subtitle_body, image_title_body_button] = builder;
+
+image_banner = image_banner.image_banner;
+title_subtitle_body = title_subtitle_body.title_subtitle_body;
+image_title_body_button= image_title_body_button.image_title_body_button;
 
   return(
     <Layout>
       <Container>
         <div className="banquet-facility">
           <div className="banquet-facility__triple">
-            <Image className="banquet-facility__image--triple" img={"https://dev.huoa.org/wp-content/uploads/2020/12/banquet-facility-1.webp"} alt=""></Image>
-            <Image className="banquet-facility__image--triple" img={"https://dev.huoa.org/wp-content/uploads/2020/12/banquet-facility-2.webp "} alt=""></Image>
-            <Image className="banquet-facility__image--triple" img={"https://dev.huoa.org/wp-content/uploads/2020/12/banquet-facility-3.webp"} alt=""></Image>
+          {image_banner.map((el, i) =>  {
+            return <Image key={i} className="banquet-facility__image--triple" img={el.url} alt={el.alt}></Image>      
+          })}
           </div>
-          <h2 className="banquet-facility__title">{section_one.title}</h2>
-          <h4 className="banquet-facility__subtitle">{section_one.subtitle}</h4>
-          <div className="banquet-facility__body" dangerouslySetInnerHTML = {createMarkup(section_one.body)}/>
-          <h1 className="banquet-facility__section-heading">{section_two.title}</h1>
+          <h2 className="banquet-facility__title--page">{title_subtitle_body.title}</h2>
+          <h4 className="banquet-facility__subtitle">{title_subtitle_body.subtitle}</h4>
+          <div className="banquet-facility__body" dangerouslySetInnerHTML = {createMarkup(title_subtitle_body.body)}/>
+          <h1 className="banquet-facility__section-heading">{image_title_body_button.title}</h1>
           <div className="banquet-facility__container">
-            <Image className="banquet-facility__image" img={"https://dev.huoa.org/wp-content/uploads/2020/12/banquet-facility-4.webp"} alt=""/>
+            <Image className="banquet-facility__image" img={image_title_body_button.image.url} alt="" />
             <div className="banquet-facility__section">
-              <div className="banquet-facility__body--right" dangerouslySetInnerHTML= {createMarkup(section_two.body)}/>
-              <Button type="filled" link={section_two.button.link}>{section_two.button.text}</Button>
+              <div className="banquet-facility__body--right" dangerouslySetInnerHTML= {createMarkup(image_title_body_button.body)}/>
+              <Button type="filled" link={image_title_body_button.button.link}>{image_title_body_button.button.text}</Button>
             </div>
-          </div>
+          </div> 
         </div>
       </Container>
     </Layout>

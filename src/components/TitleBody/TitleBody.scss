@@ -1,0 +1,15 @@
+.body {
+  margin-bottom: 4.5rem;
+
+  li + li {
+    padding-top: 12px;
+  } 
+  }
+
+@media screen and (max-width: $breakpoint-tablet) {
+    .body {
+      li + li {
+        padding-top: 32px;
+      }
+    }
+}
