@@ -10,8 +10,7 @@ import {
 } from "./actionTypes";
 
 const api = "https://dev.huoa.org/wp-json";
-let isProd =
-  process.env.NODE_ENV === "production" && navigator.userAgent !== "ReactSnap";
+let isProd = process.env.NODE_ENV === "production" && navigator.userAgent !== "ReactSnap";
 
 export const getPages = () => async (dispatch) => {
   if (isProd) {
