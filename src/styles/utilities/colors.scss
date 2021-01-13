@@ -1,32 +1,28 @@
 // Official Figma Colors
-$primary-1: #4F2C80;
-$primary-2: #A183CC;
-$primary-3: #E2D8EF;
-$primary-4: #F5F0FC;
-$primary-5: #285F1A;
+$primary-1: #4f2c80; // darkest-purple & dark-purple
+$primary-2: #a183cc; // purple
+$primary-3: #e2d8ef; // light-purple
+$primary-4: #f5f0fc; // lighter-purple
+$primary-5: #285f1a; // dark-green
 
 // Default Colors
-$white: #FFFFFF;
+$white: #ffffff;
 $black: #242728;
 $dark-grey: #494949;
 $grey: #646668;
-$lighter-grey: #F7F7F7;
-$light-grey: #F7F7F7;
-$danger: #FF0000;
-
-// Custom Colors
-$darkest-purple: $primary-1;
-$dark-purple: $primary-1;
-$purple: $primary-2;
-$light-purple: $primary-3;
-$lighter-purple: $primary-4;
-$dark-green: $primary-5;
+$lighter-grey: #f7f7f7;
+$light-grey: #f7f7f7;
+$danger: #ff0000;
 
 // Box Shadows
-$card-blank-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14), 0px 4px 5px rgba(0, 0, 0, 0.12), 0px 1px 10px rgba(0, 0, 0, 0.2);
-$card-large-shadow: 0px 2px 1px rgba(0, 0, 0, 0.14), 0px 4px 5px rgba(0, 0, 0, 0.12);
-$card-small-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14), 0px 4px 5px rgba(0, 0, 0, 0.12), 0px 1px 10px rgba(0, 0, 0, 0.2);
-$card-square-shadow: 0px 2px 1px rgba(0, 0, 0, 0.14), 0px 4px 5px rgba(0, 0, 0, 0.12);
+$card-blank-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14),
+  0px 4px 5px rgba(0, 0, 0, 0.12), 0px 1px 10px rgba(0, 0, 0, 0.2);
+$card-large-shadow: 0px 2px 1px rgba(0, 0, 0, 0.14),
+  0px 4px 5px rgba(0, 0, 0, 0.12);
+$card-small-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14),
+  0px 4px 5px rgba(0, 0, 0, 0.12), 0px 1px 10px rgba(0, 0, 0, 0.2);
+$card-square-shadow: 0px 2px 1px rgba(0, 0, 0, 0.14),
+  0px 4px 5px rgba(0, 0, 0, 0.12);
 $card-event-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
 $navbar-container-shadow: drop-shadow(0px -4px 10px rgba(0, 0, 0, 0.25));
 $navbar-dropdown-shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
