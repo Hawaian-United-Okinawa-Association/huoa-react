@@ -43,6 +43,7 @@
 
       @media (max-width: $breakpoint-tablet) {
         grid-template-columns: 1fr;
+        grid-column-gap: 0;
       }
 
       @media (max-width: $breakpoint-mobile-large) {
