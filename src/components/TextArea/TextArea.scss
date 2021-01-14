@@ -1,9 +1,22 @@
 .text-area {
   max-width: 960px;
   margin: 3rem auto;
+  padding: 0 1rem;
   text-align: center;
+
+  &__title {
+    line-height: 1.2;
+
+    @media (max-width: $breakpoint-mobile-large) {
+      font-size: 32px;
+    }
+  }
 
   &__body {
     font-size: 24px;
+
+    @media (max-width: $breakpoint-mobile-large) {
+      font-size: 20px;
+    }
   }
 }
