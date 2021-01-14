@@ -1,19 +1,6 @@
-/*****************************
-  TODO: Refactor
-  ###
-  Lets componentize these sections now
-    1. We will need a Breadcrumbs component
-    2. Club Header component
-    3. Club Body component
-    4. Club Contact component
-  NOTE: These components should be placed in folder name with leading name, exampled Title Subtitle Body should live in a title directory
-  Lastly, please delete this comment
-******************************/
-
 import React from "react";
 import { useSelector } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
-
 import Layout from "components/Layout/Layout";
 import { ReactComponent as Website } from "../../assets/website.svg";
 import { ReactComponent as Facebook } from "../../assets/facebook.svg";
