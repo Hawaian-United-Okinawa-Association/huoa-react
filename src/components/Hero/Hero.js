@@ -47,6 +47,15 @@ const Hero = ({ props }) => {
           </div>
         ) }
       </div>
+      { slides[active].content_box && (
+        <div className="hero__overlay--mobile">
+          <h2 className="hero__title">{ slides[active].content.title }</h2>
+          <h4 className="hero__description">{ slides[active].content.body ? slides[active].content.body : '' }</h4>
+          <div className="hero__button--wrapper">
+            <Button className="hero__button" type='filled' link={ slides[active].content.button.link ? slides[active].content.button.link : '/'}>{ slides[active].content.button.text ? slides[active].content.button.text : 'Learn More' }</Button>
+          </div>
+        </div>
+      )}
       { !!(slides.length > 1) && (
         <div className="hero__controls">
           { slides.map((el, i) =>
