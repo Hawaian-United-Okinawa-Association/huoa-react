@@ -19,11 +19,11 @@ export const getPages = () => async (dispatch) => {
     dispatch({ type: GET_PAGES, payload: cache.pages });
   } else {
     try {
-      const response = await axios.get(
+      const { data } = await axios.get(
         `${api}/wp/v2/pages?page=1&per_page=100`
       );
 
-      dispatch({ type: GET_PAGES, payload: response.data });
+      dispatch({ type: GET_PAGES, payload: data });
     } catch (error) {
       console.error(error);
     }
@@ -37,11 +37,11 @@ export const getClubs = () => async (dispatch) => {
     dispatch({ type: FETCH_CLUBS, payload: cache.clubs });
   } else {
     try {
-      const response = await axios.get(
+      const { data } = await axios.get(
         `${api}/wp/v2/clubs?&page=1&per_page=100&orderby=slug&order=asc`
       );
 
-      dispatch({ type: FETCH_CLUBS, payload: response.data });
+      dispatch({ type: FETCH_CLUBS, payload: data });
     } catch (error) {
       console.error(error);
     }
