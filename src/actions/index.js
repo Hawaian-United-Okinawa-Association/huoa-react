@@ -22,15 +22,8 @@ export const getPages = () => async (dispatch) => {
       const response = await axios.get(
         `${api}/wp/v2/pages?page=1&per_page=100`
       );
-      const data = response.data.reduce(
-        (allData, { slug, title, acf }) => ({
-          ...allData,
-          [slug]: { title: title.rendered, ...acf },
-        }),
-        {}
-      );
 
-      dispatch({ type: GET_PAGES, payload: data });
+      dispatch({ type: GET_PAGES, payload: response.data });
     } catch (error) {
       console.error(error);
     }
