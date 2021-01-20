@@ -27,7 +27,7 @@ const Hero = () => {
     setContent(heroImages[i]);
   };
 
-  return (
+  return !!heroImages && (
     <div className="hero">
       <div className="hero__wrapper">
         { heroImages.map((image, i) =>

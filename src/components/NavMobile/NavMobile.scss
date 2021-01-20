@@ -27,7 +27,7 @@
       width: 5rem;
       height: 5rem;
       margin-left: -.5rem;
-      fill: $darkest-purple;
+      fill: $primary-1;
     }
 
     &__title {
@@ -53,12 +53,11 @@
 
     &__sidebar {
       position: fixed;
-      top: 0;
-      right: -35rem;
       z-index: 999;
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      overflow-y: scroll;
       width: 35%;
       height: 100%;
       padding: 2rem;
@@ -66,44 +65,40 @@
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
       &--active {
-        @keyframes slideIn {
-          from {
-            right: -35rem;
-          }
-    
-          to {
-            right: 0;
-          }
-        }
-
         @extend .nav-mobile__sidebar;
-        position: absolute;
         top: 0;
         right: 0;
-        animation: slideIn 200ms ease-out;
+
+        // @keyframes slideIn {
+        //   from {
+        //     right: -35rem;
+        //   }
+    
+        //   to {
+        //     right: 0;
+        //   }
+        // }
+
+        // animation: slideIn 200ms ease-out;
       }
 
       &--inactive {
-        @keyframes slideOut {
-          from {
-            right: 0rem;
-          }
+        display: none;
+        // @keyframes slideOut {
+        //   from {
+        //     right: 0rem;
+        //   }
     
-          to {
-            right: -35rem;
-          }
-        }
+        //   to {
+        //     right: -35rem;
+        //   }
+        // }
 
-        @extend .nav-mobile__sidebar;
-        position: absolute;
-        top: 0;
-        right: -35rem;
-        animation: slideOut 200ms ease-out;
-      }
-
-      &--close {
-        align-self: flex-end;
-        margin: 1rem 0;
+        // @extend .nav-mobile__sidebar;
+        // position: absolute;
+        // top: 0;
+        // right: -35rem;
+        // animation: slideOut 200ms ease-out;
       }
 
       &--items {
@@ -175,7 +170,7 @@
         display: flex;
         margin: 0 -2rem;
         padding: .5rem 2rem;
-        background-color: $light-purple;
+        background-color: $primary-3;
         font-weight: 100;
         }
     }
@@ -184,14 +179,15 @@
         display: flex;
         width: 98%;
         height: 1px;
+        min-height: 1px;
         border: 1px;
-        background-color: $dark-purple;
+        background-color: $primary-1;
       }
 
       &--footer{
         display: flex;
         flex-direction: column;
-        padding: 1rem 0rem;
+        padding: 1rem 0rem 3rem 0rem;
 
         &-link{
           display: flex;
@@ -199,23 +195,51 @@
         }
 
         &-button{
-          align-self: center;
+          align-self: center; 
           margin-top: 1rem;
         }
+      }
+    }
+
+    &__navclose {
+      align-self: flex-end;
+      min-width: 10px;
+      min-height: 10px;
+      margin: 1rem 0;
+    }
+  }
+}
+
+// $breakpoint-laptop-large: 1440px;
+// $breakpoint-laptop: 1250px;
+// $breakpoint-tablet-large: 1024px;
+// $breakpoint-tablet: 960px;
+// $breakpoint-mobile-large: 768px;
+// $breakpoint-mobile: 480px;
+
+@media screen and (max-width: $breakpoint-mobile-large){
+  .nav-mobile {
+    &__title {
+      padding-left: .25rem;
+      font-size: 1rem;
+
+      &--sm {
+        padding-left: .25rem;
+        font-size: .5rem;
+      }
+    }
+
+    &__sidebar {
+      &--active {
+        width: 90%;
+        max-width: $breakpoint-mobile-large;
+        padding: 1rem 2rem;
       }
     }
   }
 }
 
-@media screen and (max-width: $breakpoint-tablet-large){
-  .nav-mobile{
-    // &__sidebar{
-    //   right: -45rem;
-    // }
-  }
-}
-
-@media screen and (max-width: $breakpoint-mobile-large){
+@media screen and (max-width: $breakpoint-mobile){
   .nav-mobile {
     height: 3.5rem;
     padding: 1rem 1.5rem;
@@ -235,7 +259,30 @@
     }
 
     &__sidebar {
-      width: 85%;
+      width: 95%;
+      padding: .5rem 1rem;
+
+      &--item {
+        width: 95%;
+        margin-left: auto;
+        padding: .5rem 0;
+      }
+
+      &--dropdown {
+        &-item {
+          width: 100%;
+          margin: 0 auto;
+        }
+      }
+
+      &--footer {
+        width: 95%;
+        padding-bottom: 3rem;
+
+        &-link {
+          padding: .25rem 1rem;
+        }
+      }
     }
   }
 }

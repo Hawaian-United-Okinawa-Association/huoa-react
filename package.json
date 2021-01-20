@@ -7,7 +7,7 @@
     "@testing-library/jest-dom": "5.10.1",
     "@testing-library/react": "10.3.0",
     "@testing-library/user-event": "12.0.6",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "node-sass": "^4.14.1",
     "react": "16.13.1",
     "react-app-rewired": "^2.1.6",
@@ -25,6 +25,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
+    "dev": "docker run -it --rm -v ${PWD}:/huoa -v /huoa/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true huoa-app",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
