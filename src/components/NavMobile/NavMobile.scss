@@ -2,220 +2,240 @@
 @import '../../styles/utilities/breakpoints.scss';
 @import '../../styles/utilities/fonts.scss';
 
-.nav-mobile {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  height: 2.5rem;
-  padding: 1rem 2rem;
-  @media (min-width: $breakpoint-mobile) {
-    height: 5rem;
-  }
-  @media (min-width: $breakpoint-laptop) {
-    display: none;
-  }
+.nav-mobile{
+  display: none;
+}
 
-  &__header {
+@media screen and (max-width: $breakpoint-laptop){
+  .nav-mobile {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-  }
+    justify-content: space-between;
+    overflow: hidden;
+    height: 5rem;
+    padding: 1rem 2rem;
 
-  &__logo {
-    width: 4rem;
-    height: 4rem;
-    margin-left: -.5rem;
-    fill: $darkest-purple;
-    @media (min-width: $breakpoint-mobile) {
-      width: 7rem;
-      height: 7rem;
+    &__header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
     }
-  }
 
-  &__title {
-    display: none;
-    @media (min-width: $breakpoint-mobile) {
+    &__logo {
+      width: 5rem;
+      height: 5rem;
+      margin-left: -.5rem;
+      fill: $darkest-purple;
+    }
+
+    &__title {
       display: block;
       margin: 0;
       padding: 0;
       color: $dark-grey;
-      font-size: 1.5rem;
-    }
-
-    &--sm {
-      display: none;
-      @media (min-width: $breakpoint-mobile) {
-        display: block;
-        margin: 0;
-        padding: 0;
-        color: $black;
-        font-size: .2rem;
-        font-size: .8rem;
+      font-size: 1.25rem;
+      font-family: $lora;
+      
+      &--sm {
+        font-size: .75rem;
+        font-family: $poppins;
       }
     }
-  }
 
-  &__hamburger {
-    width: 1.5rem;
-    @media (min-width: $breakpoint-mobile) {
-      width: 2rem;
-    }
-  }
-
-  &__sidebar {
-    position: fixed;
-    top: 0;
-    right: -35rem;
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    width: 35%;
-    height: 100%;
-    padding: 2rem;
-    background-color: $white;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
-    &--active {
-      @keyframes slideIn {
-        from {
-          right: -35rem;
-        }
-  
-        to {
-          right: 0;
-        }
-      }
-
-      @extend .nav-mobile__sidebar;
-      position: absolute;
-      top: 0;
-      right: 0;
-      animation: slideIn 200ms ease-out;
+    &__hamburger {
+      width: 1.5rem;
+      // @media (min-width: $breakpoint-mobile) {
+      //   width: 2rem;
+      // }
     }
 
-    &--inactive {
-      @keyframes slideOut {
-        from {
-          right: 0rem;
-        }
-  
-        to {
-          right: -35rem;
-        }
-      }
-
-      @extend .nav-mobile__sidebar;
-      position: absolute;
+    &__sidebar {
+      position: fixed;
       top: 0;
       right: -35rem;
-      animation: slideOut 200ms ease-out;
-    }
-
-    &--close {
-      align-self: flex-end;
-      margin: 1rem 0;
-    }
-
-    &--items {
+      z-index: 999;
       display: flex;
       flex-direction: column;
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-    }
-
-    &--item {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 0;
-      font-weight: 600;
-    }
-
-    &--carrot {
-      @keyframes derotateCarrot {
-        0%   {
-          transform: rotate(180deg);
-        }
-
-        100% {
-          transform: rotate(0deg);
-        }
-      }
-      
-      animation: derotateCarrot 200ms ease-in-out forwards;
+      overflow: hidden;
+      width: 35%;
+      height: 100%;
+      padding: 2rem;
+      background-color: $white;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
       &--active {
-        @keyframes rotateCarrot {
-          0%   {
-            transform: rotate(0deg);
+        @keyframes slideIn {
+          from {
+            right: -35rem;
           }
+    
+          to {
+            right: 0;
+          }
+        }
 
-          100% {
+        @extend .nav-mobile__sidebar;
+        position: absolute;
+        top: 0;
+        right: 0;
+        animation: slideIn 200ms ease-out;
+      }
+
+      &--inactive {
+        @keyframes slideOut {
+          from {
+            right: 0rem;
+          }
+    
+          to {
+            right: -35rem;
+          }
+        }
+
+        @extend .nav-mobile__sidebar;
+        position: absolute;
+        top: 0;
+        right: -35rem;
+        animation: slideOut 200ms ease-out;
+      }
+
+      &--close {
+        align-self: flex-end;
+        margin: 1rem 0;
+      }
+
+      &--items {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+
+      &--item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+        font-weight: 600;
+      }
+
+      &--carrot {
+        @keyframes derotateCarrot {
+          0%   {
             transform: rotate(180deg);
           }
-        }
-
-        animation: rotateCarrot 200ms ease-in-out forwards;
-      }
-    }
-
-    &--dropdown{
-      &--active {
-        @keyframes dropDown {
-          0% {
-            transform: scaleY(0)
-          }
-
-          80% {
-              transform: scaleY(1.1)
-          }
 
           100% {
-              transform: scaleY(1)
+            transform: rotate(0deg);
           }
         }
+        
+        animation: derotateCarrot 200ms ease-in-out forwards;
 
-        transform-origin: top center;
-        animation: dropDown 200ms ease-in-out forwards;
+        &--active {
+          @keyframes rotateCarrot {
+            0%   {
+              transform: rotate(0deg);
+            }
+
+            100% {
+              transform: rotate(180deg);
+            }
+          }
+
+          animation: rotateCarrot 200ms ease-in-out forwards;
+        }
       }
 
-      &-item {
-      display: flex;
-      margin: 0 -2rem;
-      padding: .5rem 2rem;
-      background-color: $light-purple;
-      font-weight: 100;
-      }
-  }
+      &--dropdown{
+        &--active {
+          @keyframes dropDown {
+            0% {
+              transform: scaleY(0)
+            }
 
-    &--break {
-      display: flex;
-      width: 98%;
-      height: 1px;
-      border: 1px;
-      background-color: $dark-purple;
+            80% {
+                transform: scaleY(1.1)
+            }
+
+            100% {
+                transform: scaleY(1)
+            }
+          }
+
+          transform-origin: top center;
+          animation: dropDown 200ms ease-in-out forwards;
+        }
+
+        &-item {
+        display: flex;
+        margin: 0 -2rem;
+        padding: .5rem 2rem;
+        background-color: $light-purple;
+        font-weight: 100;
+        }
     }
 
-    &--footer{
-      display: flex;
-      flex-direction: column;
-      padding: 1rem 0rem;
-
-      &-link{
+      &--break {
         display: flex;
-        padding: .5rem 0;;
+        width: 98%;
+        height: 1px;
+        border: 1px;
+        background-color: $dark-purple;
       }
 
-      &-button{
-        align-self: center;
-        margin-top: 1rem;
+      &--footer{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0rem;
+
+        &-link{
+          display: flex;
+          padding: .5rem 0;;
+        }
+
+        &-button{
+          align-self: center;
+          margin-top: 1rem;
+        }
       }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet-large){
+  .nav-mobile{
+    // &__sidebar{
+    //   right: -45rem;
+    // }
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile-large){
+  .nav-mobile {
+    height: 3.5rem;
+    padding: 1rem 1.5rem;
+
+    &__logo {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  
+    &__title {
+      padding-left: .25rem;
+      font-size: .75rem;
+
+      &--sm {
+        display: none;
+      }
+    }
+
+    &__sidebar {
+      width: 85%;
     }
   }
 }
