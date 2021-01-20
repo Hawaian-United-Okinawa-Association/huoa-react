@@ -16,8 +16,6 @@ const NavMobile = () => {
   const [ activeDropdown, setActiveDropdown ] = useState(null);
   const { routes } = useSelector((state) => state.router);
 
-  console.log(navState);
-
   const mobileRoutes = routes.filter((item) => item.name !== 'Donate');
   mobileRoutes.unshift({ name: 'Home', linkTo: '/' });
 
@@ -37,7 +35,7 @@ const NavMobile = () => {
 
       return (
         <React.Fragment key={item.linkTo}>
-          <Link to={item.children ? '#!' : item.linkTo} className="nav-mobile__sidebar--item">
+          <Link to={item.children ? '' : item.linkTo} className="nav-mobile__sidebar--item">
             <li>{item.name}</li>
             {item.children && (
               <Carrot
