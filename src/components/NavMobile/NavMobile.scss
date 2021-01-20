@@ -27,7 +27,7 @@
       width: 5rem;
       height: 5rem;
       margin-left: -.5rem;
-      fill: $darkest-purple;
+      fill: $primary-1;
     }
 
     &__title {
@@ -175,7 +175,7 @@
         display: flex;
         margin: 0 -2rem;
         padding: .5rem 2rem;
-        background-color: $light-purple;
+        background-color: $primary-3;
         font-weight: 100;
         }
     }
@@ -185,7 +185,7 @@
         width: 98%;
         height: 1px;
         border: 1px;
-        background-color: $dark-purple;
+        background-color: $primary-1;
       }
 
       &--footer{
