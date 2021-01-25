@@ -1,0 +1,16 @@
+.breadcrumb {
+  margin-top: 6vh;
+
+  &__item {
+    margin: 10px;
+    
+    &--selected {
+      color: $primary-1;
+    }
+  }
+
+  &__item:hover {
+    color: $primary-1;
+  }
+  
+}

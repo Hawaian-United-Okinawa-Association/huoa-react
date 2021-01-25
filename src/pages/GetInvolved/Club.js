@@ -14,6 +14,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
 
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
+
 import Layout from "components/Layout/Layout";
 import { ReactComponent as Website } from "../../assets/website.svg";
 import { ReactComponent as Facebook } from "../../assets/facebook.svg";
@@ -39,16 +41,7 @@ const Club = ({ match }) => {
     return (
       <Layout>
         <div className="club__container">
-          <p className="club__breadcrumb">
-            <Link className="club__breadcrumb--item" to="/">
-              Home
-            </Link>
-            /
-            <Link className="club__breadcrumb--item" to="/clubs">
-              Join a HUOA Club
-            </Link>
-            /<span className="club__breadcrumb--item">{rendered}</span>
-          </p>
+          <Breadcrumbs parent="clubs" parentText="Join a HUOA Club" rendered={ rendered } />
           <br />
           <div className="club__header">
             {!!club_image && (
