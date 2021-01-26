@@ -1,6 +1,16 @@
-.get-involved {
+.clublist {
+  &__title {
+    @media screen and (max-width: $breakpoint-mobile) {
+      text-align: center;
+    }
+  }
+
   &__description {
     margin-bottom: 50px;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      text-align: center;
+    }
   }
 
   &__items {
@@ -9,6 +19,7 @@
     columns: 2;
     
     @media screen and (max-width: $breakpoint-mobile) {
+      text-align: center;
       columns: 1;
     }
   }

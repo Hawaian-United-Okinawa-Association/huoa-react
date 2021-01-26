@@ -1,0 +1,19 @@
+.contact {
+    // width: 20vw;
+    margin-top: 10vh;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      // display: flex;
+      // margin: auto;
+      text-align: center;
+    }
+
+    &__title {
+      font-weight: bold;
+      font-size: 1.5vw;
+
+      @media screen and (max-width: $breakpoint-mobile) {
+        font-size: 5vw;
+      }
+    }
+}

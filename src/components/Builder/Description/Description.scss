@@ -1,0 +1,8 @@
+.description {
+    max-width: 60vw;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+        margin: auto;
+        text-align: center;
+      }
+}

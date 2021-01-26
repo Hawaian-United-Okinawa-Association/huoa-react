@@ -17,16 +17,17 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Layout from "components/Layout/Layout";
 
-const GetInvolved = ({ data }) => {
+const ClubList = ({ data }) => {
   let clubDataAll = useSelector((state) => state.clubs);
 
   if (!data) return null;
   else {
+    console.log(clubDataAll);
     const { title, body } = data.join_a_club_page;
     const renderClubs = clubDataAll.map((club) => {
       return (
         <li key={club.id}>
-          <Link className="get-involved__item-link" to={"/clubs/" + club.slug}>
+          <Link className="clublist__item-link" to={"/clubs/" + club.slug}>
             {club.title.rendered}
           </Link>
         </li>
@@ -34,17 +35,17 @@ const GetInvolved = ({ data }) => {
     });
     return (
       <Layout>
-        <div className="get-involved__container">
-          <div className="get-involved__title">
+        <div className="clublist__container">
+          <div className="clublist__title">
             <h2>{title}</h2>
           </div>
           <div
-            className="get-involved__description"
+            className="clublist__description"
             dangerouslySetInnerHTML={{ __html: body }}
           />
-          <div className="get-involved__body">
+          <div className="clublist__body">
             {!!clubDataAll && (
-              <ul className="get-involved__items">{renderClubs}</ul>
+              <ul className="clublist__items">{renderClubs}</ul>
             )}
           </div>
         </div>
@@ -52,4 +53,4 @@ const GetInvolved = ({ data }) => {
     );
   }
 };
-export default GetInvolved;
+export default ClubList;

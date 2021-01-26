@@ -15,8 +15,8 @@ import News from 'pages/News/News';
 import Contact from 'pages/Contact/Contact';
 import Donate from 'pages/Donate/Donate';
 import Geneology from 'pages/Geneology/Geneology';
-import GetInvolved from 'pages/GetInvolved/GetInvolved';
-import Club from 'pages/GetInvolved/Club'
+import ClubList from 'pages/ClubList/ClubList';
+import Club from 'pages/Club/Club';
 import Demo from 'pages/Demo/Demo';
 import AboutMissionAndPurpose from 'pages/MissionAndPurpose/MissionAndPurpose';
 import BanquetFacility from 'pages/BanquetFacility/BanquetFacility';
@@ -51,7 +51,7 @@ const Routes = () => {
       </Route>
       <Route exact path="/clubs">
         <Header props={ pageState.join } />
-        <GetInvolved data={ pageState["join-a-club"] }/>
+        <ClubList data={ pageState["join-a-club"] }/>
       </Route>
       <Route path="/clubs/:clubId">
         <Header props={ pageState.join } />
