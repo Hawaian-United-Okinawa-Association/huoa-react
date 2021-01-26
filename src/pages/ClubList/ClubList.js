@@ -16,6 +16,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Layout from "components/Layout/Layout";
+import Title from "../../components/ListHeader/Title/Title";
+import Description from "../../components/ListHeader/Description/Description";
 
 const ClubList = ({ data }) => {
   let clubDataAll = useSelector((state) => state.clubs);
@@ -36,13 +38,8 @@ const ClubList = ({ data }) => {
     return (
       <Layout>
         <div className="clublist__container">
-          <div className="clublist__title">
-            <h2>{title}</h2>
-          </div>
-          <div
-            className="clublist__description"
-            dangerouslySetInnerHTML={{ __html: body }}
-          />
+          <Title rendered={title} />
+          <Description parent ={body} />
           <div className="clublist__body">
             {!!clubDataAll && (
               <ul className="clublist__items">{renderClubs}</ul>

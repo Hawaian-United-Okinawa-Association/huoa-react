@@ -1,18 +1,4 @@
 .clublist {
-  &__title {
-    @media screen and (max-width: $breakpoint-mobile) {
-      text-align: center;
-    }
-  }
-
-  &__description {
-    margin-bottom: 50px;
-
-    @media screen and (max-width: $breakpoint-mobile) {
-      text-align: center;
-    }
-  }
-
   &__items {
     padding-left: 0;
     list-style: none;

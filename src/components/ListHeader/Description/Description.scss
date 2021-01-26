@@ -1,0 +1,7 @@
+.description {
+    margin-bottom: 50px;
+    
+    @media screen and (max-width: $breakpoint-mobile) {
+      text-align: center;
+    }
+}

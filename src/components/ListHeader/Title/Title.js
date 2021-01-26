@@ -1,10 +1,10 @@
 import React from "react";
 
-const Title = () => {
+const Title = ({ rendered }) => {
   return (
       <div className="Title">
-        <h2>{title}</h2>
+        <h2>{rendered}</h2>
       </div>
   );
 }
-  export default Title;
+export default Title;
