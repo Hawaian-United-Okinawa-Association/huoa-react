@@ -14,7 +14,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
 
-import Breadcrumbs from "components/Breadcrumbs/Breadcrumbs";
+import Breadcrumbs from "components/Builder/Breadcrumbs/Breadcrumbs";
 
 import Layout from "components/Layout/Layout";
 import { ReactComponent as Website } from "../../assets/website.svg";
