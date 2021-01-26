@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import Layout from 'components/Layout/Layout';
 import Image from 'components/Image/Image';
-import Breadcrumbs from 'components/Builder/Breadcrumbs/Breadcrumbs';
+import Breadcrumbs from 'components/Breadcrumbs/Breadcrumbs';
 
 const Event = ({ match }) => {
   const eventsData = useSelector((state) => state.events);

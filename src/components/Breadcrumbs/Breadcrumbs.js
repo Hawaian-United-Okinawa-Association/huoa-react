@@ -12,7 +12,7 @@ const Breadcrumbs = ({ parent, parentText, rendered }) => {
         { parentText }
       </Link>
       /<span className="breadcrumb__item breadcrumb__item--selected">{rendered}</span>
-  </p>
+    </p>
   )
 }
 
