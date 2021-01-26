@@ -30,12 +30,12 @@
 
   &[type=outlined] {
     background: $white;
-    color: $dark-purple;
-    fill: $dark-purple;
+    color: $primary-1;
+    fill: $primary-1;
 
     &:focus {
-      border-color: $dark-purple;
-      color: $purple;
+      border-color: $primary-1;
+      color: $primary-2;
     }
 
     &:hover {
@@ -52,21 +52,21 @@
   &[type=text] {
     border-color: transparent;
     background: transparent;
-    color: $dark-purple;
+    color: $primary-1;
     font-weight: 600;
-    fill: $dark-purple;
+    fill: $primary-1;
 
     &:focus {
       border-color: transparent;
       background: rgba(179, 112, 160, 0.54);
-      color: $dark-purple;
+      color: $primary-1;
     }
 
     &:hover {
       border-color: transparent;
       background: $primary-3;
-      color: $dark-purple;
-      fill: $dark-purple;
+      color: $primary-1;
+      fill: $primary-1;
     }
 
     &:disabled {
@@ -76,14 +76,14 @@
   }
 
   &:hover {
-    border-color: $dark-purple;
-    background: $dark-purple;
+    border-color: $primary-1;
+    background: $primary-1;
     color: $white;
     fill: $white;
   }
 
   &:focus {
-    border-color: $purple;
+    border-color: $primary-2;
     outline: none;
   }
 

@@ -25,6 +25,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
+    "dev": "docker run -it --rm -v ${PWD}:/huoa -v /huoa/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true huoa-app",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

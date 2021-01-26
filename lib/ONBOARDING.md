@@ -54,18 +54,6 @@ It's a good idea to understand what's needed from your task and discuss your app
 ## Run the Site Locally While Coding
 When you're ready to contribute, make sure you are running the site locally with `npm start`, so you can see in real-time how your code is working.
 
-### Setting Your Default Browser for the Project 
-If you have a favorite browser that isn't opening when you run `npm start`, know that npm chooses your browser based on your operating system, and not the default browser you have set on your OS.
-
-If you would like to open a different browser, say Firefox on Mac OS, then **create** a `.env.local` file in the root project directory. Within that file, enter this and save it.
-```
-BROWSER=firefox
-```
-
-Now when you run `npm start`, Firefox will open instead of Chrome.
-
-**.env.local** files are not tracked by git, so you don't have to worry about it being included in your commits or to the project.
-
 ### Working with the CSS Linter
 The [StyleLint](https://stylelint.io/) we have running will provide direct feedback and error messages in your browser window. If errors appear, they will need to be fixed before the site becomes previewable again.
 
