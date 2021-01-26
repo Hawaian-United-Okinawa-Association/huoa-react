@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
 import Layout from 'components/Layout/Layout';
