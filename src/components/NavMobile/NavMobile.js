@@ -69,7 +69,7 @@ const NavMobile = () => {
         </div>
         <Hamburger className="nav-mobile__hamburger" onClick={() => setNavState(true)} />
         <div className={`nav-mobile__sidebar${navState ? '--active' : '--inactive'}`}>
-          <ButtonClose onClick={() => setNavState(!navState)} className="nav-mobile__navclose" />
+          <ButtonClose onClick={() => resetSideNav()} className="nav-mobile__navclose" />
           <ul className="nav-mobile__sidebar--items">{renderSideItems(mobileRoutes)}</ul>
           <hr className="nav-mobile__sidebar--break" />
           <div className="nav-mobile__sidebar--footer">
