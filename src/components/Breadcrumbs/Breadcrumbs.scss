@@ -11,3 +11,9 @@
     color: $primary-1;
   }
 }
+
+@media (max-width: $breakpoint-tablet) {
+  .breadcrumb {
+    display: none;
+  }
+}
