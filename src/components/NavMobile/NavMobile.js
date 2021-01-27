@@ -15,8 +15,9 @@ const NavMobile = () => {
   const [ navState, setNavState ] = useState(false);
   const [ activeDropdown, setActiveDropdown ] = useState(false);
   const { routes } = useSelector((state) => state.router);
+  // const rdom = require('react-dom');
 
-  const mobileRoutes = routes.filter((item) => item.name !== 'Donate');
+  const mobileRoutes = routes.filter((item) => item.name !== 'Donate' && item.phase1 === true);
   mobileRoutes.unshift({ name: 'Home', linkTo: '/' });
 
   const resetSideNav = () => {
@@ -24,8 +25,25 @@ const NavMobile = () => {
     setActiveDropdown(false);
   };
 
+  // const handleScroll = (e) => {
+  //   console.log(e.target);
+  //   const ele = rdom.findDOMNode(e.target);
+  //   if (e.nativeEvent.deltaY <= 0) {
+  //     /* scrolling up */
+  //     if(ele.scrollTop <= 0) {e.preventDefault();}
+  //   } else {
+  //     /* scrolling down */
+  //     if(ele.scrollTop + ele.clientHeight >= ele.scrollHeight) {
+  //       e.preventDefault();
+  //     }
+  //   }
+  // };
+
   const renderDropdown = (items) => {
-    return items.map((item) => {
+    if(!items) return null;
+    
+    const phase1 = items.filter((item) => item.phase1);
+    return phase1.map((item) => {
       return (
         <Link to={item.linkTo} key={item.linkTo} onClick={() => resetSideNav()}>
           <li className="nav-mobile__sidebar--dropdown-item">{item.name}</li>
@@ -39,20 +57,19 @@ const NavMobile = () => {
       const dropBool = activeDropdown === item.name;
 
       return (
-        <React.Fragment key={item.linkTo}>
+        <div key={item.linkTo} onClick={item.children ? () => setActiveDropdown(dropBool ? null : item.name) : () => resetSideNav() }>
           <Link to={item.children ? '' : item.linkTo} className="nav-mobile__sidebar--item">
             <li>{item.name}</li>
             {item.children && (
               <Carrot
                 className={`nav-mobile__sidebar--carrot${dropBool ? '--active' : ''}`}
-                onClick={() => setActiveDropdown(dropBool ? null : item.name)}
               />
             )}
           </Link>
-          <div className={`nav-mobile__sidebar--dropdown${dropBool ? '--active' : ''}`}>
-            {dropBool && renderDropdown(item.children)}
+          <div className={`nav-mobile__sidebar--dropdown${dropBool ? '--active' : '--inactive'}`}>
+            {renderDropdown(item.children)}
           </div>
-        </React.Fragment>
+        </div>
       );
     });
   };
@@ -60,6 +77,7 @@ const NavMobile = () => {
   return (
     <React.Fragment>
       <nav className="nav-mobile">
+        <Link to='/'>
         <div className="nav-mobile__header">
           <HUOALogo className="nav-mobile__logo" height="90" width="90" />
           <div className="nav-mobile__titles">
@@ -67,8 +85,9 @@ const NavMobile = () => {
             <div className="nav-mobile__title--sm">Celebrating 120 years of Uchinanchu in Hawaii</div>
           </div>
         </div>
+        </Link>
         <Hamburger className="nav-mobile__hamburger" onClick={() => setNavState(true)} />
-        <div className={`nav-mobile__sidebar${navState ? '--active' : '--inactive'}`}>
+        <div className={`nav-mobile__sidebar${navState ? '--active' : '--inactive'}`} >
           <ButtonClose onClick={() => resetSideNav()} className="nav-mobile__navclose" />
           <ul className="nav-mobile__sidebar--items">{renderSideItems(mobileRoutes)}</ul>
           <hr className="nav-mobile__sidebar--break" />

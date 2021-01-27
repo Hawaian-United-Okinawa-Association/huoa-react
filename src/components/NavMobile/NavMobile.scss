@@ -3,11 +3,14 @@
 @import '../../styles/utilities/fonts.scss';
 
 .nav-mobile{
+  -webkit-tap-highlight-color: transparent;
   display: none;
+  overflow: hidden;
 }
 
 @media screen and (max-width: $breakpoint-laptop){
   .nav-mobile {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -46,9 +49,6 @@
 
     &__hamburger {
       width: 1.5rem;
-      // @media (min-width: $breakpoint-mobile) {
-      //   width: 2rem;
-      // }
     }
 
     &__sidebar {
@@ -65,46 +65,44 @@
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
       &--active {
+        @keyframes slideIn {
+          from {
+            right: -35rem;
+          }
+    
+          to {
+            right: 0;
+          }
+        }
+
         @extend .nav-mobile__sidebar;
         top: 0;
         right: 0;
-
-        // @keyframes slideIn {
-        //   from {
-        //     right: -35rem;
-        //   }
-    
-        //   to {
-        //     right: 0;
-        //   }
-        // }
-
-        // animation: slideIn 200ms ease-out;
+        animation: slideIn 200ms ease-out;
       }
 
       &--inactive {
-        display: none;
-        // @keyframes slideOut {
-        //   from {
-        //     right: 0rem;
-        //   }
+        @keyframes slideOut {
+          from {
+            right: 0rem;
+          }
     
-        //   to {
-        //     right: -35rem;
-        //   }
-        // }
+          to {
+            right: -35rem;
+          }
+        }
 
-        // @extend .nav-mobile__sidebar;
-        // position: absolute;
-        // top: 0;
-        // right: -35rem;
-        // animation: slideOut 200ms ease-out;
+        @extend .nav-mobile__sidebar;
+        position: fixed;
+        top: 0;
+        right: -35rem;
+        animation: slideOut 200ms ease-out;
       }
 
       &--items {
         display: flex;
         flex-direction: column;
-        margin: 0;
+        margin: 1rem 0;
         padding: 0;
         list-style-type: none;
       }
@@ -129,6 +127,7 @@
           }
         }
         
+        margin-right: 1rem;
         animation: derotateCarrot 200ms ease-in-out forwards;
 
         &--active {
@@ -142,21 +141,20 @@
             }
           }
 
+          margin-right: 1rem;
           animation: rotateCarrot 200ms ease-in-out forwards;
         }
       }
 
       &--dropdown{
+        overflow: hidden;
+        
         &--active {
           @keyframes dropDown {
             0% {
               transform: scaleY(0)
             }
-
-            80% {
-                transform: scaleY(1.1)
-            }
-
+            
             100% {
                 transform: scaleY(1)
             }
@@ -166,10 +164,26 @@
           animation: dropDown 200ms ease-in-out forwards;
         }
 
+        &--inactive {
+          @keyframes pullUp {
+            0% {
+              transform: scaleY(1)
+            }
+
+            100% {
+              transform: scaleY(0);
+            }
+          }
+
+          height: 0;
+          transform-origin: top center;
+          animation: pullUp 100ms ease-in-out forwards;
+        }
+
         &-item {
         display: flex;
-        margin: 0 -2rem;
-        padding: .5rem 2rem;
+        margin: 0 -2.5rem;
+        padding: .5rem 3rem;
         background-color: $primary-3;
         font-weight: 100;
         }
@@ -203,9 +217,10 @@
 
     &__navclose {
       align-self: flex-end;
-      min-width: 10px;
-      min-height: 10px;
-      margin: 1rem 0;
+      min-width: 1.25rem;
+      min-height: 1.25rem;
+      margin: .5rem;
+      padding: .5rem;
     }
   }
 }
@@ -233,7 +248,7 @@
       &--active {
         width: 90%;
         max-width: $breakpoint-mobile-large;
-        padding: 1rem 2rem;
+        padding: 1rem 2.5rem;
       }
     }
   }
@@ -241,7 +256,7 @@
 
 @media screen and (max-width: $breakpoint-mobile){
   .nav-mobile {
-    height: 3.5rem;
+    height: 3rem;
     padding: 1rem 1.5rem;
 
     &__logo {
@@ -271,16 +286,18 @@
       &--dropdown {
         &-item {
           width: 100%;
-          margin: 0 auto;
+          margin: 0 -0.1rem;
+          padding: .5rem 1.5rem;
         }
       }
 
       &--footer {
         width: 95%;
-        padding-bottom: 3rem;
+        // margin: auto auto 0 auto;
+        padding: .25rem 0rem 3rem 0rem;
 
         &-link {
-          padding: .25rem 1rem;
+          padding: .5rem 1rem;
         }
       }
     }
