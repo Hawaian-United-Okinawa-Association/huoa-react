@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
 import Layout from 'components/Layout/Layout';
 import Image from 'components/Image/Image';
+import Breadcrumbs from 'components/Breadcrumbs/Breadcrumbs';
 
 const Event = ({ match }) => {
   const eventsData = useSelector((state) => state.events);
@@ -21,9 +22,7 @@ const Event = ({ match }) => {
   return (
     <Layout>
       <section className="event">
-        <div className="event__breadcrumbs">
-          <Link to='/'>Home</Link> / <Link to='/events'>Events</Link> / <span className="event__highlight">{ event_title }</span>
-          </div>
+      <Breadcrumbs parent="events" parentText="Events" rendered={ event_title } />
         <h2 className="event__title">{ event_title }</h2>
         <Image className="event__image" webp="https://dev.huoa.org/wp-content/uploads/2020/09/home-hero-4.webp" />
         <h3 className="event__date">

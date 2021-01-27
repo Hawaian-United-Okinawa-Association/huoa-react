@@ -1,16 +1,4 @@
 .club {
-  &__breadcrumb {
-    margin-top: 6vh;
-
-    &--item {
-      margin: 10px;
-    }
-  
-    &--item:hover {
-      color: $primary-1;
-    }
-  }
-  
   &__header {
     display: flex;
     align-items: center;
