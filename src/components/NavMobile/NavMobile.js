@@ -16,7 +16,7 @@ const NavMobile = () => {
   const [ activeDropdown, setActiveDropdown ] = useState(false);
   const { routes } = useSelector((state) => state.router);
 
-  const mobileRoutes = routes.filter((item) => item.name !== 'Donate');
+  const mobileRoutes = routes.filter((item) => item.name !== 'Donate' && item.phase1 === true);
   mobileRoutes.unshift({ name: 'Home', linkTo: '/' });
 
   const resetSideNav = () => {

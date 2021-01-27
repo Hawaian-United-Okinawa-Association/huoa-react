@@ -113,7 +113,7 @@ const INITIAL_STATE = {
     },
     {
       name: 'Shop',
-      linkTo: 'https://shophuoa.com/',
+      linkTo: '/shop',
       phase1: true
     },
     {
