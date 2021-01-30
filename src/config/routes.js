@@ -15,7 +15,7 @@ import News from 'pages/News/News';
 import Contact from 'pages/Contact/Contact';
 import Donate from 'pages/Donate/Donate';
 import Geneology from 'pages/Geneology/Geneology';
-import ClubList from 'pages/ClubList/ClubList';
+import Clubs from 'pages/Clubs/Clubs';
 import Club from 'pages/Club/Club';
 import Demo from 'pages/Demo/Demo';
 import AboutMissionAndPurpose from 'pages/MissionAndPurpose/MissionAndPurpose';
@@ -51,7 +51,7 @@ const Routes = () => {
       </Route>
       <Route exact path="/clubs">
         <Header props={ pageState.join } />
-        <ClubList data={ pageState["join-a-club"] }/>
+        <Clubs data={ pageState["join-a-club"] }/>
       </Route>
       <Route path="/clubs/:clubId">
         <Header props={ pageState.join } />

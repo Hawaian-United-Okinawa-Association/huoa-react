@@ -1,6 +1,6 @@
 import React from "react";
 
-const Contact = ({ parent, parentText }) => {
+const ContactLinks = ({ parent, parentText }) => {
   let contact = parent;
 
   return (
@@ -14,4 +14,4 @@ const Contact = ({ parent, parentText }) => {
   );
 };
 
-export default Contact;
+export default ContactLinks;

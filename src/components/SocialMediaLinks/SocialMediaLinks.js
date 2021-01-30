@@ -1,12 +1,12 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import { ReactComponent as Website } from "../../../assets/website.svg";
-import { ReactComponent as Facebook } from "../../../assets/facebook.svg";
-import { ReactComponent as Instagram } from "../../../assets/instagram.svg";
-import { ReactComponent as Twitter } from "../../../assets/twitter.svg";
+import { ReactComponent as Website } from "../../assets/website.svg";
+import { ReactComponent as Facebook } from "../../assets/facebook.svg";
+import { ReactComponent as Instagram } from "../../assets/instagram.svg";
+import { ReactComponent as Twitter } from "../../assets/twitter.svg";
 
-const Social = ({ parent }) => {
+const SocialMediaLinks = ({ parent }) => {
   return (
     <div className="social">
       {!!parent.website && (
@@ -32,4 +32,4 @@ const Social = ({ parent }) => {
     </div>
   );
 };
-export default withRouter(Social);
+export default SocialMediaLinks;

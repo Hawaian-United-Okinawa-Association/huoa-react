@@ -3,11 +3,11 @@ import { useSelector } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 import Layout from "components/Layout/Layout";
-import Contact from "components/Builder/Contact/Contact";
-import Description from "components/Builder/Description/Description";
-import Header from "components/Builder/Header/Header";
-import Newsletter from "components/Builder/Newsletter/Newsletter";
-import Social from "components/Builder/Social/Social";
+import ContactLinks from "components/ContactLinks/ContactLinks";
+import Description from "components/Description/Description";
+import HeadingTitleImage from "components/HeadingTitleImage/HeadingTitleImage";
+import Button from "components/Button/Button";
+import SocialMediaLinks from "components/SocialMediaLinks/SocialMediaLinks";
 
 const Club = ({ match }) => {
   let clubDataAll = useSelector((state) => state.clubs);
@@ -28,20 +28,20 @@ const Club = ({ match }) => {
     return (
       <Layout>
         <div className="club__container">
-          <Header rendered={rendered} image={club_image}/>
+          <HeadingTitleImage rendered={rendered} image={club_image}/>
           {!!club_description && (
             <Description parent={club_description}/>
           )}
           
           {!!club_newsletter && (
-            <Newsletter parent={club_newsletter} />
+            <Button link={club_newsletter}>Optional Link</Button>
           )}
 
           { !!club_contact.address || !!club_contact.city_zip || !!club_contact.email || !!club_contact.phone ? (
-            <Contact parent={club_contact} parentText="Contact Information"/>
+            <ContactLinks parent={club_contact} parentText="Contact Information"/>
           ) : null }
 
-          <Social parent={club_social_media}/>
+          <SocialMediaLinks parent={club_social_media}/>
         </div>
       </Layout>
     );

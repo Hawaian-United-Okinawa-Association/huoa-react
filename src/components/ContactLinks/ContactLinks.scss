@@ -1,11 +1,8 @@
 .contact {
-    // width: 20vw;
     margin-top: 10vh;
 
     @media screen and (max-width: $breakpoint-mobile) {
-      // display: flex;
-      // margin: auto;
-      text-align: center;
+      text-align: left;
     }
 
     &__title {
