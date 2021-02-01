@@ -12,30 +12,17 @@ const Home = ({ data }) => {
   if (!data) return null;
 
   let { builder } = data;
+  let cardslarge = builder[2].cards_large;
 
   return (
     <>
-      <Hero props={ builder[0] } />
+      <Hero props={ builder[0] }/>
       <TextArea props={ builder[1] }/>
       <section className="home__section">
         <Container col='2'>
-          {/* TODO: this needs to be refactored to only pass in one object like TextArea - the button functionality is only doing onclick when in reality these could be links */}
-          <CardLarge
-            image='https://huoa.org/nuuzi/banquetfacility/hoc.jpg'
-            altTag='banquet facility'
-            header='Banquet Facility'
-            body='The Legacy Ballroom is a premier banquet venue. It is especially convenient to the Leeward and Central Oahu areas, and is readily accessible via freeway from Honolulu.'
-            button='SCHEDULE'
-            onClick={() => console.log('you clicked a button')}
-          />
-          <CardLarge
-            image=' https://dev.huoa.org/wp-content/uploads/2020/12/dancegroup.webp'
-            altTag='join a club'
-            header='Join A Club'
-            body='The HUOA is made up of 50 member clubs, whose combined member total exceeds 40,000.'
-            button='JOIN'
-            onClick={() => console.log('you clicked a button')}
-          />
+          { cardslarge.map((card, i) => {
+            return <CardLarge key={ i } props={card}/>
+          }) }
         </Container>
       </section>
 
