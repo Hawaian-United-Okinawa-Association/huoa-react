@@ -12,7 +12,8 @@ const Home = ({ data }) => {
   if (!data) return null;
 
   let { builder } = data;
-  let cardslarge = builder[2].cards_large;
+  let cardsLarge = builder[2].cards_large;
+  let cardsSquare = builder[3].cards_small.card;
 
   return (
     <>
@@ -20,9 +21,9 @@ const Home = ({ data }) => {
       <TextArea props={ builder[1] }/>
       <section className="home__section">
         <Container col='2'>
-          { cardslarge.map((card, i) => {
-            return <CardLarge key={ i } props={card}/>
-          }) }
+          { cardsLarge.map((card, i) => 
+            <CardLarge key={ i } props={card}/>
+          )}
         </Container>
       </section>
 
@@ -31,28 +32,9 @@ const Home = ({ data }) => {
           <h2 className="home__title">Support Your Community</h2>
         </Container>
         <Container col='3'>
-          {/* TODO: this needs to be refactored to only pass in one object like TextArea */}
-          <CardSquare
-            header='Annual Giving'
-            subheader='Preserving our Legacy'
-            body='Help to support ongoing classes, virtual programs, international student exchanges, and preserve the Hawaii Okinawa Center.'
-            button='LEARN MORE'
-            onClick={() => console.log('You clicked a button')}
-          />
-          <CardSquare
-            header='Capital Campaign'
-            subheader='Ikuyu Madin'
-            body='Although the Plaza is open for business, donations are still needed and greatly appreciated. They will go to the Hawaii United Okinawa Association to support its many cultural programs.'
-            button='LEARN MORE'
-            onClick={() => console.log('You clicked a button')}
-          />
-          <CardSquare
-            header='Kokua In Kind'
-            subheader='Kokua In Kind'
-            body='Is a car exchange service that will take your old car and resell it.  Proceeds from the sale less fees will be a donation to HUOA.'
-            button='LEARN MORE'
-            onClick={() => console.log('You clicked a button')}
-          />
+          { cardsSquare.map((card, i) => 
+            <CardSquare key={i} props={card}/>
+          )}
         </Container>
       </section>
 
