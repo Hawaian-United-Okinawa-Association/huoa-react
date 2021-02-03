@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 import Layout from "components/Layout/Layout";
+import Breadcrumbs from "components/Breadcrumbs/Breadcrumbs";
 import ContactLinks from "components/ContactLinks/ContactLinks";
 import Description from "components/Description/Description";
 import HeadingTitleImage from "components/HeadingTitleImage/HeadingTitleImage";
@@ -28,6 +29,8 @@ const Club = ({ match }) => {
     return (
       <Layout>
         <div className="club__container">
+          <Breadcrumbs parent="clubs" parentText="Join a HUOA Club" rendered={ rendered } />
+          <br />
           <HeadingTitleImage rendered={rendered} image={club_image}/>
           {!!club_description && (
             <Description parent={club_description}/>
