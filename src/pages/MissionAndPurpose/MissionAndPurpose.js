@@ -11,9 +11,9 @@
 ******************************/
 
 import React from 'react';
-import Container from 'components/Container/Container.js';
-import Layout from 'components/Layout/Layout.js';
-import TitleBody from 'components/TitleBody/TitleBody.js';
+import Container from 'components/Container/Container';
+import Layout from 'components/Layout/Layout';
+import TitleBody from 'components/TitleBody/TitleBody';
 
 const MissionAndPurpose = ({ data }) => {
   if (!data) return null;
