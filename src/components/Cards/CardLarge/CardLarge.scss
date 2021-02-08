@@ -1,7 +1,5 @@
 $card-image-height: 330px;
 
-// TODO: Mobile Styles
-
 .card-large {
   display: grid;
   grid-template-areas: 'image' 'text' 'button';
@@ -54,7 +52,12 @@ $card-image-height: 330px;
 }
 
 @media (max-width: $breakpoint-mobile) {
+  .card-large {
+    margin: 18px;
+  }
+
   .card-large__body{
-    margin: 0 30px;
+    margin: 0 8px;
+    text-align: left;
   }
 }
