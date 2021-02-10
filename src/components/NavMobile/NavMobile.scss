@@ -100,7 +100,7 @@
       &--items {
         display: flex;
         flex-direction: column;
-        margin: 0;
+        margin: 1rem 0;
         padding: 0;
         list-style-type: none;
       }
@@ -125,6 +125,7 @@
           }
         }
         
+        margin-right: 1rem;
         animation: derotateCarrot 200ms ease-in-out forwards;
 
         &--active {
@@ -138,6 +139,7 @@
             }
           }
 
+          margin-right: 1rem;
           animation: rotateCarrot 200ms ease-in-out forwards;
         }
       }
@@ -164,8 +166,8 @@
 
         &-item {
         display: flex;
-        margin: 0 -2rem;
-        padding: .5rem 2rem;
+        margin: 0 -2.5rem;
+        padding: .5rem 3rem;
         background-color: $primary-3;
         font-weight: 100;
         }
@@ -199,9 +201,9 @@
 
     &__navclose {
       align-self: flex-end;
-      min-width: 10px;
-      min-height: 10px;
-      margin: 1rem 0;
+      min-width: 15px;
+      min-height: 15px;
+      margin: 1rem 1rem;
     }
   }
 }
@@ -267,12 +269,14 @@
       &--dropdown {
         &-item {
           width: 100%;
-          margin: 0 auto;
+          margin: 0 -0.1rem;
+          padding: .5rem 1.5rem;
         }
       }
 
       &--footer {
         width: 95%;
+        // margin: auto auto 0 auto;
         padding: .25rem 0rem 3rem 0rem;
 
         &-link {
