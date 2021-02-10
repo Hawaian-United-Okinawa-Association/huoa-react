@@ -8,6 +8,7 @@
 
 @media screen and (max-width: $breakpoint-laptop){
   .nav-mobile {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -46,9 +47,6 @@
 
     &__hamburger {
       width: 1.5rem;
-      // @media (min-width: $breakpoint-mobile) {
-      //   width: 2rem;
-      // }
     }
 
     &__sidebar {
@@ -65,40 +63,38 @@
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
       &--active {
+        @keyframes slideIn {
+          from {
+            right: -35rem;
+          }
+    
+          to {
+            right: 0;
+          }
+        }
+
         @extend .nav-mobile__sidebar;
         top: 0;
         right: 0;
-
-        // @keyframes slideIn {
-        //   from {
-        //     right: -35rem;
-        //   }
-    
-        //   to {
-        //     right: 0;
-        //   }
-        // }
-
-        // animation: slideIn 200ms ease-out;
+        animation: slideIn 200ms ease-out;
       }
 
       &--inactive {
-        display: none;
-        // @keyframes slideOut {
-        //   from {
-        //     right: 0rem;
-        //   }
+        @keyframes slideOut {
+          from {
+            right: 0rem;
+          }
     
-        //   to {
-        //     right: -35rem;
-        //   }
-        // }
+          to {
+            right: -35rem;
+          }
+        }
 
-        // @extend .nav-mobile__sidebar;
-        // position: absolute;
-        // top: 0;
-        // right: -35rem;
-        // animation: slideOut 200ms ease-out;
+        @extend .nav-mobile__sidebar;
+        position: fixed;
+        top: 0;
+        right: -35rem;
+        animation: slideOut 200ms ease-out;
       }
 
       &--items {
