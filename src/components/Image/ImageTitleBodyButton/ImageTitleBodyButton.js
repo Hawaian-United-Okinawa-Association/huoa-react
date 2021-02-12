@@ -18,4 +18,3 @@ function ImageTitleBodyButton({ image, title, body, button }) {
   } 
   
   export default ImageTitleBodyButton;
-  
