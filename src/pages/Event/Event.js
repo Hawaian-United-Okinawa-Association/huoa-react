@@ -19,17 +19,20 @@ const Event = ({ match }) => {
   let year = splitEvent[2];
   let time =`${ splitEvent[3] } ${ splitEvent[4] }`;
 
+  console.log(event)
   return (
     <Layout>
       <section className="event">
-      <Breadcrumbs parent="events" parentText="Events" rendered={ event_title } />
+      <Image className="event__image" webp="https://dev.huoa.org/wp-content/uploads/2020/09/home-hero-4.webp" />
+      <div className="event__section--left">
+        <Breadcrumbs parent="events" parentText="Events" rendered={ event_title } />
         <h2 className="event__title">{ event_title }</h2>
-        <Image className="event__image" webp="https://dev.huoa.org/wp-content/uploads/2020/09/home-hero-4.webp" />
         <h3 className="event__date">
           { month } { day }, { year } <span className="event__spacer">|</span> { time }
         </h3>
         <p className="event__location" dangerouslySetInnerHTML={{ __html: event_location }}></p>
         <div className="event__details" dangerouslySetInnerHTML={{ __html: event_details }} />
+      </div>
       </section>
     </Layout>
   );
