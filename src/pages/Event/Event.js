@@ -19,7 +19,6 @@ const Event = ({ match }) => {
   let year = splitEvent[2];
   let time =`${ splitEvent[3] } ${ splitEvent[4] }`;
 
-  console.log(event)
   return (
     <Layout>
       <section className="event">
