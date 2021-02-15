@@ -13,3 +13,40 @@
     text-align: center;
   }
 }
+
+.card-blank__subscribe {
+  padding: 50px 80px;
+  text-align: left;
+
+  .button {
+    width: 100%
+  }
+}
+
+.card-blank__newsletter {
+  padding: 50px 80px;
+  text-align: left;
+
+  p {
+    margin-bottom: 24px;
+  }
+
+  div {
+    width: 100px;
+  }
+}
+
+.card-blank__input {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 15px;
+  border-style: solid;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .home__title {
+    font-size: 22px;
+  }
+}

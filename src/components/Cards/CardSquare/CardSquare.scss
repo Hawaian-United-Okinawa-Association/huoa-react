@@ -1,5 +1,3 @@
-// TODO: Mobile Styles
-
 .card-square {
   display: grid;
   grid-template-areas: 'text' 'button';
@@ -50,5 +48,9 @@
 @media (max-width: $breakpoint-mobile) {
   .card-square {
     margin: 19px 16px;
+  }
+
+  .card-square__body {
+    margin: 29px 16px;
   }
 }

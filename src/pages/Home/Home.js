@@ -14,6 +14,7 @@ const Home = ({ data }) => {
   let { builder } = data;
   let cardsLarge = builder[2].cards_large;
   let cardsSquare = builder[3].cards_small.card;
+  console.log(builder)
 
   return (
     <>
@@ -45,19 +46,18 @@ const Home = ({ data }) => {
         <Container col='2'>
           <CardBlank>
             {/* TODO: refactor this is not how we should be styling inner card elements. They should be styled in the Home.scss file. */}
-            <div className='card-blank--subscribe'>
+            <div className='card-blank__subscribe'>
               <h3>Purple Blast</h3>
               <p>Our monthly online newsletter to keep up to date on what's happening in the Hawaii Okinawa community.</p>
-              <input className='card-blank--input' type='text' placeholder='Email Address'></input>
+              <input className='card-blank__input' type='text' placeholder='Email Address'></input>
               <Button type='filled' onClick={() => console.log('You clicked a button')}>Subscribe</Button>
             </div>
           </CardBlank>
           <CardBlank>
-          <div className='card-blank--newsletter'>
+          <div className='card-blank__newsletter'>
               <h3>Uchinanchu Newsletter</h3>
-              {/* TODO: we should never do inline styling */}
-              <p style={{marginBottom: '24px'}}>Our official bi-monthly newsletter of HUOA, featuring the latest news and events of the organization as well as tidbits on Okinawan cultural activities and performing arts.</p>
-              <div style={{width: '100px'}}>
+              <p>Our official bi-monthly newsletter of HUOA, featuring the latest news and events of the organization as well as tidbits on Okinawan cultural activities and performing arts.</p>
+              <div>
                 <Button type='filled' onClick={() => console.log('You clicked a button')}>SIGNUP</Button>
               </div>
             </div>
