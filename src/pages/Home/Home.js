@@ -14,7 +14,6 @@ const Home = ({ data }) => {
   let { builder } = data;
   let cardsLarge = builder[2].cards_large;
   let cardsSquare = builder[3].cards_small.card;
-  console.log(builder)
 
   return (
     <>
@@ -57,9 +56,7 @@ const Home = ({ data }) => {
           <div className='card-blank__newsletter'>
               <h3>Uchinanchu Newsletter</h3>
               <p>Our official bi-monthly newsletter of HUOA, featuring the latest news and events of the organization as well as tidbits on Okinawan cultural activities and performing arts.</p>
-              <div>
-                <Button type='filled' onClick={() => console.log('You clicked a button')}>SIGNUP</Button>
-              </div>
+              <Button type='filled' onClick={() => console.log('You clicked a button')}>SIGNUP</Button>
             </div>
           </CardBlank>
         </Container>
