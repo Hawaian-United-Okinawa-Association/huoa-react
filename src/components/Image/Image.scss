@@ -1,0 +1,15 @@
+.picture {
+    &__image {
+        display: inline-flex;
+        max-width: 90px;
+        max-height: 90px;
+        margin-top: 32px;
+        margin-right: 18px;
+
+        @media screen and (max-width: $breakpoint-mobile) {
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+        }
+    }
+}

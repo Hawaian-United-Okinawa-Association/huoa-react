@@ -4,17 +4,19 @@ import { withRouter } from "react-router-dom";
 
 import Layout from "components/Layout/Layout";
 import Breadcrumbs from "components/Breadcrumbs/Breadcrumbs";
-import ContactLinks from "components/ContactLinks/ContactLinks";
+import ContactInfo from "components/ContactInfo/ContactInfo";
 import Description from "components/Description/Description";
-import HeadingTitleImage from "components/HeadingTitleImage/HeadingTitleImage";
+import HeadingTitle from "components/HeadingTitle/HeadingTitle";
 import Button from "components/Button/Button";
-import SocialMediaLinks from "components/SocialMediaLinks/SocialMediaLinks";
+import SocialMediaLinks from "components/social-media-links/social-media-links";
+import Image from "components/Image/Image";
 
 const Club = ({ match }) => {
-  let clubDataAll = useSelector((state) => state.clubs);
+  let club = useSelector((state) => state.clubs);
   let currentClub = match.params.clubId;
-  let clubData = clubDataAll.find((object) => object.slug === currentClub);
-
+  let clubData = club.find((object) => object.slug === currentClub);
+  let button_text;
+  
   if (!clubData) {
     return null;
   } else {
@@ -31,20 +33,27 @@ const Club = ({ match }) => {
         <div className="club__container">
           <Breadcrumbs parent="clubs" parentText="Join a HUOA Club" rendered={ rendered } />
           <br />
-          <HeadingTitleImage rendered={rendered} image={club_image}/>
+          <div className="club__title">
+            {!!club_image && (
+              <Image className="image" img={club_image} alt="club logo" />
+            )}
+            <HeadingTitle rendered={rendered}/>
+          </div>
           {!!club_description && (
             <Description parent={club_description}/>
           )}
           
           {!!club_newsletter && (
-            <Button link={club_newsletter}>Optional Link</Button>
+            <Button link={club_newsletter}>{button_text ? button_text : "Optional Link"}</Button>
           )}
 
-          { !!club_contact.address || !!club_contact.city_zip || !!club_contact.email || !!club_contact.phone ? (
-            <ContactLinks parent={club_contact} parentText="Contact Information"/>
-          ) : null }
+          { !!club_contact && (
+            <ContactInfo body={club_contact} title="Contact Information"/>
+          )}
 
-          <SocialMediaLinks parent={club_social_media}/>
+          { !!club_social_media && (
+            <SocialMediaLinks links={club_social_media}/>
+          )}
         </div>
       </Layout>
     );

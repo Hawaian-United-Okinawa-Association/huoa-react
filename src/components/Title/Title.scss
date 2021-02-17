@@ -1,5 +1,17 @@
-.title {
+.title{
     @media screen and (max-width: $breakpoint-mobile) {
       text-align: center;
+    }
+
+    &__left {
+      text-align: start;
+    }
+
+    &__center {
+      text-align: center;
+    }
+
+    &__right {
+      text-align: end;
     }
 }

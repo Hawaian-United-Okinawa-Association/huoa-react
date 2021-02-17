@@ -1,5 +1,9 @@
 .club {
   &__container {
     margin: 2rem auto;
+      
+    @media screen and (max-width: $breakpoint-mobile) {
+      flex-wrap: wrap;
+    }
   }
 }

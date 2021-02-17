@@ -6,26 +6,26 @@ import { ReactComponent as Facebook } from "../../assets/facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/instagram.svg";
 import { ReactComponent as Twitter } from "../../assets/twitter.svg";
 
-const SocialMediaLinks = ({ parent }) => {
+const SocialMediaLinks = ({ links }) => {
   return (
     <div className="social">
-      {!!parent.website && (
-        <Link className="social__item" to={parent.website}>
+      {!!links.website && (
+        <Link className="social__item" to={links.website}>
           <Website />
         </Link>
       )}
-      {!!parent.facebook && (
-        <Link className="social__item" to={parent.facebook}>
+      {!!links.facebook && (
+        <Link className="social__item" to={links.facebook}>
           <Facebook />
         </Link>
       )}
-      {!!parent.instagram && (
-        <Link className="social__item" to={parent.instagram}>
+      {!!links.instagram && (
+        <Link className="social__item" to={links.instagram}>
           <Instagram />
         </Link>
       )}
-      {!!parent.twitter && (
-        <Link className="social__item" to={parent.twitter}>
+      {!!links.twitter && (
+        <Link className="social__item" to={links.twitter}>
           <Twitter />
         </Link>
       )}

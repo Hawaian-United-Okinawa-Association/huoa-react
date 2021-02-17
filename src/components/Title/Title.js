@@ -1,8 +1,8 @@
 import React from "react";
 
-const Title = ({ rendered }) => {
+const Title = ({ rendered, position }) => {
   return (
-      <div className="title">
+      <div className={`title__${position}`}>
         <h2>{rendered}</h2>
       </div>
   );
