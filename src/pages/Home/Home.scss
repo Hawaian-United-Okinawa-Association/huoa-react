@@ -42,7 +42,34 @@
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
-  .home__title {
-    font-size: 22px;
+  .home {
+    &__title {
+      margin: 28px 0 43px;
+      font-size: 22px;
+    }
+
+    &__section {
+      padding: 24px 0;
+    }
+  }
+
+  .card {
+    &-blank {
+      &__newsletter,
+      &__subscribe {
+        padding: 16px;
+
+        h3 {
+          margin-top: 0;
+          text-align: center;
+        }
+      }
+    }
+
+    &-square {
+      &__text {
+        padding-top: 20px;
+      }
+    }
   }
 }
