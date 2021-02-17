@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import Layout from 'components/Layout/Layout';
 import CardEvent from 'components/Cards/CardEvent/CardEvent';
+import Container from 'components/Container/Container';
 
 const Events = () => {
   const events = useSelector((state) => state.events);
@@ -11,6 +12,7 @@ const Events = () => {
 
   return (
     <Layout>
+      <Container>
       <h2 className="events__title">Events Calendar</h2>
       <section className="events">
         <h3 className="events__subtitle">Upcoming Events</h3>
@@ -29,6 +31,7 @@ const Events = () => {
           )}
         </div>
       </section>
+      </Container>
     </Layout>
   );
 };

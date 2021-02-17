@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
 import Layout from 'components/Layout/Layout';
+import Container from 'components/Container/Container';
 import Image from 'components/Image/Image';
 import Breadcrumbs from 'components/Breadcrumbs/Breadcrumbs';
 
@@ -21,6 +22,7 @@ const Event = ({ match }) => {
 
   return (
     <Layout>
+      <Container>
       <section className="event">
       <Image className="event__image" webp="https://dev.huoa.org/wp-content/uploads/2020/09/home-hero-4.webp" />
       <div className="event__section--left">
@@ -33,6 +35,7 @@ const Event = ({ match }) => {
         <div className="event__details" dangerouslySetInnerHTML={{ __html: event_details }} />
       </div>
       </section>
+      </Container>
     </Layout>
   );
 };
