@@ -1,16 +1,16 @@
-.title-subtitle-body{
+.title-subtitle-body {
   &__body {
     margin-bottom: 4.5rem;
   }
 }
 
-@media screen and (max-width: $breakpoint-tablet){
-  .title-subtitle-body{
-    h2{
+@media screen and (max-width: $breakpoint-tablet) {
+  .title-subtitle-body {
+    h2 {
       text-align: center;
     }
     
-    &__title{
+    &__title {
       font-size: 22px;
       text-align: center;
     }
@@ -20,7 +20,7 @@
       line-height: 30px;
     }
     
-    &__title{
+    &__title {
       order: -1;
     }
   }

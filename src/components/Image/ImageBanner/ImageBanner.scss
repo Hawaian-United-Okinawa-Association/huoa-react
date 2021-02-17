@@ -9,13 +9,13 @@
     width: 100%;
   }
 }
-@media screen and (max-width: $breakpoint-mobile){
-  .image-banner{
+@media screen and (max-width: $breakpoint-mobile) {
+  .image-banner {
      grid-template-columns: 1fr;
   }
 
-  .image-banner{
-    picture:not(:first-child){
+  .image-banner {
+    picture:not(:first-child) {
       display: none;
     }
   }
