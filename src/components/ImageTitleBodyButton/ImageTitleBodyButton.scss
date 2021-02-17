@@ -1,4 +1,4 @@
-.image-title-body-button{
+.image-title-body-button {
   &__image {
     grid-column-start: 1;
     grid-column-end: 2;
@@ -30,8 +30,8 @@
   }
 }
 
-@media screen and (max-width: $breakpoint-tablet){
-  .image-title-body-button{
+@media screen and (max-width: $breakpoint-tablet) {
+  .image-title-body-button {
     &__container {
       display: block;
     }
