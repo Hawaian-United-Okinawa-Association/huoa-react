@@ -1,9 +1,9 @@
 import React from 'react';
 import Layout from 'components/Layout/Layout.js';
 import Container from 'components/Container/Container.js';
-import ImageBanner from 'components/Image/ImageBanner/ImageBanner.js';
-import ImageTitleBodyButton from 'components/Image/ImageTitleBodyButton/ImageTitleBodyButton.js';
-import TitleSubtitleBody from 'components/Title/TitleSubtitleBody/TitleSubtitleBody.js';
+import ImageBanner from 'components/ImageBanner/ImageBanner.js';
+import ImageTitleBodyButton from 'components/ImageTitleBodyButton/ImageTitleBodyButton.js';
+import TitleSubtitleBody from 'components/TitleSubtitleBody/TitleSubtitleBody.js';
 
 const BanquetFacility = ({ data }) => {
 if (!data) return null;

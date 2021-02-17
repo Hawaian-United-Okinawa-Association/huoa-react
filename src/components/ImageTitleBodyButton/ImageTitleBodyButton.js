@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'components/Button/Button.js';
 import Image from 'components/Image/Image.js';
 
-function ImageTitleBodyButton({ image, title, body, button }) {
+const ImageTitleBodyButton = ({ image, title, body, button }) => {
     return (
       <div className="image-title-body-button">
         <h4 className="image-title-body-button__section-heading">{title}</h4>
