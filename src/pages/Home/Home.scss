@@ -44,7 +44,7 @@
 @media screen and (max-width: $breakpoint-mobile) {
   .home {
     &__title {
-      margin: 28px 0 43px;
+      margin: 4px 0 26px;
       font-size: 22px;
     }
 
@@ -63,12 +63,6 @@
           margin-top: 0;
           text-align: center;
         }
-      }
-    }
-
-    &-square {
-      &__text {
-        padding-top: 20px;
       }
     }
   }
