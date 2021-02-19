@@ -15,3 +15,11 @@
     grid-column-gap: 2rem;
   }
 }
+
+@media screen and (max-width: $breakpoint-tablet){
+  .events {
+    &__cards {
+      grid-template-columns: 1fr;
+    }
+  }
+}

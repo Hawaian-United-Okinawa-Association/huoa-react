@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import Layout from 'components/Layout/Layout';
+import Container from 'components/Container/Container';
 import CardEvent from 'components/Cards/CardEvent/CardEvent';
 
 const Events = () => {
@@ -11,7 +12,8 @@ const Events = () => {
 
   return (
     <Layout>
-      <h1 className="events__title">Events Calendar</h1>
+      <Container>
+      <h2 className="events__title">Events Calendar</h2>
       <section className="events">
         <h3 className="events__subtitle">Upcoming Events</h3>
         <div className="events__cards">
@@ -29,6 +31,7 @@ const Events = () => {
           )}
         </div>
       </section>
+      </Container>
     </Layout>
   );
 };

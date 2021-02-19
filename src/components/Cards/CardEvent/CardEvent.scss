@@ -1,5 +1,6 @@
 .card-event {
   position: relative;
+  border-radius: 4px;
   padding: .5rem;
   box-shadow: $card-event-shadow;
 
@@ -15,6 +16,7 @@
     justify-content: center;
     width: 4.5rem;
     height: 4.5rem;
+    border-radius: 0px 0px 4px 0px;
     background-color: $white;
     color: $primary-1;
     font-weight: 600;
@@ -47,5 +49,11 @@
       font-weight: 400;
       text-transform: none;
     }
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet){
+  .card-event {
+    margin-bottom: 24px
   }
 }
