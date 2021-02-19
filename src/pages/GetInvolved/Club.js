@@ -14,6 +14,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
 
+import Breadcrumbs from "components/Breadcrumbs/Breadcrumbs";
+
 import Layout from "components/Layout/Layout";
 import { ReactComponent as Website } from "../../assets/website.svg";
 import { ReactComponent as Facebook } from "../../assets/facebook.svg";
@@ -28,90 +30,93 @@ const Club = ({ match }) => {
   if (!clubData) {
     return null;
   } else {
-    let { club_description,club_image,club_contact,club_social_media } = clubData.acf.club;
+    let {
+      club_description,
+      club_image,
+      club_contact,
+      club_social_media,
+      club_newsletter,
+    } = clubData.acf.club;
     let { rendered } = clubData.title;
     return (
       <Layout>
         <div className="club__container">
-          <p className="club__breadcrumb">
-            <Link className="club__breadcrumb--item" to="/">
-              Home
-            </Link>
-            /
-            <Link className="club__breadcrumb--item" to="/clubs">
-              Join a HUOA Club
-            </Link>
-            /<span className="club__breadcrumb--item">{rendered}</span>
-          </p>
+          <Breadcrumbs parent="clubs" parentText="Join a HUOA Club" rendered={ rendered } />
           <br />
           <div className="club__header">
-            {!!club_image &&
+            {!!club_image && (
               <img
                 className="club__header--image"
                 src={club_image}
                 alt="club logo"
               />
-            }
+            )}
             <div className="club__header--title">{rendered}</div>
           </div>
-          {!!club_description &&
+          {!!club_description && (
             <div
               className="club__description"
               dangerouslySetInnerHTML={{ __html: club_description }}
             />
-          }
+          )}
+          
+          {!!club_newsletter && (
+            <div className="club__newsletter">
+              <a href={club_newsletter}>Optional Link</a>
+            </div>
+          )}
 
-          <div className="club__contact">
-            <div className="club__contact--title">Contact Information</div>
-            {!!club_contact.address &&
-              <div className="club__contact--address">
-                <div>{club_contact.address}</div>
-              </div>
-            }
-            {!!club_contact.email &&
-              <div className="club__contact--email">
-                <div>{club_contact.email}</div>
-              </div>
-            }
-            {!!club_contact.phone &&
-              <div className="club__contact--phone">
-                <div>P: {club_contact.phone}</div>
-              </div>
-            }
-          </div>
+          { !!club_contact.address || !!club_contact.city_zip || !!club_contact.email || !!club_contact.phone ? (
+            <div className="club__contact">
+              <div className="club__contact--title">Contact Information</div>
+                <div className="club__contact--address">
+                   <div>{club_contact.address}</div>
+                </div>
+                <div className="club__contact--city_zip">
+                  {club_contact.city_zip}
+                </div>
+                <div className="club__contact--email">
+                  {club_contact.email}
+                </div>
+                <div className="club__contact--phone">
+                  {club_contact.phone}
+                </div>
+            </div>
+          ) : null }
+
           <div className="club__social">
-            {!!club_social_media.website &&
+            {!!club_social_media.website && (
               <Link
                 className="club__social--item"
                 to={club_social_media.website}
               >
                 <Website />
               </Link>
-            }
-            {!!club_social_media.facebook &&
+            )}
+            {!!club_social_media.facebook && (
               <Link
                 className="club__social--item"
                 to={club_social_media.facebook}
               >
                 <Facebook />
               </Link>
-            }
-            {!!club_social_media.instagram &&
+            )}
+            {!!club_social_media.instagram && (
               <Link
                 className="club__social--item"
                 to={club_social_media.instagram}
               >
                 <Instagram />
               </Link>
-            }
-            {!!club_social_media.twitter &&
+            )}
+            {!!club_social_media.twitter && (
               <Link
                 className="club__social--item"
                 to={club_social_media.twitter}
               >
                 <Twitter />
               </Link>
-            }
+            )}
           </div>
         </div>
       </Layout>

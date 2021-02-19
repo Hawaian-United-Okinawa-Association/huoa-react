@@ -1,22 +1,21 @@
 import React, { useEffect, useState }  from 'react';
-import { useSelector } from 'react-redux';
 
 import Image from 'components/Image/Image';
 import Container from 'components/Container/Container';
 import Button from 'components/Button/Button';
 
-const Hero = () => {
-  const heroImages = useSelector(state => state.heros);
+const Hero = ({ props }) => {
+  const { slides } = props.hero_slider;
 
   const [ active, setActive ] = useState(0);
-  const [ content, setContent ] = useState(heroImages[0]);
 
   // In order to have a timer with setInterval we need to bind this to the component otherwise there is a memory leak in react, if you like to see what it looks like put set interval outside of the hook and watch the hero's promises bubble up
   // https://overreacted.io/making-setinterval-declarative-with-react-hooks/
   useEffect(() => {
+    if (slides.length === 1) return;
+
     const timer = setInterval(() => {
-      active === heroImages.length - 1 ? setActive(0) : setActive(active + 1);
-      setContent(heroImages[active]);
+      active === slides.length - 1 ? setActive(0) : setActive(active + 1);
     }, 4000);
 
     return () => clearInterval(timer);
@@ -24,36 +23,46 @@ const Hero = () => {
 
   const updateSlide = (i) => {
     setActive(i);
-    setContent(heroImages[i]);
   };
 
-  return (
+  return !!slides && (
     <div className="hero">
       <div className="hero__wrapper">
-        { heroImages.map((image, i) =>
+        { slides.map((slide, i) =>
           <div className='hero__slide' data-active={ active === i } key={ i }>
             <Image className="hero__image"
-              webp={ image.acf.hero_image }
+              webp={ slide.image.url }
             />
+            { slide.content_box && (
+              <div className="hero__overlay">
+                <Container col='12'>
+                  <div className="hero__content" data-placement={ slide.content.placement }>
+                    <h2 className="hero__title">{ slide.content.title }</h2>
+                    <h4 className="hero__description">{ slide.content.body ? slide.content.body : '' }</h4>
+                    <Button className="hero__button" type='filled' link={ slide.content.button.link ? slide.content.button.link : '/'}>{ slide.content.button.text ? slide.content.button.text : 'Learn More' }</Button>
+                  </div>
+                </Container>
+              </div>
+            )}
           </div>
         ) }
       </div>
-      <div className="hero__overlay">
-        <Container col='12'>
-          { !!content.acf.hero_title && (
-            <div className="hero__content">
-              <h2 className="hero__title">{ content.acf.hero_title }</h2>
-              <h4 className="hero__description">{ content.acf.hero_description ? content.acf.hero_description : '' }</h4>
-              <Button className="hero__button" type='filled' link={ content.acf.button.link ? content.acf.button.link : '/'}>{ content.acf.button.text ? content.acf.button.text : 'Learn More' }</Button>
-            </div>
+      { slides[active].content_box && (
+        <div className="hero__overlay--mobile">
+          <h2 className="hero__title">{ slides[active].content.title }</h2>
+          <h4 className="hero__description">{ slides[active].content.body ? slides[active].content.body : '' }</h4>
+          <div className="hero__button--wrapper">
+            <Button className="hero__button" type='filled' link={ slides[active].content.button.link ? slides[active].content.button.link : '/'}>{ slides[active].content.button.text ? slides[active].content.button.text : 'Learn More' }</Button>
+          </div>
+        </div>
+      )}
+      { !!(slides.length > 1) && (
+        <div className="hero__controls">
+          { slides.map((el, i) =>
+            <span className='hero__selector' data-active={ active === i } onClick={ () => updateSlide(i) } key={ 'selector-' + i }></span>
           ) }
-        </Container>
-      </div>
-      <div className="hero__controls">
-        { heroImages.map((el, i) =>
-          <span className='hero__selector' data-active={ active === i } onClick={ () => updateSlide(i) } key={ 'selector-' + i }></span>
-        ) }
-      </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -3,10 +3,6 @@ $max_event_content_width: 800px;
 .event {
   margin: 2rem auto;
 
-  &__highlight {
-    color: $dark-purple;
-  }
-
   &__image {
     max-width: 600px;
   }

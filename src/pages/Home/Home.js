@@ -11,10 +11,12 @@ import Button from 'components/Button/Button';
 const Home = ({ data }) => {
   if (!data) return null;
 
+  let { builder } = data;
+
   return (
     <>
-      <Hero />
-      <TextArea props={ data.builder[0] }/>
+      <Hero props={ builder[0] } />
+      <TextArea props={ builder[1] }/>
       <section className="home__section">
         <Container col='2'>
           {/* TODO: this needs to be refactored to only pass in one object like TextArea - the button functionality is only doing onclick when in reality these could be links */}
