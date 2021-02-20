@@ -1,0 +1,20 @@
+.image-banner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 24px;
+  order: 0;
+
+  &__image {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+@media screen and (max-width: $breakpoint-mobile) {
+  .image-banner {
+     grid-template-columns: 1fr;
+
+     picture:not:first-child {
+      display: none;
+    }
+  }
+}
