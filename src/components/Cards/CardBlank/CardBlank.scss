@@ -1,17 +1,53 @@
-@import "styles/utilities/colors.scss";
-@import "styles/utilities/borders.scss";
-
 .card-blank {
   min-width: 280px;
   border-radius: $card-border-radius;
   background: $white;
   box-shadow: $card-blank-shadow;
   text-align: center;
+
+  &__subscribe {
+    padding: 50px 80px;
+    text-align: left;
+  
+    .button {
+      width: 100%;
+    }
+  }
+  
+  &__newsletter {
+    padding: 50px 80px;
+    text-align: left;
+  
+    p {
+      margin-bottom: 24px;
+    }
+  }
+  
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 15px;
+    border-style: solid;
+    border-radius: 4px;
+    padding: 10px;
+  }
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
-  .card-blank {
-    margin: 16px;
-    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.14);
+  .card {
+    margin: 1rem;
+    box-shadow: $card-blank-shadow-mobile;
+
+    &-blank {
+      &__newsletter,
+      &__subscribe {
+        padding: 16px;
+
+        h3 {
+          margin-top: 0;
+          text-align: center;
+        }
+      }
+    }
   }
 }

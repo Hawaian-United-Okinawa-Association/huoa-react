@@ -47,7 +47,7 @@
 
 @media (max-width: $breakpoint-mobile) {
   .card-square {
-    margin: 19px 16px;
+    margin: 16px;
     
     &__text {
       padding-top: 20px;
@@ -58,11 +58,11 @@
     }
 
     &__subtitle {
-      font-size: 17px;
+      font-size: 18px;
     }
 
     &__body {
-      margin: 29px 16px;
+      margin: 28px 16px;
       font-size: 14px;
     }
   }

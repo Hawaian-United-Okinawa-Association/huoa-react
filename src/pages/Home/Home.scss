@@ -14,33 +14,6 @@
   }
 }
 
-.card-blank__subscribe {
-  padding: 50px 80px;
-  text-align: left;
-
-  .button {
-    width: 100%;
-  }
-}
-
-.card-blank__newsletter {
-  padding: 50px 80px;
-  text-align: left;
-
-  p {
-    margin-bottom: 24px;
-  }
-}
-
-.card-blank__input {
-  box-sizing: border-box;
-  width: 100%;
-  margin-bottom: 15px;
-  border-style: solid;
-  border-radius: 4px;
-  padding: 10px;
-}
-
 @media screen and (max-width: $breakpoint-mobile) {
   .home {
     &__title {
@@ -50,20 +23,6 @@
 
     &__section {
       padding: 24px 0;
-    }
-  }
-
-  .card {
-    &-blank {
-      &__newsletter,
-      &__subscribe {
-        padding: 16px;
-
-        h3 {
-          margin-top: 0;
-          text-align: center;
-        }
-      }
     }
   }
 }

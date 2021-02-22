@@ -54,7 +54,7 @@ $card-image-height: 330px;
 @media (max-width: $breakpoint-mobile) {
   .card-large {
     grid-template-rows: 230px auto 74px;
-    margin: 18px;
+    margin: 16px;
 
     &__body {
       padding-bottom: 0;
@@ -62,21 +62,21 @@ $card-image-height: 330px;
     }
 
     &__title {
-      margin: 4px 0 16px;
+      margin: 0 0 16px;
       font-size: 20px;
     }
 
     &__image {
-      height: 230px;
+      height: 100%;
     }
 
     &__button {
-      margin: 16px 0 20px;
+      margin: auto;
     }
   }
 
   .card-large__body{
-    margin: 0 8px;
+    margin: 0 1rem;
     text-align: left;
   }
 }
