@@ -13,3 +13,16 @@
     text-align: center;
   }
 }
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .home {
+    &__title {
+      margin: 4px 0 26px;
+      font-size: 22px;
+    }
+
+    &__section {
+      padding: 24px 0;
+    }
+  }
+}

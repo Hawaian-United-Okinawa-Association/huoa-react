@@ -1,7 +1,5 @@
 $card-image-height: 330px;
 
-// TODO: Mobile Styles
-
 .card-large {
   display: grid;
   grid-template-areas: 'image' 'text' 'button';
@@ -31,7 +29,7 @@ $card-image-height: 330px;
   font-family: Poppins;
 }
 
-.card-large__header {
+.card-large__title {
   margin: 24px auto;
   font-size: 27px;
   line-height: 37px;
@@ -54,7 +52,31 @@ $card-image-height: 330px;
 }
 
 @media (max-width: $breakpoint-mobile) {
+  .card-large {
+    grid-template-rows: 230px auto 74px;
+    margin: 16px;
+
+    &__body {
+      padding-bottom: 0;
+      font-size: 16px;
+    }
+
+    &__title {
+      margin: 0 0 16px;
+      font-size: 20px;
+    }
+
+    &__image {
+      height: 100%;
+    }
+
+    &__button {
+      margin: auto;
+    }
+  }
+
   .card-large__body{
-    margin: 0 30px;
+    margin: 0 1rem;
+    text-align: left;
   }
 }
