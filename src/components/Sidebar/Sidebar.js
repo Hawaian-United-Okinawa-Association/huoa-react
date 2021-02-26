@@ -39,7 +39,7 @@ const Sidebar = () => {
       <div className="sidebar__card sidebar__card--center">
         <h3>Support HUOA</h3>
         <p>Your support is vital in promoting and preserving Okinawan culture.</p>
-        <Button className="sidebar__button" type="text" link="/clubs">
+        <Button className="sidebar__button" type="text" link="/donate">
           Learn More
         </Button>
       </div>
