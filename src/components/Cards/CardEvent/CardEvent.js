@@ -5,7 +5,7 @@ import Button from 'components/Button/Button';
 const CardEvent = ({ props }) => {
   if (!props.acf) return null;
 
-  const { event_title, event_date, event_location } = props.acf;
+  const { event_title, event_date, event_location, event_image } = props.acf;
   const event_slug = props.slug;
 
   let splitEvent = event_date.split(' ');
@@ -17,7 +17,7 @@ const CardEvent = ({ props }) => {
   return (
     <div className="card-event">
       <div className="card-event__date">{ month }<br />{ day }</div>
-      <Image className="card-event__image" webp="https://dev.huoa.org/wp-content/uploads/2020/09/home-hero-4.webp" />
+      <Image className="card-event__image" webp={ event_image.url } />
       <h3 className="card-event__title">{ event_title }</h3>
       <p className="card-event__full-date">
         { month } { day }, { year } <span className="card-event__spacer">|</span> { time }
