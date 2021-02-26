@@ -15,19 +15,19 @@ const Events = () => {
       <Container>
       <h2 className="events__title">Events Calendar</h2>
       <section className="events">
-        <h3 className="events__subtitle">Upcoming Events</h3>
+        <h4 className="events__subtitle">Upcoming Events</h4>
         <div className="events__cards">
           { events.map((event, i) =>
-            <CardEvent key={ i } props={ event } />
+            !event.acf.annual ? <CardEvent key={ i } props={ event } /> : ''
           )}
         </div>
 
       </section>
       <section className="events">
-        <h3 className="events__subtitle">Annual Events</h3>
+        <h4 className="events__subtitle events__subtitle--annual">Annual Events</h4>
         <div className="events__cards">
           { events.map((event, i) =>
-            <CardEvent key={ i } props={ event } />
+            event.acf.annual ? <CardEvent key={ i } props={ event } /> : ''
           )}
         </div>
       </section>
