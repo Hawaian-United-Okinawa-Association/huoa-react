@@ -12,8 +12,8 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__links">
-          <Link to="/about" className="footer__link">About</Link>
-          <Link to="/get-invloved" className="footer__link">Get Involved</Link>
+          <Link to="/about/mission-and-purpose" className="footer__link">About</Link>
+          <Link to="/clubs" className="footer__link">Get Involved</Link>
           <Link to="/events" className="footer__link">Events</Link>
           <Link to="/contact" className="footer__link">Contact</Link>
           {/* TODO: this will be added back later so we'll comment these out for now */}
