@@ -1,18 +1,22 @@
 import { GET_PAGES } from '../actions/actionTypes';
 import { createReducer } from './reducerUtils';
 
-const INITIAL_STATE = {};
-
 const getPagesReducer = (state, payload) => {
   return payload.reduce(
-    (allData, { slug, title, acf }) => ({
+    (allData, { id, slug, menu_order, title, acf, parent }) => ({
       ...allData,
-      [slug]: { title: title.rendered, ...acf },
+      [slug]: {
+        id: id,
+        order: menu_order,
+        title: title.rendered,
+        navigation: parent,
+        ...acf
+      },
     }),
     {}
   );
 };
 
-export default createReducer(INITIAL_STATE, {
+export default createReducer({}, {
   [GET_PAGES] : getPagesReducer
 });

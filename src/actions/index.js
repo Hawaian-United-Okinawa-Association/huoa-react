@@ -3,7 +3,7 @@ import axios from "axios";
 import {
   FETCH_CLUBS,
   GET_PAGES,
-  GET_HEROS,
+  GET_ROUTER,
   GET_EVENTS,
   MODAL_OPEN,
   MODAL_CLOSE,
@@ -17,13 +17,16 @@ export const getPages = () => async (dispatch) => {
     let cache = window.__REDUX_STATE__;
 
     dispatch({ type: GET_PAGES, payload: cache.pages });
+    dispatch({ type: GET_ROUTER, payload: cache.pages });
   } else {
     try {
+      // TODO: we need to check if there is more than 100 pages then we need to paginate
       const { data } = await axios.get(
-        `${api}/wp/v2/pages?page=1&per_page=100`
+        `${api}/wp/v2/pages?page=1&per_page=100&orderby=parent&order=asc`
       );
 
       dispatch({ type: GET_PAGES, payload: data });
+      dispatch({ type: GET_ROUTER, payload: data });
     } catch (error) {
       console.error(error);
     }
@@ -37,29 +40,12 @@ export const getClubs = () => async (dispatch) => {
     dispatch({ type: FETCH_CLUBS, payload: cache.clubs });
   } else {
     try {
+      // TODO: we need to check if there is more than 100 clubs then we need to paginate
       const { data } = await axios.get(
         `${api}/wp/v2/clubs?&page=1&per_page=100&orderby=slug&order=asc`
       );
 
       dispatch({ type: FETCH_CLUBS, payload: data });
-    } catch (error) {
-      console.error(error);
-    }
-  }
-};
-
-export const getHeros = () => async (dispatch) => {
-  if (isProd) {
-    let cache = window.__REDUX_STATE__;
-
-    dispatch({ type: GET_HEROS, payload: cache.heros });
-  } else {
-    try {
-      const { data } = await axios.get(
-        `${api}/wp/v2/heros?page=1&per_page=100`
-      );
-
-      dispatch({ type: GET_HEROS, payload: data });
     } catch (error) {
       console.error(error);
     }
@@ -74,7 +60,7 @@ export const getEvents = () => async (dispatch) => {
   } else {
     try {
       const { data } = await axios.get(
-        `${api}/wp/v2/events?page=1&per_page=100`
+        `${api}/wp/v2/events?page=1&per_page=100&orderby=date&order=asc`
       );
 
       dispatch({ type: GET_EVENTS, payload: data });
