@@ -60,7 +60,7 @@ export const getEvents = () => async (dispatch) => {
   } else {
     try {
       const { data } = await axios.get(
-        `${api}/wp/v2/events?page=1&per_page=100`
+        `${api}/wp/v2/events?page=1&per_page=100&orderby=date&order=asc`
       );
 
       dispatch({ type: GET_EVENTS, payload: data });
