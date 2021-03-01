@@ -24,7 +24,7 @@ const Donate = ({ data }) => {
         <DonateSectionTwo data={data.donate_section_two} />
       </Layout>
     </div>
-    )
+  )
 }
 
 export default Donate;

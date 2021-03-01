@@ -8,7 +8,6 @@ import Header from './header';
 
 // Components
 import Home from 'pages/Home/Home';
-import About from 'pages/About/About';
 import Events from 'pages/Events/Events';
 import Event from 'pages/Event/Event';
 import News from 'pages/News/News';
@@ -17,7 +16,7 @@ import Donate from 'pages/Donate/Donate';
 import Geneology from 'pages/Geneology/Geneology';
 import GetInvolved from 'pages/GetInvolved/GetInvolved';
 import Club from 'pages/GetInvolved/Club'
-import AboutMissionAndPurpose from 'pages/MissionAndPurpose/MissionAndPurpose';
+import MissionAndPurpose from 'pages/MissionAndPurpose/MissionAndPurpose';
 import BanquetFacility from 'pages/BanquetFacility/BanquetFacility';
 
 const Routes = () => {
@@ -31,16 +30,12 @@ const Routes = () => {
         <Header props={ pageState.home } />
         <Home data={pageState.home} />
       </Route>
-      <Route exact path="/about">
-        <Header props={ pageState.about } />
-        <About />
-      </Route>
       <Route path="/mission-purpose">
-        <Header props={ pageState["mission-purpose"] } />
-        <AboutMissionAndPurpose data={ pageState["mission-purpose"]}/>
+        {/* <Header props={ pageState["mission-purpose"] } /> */}
+        <MissionAndPurpose data={ pageState["mission-purpose"]}/>
       </Route>
       <Route path="/banquet-facility">
-        <Header props={ pageState["banquet-facility"]}/>
+        {/* <Header props={ pageState["banquet-facility"]}/> */}
         <BanquetFacility data={ pageState["banquet-facility"]}/>
       </Route>
       <Route exact path="/events">
@@ -65,7 +60,7 @@ const Routes = () => {
       </Route>
       <Route path="/contact">
         <Header props={ pageState.contact } />
-        <Contact data={pageState.contact} />
+        <Contact data={ pageState.contact } />
       </Route>
       <Route path="/donate">
         <Header props={ pageState.donate } />

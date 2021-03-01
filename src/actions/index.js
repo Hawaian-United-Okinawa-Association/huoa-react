@@ -17,7 +17,7 @@ export const getPages = () => async (dispatch) => {
     let cache = window.__REDUX_STATE__;
 
     dispatch({ type: GET_PAGES, payload: cache.pages });
-    dispatch({ type: GET_ROUTER, payload: cache.pages });
+    dispatch({ type: GET_ROUTER, payload: cache.router });
   } else {
     try {
       // TODO: we need to check if there is more than 100 pages then we need to paginate
