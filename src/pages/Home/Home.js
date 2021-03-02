@@ -2,9 +2,9 @@ import React from 'react';
 
 import Hero from 'components/Hero/Hero';
 import TextArea from 'components/TextArea/TextArea';
-import CardLarge from 'components/Cards/CardLarge/CardLarge';
-import CardSquare from 'components/Cards/CardSquare/CardSquare';
-import CardBlank from 'components/Cards/CardBlank/CardBlank';
+import CardLarge from 'components/CardLarge/CardLarge';
+import CardSquare from 'components/CardSquare/CardSquare';
+import CardBlank from 'components/CardBlank/CardBlank';
 import Container from 'components/Container/Container';
 import Button from 'components/Button/Button';
 
