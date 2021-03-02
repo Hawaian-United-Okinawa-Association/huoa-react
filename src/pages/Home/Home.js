@@ -4,6 +4,7 @@ import Hero from 'components/Hero/Hero';
 import TextArea from 'components/TextArea/TextArea';
 import CardLarge from 'components/CardLarge/CardLarge';
 import CardSquare from 'components/CardSquare/CardSquare';
+import CardBlast from 'components/CardBlast/CardBlast';
 import CardBlank from 'components/CardBlank/CardBlank';
 import Container from 'components/Container/Container';
 import Button from 'components/Button/Button';
@@ -14,6 +15,8 @@ const Home = ({ data }) => {
   let { builder } = data;
   let cardsLarge = builder[2].cards_large;
   let cardsSquare = builder[3].cards_small.card;
+  // TODO ask mateo about this, not sure how to access the data.
+  let cardBlast = builder[1].cards_blast;
 
   return (
     <>
@@ -44,7 +47,7 @@ const Home = ({ data }) => {
         </Container>
         <Container col='2'>
           <CardBlank>
-            {/* TODO: refactor this is not how we should be styling inner card elements. They should be styled in the Home.scss file. */}
+            {/* TODO: Add the new CardBlast to this section with the data. */}
             <div className='card-blank__subscribe'>
               <h3>Purple Blast</h3>
               <p>Our monthly online newsletter to keep up to date on what's happening in the Hawaii Okinawa community.</p>
