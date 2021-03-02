@@ -13,9 +13,9 @@ const CardBlast = ({ props }) => {
         <p className='card-blast__body'>{ body }</p>
       </div>
       <div className='card-blast__form'>
-        <input className='card-blank__input' type='text' placeholder={ firstName }></input>
-        <input className='card-blank__input' type='text' placeholder={ lastName }></input>
-        <input className='card-blank__input' type='text' placeholder={ email }></input>
+        <input className='card-blast__input' type='text' placeholder={ firstName }></input>
+        <input className='card-blast__input' type='text' placeholder={ lastName }></input>
+        <input className='card-blast__input' type='text' placeholder={ email }></input>
       </div>
       <div className='card-blast__button'>
         <Button type='filled' onClick={() => console.log('You clicked a button')}>{ button.text }</Button>
