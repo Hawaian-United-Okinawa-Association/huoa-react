@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import Button from '../Button/Button';
 
 const CardBlast = ({ props }) => {
-  const { title, body, firstName, lastName, email, button } = props;
+  const { title, body, firstName, lastName, email, button, api } = props;
   const ref = useRef();
 
   return (
@@ -18,7 +18,7 @@ const CardBlast = ({ props }) => {
         <input className='card-blast__input' type='text' placeholder={ email }></input>
       </div>
       <div className='card-blast__button'>
-        <Button type='filled' onClick={() => console.log('You clicked a button')}>{ button.text }</Button>
+        <Button type='filled' onClick={() => console.log(`here's the api { api }`)}>{ button.text }</Button>
       </div>
     </div>
   );
