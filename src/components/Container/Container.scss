@@ -27,3 +27,9 @@ $container-width: 1260px;
     }
   }
 }
+
+@media screen and (max-width: $breakpoint-laptop) {
+  .container {
+    margin: 0 16px;
+  }
+}

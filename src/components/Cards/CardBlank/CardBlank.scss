@@ -1,38 +1,53 @@
-@import 'styles/utilities/colors.scss';
-@import 'styles/utilities/borders.scss';
-
-// TODO:
-//  - add mobile styling
-//  - our way of bem is card-blank__subscribe
-//  - we shouldn't be styling subscribe | newsletter | input in this file this should only be styling the blank card
-
 .card-blank {
   min-width: 280px;
   border-radius: $card-border-radius;
   background: $white;
   box-shadow: $card-blank-shadow;
   text-align: center;
-}
 
-.card-blank--subscribe {
-  padding: 50px 80px;
-  text-align: left;
-
-  .button {
-    width: 100%
+  &__subscribe {
+    padding: 50px 80px;
+    text-align: left;
+  
+    .button {
+      width: 100%;
+    }
+  }
+  
+  &__newsletter {
+    padding: 50px 80px;
+    text-align: left;
+  
+    p {
+      margin-bottom: 24px;
+    }
+  }
+  
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 15px;
+    border-style: solid;
+    border-radius: 4px;
+    padding: 10px;
   }
 }
 
-.card-blank--newsletter {
-  padding: 50px 80px;
-  text-align: left;
-}
+@media screen and (max-width: $breakpoint-mobile) {
+  .card {
+    margin: 1rem;
+    box-shadow: $card-blank-shadow-mobile;
 
-.card-blank--input {
-  box-sizing: border-box;
-  width: 100%;
-  margin-bottom: 15px;
-  border-style: solid;
-  border-radius: 4px;
-  padding: 10px;
+    &-blank {
+      &__newsletter,
+      &__subscribe {
+        padding: 16px;
+
+        h3 {
+          margin-top: 0;
+          text-align: center;
+        }
+      }
+    }
+  }
 }

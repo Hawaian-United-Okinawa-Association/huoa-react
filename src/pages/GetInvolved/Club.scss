@@ -1,4 +1,8 @@
 .club {
+  &__container {
+    margin: 2rem auto;
+  }
+
   &__header {
     display: flex;
     align-items: center;
