@@ -6,16 +6,36 @@
 
     h3 {
       flex-basis: 100%;
+    
+      @media screen and (max-width: $breakpoint-mobile) {
+        text-align: center;
+      }
     }
   }
 
   &__col {
     flex-basis: 50%;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      flex-basis: 100%;
+      margin-left: 10%;
+      text-align: left;
+      
+      h3 {
+        text-align: left;
+      }
+    }
   }
 
   &__map {
     width: 100%;
     height: 300px;
     margin-top: 1rem;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      width: 90%;
+      height: 300px;
+      margin: auto;
+    }
   }
 }
