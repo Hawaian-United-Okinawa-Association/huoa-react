@@ -15,8 +15,9 @@ const Home = ({ data }) => {
   let { builder } = data;
   let cardsLarge = builder[2].cards_large;
   let cardsSquare = builder[3].cards_small.card;
-  // TODO ask mateo about this, not sure how to access the data.
-  let cardBlast = builder[1].cards_blast;
+
+  //TODO find out how to access the data from wp to render into the CardBlast component
+  let cardBlast = builder.cards_custom.cards.purple_blast;
 
   return (
     <>
@@ -46,15 +47,7 @@ const Home = ({ data }) => {
           <h2 className="home__title">Join Our Newsletter</h2>
         </Container>
         <Container col='2'>
-          <CardBlank>
-            {/* TODO: Add the new CardBlast to this section with the data. */}
-            <div className='card-blank__subscribe'>
-              <h3>Purple Blast</h3>
-              <p>Our monthly online newsletter to keep up to date on what's happening in the Hawaii Okinawa community.</p>
-              <input className='card-blank__input' type='text' placeholder='Email Address'></input>
-              <Button type='filled' onClick={() => console.log('You clicked a button')}>Subscribe</Button>
-            </div>
-          </CardBlank>
+          <CardBlast props={cardBlast}/>
           <CardBlank>
           <div className='card-blank__newsletter'>
               <h3>Uchinanchu Newsletter</h3>
