@@ -1,5 +1,6 @@
 //Dependencies
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 //Components
 import Modal from 'components/Modal/Modal';
@@ -12,6 +13,9 @@ import { Init } from './Init';
 
 const App = () => {
   Init();
+  const scroll = useSelector(state => state.scroll);
+  document.body.style.overflow = scroll ? 'scroll' : 'hidden';
+  
   return (
     <main>
       <Modal />

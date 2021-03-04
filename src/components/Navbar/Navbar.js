@@ -56,7 +56,7 @@ const Navbar = () => {
             <div className="navbar__titles">
               {/* TODO: need to make this dynamic */}
               <h2 className="navbar__title">Hawaii United Okinawa Association</h2>
-              <h5 className="navbar__title--sm">Celebrating 120 years of Uchinanchu in Hawaii</h5>
+              <h5 className="navbar__title--sm">Promote, perpetuate, and preserve the Okinawan culture here in Hawaii</h5>
             </div>
           </div>
         </Link>
