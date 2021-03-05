@@ -8,7 +8,6 @@ import Header from './header';
 
 // Components
 import Home from 'pages/Home/Home';
-import About from 'pages/About/About';
 import Events from 'pages/Events/Events';
 import Event from 'pages/Event/Event';
 import News from 'pages/News/News';
@@ -30,10 +29,6 @@ const Routes = () => {
       <Route exact path="/">
         <Header props={ pageState.home } />
         <Home data={pageState.home} />
-      </Route>
-      <Route exact path="/about">
-        <Header props={ pageState.about } />
-        <About />
       </Route>
       <Route path="/mission-purpose">
         <Header props={ pageState["mission-purpose"] } />

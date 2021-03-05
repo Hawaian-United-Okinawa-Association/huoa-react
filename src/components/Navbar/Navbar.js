@@ -15,7 +15,7 @@ const Navbar = () => {
     return children.map((item) => (
       <Link
         className="navbar__dropdown--link"
-        to={item.slug}
+        to={'/' + item.slug}
         onClick={() => setNavState(false)}
         key={item.slug}
         data-text={item.title}
@@ -30,7 +30,7 @@ const Navbar = () => {
       return item.slug !== 'home' && (
         <NavItem
           name={item.title}
-          linkTo={item.slug}
+          linkTo={'/' + item.slug}
           key={item.slug}
           navState={navState}
           setNavState={setNavState}
