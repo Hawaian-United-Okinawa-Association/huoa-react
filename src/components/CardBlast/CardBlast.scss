@@ -1,0 +1,45 @@
+.card-blast {
+  min-width: 280px;
+  border-radius: $card-border-radius;
+  padding: 50px 80px;
+  background: $white;
+  box-shadow: $card-blank-shadow;
+  text-align: left;
+
+  &__title {
+    margin: 0;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 21px;
+  }
+
+  &__body {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+  }
+  
+  &__form__name-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 15px;
+    border-style: solid;
+    border-radius: 4px;
+    padding: 10px;
+  }
+
+  &__button-container {
+    width: 100%;
+
+    .button {
+      width: 100%;
+    }
+  }
+  
+}
