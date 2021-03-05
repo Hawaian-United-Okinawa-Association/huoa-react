@@ -5,9 +5,8 @@ import TextArea from 'components/TextArea/TextArea';
 import CardLarge from 'components/CardLarge/CardLarge';
 import CardSquare from 'components/CardSquare/CardSquare';
 import CardBlast from 'components/CardBlast/CardBlast';
-import CardBlank from 'components/CardBlank/CardBlank';
+import CardNewsletter from 'components/CardNewsletter/CardNewsletter';
 import Container from 'components/Container/Container';
-import Button from 'components/Button/Button';
 
 const Home = ({ data }) => {
   if (!data) return null;
@@ -16,6 +15,7 @@ const Home = ({ data }) => {
   let cardsLarge = builder[2].cards_large;
   let cardsSquare = builder[3].cards_small.card;
   let cardBlast = builder[4].cards_custom.cards[0].purple_blast;
+  let cardNewsletter = builder[4].cards_custom.cards[1].newsletters;
 
   return (
     <>
@@ -46,13 +46,7 @@ const Home = ({ data }) => {
         </Container>
         <Container col='2'>
           <CardBlast props={ cardBlast }/>
-          <CardBlank>
-          <div className='card-blank__newsletter'>
-              <h3>Uchinanchu Newsletter</h3>
-              <p>Our official bi-monthly newsletter of HUOA, featuring the latest news and events of the organization as well as tidbits on Okinawan cultural activities and performing arts.</p>
-              <Button type='filled' onClick={() => console.log('You clicked a button')}>SIGNUP</Button>
-            </div>
-          </CardBlank>
+          <CardNewsletter props={ cardNewsletter } />
         </Container>
       </section>
     </>
