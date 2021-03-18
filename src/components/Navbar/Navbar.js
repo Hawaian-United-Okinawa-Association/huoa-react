@@ -30,7 +30,7 @@ const Navbar = () => {
       return item.slug !== 'home' && (
         <NavItem
           name={item.title}
-          linkTo={'/' + item.slug}
+          linkTo={ item.slug !== 'shop' ? item.slug :'/' + item.slug }
           key={item.slug}
           navState={navState}
           setNavState={setNavState}
