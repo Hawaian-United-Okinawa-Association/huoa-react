@@ -6,11 +6,6 @@ import { ReactComponent as PlusIcon } from 'assets/plus-icon.svg';
 const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled }, ref) => {
   const hasIcon = () => icon ? <PlusIcon className='button__plus-icon'/> : null;
 
-  const rootURL = new RegExp('huoa.org/')
-  if (rootURL.test(link)) {
-    link = link.slice(rootURL.exec(link).index + 8)
-  }
-
   if (!onClick && !link) {
     throw new Error('Button requires a link or an onClick attribute');
   }
