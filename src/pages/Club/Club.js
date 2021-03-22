@@ -5,8 +5,7 @@ import { withRouter } from "react-router-dom";
 import Layout from "components/Layout/Layout";
 import Breadcrumbs from "components/Breadcrumbs/Breadcrumbs";
 import ContactInfo from "components/ContactInfo/ContactInfo";
-import Description from "components/Description/Description";
-import HeadingTitle from "components/HeadingTitle/HeadingTitle";
+import Title from "components/Title/Title";
 import Button from "components/Button/Button";
 import SocialMediaLinks from "components/social-media-links/social-media-links";
 import Image from "components/Image/Image";
@@ -35,12 +34,12 @@ const Club = ({ match }) => {
           <br />
           <div className="club__title">
             {!!club_image && (
-              <Image className="image" img={club_image} alt="club logo" />
+              <Image className="club_image" img={club_image} alt="club logo" />
             )}
-            <HeadingTitle rendered={rendered}/>
+            <Title rendered={rendered}/>
           </div>
           {!!club_description && (
-            <Description parent={club_description}/>
+            <div className="club_description" dangerouslySetInnerHTML={{__html: club_description}} />
           )}
           
           {!!club_newsletter && (
