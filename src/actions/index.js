@@ -7,6 +7,7 @@ import {
   GET_EVENTS,
   MODAL_OPEN,
   MODAL_CLOSE,
+  GET_SETTINGS,
 } from "./actionTypes";
 
 const api = "https://dev.huoa.org/wp-json";
@@ -64,6 +65,24 @@ export const getEvents = () => async (dispatch) => {
       );
 
       dispatch({ type: GET_EVENTS, payload: data });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+};
+
+export const getSettings = () => async (dispatch) => {
+  if (isProd) {
+    let cache = window.__REDUX_STATE__;
+
+    dispatch({ type: GET_SETTINGS, payload: cache.settings });
+  } else {
+    try {
+      const { data } = await axios.get(
+        `${api}/wp/v2/settings`
+      );
+
+      dispatch({ type: GET_SETTINGS, payload: data });
     } catch (error) {
       console.error(error);
     }

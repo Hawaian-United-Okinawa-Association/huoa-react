@@ -10,5 +10,6 @@ export default combineReducers({
   events: eventReducer,
   router: routerReducer,
   modals: modalReducer,
-  pages: pagesReducer
+  pages: pagesReducer,
+  settings: settingsReducer
 });
