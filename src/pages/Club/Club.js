@@ -32,11 +32,11 @@ const Club = ({ match }) => {
         <div className="club__container">
           <Breadcrumbs parent="clubs" parentText="Join a HUOA Club" rendered={ rendered } />
           <br />
-          <div className="club__title">
+          <div className="club__title-box">
             {!!club_image && (
-              <Image className="club_image" img={club_image} alt="club logo" />
+              <Image className="club__image" img={club_image} alt="club logo" />
             )}
-            <Title rendered={rendered}/>
+            <Title rendered={rendered} className="club__title"/>
           </div>
           {!!club_description && (
             <div className="club_description" dangerouslySetInnerHTML={{__html: club_description}} />
