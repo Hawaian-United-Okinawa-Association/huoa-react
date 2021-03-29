@@ -23,7 +23,7 @@ const Clubs = ({ data }) => {
       <Layout>
         <div className="clubs__container">
           <Title rendered={title} position="left" className="clubs__title"/>
-          <div className="clubs_description" dangerouslySetInnerHTML={{__html: body}} />
+          <div className="clubs__description" dangerouslySetInnerHTML={{__html: body}} />
           <div className="clubs__body">
             {!!clubs && (
               <ul className="clubs__items">{clubsList}</ul>

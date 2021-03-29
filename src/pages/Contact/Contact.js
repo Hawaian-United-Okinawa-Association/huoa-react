@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from 'components/Layout/Layout';
-import { ReactComponent as Twitter } from 'assets/twitter.svg';
-import { ReactComponent as Instagram } from 'assets/instagram.svg';
-import { ReactComponent as Facebook } from 'assets/facebook.svg';
+import { ReactComponent as Instagram } from 'assets/Instagram_black.svg';
+import { ReactComponent as YouTube } from 'assets/YouTube_black.svg';
+import { ReactComponent as Facebook } from 'assets/Facebook_black.svg';
 
 const Contact = ({ data }) => {
   if (!data) return null;
@@ -16,8 +16,8 @@ const Contact = ({ data }) => {
           <h3>{ data.section_1.section_title }</h3>
           <div dangerouslySetInnerHTML={{ __html: data.section_1.section_body.left }} />
           <div className="contact__social">
-            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><Twitter className='contact__social--item' /></a>
-            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"><Instagram className='contact__social--item' /></a>
+          <a href="https://YouTube.com/" target="_blank" rel="noopener noreferrer"><YouTube className='contact__social--item' /></a>
+            <a href="https://Instagram.com/" target="_blank" rel="noopener noreferrer"><Instagram className='contact__social--item' /></a>
             <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer"><Facebook className='contact__social--item' /></a>
           </div>
           </div>

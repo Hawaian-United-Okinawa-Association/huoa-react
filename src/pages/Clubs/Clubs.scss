@@ -5,7 +5,8 @@
     columns: 2;
     
     @media screen and (max-width: $breakpoint-mobile) {
-      text-align: center;
+      margin: 0 10% 0 10%;
+      text-align: left;
       columns: 1;
     }
   }
@@ -19,5 +20,9 @@
   &__item-link:hover {
     color: $primary-1;
     font-weight: 800;
+  }
+
+  &__description {
+    margin: 3rem 10% 3rem 10%;
   }
 }
