@@ -39,16 +39,14 @@ const Club = ({ match }) => {
             <Title rendered={rendered} className="club__title"/>
           </div>
           {!!club_description && (
-            <div className="club_description" dangerouslySetInnerHTML={{__html: club_description}} />
+            <div className="club__description" dangerouslySetInnerHTML={{__html: club_description}} />
           )}
           
           {!!club_newsletter && (
             <Button link={club_newsletter}>{button_text ? button_text : "Optional Link"}</Button>
           )}
 
-          { !!club_contact && (
-            <ContactInfo body={club_contact} title="Contact Information"/>
-          )}
+          {club_contact.address  !== "" || club_contact.city_zip  !== "" || club_contact.email  !== "" || club_contact.phone  !== "" ? <ContactInfo body={club_contact} /> : null }
 
           { !!club_social_media && (
             <SocialMediaLinks links={club_social_media}/>
