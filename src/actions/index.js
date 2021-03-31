@@ -79,10 +79,11 @@ export const getSettings = () => async (dispatch) => {
   } else {
     try {
       const { data } = await axios.get(
-        `${api}/wp/v2/settings`
+        `${api}`
       );
+      console.log(data);
 
-      dispatch({ type: GET_SETTINGS, payload: data });
+      dispatch({ type: GET_SETTINGS, payload: {title: data.name, description: data.description} });
     } catch (error) {
       console.error(error);
     }
