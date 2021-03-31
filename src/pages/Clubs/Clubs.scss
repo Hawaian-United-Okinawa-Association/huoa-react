@@ -23,6 +23,8 @@
   }
 
   &__description {
-    margin: 3rem 10% 3rem 10%;
+    @media screen and (max-width: $breakpoint-mobile) {
+      margin: 3rem 10% 3rem 10%;
+    }
   }
 }
