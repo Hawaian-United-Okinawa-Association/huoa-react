@@ -81,7 +81,6 @@ export const getSettings = () => async (dispatch) => {
       const { data } = await axios.get(
         `${api}`
       );
-      console.log(data);
 
       dispatch({ type: GET_SETTINGS, payload: {title: data.name, description: data.description} });
     } catch (error) {
