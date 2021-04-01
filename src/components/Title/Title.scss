@@ -5,6 +5,10 @@
 
     &__left {
       text-align: start;
+      
+      @media screen and (max-width: $breakpoint-mobile) {
+        text-align: center;
+      }
     }
 
     &__center {

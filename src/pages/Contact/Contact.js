@@ -13,25 +13,35 @@ const Contact = ({ data }) => {
         <h2 className="contact__title">Contact Us</h2>
         <div className="contact__section">
           <div className="contact__col">
-          <h3>{ data.section_1.section_title }</h3>
-          <div dangerouslySetInnerHTML={{ __html: data.section_1.section_body.left }} />
-          <div className="contact__social">
-          <a href="https://YouTube.com/" target="_blank" rel="noopener noreferrer"><YouTube className='contact__social--item' /></a>
-            <a href="https://Instagram.com/" target="_blank" rel="noopener noreferrer"><Instagram className='contact__social--item' /></a>
-            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer"><Facebook className='contact__social--item' /></a>
+            <h3>{data.section_1.section_title}</h3>
+            <div dangerouslySetInnerHTML={{ __html: data.section_1.section_body.left }} />
+            <div className="contact__social">
+              <a href="https://YouTube.com/" target="_blank" rel="noopener noreferrer">
+                <YouTube className='contact__social--item' />
+              </a>
+              <a href="https://Instagram.com/" target="_blank" rel="noopener noreferrer">
+                <Instagram className='contact__social--item' />
+              </a>
+              <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
+                <Facebook className='contact__social--item' />
+              </a>
+            </div>
           </div>
+          <div className="contact__col">
+            <iframe src={data.section_1.section_body.right} className="contact__map--main" title="Google Maps" frameBorder="0" aria-hidden="false" tabIndex="0" />
           </div>
-          <div className="contact__col"><iframe src={ data.section_1.section_body.right } className="contact__map--main" title="Google Maps" frameBorder="0" aria-hidden="false" tabIndex="0"></iframe></div>
         </div>
         <div className="contact__section">
-          <h3>{ data.section_2.section_title }</h3>
+          <h3>{data.section_2.section_title}</h3>
           <div className="contact__col" dangerouslySetInnerHTML={{ __html: data.section_2.section_body.full_width }}></div>
         </div>
         <div className="contact__section">
-          <h3>{ data.section_3.section_title }</h3>
+          <h3>{data.section_3.section_title}</h3>
           <div className="contact__col" dangerouslySetInnerHTML={{ __html: data.section_3.section_body.left }}></div>
           <div className="contact__col" dangerouslySetInnerHTML={{ __html: data.section_3.section_body.right }}></div>
-          <div className="contact__col"><iframe src={ data.section_1.section_body.right } className="contact__map--mobile" title="Google Maps" frameBorder="0" aria-hidden="false" tabIndex="0"></iframe></div>
+          <div className="contact__col">
+            <iframe src={data.section_1.section_body.right} className="contact__map--mobile" title="Google Maps" frameBorder="0" aria-hidden="false" tabIndex="0" />
+          </div>
         </div>
       </div>
     </Layout>

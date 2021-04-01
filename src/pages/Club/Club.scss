@@ -33,5 +33,15 @@
 
   &__description {
     margin: 3rem 0 3rem 0;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      margin: 3rem 2rem 3rem 2rem;
+    }
+  }
+}
+
+.button {
+  @media screen and (max-width: $breakpoint-mobile) {
+    margin: 0 2rem 0 2rem;
   }
 }
