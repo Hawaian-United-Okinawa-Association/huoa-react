@@ -55,7 +55,6 @@ const Navbar = () => {
           <div className="navbar__header">
             <HUOALogo className="navbar__logo" />
             <div className="navbar__titles">
-              {/* TODO: need to make this dynamic */}
               <h2 className="navbar__title">{title}</h2>
               <h5 className="navbar__title--sm">{description}</h5>
             </div>
