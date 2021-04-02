@@ -36,7 +36,7 @@ const Club = ({ match }) => {
             {!!club_image && (
               <Image className="club__image" img={club_image} alt="club logo" />
             )}
-            <Title rendered={rendered} className="club__title"/>
+            <Title rendered={rendered} className="left"/>
           </div>
           {!!club_description && (
             <div className="club__description" dangerouslySetInnerHTML={{__html: club_description}} />

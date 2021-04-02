@@ -11,20 +11,47 @@ import { ReactComponent as Newsletter2 } from 'assets/uchinanchu.svg';
 const Sidebar = () => {
   const { routes } = useSelector((state) => state.router);
   const { pathname } = useLocation();
-  const current = routes.find((route) => route.linkTo === `/${pathname.split('/')[1]}`);
-  const { children } = current;
+  let current;
+  let children;
 
-  return (
+  // TODO: fix sidebar to support children who have siblings
+  if (!!routes) {
+    let lastParent;
+
+    routes.forEach((route) => {
+      let findMe = `${pathname.split('/')[1]}`;
+
+      lastParent = route;
+
+      if (route.slug === findMe) {
+        current = route.title;
+        children = route.children;
+        return;
+      };
+
+      if (lastParent.children.length > 0 && !children) {
+        current = route.children.find((child) => {
+          return child.slug === findMe;
+        });
+        if (current) {
+          children = route.children;
+        }
+      }
+    });
+  }
+
+  return !!current && (
     <div className="sidebar">
-      {!!children && (
+      {!!children.length && (
         <div className="sidebar__card">
-        <div className="sidebar__parent">{ current.name }</div>
+        <div className="sidebar__parent">{ current.title }</div>
         { children.map((child, i) =>
-          !!child.phase1 && (
-            <Link to={ child.linkTo } key={ i }>
-              <div className="sidebar__link" data-active={!!(pathname === child.linkTo)}>{ child.name }</div>
-            </Link>
-          )
+          <Link to={ child.slug } key={ i }>
+            <div className="sidebar__link"
+              data-active={!!(pathname === `/${child.slug}`)}>
+              { child.title }
+            </div>
+          </Link>
         )}
       </div>
       ) }
@@ -39,7 +66,7 @@ const Sidebar = () => {
       <div className="sidebar__card sidebar__card--center">
         <h3>Support HUOA</h3>
         <p>Your support is vital in promoting and preserving Okinawan culture.</p>
-        <Button className="sidebar__button" type="text" link="/clubs">
+        <Button className="sidebar__button" type="text" link="/donate">
           Learn More
         </Button>
       </div>

@@ -1,4 +1,6 @@
 .breadcrumb {
+  margin: 0;
+
   &__item {
     margin: 10px;
     
@@ -9,6 +11,10 @@
 
   &__item:hover {
     color: $primary-1;
+  }
+
+  &__item:first-child {
+    margin-left: 0;
   }
 }
 

@@ -20,3 +20,29 @@
     }
   }
 }
+
+@media screen and (max-width: $breakpoint-mobile-large) {
+  .text-area {
+    margin: 28px 0;
+    
+    &__title {
+        font-size: 32px;
+      }
+  
+    &__body {
+        font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .text-area {
+    &__title {
+      font-size: 22px;
+    }
+
+    &__body {
+      font-size: 16px;
+    }
+  }
+}

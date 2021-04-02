@@ -1,15 +1,26 @@
+body, html {
+  font-family: $poppins;
+}
+
 h2 {
   font-size: 42px;
   font-family: $lora;
   line-height: 31px;
 }
 
+h3 {
+  font-weight: 300;
+  font-size: 18px;
+  font-family: $poppins;
+  line-height: 37px;
+}
+
 h4 {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 24px;
   font-family: $poppins;
   line-height: 36px;
-  text-transform: capitalize
+  text-transform: capitalize;
 }
 
 h5 {
@@ -19,11 +30,35 @@ h5 {
   line-height: 24px;
 }
 
+.p1 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  font-family: $poppins
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-body, html {
-  font-family: $poppins;
+li + li {
+  padding-top: 12px;
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  h2 {
+    font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+  }
+
+  .p1{
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  li + li {
+    padding-top: 32px;
+  }
 }

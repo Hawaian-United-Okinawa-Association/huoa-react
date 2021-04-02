@@ -8,10 +8,11 @@
       
       @media screen and (max-width: $breakpoint-mobile) {
         margin: 0 2rem 0 2rem;
-        text-align: center;
-        
+
         h2 {
+          font-size: 42px;
           line-height: 3rem;
+          text-align: center;
         }
       }
     }

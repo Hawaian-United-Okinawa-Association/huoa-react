@@ -1,12 +1,15 @@
 .events {
-  margin: 3rem auto 4rem;
-
   &__title {
     margin-top: 3rem;
   }
 
   &__subtitle {
+    margin-top: 1rem;
     font-size: 24px;
+
+    &--annual {
+      margin-top: 4rem;
+    }
   }
 
   &__cards {
@@ -14,5 +17,13 @@
     grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 2rem;
     grid-column-gap: 2rem;
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet){
+  .events {
+    &__cards {
+      grid-template-columns: 1fr;
+    }
   }
 }
