@@ -10,6 +10,7 @@ import { ReactComponent as HUOALogo } from '../../assets/huoa-logo.svg';
 const Navbar = () => {
   const [ navState, setNavState ] = useState(false);
   const { routes } = useSelector((state) => state.router);
+  const { title, description } = useSelector((state) => state.settings);
 
   const renderMenuItems = (children) => {
     return children.map((item) => (
@@ -54,9 +55,8 @@ const Navbar = () => {
           <div className="navbar__header">
             <HUOALogo className="navbar__logo" />
             <div className="navbar__titles">
-              {/* TODO: need to make this dynamic */}
-              <h2 className="navbar__title">Hawaii United Okinawa Association</h2>
-              <h5 className="navbar__title--sm">Celebrating 120 years of Uchinanchu in Hawaii</h5>
+              <h2 className="navbar__title">{title}</h2>
+              <h5 className="navbar__title--sm">{description}</h5>
             </div>
           </div>
         </Link>
