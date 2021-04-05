@@ -13,7 +13,8 @@ const Event = ({ match }) => {
 
   if (!event) return null;
 
-  let { event_title, event_details, event_location, event_date } = event.acf;
+  let { event_title, event_details, event_location, event_date, event_image } = event.acf;
+
   let splitEvent = event_date.split(' ');
   let month = splitEvent[0];
   let day = splitEvent[1].slice(0, -1);
@@ -24,7 +25,7 @@ const Event = ({ match }) => {
     <Layout>
       <Container>
       <section className="event">
-      <Image className="event__image" webp="https://dev.huoa.org/wp-content/uploads/2020/09/home-hero-4.webp" />
+      <Image className="event__image" webp={ event_image.url } />
       <div className="event__section--left">
         <Breadcrumbs parent="events" parentText="Events" rendered={ event_title } />
         <h2 className="event__title">{ event_title }</h2>

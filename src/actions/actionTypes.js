@@ -4,5 +4,9 @@ export const
   GET_PAGES = 'GET_PAGES',
   GET_ROUTER = 'GET_ROUTER',
   GET_EVENTS = 'GET_EVENTS',
+<<<<<<< HEAD
   TOGGLE_SCROLL = 'TOGGLE_SCROLL',
+=======
+  GET_SETTINGS = 'GET_SETTINGS',
+>>>>>>> main
   FETCH_CLUBS = 'FETCH_CLUBS';

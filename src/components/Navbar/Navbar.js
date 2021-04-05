@@ -10,12 +10,13 @@ import { ReactComponent as HUOALogo } from '../../assets/huoa-logo.svg';
 const Navbar = () => {
   const [ navState, setNavState ] = useState(false);
   const { routes } = useSelector((state) => state.router);
+  const { title, description } = useSelector((state) => state.settings);
 
   const renderMenuItems = (children) => {
     return children.map((item) => (
       <Link
         className="navbar__dropdown--link"
-        to={item.slug}
+        to={'/' + item.slug}
         onClick={() => setNavState(false)}
         key={item.slug}
         data-text={item.title}
@@ -30,7 +31,7 @@ const Navbar = () => {
       return item.slug !== 'home' && (
         <NavItem
           name={item.title}
-          linkTo={item.slug}
+          linkTo={ item.slug !== 'shop' ? item.slug :'/' + item.slug }
           key={item.slug}
           navState={navState}
           setNavState={setNavState}
@@ -54,9 +55,14 @@ const Navbar = () => {
           <div className="navbar__header">
             <HUOALogo className="navbar__logo" />
             <div className="navbar__titles">
+<<<<<<< HEAD
               {/* TODO: need to make this dynamic */}
               <h2 className="navbar__title">Hawaii United Okinawa Association</h2>
               <h5 className="navbar__title--sm">Promote, perpetuate, and preserve the Okinawan culture here in Hawaii</h5>
+=======
+              <h2 className="navbar__title">{title}</h2>
+              <h5 className="navbar__title--sm">{description}</h5>
+>>>>>>> main
             </div>
           </div>
         </Link>
