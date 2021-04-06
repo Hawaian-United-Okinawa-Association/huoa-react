@@ -13,7 +13,21 @@ const CardBlast = ({ props }) => {
   const submit = (e) => {
     e.preventDefault()
     // props.handleSubmit(firstName, lastName, email)
-    console.log(`https://huoa.us10.list-manage.com/subscribe/post?u=fb4e3b9e255496f68e4d87e35&id=96858fbc3b&MERGE0=${email.MERGE0}.com&MERGE1=${firstName.MERGE1}&MERGE2=${lastName.MERGE2}`)
+    
+    let api = `https://huoa.us10.list-manage.com/subscribe/post?u=fb4e3b9e255496f68e4d87e35&id=96858fbc3b&MERGE0=${email.MERGE0}.com&MERGE1=${firstName.MERGE1}&MERGE2=${lastName.MERGE2}`
+
+    fetch(api, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then(response => {
+      if (response.ok) {
+        console.log('Success: ', response);
+      } else {
+        console.error('Error: ', response);
+      }
+    });
     
   }
 
