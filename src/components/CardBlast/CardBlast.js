@@ -56,13 +56,13 @@ const CardBlast = ({ props }) => {
             className='card-blast__input' 
             type="email"
             placeholder={ email_placeholder } 
-            autocapitalize="none" 
-            autocorrect="off" 
+            autoCapitalize="none" 
+            autoCorrect="off" 
             name="MERGE0" 
             id="MERGE0" 
             onChange={e => setEmail({ ...email, MERGE0: e.target.value })}  />
           <div className='card-blast__button-container'>
-            <input type="submit" class="formEmailButton button" name="submit" value={button_text} />
+            <input type="submit" className="formEmailButton button" name="submit" value={button_text} />
           </div>
         </form>
       </div>
