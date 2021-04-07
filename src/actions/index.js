@@ -7,11 +7,8 @@ import {
   GET_EVENTS,
   MODAL_OPEN,
   MODAL_CLOSE,
-<<<<<<< HEAD
   TOGGLE_SCROLL,
-=======
   GET_SETTINGS,
->>>>>>> main
 } from "./actionTypes";
 
 const api = "https://dev.huoa.org/wp-json";

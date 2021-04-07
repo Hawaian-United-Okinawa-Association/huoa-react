@@ -51,10 +51,14 @@
       width: 1.5rem;
     }
 
+    &__listItem{
+      padding: 0;
+    }
+
     &__sidebar {
       position: fixed;
       z-index: 999;
-      display: flex;
+      display: none;
       flex-direction: column;
       overflow: hidden;
       overflow-y: scroll;
@@ -78,6 +82,7 @@
         @extend .nav-mobile__sidebar;
         top: 0;
         right: 0;
+        display: flex;
         animation: slideIn 200ms ease-out;
       }
 
@@ -96,6 +101,7 @@
         position: fixed;
         top: 0;
         right: -35rem;
+        display: flex;
         animation: slideOut 200ms ease-out;
       }
 
@@ -112,23 +118,13 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        width: 100%;
         padding: 1rem 0;
         font-weight: 600;
       }
 
       &--carrot {
-        @keyframes derotateCarrot {
-          0%   {
-            transform: rotate(180deg);
-          }
-
-          100% {
-            transform: rotate(0deg);
-          }
-        }
-        
         margin-right: 1rem;
-        animation: derotateCarrot 200ms ease-in-out forwards;
 
         &--active {
           @keyframes rotateCarrot {
@@ -144,22 +140,43 @@
           margin-right: 1rem;
           animation: rotateCarrot 200ms ease-in-out forwards;
         }
+
+        &--inactive {
+          @keyframes derotateCarrot {
+            0%   {
+              transform: rotate(180deg);
+            }
+  
+            100% {
+              transform: rotate(0deg);
+            }
+          }
+
+          margin-right: 1rem;
+          animation: derotateCarrot 200ms ease-in-out forwards;
+        }
       }
 
-      &--dropdown{
-        overflow: hidden;
+      &--dropdown {
+        display: none;
+        margin: 0 -2rem;
+        padding: 0;
         
         &--active {
           @keyframes dropDown {
             0% {
+              height: 0;
               transform: scaleY(0)
             }
             
             100% {
-                transform: scaleY(1)
+              height: 5rem;
+              transform: scaleY(1)
             }
           }
 
+          @extend .nav-mobile__sidebar--dropdown;
+          display: block;
           transform-origin: top center;
           animation: dropDown 200ms ease-in-out forwards;
         }
@@ -167,22 +184,26 @@
         &--inactive {
           @keyframes pullUp {
             0% {
+              height: 5rem;
               transform: scaleY(1)
             }
 
             100% {
+              height: 0;
               transform: scaleY(0);
             }
           }
 
+          @extend .nav-mobile__sidebar--dropdown;
+          display: block;
           height: 0;
           transform-origin: top center;
-          animation: pullUp 150ms ease-in-out forwards;
+          animation: pullUp 200ms ease-in-out forwards;
         }
 
         &-item {
+        left: 0;
         display: flex;
-        margin: 0 -2.5rem;
         padding: .5rem 3rem;
         background-color: $primary-3;
         font-weight: 100;
@@ -245,7 +266,12 @@
       &--active {
         width: 90%;
         max-width: $breakpoint-mobile-large;
-        padding: 1rem 2.5rem;
+        padding: 2.5rem;
+      }
+
+      &--dropdown {
+        margin: 0 -3.5rem;
+        padding-left: 1rem;
       }
     }
   }
@@ -278,7 +304,7 @@
 
     &__sidebar {
       width: 95%;
-      padding: .5rem 1rem;
+      padding: 1rem;
 
       &--item {
         width: 95%;
@@ -289,14 +315,12 @@
       &--dropdown {
         &-item {
           width: 100%;
-          margin: 0 -0.1rem;
-          padding: .5rem 1.5rem;
+          padding-left: 4.5rem;
         }
       }
 
       &--footer {
         width: 95%;
-        // margin: auto auto 0 auto;
         padding: .25rem 0rem 3rem 0rem;
 
         &-link {

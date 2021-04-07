@@ -1,5 +1,5 @@
 //Dependencies
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -14,13 +14,41 @@ import './NavMobile.scss';
 
 const NavMobile = () => {
   const dispatch = useDispatch();
-  const [ navState, setNavState ] = useState(false);
-  const [ activeDropdown, setActiveDropdown ] = useState(false);
-  const { routes } = useSelector((state) => state.router);
+  const [ navState, setNavState ] = useState('init');
+  const [ dropdownOpen, setDropdownOpen ] = useState('init');
+  const [ closeDropdown, setCloseDropdown ] = useState('init');
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
-  const resetSideNav = () => {
-    setNavState(false);
-    setActiveDropdown(false);
+  const { routes } = useSelector((state) => state.router);
+  const { title, description } = useSelector((state) => state.settings);
+
+  const resetSideNav = (status) => {
+    setCloseDropdown(status);
+    setDropdownOpen(status);
+    setNavState(status);
+  };
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenWidth(window.innerWidth)
+      if(screenWidth >= 1200){
+        resetSideNav('init');
+      }
+    }
+    window.addEventListener('resize', handleResize)
+  })
+
+  const handleAnimation = (hook) => {
+    switch(hook){
+      case 'init':
+        return '';
+      case false:
+        return '--inactive';
+      case true:
+        return '--active';
+      default:
+        return null;
+    }
   };
 
   const handleScroll = () => {
@@ -30,34 +58,81 @@ const NavMobile = () => {
   const renderDropdown = (items) => {
     return items.map((item) => {
       return (
-        <Link to={item.slug} key={item.slug} onClick={() => resetSideNav()}>
-          <li className="nav-mobile__sidebar--dropdown-item">{item.title}</li>
-        </Link>
+        <li className="nav-mobile__listItem" key={item.slug} >
+          <Link onClick={() => resetSideNav(false)} to={`/${item.slug}`} className="nav-mobile__sidebar--dropdown-item">{item.title}</Link>
+        </li>
       );
     });
   };
 
-  const renderSideItems = (items) => {
-    items.filter((item) => item.title !== 'Donate');
+  const standardItem = (item) => {
+    if(item.children.length){
 
-    return items.map((item) => {
-      const dropBool = activeDropdown === item.title;
+      const handleDrop = (title) => {
+        if(title === closeDropdown){
+          return false;
+        }else if(title === dropdownOpen){
+          return true;
+        }else{
+          return 'init'
+        }
+      };
 
-      return item.slug !== 'donate' && (
-        <div key={item.slug} onClick={item.children ? () => setActiveDropdown(dropBool ? null : item.title) : () => resetSideNav() }>
-          <Link to={item.children ? '' : item.slug} className="nav-mobile__sidebar--item">
-            <li>{item.title}</li>
-            {item.children[0] && (
-              <Carrot
-                className={`nav-mobile__sidebar--carrot${dropBool ? '--active' : ''}`}
-              />
-            )}
-          </Link>
-          <div className={`nav-mobile__sidebar--dropdown${dropBool ? '--active' : '--inactive'}`}>
-            {renderDropdown(item.children)}
+      return (
+        <li
+          className="nav-mobile__listItem"
+          key={item.slug}
+          onClick={dropdownOpen === item.title ? () =>{setCloseDropdown(item.title); setDropdownOpen(false)} : () => {setDropdownOpen(item.title); setCloseDropdown(false);}}
+          >
+          <div className="nav-mobile__sidebar--item">
+            {item.title}
+            <Carrot className={`nav-mobile__sidebar--carrot${handleAnimation(handleDrop(item.title))}`} />
           </div>
+          <ul className={`nav-mobile__sidebar--dropdown${handleAnimation(handleDrop(item.title))}`}>
+            {renderDropdown(item.children)}
+          </ul>
+        </li>
+      )
+    } else {
+      return(
+        <li className="nav-mobile__listItem" key={item.slug} onClick={ () => resetSideNav('init') }>
+          <Link to={`/${item.slug}`}>
+            <div className="nav-mobile__sidebar--item">
+              {item.title}
+            </div>
+          </Link>
+        </li>
+      )
+    }
+  };
+
+  const redirectItem = (item) => {
+    return(
+      <li className="nav-mobile__listItem" key={item.slug} onClick={ () => resetSideNav('init') }>
+        <div className="nav-mobile__sidebar--item">
+          <a
+            href={item.slug}
+            data-text={item.title}
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+            {item.title}
+          </a>
         </div>
-      );
+      </li>
+    )
+  };
+
+  const renderSideItems = (items) => {
+    return items.map((item) => {
+      switch (item.title){
+        case 'Donate':
+          return null;
+        case 'Shop':
+          return redirectItem(item);
+        default:
+          return standardItem(item);
+      }
     });
   };
 
@@ -68,19 +143,23 @@ const NavMobile = () => {
         <div className="nav-mobile__header">
           <HUOALogo className="nav-mobile__logo" height="90" width="90" />
           <div className="nav-mobile__titles">
-            <div className="nav-mobile__title">Hawaii United Okinawa Association</div>
-            <div className="nav-mobile__title--sm">Promote, perpetuate, and preserve the Okinawan culture here in Hawaii</div>
+            <div className="nav-mobile__title">{title}</div>
+            <div className="nav-mobile__title--sm">{description}</div>
           </div>
         </div>
         </Link>
         <Hamburger className="nav-mobile__hamburger" onClick={() => {setNavState(true); handleScroll();}} />
-        <div className={`nav-mobile__sidebar${navState ? '--active' : '--inactive'}`} >
-          <ButtonClose onClick={() => {resetSideNav(); handleScroll();}} className="nav-mobile__navclose" />
+        <div className={`nav-mobile__sidebar${handleAnimation(navState)}`} >
+          <ButtonClose onClick={() => {resetSideNav(false); handleScroll();}} className="nav-mobile__navclose" />
           <ul className="nav-mobile__sidebar--items">{!!routes && renderSideItems(routes)}</ul>
           <hr className="nav-mobile__sidebar--break" />
           <div className="nav-mobile__sidebar--footer">
-            <small className="nav-mobile__sidebar--footer-link">Rent Our Ballroom</small>
-            <small className="nav-mobile__sidebar--footer-link">Join our Newsletter</small>
+            <Link to='/banquet-facility' onClick={() => resetSideNav('init')}>
+              <small className="nav-mobile__sidebar--footer-link">Rent Our Ballroom</small>
+            </Link>
+            <Link to='/' onClick={() => resetSideNav('init')}>
+              <small className="nav-mobile__sidebar--footer-link">Join our Newsletter</small>
+            </Link>
             <div className="nav-mobile__sidebar--footer-button">
               <Button type="filled" link="donate">
                   Donate  

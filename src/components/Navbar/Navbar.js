@@ -55,14 +55,8 @@ const Navbar = () => {
           <div className="navbar__header">
             <HUOALogo className="navbar__logo" />
             <div className="navbar__titles">
-<<<<<<< HEAD
-              {/* TODO: need to make this dynamic */}
-              <h2 className="navbar__title">Hawaii United Okinawa Association</h2>
-              <h5 className="navbar__title--sm">Promote, perpetuate, and preserve the Okinawan culture here in Hawaii</h5>
-=======
               <h2 className="navbar__title">{title}</h2>
               <h5 className="navbar__title--sm">{description}</h5>
->>>>>>> main
             </div>
           </div>
         </Link>

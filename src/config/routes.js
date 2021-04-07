@@ -1,6 +1,6 @@
 // Dependencies
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 // Config
@@ -76,6 +76,9 @@ const Routes = () => {
       <Route exact path="/ogsh">
         <Header props={ pageState.ogsh } />
         <Geneology />
+      </Route>
+      <Route exact path="/home">
+        <Redirect to="/"/>
       </Route>
     </Switch>
   );
