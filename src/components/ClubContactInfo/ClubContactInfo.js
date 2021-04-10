@@ -1,6 +1,6 @@
 import React from "react";
 
-const ContactInfo = ({ body }) => {
+const ClubContactInfo = ({ body }) => {
   let contact = body;
 
   return (
@@ -14,4 +14,4 @@ const ContactInfo = ({ body }) => {
   );
 };
 
-export default ContactInfo;
+export default ClubContactInfo;

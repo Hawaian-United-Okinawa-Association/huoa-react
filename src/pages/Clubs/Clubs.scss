@@ -1,11 +1,17 @@
 .clubs {
+  &__title {
+    @media screen and (max-width: $breakpoint-mobile) {
+      text-align: center
+    }
+  }
+
   &__items {
     padding-left: 0;
     list-style: none;
     columns: 2;
     
     @media screen and (max-width: $breakpoint-mobile) {
-      margin: 0 2rem 0 2rem;
+      margin: 0 2rem;
       text-align: left;
       columns: 1;
     }
@@ -24,7 +30,7 @@
 
   &__description {
     @media screen and (max-width: $breakpoint-mobile) {
-      margin: 3rem 2rem 3rem 2rem;
+      margin: 3rem 2rem;
     }
   }
 }

@@ -11,7 +11,7 @@
     margin-right: 18px;
 
     @media screen and (max-width: $breakpoint-mobile) {
-        margin: auto;
+      margin: auto;
     }
   }
 
@@ -32,16 +32,16 @@
   }
 
   &__description {
-    margin: 3rem 0 3rem 0;
+    margin: 3rem 0;
 
     @media screen and (max-width: $breakpoint-mobile) {
-      margin: 3rem 2rem 3rem 2rem;
+      margin: 3rem 2rem;
     }
   }
 }
 
 .button {
   @media screen and (max-width: $breakpoint-mobile) {
-    margin: 0 2rem 0 2rem;
+    margin: 0 2rem;
   }
 }

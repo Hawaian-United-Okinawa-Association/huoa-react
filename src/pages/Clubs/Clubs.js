@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Layout from "components/Layout/Layout";
-import Title from "components/Title/Title";
 
 const Clubs = ({ data }) => {
   let clubs = useSelector((state) => state.clubs);
@@ -22,7 +21,7 @@ const Clubs = ({ data }) => {
     return (
       <Layout>
         <div className="clubs__container">
-          <Title rendered={title} position="left" className="clubs__title"/>
+          <h2 position="left" className="clubs__title">{title}</h2>
           <div className="clubs__description" dangerouslySetInnerHTML={{__html: body}} />
           <div className="clubs__body">
             {!!clubs && (

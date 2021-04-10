@@ -1,17 +1,17 @@
 .contact-info {
-  margin-top: 10vh;
+  margin-top: 7rem;
   
   @media screen and (max-width: $breakpoint-mobile) {
-    margin: 3rem 2rem 3rem 2rem;
+    margin: 3rem 2rem;
     text-align: left;
   }
 
   &__title {
     font-weight: bold;
-    font-size: 1.5vw;
+    font-size: 30px;
 
     @media screen and (max-width: $breakpoint-mobile) {
-      font-size: 5vw;
+      font-size: 20px;
     }
   }
 }
