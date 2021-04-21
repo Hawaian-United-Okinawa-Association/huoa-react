@@ -32,6 +32,18 @@
     border-style: solid;
     border-radius: 4px;
     padding: 10px;
+    
+    &:not(:focus):not(:placeholder-shown):invalid {
+      border-color: $error;
+    }
+    
+    &:not(:focus):not(:placeholder-shown):invalid ~ .error-message {
+      display: block; 
+    }
+
+    &:not(:focus):not(:placeholder-shown):valid {
+      border-color: $primary-5;
+    }
   }
 
   &__button-container {
