@@ -31,7 +31,8 @@ const CardBlast = ({ props }) => {
     }) 
   }
   // TODO write conditional for state formData, so that when we get a 'success', we will show the success card info.
-  // TODO add a cookie with an expiry date, so we can keep the form disabled for 24 hours or something. Ask Jenn about this.
+  
+  // TODO fix the conditional error to get the builds to work.
 
   return (
     <div className='card-blast'>
