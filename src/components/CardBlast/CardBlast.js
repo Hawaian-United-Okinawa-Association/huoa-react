@@ -36,7 +36,7 @@ const CardBlast = ({ props }) => {
 
   return (
     <div className='card-blast'>
-      {formData === "fail" || formData === "" &&
+      {formData === "" &&
         <div className='card-blast__form--wrapper'>
           <div className='card-blast__text'>
             <h3 className='card-blast__title'>{ title }</h3>
