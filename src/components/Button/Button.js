@@ -6,7 +6,7 @@ import { ReactComponent as PlusIcon } from 'assets/plus-icon.svg';
 const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled, value, submit }, ref) => {
   const hasIcon = () => icon ? <PlusIcon className='button__plus-icon'/> : null;
 
-  if (!onClick && !link && (type != 'submit')) {
+  if (!onClick && !link && (type !== 'submit')) {
     throw new Error('Button requires a link or an onClick attribute');
   }
   else if (type === 'submit') {

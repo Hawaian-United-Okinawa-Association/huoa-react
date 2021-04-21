@@ -81,7 +81,7 @@ const CardBlast = ({ props }) => {
                 onChange={e => setEmail({ ...email, MERGE0: e.target.value })}
                 required={true} />
               <div className='card-blast__button-container'>
-                <Button submit type='submit' value={button_text} />
+                <Button type='submit' value={button_text} />
               </div>
             </form>
           </div>
