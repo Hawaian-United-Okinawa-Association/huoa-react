@@ -53,33 +53,44 @@ const CardBlast = ({ props }) => {
                 name="id" 
                 value="96858fbc3b" />
               <div className="card-blast__form__name-container">
-                <input 
-                  className='card-blast__input' 
-                  type="text" 
-                  placeholder={ first_name_placeholder } 
-                  name="MERGE1" 
-                  id="MERGE1" 
-                  onChange={e => setFirstName({ ...firstName, MERGE1: e.target.value })}
-                  required={true} />
-                <input 
-                  className='card-blast__input' 
-                  type="text" 
-                  placeholder={ last_name_placeholder } 
-                  name="MERGE2" 
-                  id="MERGE2" 
-                  onChange={e => setLastName({ ...lastName, MERGE2: e.target.value })}
-                  required={true} />
+                <div className="card-blast__form__input-container">
+                  <input 
+                    className='card-blast__input' 
+                    type="text" 
+                    placeholder={ first_name_placeholder } 
+                    name="MERGE1" 
+                    id="MERGE1" 
+                    onChange={e => setFirstName({ ...firstName, MERGE1: e.target.value })}
+                    required={true} />
+                  <p className="card-blast__input__error-message">Please enter first name*</p>
+                </div>
+                <div className="card-blast__form__input-container">
+                  <input 
+                    className='card-blast__input' 
+                    type="text" 
+                    placeholder={ last_name_placeholder } 
+                    name="MERGE2" 
+                    id="MERGE2" 
+                    onChange={e => setLastName({ ...lastName, MERGE2: e.target.value })}
+                    required={true} />
+                  <p className="card-blast__input__error-message">Please enter last name*</p>
+                </div>
               </div>
-              <input 
-                className='card-blast__input' 
-                type="email"
-                placeholder={ email_placeholder } 
-                autoCapitalize="none" 
-                autoCorrect="off" 
-                name="MERGE0" 
-                id="MERGE0" 
-                onChange={e => setEmail({ ...email, MERGE0: e.target.value })}
-                required={true} />
+              <div className="card-blast__form__name-container">
+              </div>
+              <div className="card-blast__form__input-container">
+                <input 
+                  className='card-blast__input' 
+                  type="email"
+                  placeholder={ email_placeholder } 
+                  autoCapitalize="none" 
+                  autoCorrect="off" 
+                  name="MERGE0" 
+                  id="MERGE0" 
+                  onChange={e => setEmail({ ...email, MERGE0: e.target.value })}
+                  required={true} />
+                <p className="card-blast__input__error-message">Please enter a valid Email Address*</p>
+              </div>
               <div className='card-blast__button-container'>
                 <Button type='submit' value={button_text} />
               </div>

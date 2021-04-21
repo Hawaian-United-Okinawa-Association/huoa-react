@@ -18,26 +18,41 @@
     font-style: normal;
     font-size: 16px;
   }
-  
-  &__form__name-container {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
+
+  &__form {
+    &__name-container {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+
+    &__input-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 15px;
+    }
   }
   
   &__input {
     box-sizing: border-box;
     width: 100%;
-    margin-bottom: 15px;
     border-style: solid;
     border-radius: 4px;
     padding: 10px;
     
+    &__error-message {
+      display: none;
+      margin: 0;
+      color: $error;
+      font-weight: bold;
+    }
+
     &:not(:focus):not(:placeholder-shown):invalid {
       border-color: $error;
     }
     
-    &:not(:focus):not(:placeholder-shown):invalid ~ .error-message {
+    &:not(:focus):not(:placeholder-shown):invalid ~ .card-blast__error-message {
       display: block; 
     }
 
