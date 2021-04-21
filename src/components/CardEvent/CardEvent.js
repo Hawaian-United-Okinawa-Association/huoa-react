@@ -27,7 +27,7 @@ const CardEvent = ({ props }) => {
         dangerouslySetInnerHTML={{ __html: event_location }} />
 
       <div className="card-event__button">
-        <Button type="text" link={`events/${ event_slug }`}>Read More</Button>
+        <Button type="text" link={`/events/${ event_slug }`}>Read More</Button>
       </div>
     </div>
   );
