@@ -12,7 +12,8 @@
   transition-duration: 0.4s;
   transition-property: background-color, color, border-color, fill;
 
-  &[type=filled] {
+  &[type=filled],
+  &[type=submit] {
     background-color: $primary-1;
     color: $white;
     fill: $white;

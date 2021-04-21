@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import jsonp from 'jsonp';
 
 import checkmark from './check.svg';
+import Button from '../Button/Button';
 
 const CardBlast = ({ props }) => {
   const { title, body, first_name_placeholder, last_name_placeholder, email_placeholder, button_text } = props;
@@ -80,7 +81,7 @@ const CardBlast = ({ props }) => {
                 onChange={e => setEmail({ ...email, MERGE0: e.target.value })}
                 required={true} />
               <div className='card-blast__button-container'>
-                <input type="submit" className="formEmailButton button" name="submit" value={button_text} />
+                <Button submit type='submit' value={button_text} />
               </div>
             </form>
           </div>
