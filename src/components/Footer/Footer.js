@@ -35,9 +35,15 @@ const Footer = () => {
           <div className="footer__contact--col">Mon-Fri, 8:30 am - 5 pm Saturday & Sunday, Closed</div>
         </div>
         <div className="footer__social">
-          <a href="https://www.youtube.com/c/HawaiiUnitedOkinawaAssociation" target="_blank" rel="noopener noreferrer"><YouTube className='footer__social-icon' /></a>
-          <a href="https://www.instagram.com/hawaiiunitedokinawaassociation/?hl=en" target="_blank" rel="noopener noreferrer"><Instagram className='footer__social-icon' /></a>
-          <a href="https://www.facebook.com/HUOA.org/" target="_blank" rel="noopener noreferrer"><Facebook className='footer__social-icon' /></a>
+          <a href="https://www.youtube.com/c/HawaiiUnitedOkinawaAssociation" target="_blank" rel="noopener noreferrer">
+            <YouTube className='footer__social-icon' />
+          </a>
+          <a href="https://www.instagram.com/hawaiiunitedokinawaassociation/?hl=en" target="_blank" rel="noopener noreferrer">
+            <Instagram className='footer__social-icon' />
+          </a>
+          <a href="https://www.facebook.com/HUOA.org/" target="_blank" rel="noopener noreferrer">
+            <Facebook className='footer__social-icon' />
+          </a>
         </div>
       </div>
     </footer>

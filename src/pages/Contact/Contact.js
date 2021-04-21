@@ -16,13 +16,13 @@ const Contact = ({ data }) => {
             <h3>{data.section_1.section_title}</h3>
             <div dangerouslySetInnerHTML={{ __html: data.section_1.section_body.left }} />
             <div className="contact__social">
-              <a href="https://YouTube.com/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.youtube.com/c/HawaiiUnitedOkinawaAssociation" target="_blank" rel="noopener noreferrer">
                 <YouTube className='contact__social--item' />
               </a>
-              <a href="https://Instagram.com/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/hawaiiunitedokinawaassociation/?hl=en" target="_blank" rel="noopener noreferrer">
                 <Instagram className='contact__social--item' />
               </a>
-              <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/HUOA.org/" target="_blank" rel="noopener noreferrer">
                 <Facebook className='contact__social--item' />
               </a>
             </div>

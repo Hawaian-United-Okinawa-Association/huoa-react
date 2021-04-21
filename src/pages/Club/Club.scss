@@ -29,6 +29,17 @@
   
   &__title {
     display: inline-flex;
+    text-align: start;
+    
+    @media screen and (max-width: $breakpoint-mobile) {
+      margin: 0 2rem;
+
+      h2 {
+        font-size: 42px;
+        line-height: 3rem;
+        text-align: center;
+      }
+    }
   }
 
   &__description {

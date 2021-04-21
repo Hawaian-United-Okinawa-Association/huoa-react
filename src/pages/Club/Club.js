@@ -5,7 +5,6 @@ import { withRouter } from "react-router-dom";
 import Layout from "components/Layout/Layout";
 import Breadcrumbs from "components/Breadcrumbs/Breadcrumbs";
 import ClubContactInfo from "components/ClubContactInfo/ClubContactInfo";
-import Title from "components/Title/Title";
 import Button from "components/Button/Button";
 import SocialMediaLinks from "components/SocialMediaLinks/SocialMediaLinks";
 import Image from "components/Image/Image";
@@ -14,7 +13,6 @@ const Club = ({ match }) => {
   let club = useSelector((state) => state.clubs);
   let currentClub = match.params.clubId;
   let clubData = club.find((object) => object.slug === currentClub);
-  let button_text;
 
   if (!clubData) {
     return null;
@@ -36,14 +34,16 @@ const Club = ({ match }) => {
             {!!club_image && (
               <Image className="club__image" img={club_image} alt="club logo" />
             )}
-            <Title rendered={rendered} className="left" />
+            <div className={`club__title`}>
+              <h2>{rendered}</h2>
+            </div>
           </div>
           {!!club_description && (
             <div className="club__description" dangerouslySetInnerHTML={{ __html: club_description }} />
           )}
 
           {!!club_newsletter && (
-            <Button link={club_newsletter}>{button_text ? button_text : "Optional Link"}</Button>
+            <Button link={club_newsletter}>Newsletter</Button>
           )}
 
           {club_contact.address !== "" || club_contact.city_zip !== "" || club_contact.email !== "" || club_contact.phone !== "" ? 
