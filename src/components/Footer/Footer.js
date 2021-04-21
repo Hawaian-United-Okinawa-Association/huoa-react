@@ -3,9 +3,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { ReactComponent as Logo } from 'assets/huoa-logo.svg';
-import { ReactComponent as Twitter } from 'assets/twitter.svg';
 import { ReactComponent as Instagram } from 'assets/instagram.svg';
 import { ReactComponent as Facebook } from 'assets/facebook.svg';
+import { ReactComponent as Youtube } from 'assets/youtube.svg';
 
 const Footer = () => {
   return (
@@ -35,7 +35,7 @@ const Footer = () => {
           <div className="footer__contact--col">Mon-Fri, 8:30 am - 5 pm Saturday & Sunday, Closed</div>
         </div>
         <div className="footer__social">
-          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><Twitter className='footer__social-icon' /></a>
+          <a href="https://www.youtube.com/c/HawaiiUnitedOkinawaAssociation" target="_blank" rel="noopener noreferrer"><Youtube className='footer__social-icon' /></a>
           <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"><Instagram className='footer__social-icon' /></a>
           <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer"><Facebook className='footer__social-icon' /></a>
         </div>
