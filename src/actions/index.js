@@ -7,6 +7,7 @@ import {
   GET_EVENTS,
   MODAL_OPEN,
   MODAL_CLOSE,
+  GET_SETTINGS,
 } from "./actionTypes";
 
 const api = "https://dev.huoa.org/wp-json";
@@ -17,7 +18,7 @@ export const getPages = () => async (dispatch) => {
     let cache = window.__REDUX_STATE__;
 
     dispatch({ type: GET_PAGES, payload: cache.pages });
-    dispatch({ type: GET_ROUTER, payload: cache.pages });
+    dispatch({ type: GET_ROUTER, payload: cache.router });
   } else {
     try {
       // TODO: we need to check if there is more than 100 pages then we need to paginate
@@ -64,6 +65,24 @@ export const getEvents = () => async (dispatch) => {
       );
 
       dispatch({ type: GET_EVENTS, payload: data });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+};
+
+export const getSettings = () => async (dispatch) => {
+  if (isProd) {
+    let cache = window.__REDUX_STATE__;
+
+    dispatch({ type: GET_SETTINGS, payload: cache.settings });
+  } else {
+    try {
+      const { data } = await axios.get(
+        `${api}`
+      );
+
+      dispatch({ type: GET_SETTINGS, payload: {title: data.name, description: data.description} });
     } catch (error) {
       console.error(error);
     }

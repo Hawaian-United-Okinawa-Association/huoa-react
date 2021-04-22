@@ -4,7 +4,11 @@ $max_event_content_width: 800px;
   display: grid;
   grid-template-columns: 4fr 5fr;
   margin: 1.5rem auto;
- 
+
+  &__title {
+    line-height: 1.2;
+  }
+
   &__section--left{
     order: -1;
   }
