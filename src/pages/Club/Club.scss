@@ -1,6 +1,6 @@
 .club {
   &__container {
-    margin: 2rem auto;
+    margin: 2rem 2rem;
   }  
 
   &__image {
@@ -18,11 +18,14 @@
   &__title-box {
     display: inline-flex;
 
-    @media screen and (max-width: $breakpoint-mobile) {
+    @media screen and (max-width: $breakpoint-tablet-large) {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       margin: auto;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile-large) {
       text-align: center;
     }
   }
@@ -31,12 +34,19 @@
     display: inline-flex;
     text-align: start;
     
-    @media screen and (max-width: $breakpoint-mobile) {
-      margin: 0 2rem;
+    @media screen and (max-width: $breakpoint-tablet-large) {
+      // margin-left: 2rem;
 
       h2 {
         font-size: 42px;
         line-height: 3rem;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      margin: 0 2rem;
+
+      h2 {
         text-align: center;
       }
     }
@@ -45,14 +55,8 @@
   &__description {
     margin: 3rem 0;
 
-    @media screen and (max-width: $breakpoint-mobile) {
-      margin: 3rem 2rem;
+    @media screen and (max-width: $breakpoint-tablet-large) {
+      margin: 3rem 0;
     }
-  }
-}
-
-.button {
-  @media screen and (max-width: $breakpoint-mobile) {
-    margin: 0 2rem;
   }
 }

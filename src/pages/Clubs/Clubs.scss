@@ -3,6 +3,10 @@
     @media screen and (max-width: $breakpoint-mobile) {
       text-align: center
     }
+
+    @media screen and (max-width: $breakpoint-tablet-large) {
+      text-align: center;
+    }
   }
 
   &__items {
@@ -11,6 +15,24 @@
     columns: 2;
     
     @media screen and (max-width: $breakpoint-mobile) {
+      margin: 0 2rem;
+      text-align: left;
+      columns: 1;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile-large) {
+      margin: 0 2rem;
+      text-align: left;
+      columns: 1;
+    }
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      margin: 0 2rem;
+      text-align: left;
+      columns: 1;
+    }
+
+    @media screen and (max-width: $breakpoint-tablet-large) {
       margin: 0 2rem;
       text-align: left;
       columns: 1;
@@ -36,6 +58,18 @@
 
   &__description {
     @media screen and (max-width: $breakpoint-mobile) {
+      margin: 3rem 2rem;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile-large) {
+      margin: 3rem 2rem;
+    }
+
+    @media screen and (max-width: $breakpoint-tablet) {
+        margin: 3rem 2rem;
+    }
+
+    @media screen and (max-width: $breakpoint-tablet-large) {
       margin: 3rem 2rem;
     }
   }
