@@ -28,7 +28,7 @@ const Navbar = () => {
 
   const renderNavItems = (items) => {
     return items.map((item) => {
-      return item.slug !== 'home' && (
+      return !!item && item.slug !== 'home' && (
         <NavItem
           name={item.title}
           linkTo={ item.slug !== 'shop' ? item.slug :'/' + item.slug }

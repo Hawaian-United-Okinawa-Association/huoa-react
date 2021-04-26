@@ -22,7 +22,7 @@ import BanquetFacility from 'pages/BanquetFacility/BanquetFacility';
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
   // TODO: Need to make these dynamic use `state.router`
-
+  console.log(pageState)
   return (
     <Switch>
       <Route exact path="/">
@@ -49,9 +49,9 @@ const Routes = () => {
         <Header props={ pageState.events } />
         <Event />
       </Route>
-      <Route exact path="/join-a-club">
-        <Header props={ pageState["join-a-club"]}/>
-        <Clubs data={ pageState["join-a-club"] } />
+      <Route exact path="/clubs">
+        <Header props={ pageState["clubs"]}/>
+        <Clubs data={ pageState["clubs"] } />
       </Route>
       <Route path="/clubs/:clubId">
         <Header props={ pageState.join } />

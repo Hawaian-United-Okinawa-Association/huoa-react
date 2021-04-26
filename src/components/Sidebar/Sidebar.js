@@ -19,11 +19,14 @@ const Sidebar = () => {
     let lastParent;
 
     routes.forEach((route) => {
+      if (!route) {
+        return
+      }
       let findMe = `${pathname.split('/')[1]}`;
 
       lastParent = route;
 
-      if (route.slug === findMe) {
+      if (!!route && route.slug === findMe) {
         current = route.title;
         children = route.children;
         return;
