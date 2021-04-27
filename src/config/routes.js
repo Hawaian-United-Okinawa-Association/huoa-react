@@ -22,7 +22,6 @@ import BanquetFacility from 'pages/BanquetFacility/BanquetFacility';
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
   // TODO: Need to make these dynamic use `state.router`
-  console.log(pageState)
   return (
     <Switch>
       <Route exact path="/">
