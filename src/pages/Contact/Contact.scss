@@ -40,12 +40,19 @@
   &__col {
     flex-basis: 50%;
 
-    @media screen and (max-width: $breakpoint-mobile) {
+    @media screen and (max-width: $breakpoint-mobile-large) {
+      flex-basis: 100%;
       text-align: left;
       
       h3 {
         margin: auto;
         text-align: left;
+      }
+    }
+
+    &--right {
+      @media screen and (max-width: $breakpoint-mobile-large) {
+        display: none;
       }
     }
   }

@@ -27,7 +27,7 @@ const Contact = ({ data }) => {
               </a>
             </div>
           </div>
-          <div className="contact__col">
+          <div className="contact__col--right">
             <iframe src={data.section_1.section_body.right} className="contact__map--main" title="Google Maps" frameBorder="0" aria-hidden="false" tabIndex="0" />
           </div>
         </div>
@@ -38,8 +38,8 @@ const Contact = ({ data }) => {
         <div className="contact__section">
           <h3>{data.section_3.section_title}</h3>
           <div className="contact__col" dangerouslySetInnerHTML={{ __html: data.section_3.section_body.left }}></div>
-          <div className="contact__col" dangerouslySetInnerHTML={{ __html: data.section_3.section_body.right }}></div>
-          <div className="contact__col">
+          <div className="contact__col--right" dangerouslySetInnerHTML={{ __html: data.section_3.section_body.right }}></div>
+          <div className="contact__col--right">
             <iframe src={data.section_1.section_body.right} className="contact__map--mobile" title="Google Maps" frameBorder="0" aria-hidden="false" tabIndex="0" />
           </div>
         </div>
