@@ -55,7 +55,7 @@
       width: 415px;
       height: 300px;
       margin-top: 1rem;
-      @media screen and (max-width: $breakpoint-mobile) {
+      @media screen and (max-width: $breakpoint-mobile-large) {
         display: none;
       }
 
@@ -68,7 +68,7 @@
     &--mobile {
       display: none;
 
-      @media screen and (max-width: $breakpoint-mobile) {
+      @media screen and (max-width: $breakpoint-mobile-large) {
         display: block;
         width: 300px;
         height: 250px;

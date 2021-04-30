@@ -1,11 +1,11 @@
 .clubs {
   &__title {
+    @media screen and (max-width: $breakpoint-laptop) {
+      text-align: center;
+    }
+    
     @media screen and (max-width: $breakpoint-mobile) {
       text-align: center
-    }
-
-    @media screen and (max-width: $breakpoint-tablet-large) {
-      text-align: center;
     }
   }
 
@@ -13,26 +13,14 @@
     padding-left: 0;
     list-style: none;
     columns: 2;
-    
-    @media screen and (max-width: $breakpoint-mobile) {
-      margin: 0 2rem;
-      text-align: left;
-      columns: 1;
-    }
 
-    @media screen and (max-width: $breakpoint-mobile-large) {
+    @media screen and (max-width: $breakpoint-laptop) {
       margin: 0 2rem;
       text-align: left;
-      columns: 1;
+      columns: 2;
     }
 
     @media screen and (max-width: $breakpoint-tablet) {
-      margin: 0 2rem;
-      text-align: left;
-      columns: 1;
-    }
-
-    @media screen and (max-width: $breakpoint-tablet-large) {
       margin: 0 2rem;
       text-align: left;
       columns: 1;
@@ -57,19 +45,23 @@
   }
 
   &__description {
-    @media screen and (max-width: $breakpoint-mobile) {
+    @media screen and (max-width: $breakpoint-laptop) {
       margin: 3rem 2rem;
     }
 
-    @media screen and (max-width: $breakpoint-mobile-large) {
+    @media screen and (max-width: $breakpoint-tablet-large) {
       margin: 3rem 2rem;
     }
 
     @media screen and (max-width: $breakpoint-tablet) {
-        margin: 3rem 2rem;
+      margin: 3rem 2rem;
+    }
+    
+    @media screen and (max-width: $breakpoint-mobile-large) {
+      margin: 3rem 2rem;
     }
 
-    @media screen and (max-width: $breakpoint-tablet-large) {
+    @media screen and (max-width: $breakpoint-mobile) {
       margin: 3rem 2rem;
     }
   }
