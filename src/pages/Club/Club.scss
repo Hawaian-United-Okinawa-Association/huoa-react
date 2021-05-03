@@ -1,7 +1,7 @@
 .club {
   &__container {
     margin: 2rem 2rem;
-  }  
+  }
 
   &__image {
     display: inline-flex;
@@ -29,14 +29,12 @@
       text-align: center;
     }
   }
-  
+
   &__title {
     display: inline-flex;
     text-align: start;
-    
-    @media screen and (max-width: $breakpoint-tablet-large) {
-      // margin-left: 2rem;
 
+    @media screen and (max-width: $breakpoint-tablet-large) {
       h2 {
         font-size: 42px;
         line-height: 3rem;

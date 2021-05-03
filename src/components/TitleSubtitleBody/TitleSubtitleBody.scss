@@ -3,26 +3,25 @@
       margin-bottom: 4.5rem;
     }
   }
-  
+
   @media screen and (max-width: $breakpoint-tablet) {
     .title-subtitle-body {
       h2 {
         text-align: center;
       }
-      
-      &__title {
-        font-size: 22px;
-        text-align: center;
-      }
-  
-      &__subtitle {
-        font-size: 20px;
-        line-height: 30px;
-      }
-      
-      &__title {
-        order: -1;
-      }
+
+    &__title {
+      font-size: 22px;
+      text-align: center;
+    }
+
+    &__subtitle {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    &__title {
+      order: -1;
     }
   }
-  
+}
