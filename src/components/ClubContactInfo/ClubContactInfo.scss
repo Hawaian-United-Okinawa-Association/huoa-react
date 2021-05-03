@@ -1,0 +1,17 @@
+.club-contact-info {
+  margin-top: 7rem;
+  
+  @media screen and (max-width: $breakpoint-tablet-large) {
+    margin: 3rem 0;
+    text-align: left;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 30px;
+
+    @media screen and (max-width: $breakpoint-tablet-large) {
+      font-size: 20px;
+    }
+  }
+}

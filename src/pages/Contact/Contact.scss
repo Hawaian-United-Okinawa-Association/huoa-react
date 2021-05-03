@@ -1,21 +1,86 @@
 .contact {
+  margin: 2rem;
+
+  &__title {
+    @media screen and (max-width: $breakpoint-tablet-large) {
+      text-align: center;
+    }
+  }
+
   &__section {
     display: flex;
     flex-wrap: wrap;
-    margin: 2rem auto;
+    margin: auto;
+
+    @media screen and (max-width: $breakpoint-tablet-large) {
+      text-align: left;
+    }
 
     h3 {
       flex-basis: 100%;
+    }
+
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin-top: 1rem;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      width: 70%
+    }
+
+    a {
+      margin: auto;
     }
   }
 
   &__col {
     flex-basis: 50%;
+
+    @media screen and (max-width: $breakpoint-mobile-large) {
+      flex-basis: 100%;
+      text-align: left;
+      
+      h3 {
+        margin: auto;
+        text-align: left;
+      }
+    }
+
+    &--right {
+      @media screen and (max-width: $breakpoint-mobile-large) {
+        display: none;
+      }
+    }
   }
 
   &__map {
-    width: 100%;
-    height: 300px;
-    margin-top: 1rem;
+    &--main {
+      width: 415px;
+      height: 300px;
+      margin-top: 1rem;
+      @media screen and (max-width: $breakpoint-mobile-large) {
+        display: none;
+      }
+
+      @media screen and (max-width: $breakpoint-tablet-large) {
+        width: 18rem;
+        height: 200px;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @media screen and (max-width: $breakpoint-mobile-large) {
+        display: block;
+        width: 300px;
+        height: 250px;
+        margin-top: 3rem;
+      }
+    }
   }
 }

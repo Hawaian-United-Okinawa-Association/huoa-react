@@ -1,0 +1,68 @@
+.clubs {
+  &__title {
+    @media screen and (max-width: $breakpoint-laptop) {
+      text-align: center;
+    }
+    
+    @media screen and (max-width: $breakpoint-mobile) {
+      text-align: center
+    }
+  }
+
+  &__items {
+    padding-left: 0;
+    list-style: none;
+    columns: 2;
+
+    @media screen and (max-width: $breakpoint-laptop) {
+      margin: 0 2rem;
+      text-align: left;
+      columns: 2;
+    }
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      margin: 0 2rem;
+      text-align: left;
+      columns: 1;
+    }
+
+    li {
+      margin: auto;
+      padding-top: 20px;
+    }
+    
+  }
+
+  &__item-link {
+    display: inline-block;
+    padding-bottom: 15px;
+    text-decoration-line: underline;
+  }
+
+  &__item-link:hover {
+    color: $primary-1;
+    font-weight: 800;
+  }
+
+  &__description {
+    @media screen and (max-width: $breakpoint-laptop) {
+      margin: 3rem 2rem;
+    }
+
+    @media screen and (max-width: $breakpoint-tablet-large) {
+      margin: 3rem 2rem;
+    }
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      margin: 3rem 2rem;
+    }
+    
+    @media screen and (max-width: $breakpoint-mobile-large) {
+      margin: 3rem 2rem;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      margin: 3rem 2rem;
+    }
+  }
+}
