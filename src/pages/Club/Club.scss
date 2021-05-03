@@ -1,0 +1,60 @@
+.club {
+  &__container {
+    margin: 2rem 2rem;
+  }
+
+  &__image {
+    display: inline-flex;
+    max-width: 90px;
+    max-height: 90px;
+    margin-top: 9px;
+    margin-right: 18px;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      margin: auto;
+    }
+  }
+
+  &__title-box {
+    display: inline-flex;
+
+    @media screen and (max-width: $breakpoint-tablet-large) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: auto;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile-large) {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    display: inline-flex;
+    text-align: start;
+
+    @media screen and (max-width: $breakpoint-tablet-large) {
+      h2 {
+        font-size: 42px;
+        line-height: 3rem;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      margin: 0 2rem;
+
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+
+  &__description {
+    margin: 3rem 0;
+
+    @media screen and (max-width: $breakpoint-tablet-large) {
+      margin: 3rem 0;
+    }
+  }
+}

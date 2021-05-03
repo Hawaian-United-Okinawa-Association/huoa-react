@@ -13,16 +13,15 @@ import Event from 'pages/Event/Event';
 import News from 'pages/News/News';
 import Contact from 'pages/Contact/Contact';
 import Donate from 'pages/Donate/Donate';
-import GetInvolved from 'pages/GetInvolved/GetInvolved';
 import Geneology from 'pages/Geneology/Geneology';
-import Club from 'pages/GetInvolved/Club'
+import Clubs from 'pages/Clubs/Clubs';
+import Club from 'pages/Club/Club';
 import AboutMissionAndPurpose from 'pages/MissionAndPurpose/MissionAndPurpose';
 import BanquetFacility from 'pages/BanquetFacility/BanquetFacility';
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
   // TODO: Need to make these dynamic use `state.router`
-
   return (
     <Switch>
       <Route exact path="/">
@@ -49,13 +48,9 @@ const Routes = () => {
         <Header props={ pageState.events } />
         <Event />
       </Route>
-      <Route exact path="/join-a-club">
-        <Header props={ pageState["join-a-club"]}/>
-        <GetInvolved data={ pageState["join-a-club"] } />
-      </Route>
       <Route exact path="/clubs">
-        <Header props={ pageState["join-a-club"]}/>
-        <GetInvolved data={ pageState["join-a-club"] } />
+        <Header props={ pageState["clubs"]}/>
+        <Clubs data={ pageState["clubs"] } />
       </Route>
       <Route path="/clubs/:clubId">
         <Header props={ pageState.join } />
