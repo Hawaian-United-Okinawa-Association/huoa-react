@@ -13,7 +13,6 @@
 import React from 'react';
 import Container from 'components/Container/Container';
 import Layout from 'components/Layout/Layout';
-import TitleBody from 'components/TitleBody/TitleBody';
 
 const MissionAndPurpose = ({ data }) => {
   if (!data) return null;
@@ -25,11 +24,12 @@ const MissionAndPurpose = ({ data }) => {
       <Container>
         <div className="about-mission-purpose">
           { builder.map((el, i) =>
-            <TitleBody 
-              key={i} 
-              title={el.title_body.title} 
-              body={el.title_body.body} 
-            />
+            <div key={i}>
+              <h2 className="about-mission-purpose__title">
+                {el.title_body.title}
+              </h2>
+              <div className="about-mission-purpose__body" dangerouslySetInnerHTML = {{ __html: el.title_body.body }} />
+            </div>
           )}
         </div>
       </Container>

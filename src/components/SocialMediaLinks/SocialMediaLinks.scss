@@ -1,0 +1,11 @@
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    max-width: 60vw;
+
+    &__item {
+      display: inline-flex;
+      max-width: 30px;
+      max-height: 30px;
+    }
+}

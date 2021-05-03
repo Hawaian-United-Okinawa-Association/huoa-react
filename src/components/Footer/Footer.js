@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { ReactComponent as Logo } from 'assets/huoa-logo.svg';
-import { ReactComponent as Twitter } from 'assets/twitter.svg';
+import { ReactComponent as YouTube } from 'assets/youtube.svg';
 import { ReactComponent as Instagram } from 'assets/instagram.svg';
 import { ReactComponent as Facebook } from 'assets/facebook.svg';
 
@@ -12,8 +12,8 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__links">
-          <Link to="/about" className="footer__link">About</Link>
-          <Link to="/get-invloved" className="footer__link">Get Involved</Link>
+          <Link to="/about/mission-and-purpose" className="footer__link">About</Link>
+          <Link to="/clubs" className="footer__link">Clubs</Link>
           <Link to="/events" className="footer__link">Events</Link>
           <Link to="/contact" className="footer__link">Contact</Link>
           {/* TODO: this will be added back later so we'll comment these out for now */}
@@ -35,9 +35,15 @@ const Footer = () => {
           <div className="footer__contact--col">Mon-Fri, 8:30 am - 5 pm Saturday & Sunday, Closed</div>
         </div>
         <div className="footer__social">
-          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><Twitter className='footer__social-icon' /></a>
-          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"><Instagram className='footer__social-icon' /></a>
-          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer"><Facebook className='footer__social-icon' /></a>
+          <a href="https://www.youtube.com/c/HawaiiUnitedOkinawaAssociation" target="_blank" rel="noopener noreferrer">
+            <YouTube className='footer__social-icon' />
+          </a>
+          <a href="https://www.instagram.com/hawaiiunitedokinawaassociation/?hl=en" target="_blank" rel="noopener noreferrer">
+            <Instagram className='footer__social-icon' />
+          </a>
+          <a href="https://www.facebook.com/HUOA.org/" target="_blank" rel="noopener noreferrer">
+            <Facebook className='footer__social-icon' />
+          </a>
         </div>
       </div>
     </footer>
