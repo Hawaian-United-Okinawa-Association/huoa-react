@@ -3,10 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { ReactComponent as Logo } from 'assets/huoa-logo.svg';
-<<<<<<< HEAD
-=======
 import { ReactComponent as YouTube } from 'assets/youtube.svg';
->>>>>>> main
 import { ReactComponent as Instagram } from 'assets/instagram.svg';
 import { ReactComponent as Facebook } from 'assets/facebook.svg';
 import { ReactComponent as Youtube } from 'assets/youtube.svg';
