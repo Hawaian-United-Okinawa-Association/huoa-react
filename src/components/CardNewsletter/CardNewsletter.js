@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import Button from '../Button/Button';
+import Button from 'components/Button/Button';
 
 const CardNewsletter = ({ props }) => {
   const {title, body, buttons } = props;

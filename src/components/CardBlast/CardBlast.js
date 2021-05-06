@@ -16,7 +16,6 @@ const CardBlast = ({ props }) => {
 
   const submit = (event) => {  
     event.preventDefault();
-    console.log(firstName, lastName, email);
     let api = `https://huoa.us10.list-manage.com/subscribe/post-json?u=fb4e3b9e255496f68e4d87e35&id=96858fbc3b&MERGE0=${email.MERGE0}.com&MERGE1=${firstName.MERGE1}&MERGE2=${lastName.MERGE2}`
     
     jsonp(api, {
@@ -25,14 +24,9 @@ const CardBlast = ({ props }) => {
       if (error) {
         console.log(error)
       }
-      console.log(data.result)
       setFormData(data.result);
-      console.log(formData)
     }) 
   }
-  // TODO write conditional for state formData, so that when we get a 'success', we will show the success card info.
-  
-  // TODO fix the conditional error to get the builds to work.
 
   return (
     <div className='card-blast'>

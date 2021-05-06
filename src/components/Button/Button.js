@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { ReactComponent as PlusIcon } from 'assets/plus-icon.svg';
 
-const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled, value, submit }, ref) => {
+const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled, value }, ref) => {
   const hasIcon = () => icon ? <PlusIcon className='button__plus-icon'/> : null;
 
   if (!onClick && !link && (type !== 'submit')) {
