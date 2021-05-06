@@ -6,6 +6,10 @@
   box-shadow: $card-blank-shadow;
   text-align: left;
 
+  @media (max-width: $breakpoint-mobile) {
+    padding: 20px;
+  }
+
   &__title {
     margin: 0;
     font-weight: 500;
