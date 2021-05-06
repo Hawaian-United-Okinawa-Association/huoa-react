@@ -7,7 +7,7 @@
   text-align: left;
 
   @media (max-width: $breakpoint-mobile) {
-    padding: 20px;
+    padding: 32px;
   }
 
   &__title {
@@ -28,6 +28,11 @@
       display: flex;
       flex-direction: row;
       gap: 1rem;
+
+      @media (max-width: $breakpoint-mobile) {
+        flex-direction: column;
+        gap: 0;
+      }
     }
 
     &__input-container {
