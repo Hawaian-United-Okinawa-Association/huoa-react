@@ -105,6 +105,6 @@ export const closeModal = () => {
 
 export const toggleScroll = () => {
   return {
-    type: TOGGLE_SCROLL,
+    type: TOGGLE_SCROLL
   };
 };

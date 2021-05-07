@@ -21,7 +21,7 @@ import BanquetFacility from 'pages/BanquetFacility/BanquetFacility';
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
   // TODO: Need to make these dynamic use `state.router`
-  console.log(pageState.home);
+  
   return (
     <Switch>
       <Route exact path="/">
@@ -63,10 +63,6 @@ const Routes = () => {
       <Route exact path="/donate">
         <Header props={ pageState.donate } />
         <Donate data={pageState.donate} />
-      </Route>
-      <Route exact path="/ogsh">
-        <Header props={ pageState.ogsh } />
-        <Geneology />
       </Route>
       <Route exact path="/home">
         <Redirect to="/"/>
