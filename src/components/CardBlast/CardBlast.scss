@@ -1,7 +1,7 @@
 .card-blast {
   justify-self: center;
   min-width: 280px;
-  max-width: 440px;
+  max-width: 536px;
   border-radius: $card-border-radius;
   padding: 64px 80px;
   background: $white;
@@ -32,7 +32,7 @@
       flex-direction: row;
       gap: 1rem;
 
-      @media (max-width: $breakpoint-mobile-large) {
+      @media (max-width: $breakpoint-mobile) {
         flex-direction: column;
         gap: 0;
       }
