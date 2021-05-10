@@ -8,7 +8,7 @@
   box-shadow: $card-blank-shadow;
   text-align: left;
 
-  @media (max-width: $breakpoint-mobile) {
+  @media (max-width: $breakpoint-mobile-large) {
     margin: 16px;
     padding: 32px;
   }
@@ -32,7 +32,7 @@
       flex-direction: row;
       gap: 1rem;
 
-      @media (max-width: $breakpoint-mobile) {
+      @media (max-width: $breakpoint-mobile-large) {
         flex-direction: column;
         gap: 0;
       }
