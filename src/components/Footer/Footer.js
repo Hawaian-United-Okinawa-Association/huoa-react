@@ -3,9 +3,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { ReactComponent as Logo } from 'assets/huoa-logo.svg';
-import { ReactComponent as YouTube } from 'assets/youtube.svg';
 import { ReactComponent as Instagram } from 'assets/instagram.svg';
 import { ReactComponent as Facebook } from 'assets/facebook.svg';
+import { ReactComponent as Youtube } from 'assets/youtube.svg';
 
 const Footer = () => {
   return (
@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
         <div className="footer__social">
           <a href="https://www.youtube.com/c/HawaiiUnitedOkinawaAssociation" target="_blank" rel="noopener noreferrer">
-            <YouTube className='footer__social-icon' />
+            <Youtube className='footer__social-icon' />
           </a>
           <a href="https://www.instagram.com/hawaiiunitedokinawaassociation/?hl=en" target="_blank" rel="noopener noreferrer">
             <Instagram className='footer__social-icon' />

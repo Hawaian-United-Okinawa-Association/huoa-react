@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 
-import Image from '../../Image/Image';
-import Button from '../../Button/Button';
+import Image from 'components/Image/Image';
+import Button from 'components/Button/Button';
 
 const CardLarge = ({ props }) => {
   const { image, title, body, button } = props;

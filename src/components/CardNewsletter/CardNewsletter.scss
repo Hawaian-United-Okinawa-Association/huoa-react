@@ -1,0 +1,38 @@
+.card-newsletter {
+  min-width: 280px;
+  border-radius: $card-border-radius;
+  padding: 64px;
+  background: $white;
+  box-shadow: $card-blank-shadow;
+  text-align: left;
+
+  @media (max-width: $breakpoint-mobile) {
+    margin: 16px;
+    padding: 32px;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 21px;
+  }
+
+  &__body {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+  }
+
+  &__button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+
+    .button {
+      width: auto;
+      margin: auto auto auto 0;
+    }
+  }
+}

@@ -34,7 +34,7 @@
   &__logo {
     width: 125px;
     height: 125px;
-    margin: 4rem auto;
+    margin: 2rem auto;
     fill: $white;
   }
 
@@ -54,10 +54,15 @@
         margin: 1rem auto;
       }
     }
+  }
 
+  &__social {
+    margin-top: 2em;
   }
 
   &__social-icon {
+    width: 40px;
+    height: 40px;
     margin: auto 1rem;
   }
 }

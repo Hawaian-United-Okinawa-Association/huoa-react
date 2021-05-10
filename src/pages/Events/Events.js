@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import Layout from 'components/Layout/Layout';
 import Container from 'components/Container/Container';
-import CardEvent from 'components/Cards/CardEvent/CardEvent';
+import CardEvent from 'components/CardEvent/CardEvent';
 
 const Events = () => {
   const events = useSelector((state) => state.events);

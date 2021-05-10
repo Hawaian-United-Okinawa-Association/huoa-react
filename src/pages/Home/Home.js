@@ -2,11 +2,11 @@ import React from 'react';
 
 import Hero from 'components/Hero/Hero';
 import TextArea from 'components/TextArea/TextArea';
-import CardLarge from 'components/Cards/CardLarge/CardLarge';
-import CardSquare from 'components/Cards/CardSquare/CardSquare';
-import CardBlank from 'components/Cards/CardBlank/CardBlank';
+import CardLarge from 'components/CardLarge/CardLarge';
+import CardSquare from 'components/CardSquare/CardSquare';
+import CardBlast from 'components/CardBlast/CardBlast';
+import CardNewsletter from 'components/CardNewsletter/CardNewsletter';
 import Container from 'components/Container/Container';
-import Button from 'components/Button/Button';
 
 const Home = ({ data }) => {
   if (!data) return null;
@@ -14,6 +14,8 @@ const Home = ({ data }) => {
   let { builder } = data;
   let cardsLarge = builder[2].cards_large;
   let cardsSquare = builder[3].cards_small.card;
+  let cardBlast = builder[4].cards_custom.cards[0].purple_blast;
+  let cardNewsletter = builder[4].cards_custom.cards[1].newsletters;
 
   return (
     <>
@@ -43,22 +45,8 @@ const Home = ({ data }) => {
           <h2 className="home__title">Join Our Newsletter</h2>
         </Container>
         <Container col='2'>
-          <CardBlank>
-            {/* TODO: refactor this is not how we should be styling inner card elements. They should be styled in the Home.scss file. */}
-            <div className='card-blank__subscribe'>
-              <h3>Purple Blast</h3>
-              <p>Our monthly online newsletter to keep up to date on what's happening in the Hawaii Okinawa community.</p>
-              <input className='card-blank__input' type='text' placeholder='Email Address'></input>
-              <Button type='filled' onClick={() => console.log('You clicked a button')}>Subscribe</Button>
-            </div>
-          </CardBlank>
-          <CardBlank>
-          <div className='card-blank__newsletter'>
-              <h3>Uchinanchu Newsletter</h3>
-              <p>Our official bi-monthly newsletter of HUOA, featuring the latest news and events of the organization as well as tidbits on Okinawan cultural activities and performing arts.</p>
-              <Button type='filled' onClick={() => console.log('You clicked a button')}>SIGNUP</Button>
-            </div>
-          </CardBlank>
+          <CardBlast props={ cardBlast }/>
+          <CardNewsletter props={ cardNewsletter } />
         </Container>
       </section>
     </>

@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 
 import { ReactComponent as PlusIcon } from 'assets/plus-icon.svg';
 
-const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled }, ref) => {
+const Button = React.forwardRef(({ type, icon, children, link, onClick, disabled, value }, ref) => {
   const hasIcon = () => icon ? <PlusIcon className='button__plus-icon'/> : null;
 
-  const rootURL = new RegExp('huoa.org/')
-  if (rootURL.test(link)) {
-    link = link.slice(rootURL.exec(link).index + 8)
-  }
-
-  if (!onClick && !link) {
+  if (!onClick && !link && (type !== 'submit')) {
     throw new Error('Button requires a link or an onClick attribute');
+  }
+  else if (type === 'submit') {
+    return (
+      <input type='submit' className='button' name='submit' value={value} />
+    )
   }
   else if (onClick) {
     return (
