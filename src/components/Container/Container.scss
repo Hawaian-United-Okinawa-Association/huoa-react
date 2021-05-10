@@ -20,7 +20,7 @@ $container-width: 1260px;
       column-gap: 2rem;
     }
 
-    @media screen and (max-width: $breakpoint-mobile) {
+    @media screen and (max-width: $breakpoint-mobile-large) {
       grid-template-columns: 1fr;
       row-gap: 1rem;
       column-gap: 1rem;
