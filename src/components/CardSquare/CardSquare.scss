@@ -2,7 +2,6 @@
   display: grid;
   grid-template-areas: 'text' 'button';
   grid-template-rows: auto 80px;
-  min-width: 280px;
   border-radius: $card-border-radius;
   background: $lighter-grey;
   box-shadow: $card-square-shadow;
