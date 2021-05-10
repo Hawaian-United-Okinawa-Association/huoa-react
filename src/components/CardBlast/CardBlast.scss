@@ -1,5 +1,7 @@
 .card-blast {
+  justify-self: center;
   min-width: 280px;
+  max-width: 440px;
   border-radius: $card-border-radius;
   padding: 64px 80px;
   background: $white;

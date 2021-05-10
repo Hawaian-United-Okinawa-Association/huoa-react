@@ -1,11 +1,13 @@
 .card-newsletter {
+  justify-self: center;
   min-width: 280px;
+  max-width: 440px;
   border-radius: $card-border-radius;
-  padding: 64px;
+  padding: 64px 80px;
   background: $white;
   box-shadow: $card-blank-shadow;
   text-align: left;
-
+  
   @media (max-width: $breakpoint-mobile) {
     margin: 16px;
     padding: 32px;
