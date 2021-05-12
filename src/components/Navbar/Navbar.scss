@@ -156,3 +156,7 @@
     }
   }
 }
+
+@media screen and (max-width: $breakpoint-laptop){
+  display: none;
+}

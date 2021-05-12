@@ -1,0 +1,331 @@
+@import '../../styles//utilities/colors.scss';
+@import '../../styles/utilities/breakpoints.scss';
+@import '../../styles/utilities/fonts.scss';
+
+.nav-mobile {
+  -webkit-tap-highlight-color: transparent;
+  display: none;
+}
+
+@media screen and (max-width: $breakpoint-laptop) {
+  .nav-mobile {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    height: 5rem;
+    padding: 1rem 2rem;
+
+    &__header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__logo {
+      width: 5rem;
+      height: 5rem;
+      margin-left: -0.5rem;
+      fill: $primary-1;
+    }
+
+    &__title {
+      display: block;
+      margin: 0;
+      padding: 0;
+      color: $dark-grey;
+      font-size: 1.25rem;
+      font-family: $lora;
+
+      &--sm {
+        font-size: 0.75rem;
+        font-family: $poppins;
+      }
+    }
+
+    &__hamburger {
+      width: 1.5rem;
+    }
+
+    &__listItem {
+      padding: 0;
+    }
+
+    &__sidebar {
+      position: fixed;
+      z-index: 999;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      overflow-y: scroll;
+      width: 35%;
+      height: 100%;
+      padding: 2rem;
+      background-color: $white;
+      filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+
+      &--active {
+        @extend .nav-mobile__sidebar;
+        top: 0;
+        right: 0;
+        display: flex;
+        animation: slideIn 200ms ease-out;
+      }
+
+      &--inactive {
+        @extend .nav-mobile__sidebar;
+        position: fixed;
+        top: 0;
+        right: -35rem;
+        display: flex;
+        animation: slideOut 200ms ease-out;
+      }
+
+      &--items {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
+        padding: 0;
+        list-style-type: none;
+      }
+
+      &--item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 1rem 0;
+        font-weight: 600;
+      }
+
+      &--carrot {
+        margin-right: 1rem;
+
+        &--active {
+          margin-right: 1rem;
+          animation: rotateCarrot 200ms ease-in-out forwards;
+        }
+
+        &--inactive {
+          margin-right: 1rem;
+          animation: derotateCarrot 200ms ease-in-out forwards;
+        }
+      }
+
+      &--break {
+        display: flex;
+        width: 98%;
+        height: 1px;
+        min-height: 1px;
+        border: 1px;
+        background-color: $primary-1;
+      }
+
+      &--footer {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0 3rem;
+
+        &-link {
+          display: flex;
+          padding: 0.5rem 0;;
+        }
+
+        &-button {
+          align-self: center;
+          margin-top: 1rem;
+        }
+
+        &-button a {
+          padding: 8px 40px;
+        }
+      }
+    }
+
+    &__dropdown {
+      display: none;
+      margin: 0 -2rem;
+      padding: 0;
+
+      &--active {
+        @extend .nav-mobile__dropdown;
+        display: block;
+        transform-origin: top center;
+        animation: dropDown 200ms ease-in-out forwards;
+      }
+
+      &--inactive {
+        @extend .nav-mobile__dropdown;
+        display: block;
+        height: 0;
+        transform-origin: top center;
+        animation: pullUp 200ms ease-in-out forwards;
+      }
+
+      &-item {
+        left: 0;
+        display: flex;
+        padding: 0.5rem 3rem;
+        background-color: $primary-3;
+        font-weight: 100;
+      }
+    }
+
+    &__navclose {
+      align-self: flex-end;
+      min-width: 1.25rem;
+      min-height: 1.25rem;
+      margin: 0.5rem;
+      padding: 0.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile-large) {
+  .nav-mobile {
+    &__title {
+      padding-left: 0.25rem;
+      font-size: 1rem;
+
+      &--sm {
+        padding-left: 0.25rem;
+        font-size: 0.5rem;
+      }
+    }
+
+    &__sidebar {
+      &--active {
+        width: 90%;
+        max-width: $breakpoint-mobile-large;
+        padding: 2.5rem;
+      }
+    }
+
+    &__dropdown {
+      margin: 0 -3.5rem;
+      padding-left: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile-med) {
+  .nav-mobile__title--sm {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .nav-mobile {
+    height: 3rem;
+    padding: 1rem 1.5rem;
+
+    &__logo {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    &__title {
+      padding-left: 0.25rem;
+      font-size: 0.75rem;
+
+      &--sm {
+        display: none;
+      }
+    }
+
+    &__sidebar {
+      width: 95%;
+      padding: 1rem;
+
+      &--item {
+        width: 95%;
+        margin-left: auto;
+        padding: 0.5rem 0;
+      }
+
+      &--footer {
+        width: 95%;
+        padding: 0.25rem 0 3rem 0;
+
+        &-link {
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+
+    &__dropdown {
+      &-item {
+        width: 100%;
+        padding-left: 4.5rem;
+      }
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    right: -35rem;
+  }
+
+  to {
+    right: 0;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: -35rem;
+  }
+}
+
+@keyframes rotateCarrot {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes derotateCarrot {
+  0% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes dropDown {
+  0% {
+    height: 0;
+    transform: scaleY(0);
+  }
+
+  100% {
+    height: 5rem;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes pullUp {
+  0% {
+    height: 5rem;
+    transform: scaleY(1);
+  }
+
+  100% {
+    height: 0;
+    transform: scaleY(0);
+  }
+}

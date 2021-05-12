@@ -7,6 +7,7 @@ import {
   GET_EVENTS,
   MODAL_OPEN,
   MODAL_CLOSE,
+  TOGGLE_SCROLL,
   GET_SETTINGS,
 } from "./actionTypes";
 
@@ -99,5 +100,11 @@ export const openModal = (modalContent) => {
 export const closeModal = () => {
   return {
     type: MODAL_CLOSE,
+  };
+};
+
+export const toggleScroll = () => {
+  return {
+    type: TOGGLE_SCROLL
   };
 };
