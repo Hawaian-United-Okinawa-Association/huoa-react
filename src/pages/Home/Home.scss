@@ -27,7 +27,7 @@
   }
 }
 
-#community {
+.home__section__community {
   .container__col--3 {
     @media screen and (max-width: $breakpoint-mobile-large) {
       grid-template-columns: 1fr;

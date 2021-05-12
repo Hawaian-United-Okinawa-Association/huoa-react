@@ -29,7 +29,7 @@ const Home = ({ data }) => {
         </Container>
       </section>
 
-      <section className="home__section" id="community">
+      <section className="home__section home__section__community">
         <Container col='1'>
           <h2 className="home__title">Support Your Community</h2>
         </Container>
