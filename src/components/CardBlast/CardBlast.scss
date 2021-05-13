@@ -1,12 +1,14 @@
 .card-blast {
+  justify-self: center;
   min-width: 280px;
+  max-width: 536px;
   border-radius: $card-border-radius;
   padding: 64px 80px;
   background: $white;
   box-shadow: $card-blank-shadow;
   text-align: left;
 
-  @media (max-width: $breakpoint-mobile) {
+  @media (max-width: $breakpoint-mobile-large) {
     margin: 16px;
     padding: 32px;
   }
