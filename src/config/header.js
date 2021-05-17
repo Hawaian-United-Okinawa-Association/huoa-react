@@ -1,16 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-const Header = ({ props }) => {
+const GoogleAnalytics = () => {
 
-
-
-
-  return !!props ? (
-    <Helmet>
-      <title>{props.seo.title || 'Huoa.org'}</title>
-      <meta name="description" content={props.seo.description || 'Welcome to Huoa.org'} />
-
+  return (
+    <>
       <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-122356652-1"></script>
       <script>{`
       window.dataLayer = window.dataLayer || [];
@@ -18,6 +12,17 @@ const Header = ({ props }) => {
       gtag('js', new Date());
       gtag('config', 'UA-122356652-1');`}
       </script>
+    </>
+  )
+}
+
+const Header = ({ props }) => {
+  
+  return !!props ? (
+    <Helmet>
+      <title>{props.seo.title || 'Huoa.org'}</title>
+      <meta name="description" content={props.seo.description || 'Welcome to Huoa.org'} />
+
       <meta property="og:title" content={props.seo.title || 'Huoa.org'} />
       <meta property="og:description" content={props.seo.description || 'Welcome to Huoa.org'} />
       <meta property="og:image" content={props.seo.image} />
@@ -26,6 +31,9 @@ const Header = ({ props }) => {
       <meta name="twitter:description" content={props.seo.description || 'Welcome to Huoa.org'} />
       <meta name="twitter:image" content={props.seo.image} />
       <meta name="twitter:card" content="summary_large_image" />
+
+      {process.env.NODE_ENV === 'production' ? <GoogleAnalytics /> : ''}
+
     </Helmet>
   ) : null;
 }
