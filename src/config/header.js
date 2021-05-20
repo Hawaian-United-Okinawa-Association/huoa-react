@@ -32,8 +32,7 @@ const Header = ({ props }) => {
       <meta name="twitter:image" content={props.seo.image} />
       <meta name="twitter:card" content="summary_large_image" />
 
-      {process.env.NODE_ENV === "production" && navigator.userAgent !== "ReactSnap" ? <GoogleAnalytics /> : ''}
-
+      <GoogleAnalytics />
     </Helmet>
   ) : null;
 }
