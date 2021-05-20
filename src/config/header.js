@@ -17,7 +17,7 @@ const GoogleAnalytics = () => {
 }
 
 const Header = ({ props }) => {
-  
+
   return !!props ? (
     <Helmet>
       <title>{props.seo.title || 'Huoa.org'}</title>
@@ -32,7 +32,7 @@ const Header = ({ props }) => {
       <meta name="twitter:image" content={props.seo.image} />
       <meta name="twitter:card" content="summary_large_image" />
 
-      {process.env.NODE_ENV === 'production' ? <GoogleAnalytics /> : ''}
+      {process.env.NODE_ENV === "production" && navigator.userAgent !== "ReactSnap" ? <GoogleAnalytics /> : ''}
 
     </Helmet>
   ) : null;
