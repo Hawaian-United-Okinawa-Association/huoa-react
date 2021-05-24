@@ -79,7 +79,7 @@ const Sidebar = () => {
         <p className="sidebar__newsletters">Purple Blast</p>
         <Newsletter2 className="sidebar__icon" />
         <p className="sidebar__newsletters">Uchinanchu Newsletter</p>
-        <Button className="sidebar__button" type="text" link="/">Learn More</Button>
+        <a className="button" type="text" href="/#newsletters">Learn More</a>
       </div>
     </div>
   );
