@@ -62,7 +62,7 @@ const Sidebar = () => {
         <h3>Rent Our Ballroom</h3>
         <Ballroom className="sidebar__icon" />
         <p>THE LEGACY BALLROOM is handled by A Catered Experience, a division of Zippy's Restaurants</p>
-        <Button className="sidebar__button" type="text" link="/about/banquet-facility">
+        <Button className="sidebar__button" type="text" link="/banquet-facility">
           Learn More
         </Button>
       </div>
