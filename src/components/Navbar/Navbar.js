@@ -28,12 +28,9 @@ const Navbar = () => {
 
   const renderNavItems = (items) => {
     return items.map((item) => {
-      // console.log(`item.slug ${item.slug}`)
       return !!item && item.slug !== 'home' && (
         <NavItem
           name={item.title}
-          // linkTo={ item.slug !== 'shop' ? item.slug :'/' + item.slug }
-          // linkTo={ '/' + item.slug }
           linkTo={ item.slug !== 'https://shophuoa.com/' ? '/' + item.slug : 'https://shophuoa.com/'}
           key={item.slug}
           navState={navState}
