@@ -49,7 +49,7 @@ const Sidebar = () => {
         <div className="sidebar__card">
         <div className="sidebar__parent">{ current.title }</div>
         { children.map((child, i) =>
-          <Link to={ child.slug } key={ i }>
+          <Link to={ '/' + child.slug } key={ i }>
             <div className="sidebar__link"
               data-active={!!(pathname === `/${child.slug}`)}>
               { child.title }
