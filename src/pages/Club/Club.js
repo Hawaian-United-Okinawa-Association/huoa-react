@@ -28,7 +28,7 @@ const Club = ({ match }) => {
     return (
       <Layout>
         <div className="club__container">
-          <Breadcrumbs parent="join-a-club" parentText="Join a HUOA Club" rendered={rendered} />
+          <Breadcrumbs parent="clubs" parentText="Join a HUOA Club" rendered={rendered} />
           <br />
           <div className="club__title-box">
             {!!club_image && (
