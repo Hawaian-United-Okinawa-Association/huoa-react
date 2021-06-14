@@ -51,7 +51,7 @@ const Sidebar = () => {
         { children.map((child, i) =>
           <Link to={ '/' + child.slug } key={ i }>
             <div className="sidebar__link"
-              data-active={!!(pathname === `/${child.slug}`)}>
+              data-active={!!(pathname === `/${child.slug}`) || !!((pathname.split('/').length === 3) && (pathname.split('/')[1] ===child.slug))}>
               { child.title }
             </div>
           </Link>

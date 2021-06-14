@@ -10,6 +10,7 @@ const Clubs = ({ data }) => {
   else {
     const { title, body } = data.join_a_club_page;
     const clubsList = clubs.map((club) => {
+      console.log(club.slug)
       return (
         <li key={club.id}>
           <Link className="clubs__item-link" to={"/clubs/" + club.slug}>
