@@ -23,9 +23,6 @@ const Sidebar = () => {
       if (!route) {
         return
       }
-      // let findMe = `${pathname.split('/')[1]}`;
-      console.log(`pathname is ${pathname}`);
-      console.log(`findMe is ${findMe}`);
 
       lastParent = route;
 
@@ -54,7 +51,6 @@ const Sidebar = () => {
         { children.map((child, i) =>
           <Link to={ '/' + child.slug } key={ i }>
             <div className="sidebar__link"
-              // data-active={!!(pathname === `/${child.slug}`) || !!((pathname.split('/').length === 3) && (pathname.split('/')[1] ===child.slug))}>
               data-active={!!(pathname.includes(child.slug))}>
               { child.title }
             </div>
