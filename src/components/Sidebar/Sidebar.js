@@ -11,6 +11,7 @@ import { ReactComponent as Newsletter2 } from 'assets/uchinanchu.svg';
 const Sidebar = () => {
   const { routes } = useSelector((state) => state.router);
   const { pathname } = useLocation();
+  let findMe = `${pathname.split('/')[1]}`;
   let current;
   let children;
 
@@ -22,7 +23,6 @@ const Sidebar = () => {
       if (!route) {
         return
       }
-      let findMe = `${pathname.split('/')[1]}`;
 
       lastParent = route;
 
@@ -49,9 +49,9 @@ const Sidebar = () => {
         <div className="sidebar__card">
         <div className="sidebar__parent">{ current.title }</div>
         { children.map((child, i) =>
-          <Link to={ child.slug } key={ i }>
+          <Link to={ '/' + child.slug } key={ i }>
             <div className="sidebar__link"
-              data-active={!!(pathname === `/${child.slug}`)}>
+              data-active={!!(pathname.includes(child.slug))}>
               { child.title }
             </div>
           </Link>

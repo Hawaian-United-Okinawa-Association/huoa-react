@@ -31,7 +31,7 @@ const Navbar = () => {
       return !!item && item.slug !== 'home' && (
         <NavItem
           name={item.title}
-          linkTo={ item.slug !== 'shop' ? item.slug :'/' + item.slug }
+          linkTo={ item.slug !== 'https://shophuoa.com/' ? '/' + item.slug : 'https://shophuoa.com/'}
           key={item.slug}
           navState={navState}
           setNavState={setNavState}
