@@ -25,7 +25,7 @@ const Home = ({ data }) => {
         <Container col='2'>
           { cardsLarge.map((card, i) => 
             <CardLarge key={ i } props={card}/>
-          )}
+          )} {console.log(data)}
         </Container>
       </section>
 

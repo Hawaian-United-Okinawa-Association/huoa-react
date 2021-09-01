@@ -54,8 +54,8 @@ const Routes = () => {
         <Club />
       </Route>
       <Route exact path="/scholarships">
-        <Header props={ pageState["scholarships"]}/>
-        <Scholarships data={ pageState["scholarships"] } />
+        <Header props={ pageState.scholarships}/>
+        <Scholarships data={ pageState.scholarships } />
       </Route>
       <Route exact path="/news">
         <Header props={ pageState.news } />

@@ -23,7 +23,7 @@ class Panel extends Component {
 	}
 
 	render () {
-		const { label, content, activeTab, index, activateTab } = this.props;
+		const { title, content, activeTab, index, activateTab } = this.props;
 		const { height } = this.state;
 		const isActive = activeTab === index;
 		const innerStyle = {
@@ -37,14 +37,14 @@ class Panel extends Component {
 				<button className='panel__label'
 					role='tab'
 					onClick={ activateTab }>
-					{ label }
+					{ title }
 				</button>
 				<div className='panel__inner'
 					style={ innerStyle }
 					aria-hidden={ !isActive }>
-					<p className='panel__content'>
-						{ content }
-					</p>
+					<div className='panel__content' dangerouslySetInnerHTML = {{ __html: content }}>
+						
+					</div>
 				</div>
 			</div>
 		);

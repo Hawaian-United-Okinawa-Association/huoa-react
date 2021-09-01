@@ -66,5 +66,14 @@
 	color: $black;
 	opacity: 0;
 	transition: opacity 0.3s linear 0.18s;
+
+  a {
+    text-decoration-line: underline;
+    &:hover {
+      color: $primary-1;
+      font-weight: 800;
+    }
+  }
+
 }
 /* stylelint-enable */
