@@ -1,71 +1,71 @@
 /* stylelint-disable */
 // TODO: Fix according to linter.
 .accordion {
-	width: 100%;
-	// max-width: 740px;
+  width: 100%;
+  // max-width: 740px;
 }
 .panel {
-	border-radius: $card-border-radius;
+  border-radius: $card-border-radius;
   background: $lighter-grey;
   box-shadow: $card-square-shadow;
-	&:not(:last-child) {
-		margin-bottom: 15px;
-	}
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
 }
 .panel__label {
-	position: relative;
-	display: block;
-	width: 100%;
-	background: none;
-	border: none;
-	text-align: left;
-	padding: 25px 60px 25px 25px;
-	font-weight: 500;
-	font-size: 17px;
-	font-family: inherit;
-	transition: color 0.2s linear;
-	cursor: pointer;
-	&:focus {
-		outline: none;
-	}
-	&:before {
-		transform: rotate(-90deg);
-		transition: transform 0.35s cubic-bezier(0.65, 0.05, 0.36, 1);
-	}
+  position: relative;
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 25px 60px 25px 25px;
+  font-weight: 500;
+  font-size: 17px;
+  font-family: inherit;
+  transition: color 0.2s linear;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:before {
+    transform: rotate(-90deg);
+    transition: transform 0.35s cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
 }
 .panel__label:after,
 .panel__label:before {
-	content: '';
-	position: absolute;
-	right: 25px;
-	top: 50%;
-	width: 22px;
-	height: 2px;
-	margin-top: -2px;
-	background-color: $primary-1;
+  content: '';
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  width: 22px;
+  height: 2px;
+  margin-top: -2px;
+  background-color: $primary-1;
 }
 .panel[aria-expanded='true'] {
-	.panel__content {
-		opacity: 1;
-	}
-	.panel__label {
-		color: $primary-1;
-		&:before {
-			transform: rotate(0deg);
-		}
-	}
+  .panel__content {
+    opacity: 1;
+  }
+  .panel__label {
+    color: $primary-1;
+    &:before {
+      transform: rotate(0deg);
+    }
+  }
 }
 .panel__inner {
-	overflow: hidden;
-	will-change: height;
-	transition: height 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  overflow: hidden;
+  will-change: height;
+  transition: height 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 .panel__content {
-	margin: 5px 25px 25px;
-	font-size: 14px;
-	color: $black;
-	opacity: 0;
-	transition: opacity 0.3s linear 0.18s;
+  margin: 5px 25px 25px;
+  font-size: 14px;
+  color: $black;
+  opacity: 0;
+  transition: opacity 0.3s linear 0.18s;
 
   a {
     text-decoration-line: underline;

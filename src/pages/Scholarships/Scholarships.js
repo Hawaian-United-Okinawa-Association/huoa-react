@@ -1,11 +1,8 @@
 import React from "react";
-// import { useSelector } from "react-redux";
-// import { Link } from "react-router-dom";
+
 import Layout from "components/Layout/Layout";
 import Accordion from "components/Accordion/Accordion";
 
-// TODO: connect to WP backend to fetch scholarships & page title.
-// TODO: render html styling inside panels, instead of plain text. 
 const Scholarships = ({ data }) => {
 
   if (!data) return null;
