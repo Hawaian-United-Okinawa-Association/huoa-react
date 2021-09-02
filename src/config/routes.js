@@ -17,6 +17,7 @@ import Clubs from 'pages/Clubs/Clubs';
 import Club from 'pages/Club/Club';
 import AboutMissionAndPurpose from 'pages/MissionAndPurpose/MissionAndPurpose';
 import BanquetFacility from 'pages/BanquetFacility/BanquetFacility';
+import StudentExchange from 'pages/StudentExchange/StudentExchange';
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
@@ -66,6 +67,10 @@ const Routes = () => {
       </Route>
       <Route exact path="/home">
         <Redirect to="/"/>
+      </Route>
+      <Route exact path="/student-exchange">
+        <Header data={ pageState["student-exchange"] } />
+        <StudentExchange data={ pageState["student-exchange"] } />
       </Route>
     </Switch>
   );

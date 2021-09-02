@@ -14,6 +14,7 @@ const Sidebar = () => {
   let findMe = `${pathname.split('/')[1]}`;
   let current;
   let children;
+  let parentTitle;
 
   // TODO: fix sidebar to support children who have siblings
   if (!!routes) {
@@ -25,6 +26,12 @@ const Sidebar = () => {
       }
 
       lastParent = route;
+
+      lastParent.children.forEach((child) => {
+        if(findMe === child.slug){
+          parentTitle = lastParent.title;
+        }
+      })
 
       if (!!route && route.slug === findMe) {
         current = route.title;
@@ -47,7 +54,7 @@ const Sidebar = () => {
     <div className="sidebar">
       {!!children.length && (
         <div className="sidebar__card">
-        <div className="sidebar__parent">{ current.title }</div>
+        <div className="sidebar__parent">{ parentTitle }</div>
         { children.map((child, i) =>
           <Link to={ '/' + child.slug } key={ i }>
             <div className="sidebar__link"
