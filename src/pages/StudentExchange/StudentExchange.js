@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from 'components/Layout/Layout';
-import './StudentExchange.scss';
 
 const StudentExchange = ({ data }) => {
   if (!data) return null;
