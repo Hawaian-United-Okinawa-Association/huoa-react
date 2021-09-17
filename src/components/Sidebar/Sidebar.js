@@ -28,7 +28,7 @@ const Sidebar = () => {
       lastParent = route;
 
       lastParent.children.forEach((child) => {
-        if(findMe === child.slug){
+        if (findMe === child.slug) {
           parentTitle = lastParent.title;
         }
       })
