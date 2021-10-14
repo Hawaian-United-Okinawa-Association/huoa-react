@@ -16,6 +16,7 @@ import Donate from 'pages/Donate/Donate';
 import Clubs from 'pages/Clubs/Clubs';
 import Club from 'pages/Club/Club';
 import Scholarships from 'pages/Scholarships/Scholarships';
+import Volunteer from 'pages/Volunteer/Volunteer';
 import AboutMissionAndPurpose from 'pages/MissionAndPurpose/MissionAndPurpose';
 import BanquetFacility from 'pages/BanquetFacility/BanquetFacility';
 
@@ -56,6 +57,10 @@ const Routes = () => {
       <Route exact path="/scholarships">
         <Header props={ pageState.scholarships}/>
         <Scholarships data={ pageState.scholarships } />
+      </Route>
+      <Route exact path="/volunteer">
+        <Header props={ pageState.volunteer}/>
+        <Volunteer data={ pageState.volunteer } />
       </Route>
       <Route exact path="/news">
         <Header props={ pageState.news } />
