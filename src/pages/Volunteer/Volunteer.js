@@ -24,25 +24,6 @@ const Volunteer = ({ data }) => {
           <div className="volunteer__body">
             <Accordion panels={opportunities_list}></Accordion>
           </div>
-          {/* <div className="contact__section">
-          <div className="contact__col">
-            <h4>Become a Volunteer</h4>
-            <div dangerouslySetInnerHTML={{ __html: become_body }} />
-            <Button 
-            link='/volunteer'
-            type='filled'>
-            Application Form
-          </Button>
-        <div className="volunteer__description" dangerouslySetInnerHTML={{__html: bottom}} />
-          </div>
-          <div className="contact__col--right">
-          <h4>Mail to:</h4>
-          <div className="volunteer__description" dangerouslySetInnerHTML={{__html: mail_to_body}} />
-          <h4>Fax to:</h4>
-          <div className="volunteer__description" dangerouslySetInnerHTML={{__html: fax_to_body}} />
-          </div>
-        </div> */}
-
           <h4>Become a Volunteer</h4>
           <div className="volunteer__description" dangerouslySetInnerHTML={{__html: become_body}} />
           <h4>Mail to:</h4>
