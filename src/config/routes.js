@@ -85,7 +85,7 @@ const Routes = () => {
       </Route>
       <Route path="/about/jen">
         <Header data={ pageState["jen"] } />
-        <Jen data={ pageState["jen"] } />
+        <Jen } />
       </Route>
     </Switch>
   );
