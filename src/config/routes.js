@@ -20,6 +20,7 @@ import Volunteer from 'pages/Volunteer/Volunteer';
 import AboutMissionAndPurpose from 'pages/MissionAndPurpose/MissionAndPurpose';
 import BanquetFacility from 'pages/BanquetFacility/BanquetFacility';
 import StudentExchange from 'pages/StudentExchange/StudentExchange';
+import Jen from 'pages/Jen/Jen';
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
@@ -81,6 +82,10 @@ const Routes = () => {
       <Route exact path="/student-exchange">
         <Header data={ pageState["student-exchange"] } />
         <StudentExchange data={ pageState["student-exchange"] } />
+      </Route>
+      <Route path="/about/jen">
+        <Header data={ pageState["jen"] } />
+        <StudentExchange data={ pageState["jen"] } />
       </Route>
     </Switch>
   );
