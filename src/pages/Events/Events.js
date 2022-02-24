@@ -7,6 +7,7 @@ import CardEvent from 'components/CardEvent/CardEvent';
 
 const Events = () => {
   const events = useSelector((state) => state.events);
+  let today = new Date()
 
   if (!events.length) return null;
 
@@ -18,16 +19,16 @@ const Events = () => {
         <h4 className="events__subtitle">Upcoming Events</h4>
         <div className="events__cards">
           { events.map((event, i) =>
-            !event.acf.annual ? <CardEvent key={ i } props={ event } /> : ''
+            today < new Date(event.acf.event_date) ? <CardEvent key={ i } props={ event } /> : ''
           )}
         </div>
 
       </section>
       <section className="events">
-        <h4 className="events__subtitle events__subtitle--annual">Annual Events</h4>
+        <h4 className="events__subtitle events__subtitle--annual">Past Events</h4>
         <div className="events__cards">
-          { events.map((event, i) =>
-            event.acf.annual ? <CardEvent key={ i } props={ event } /> : ''
+          { events.map((event, i) => 
+            today > new Date(event.acf.event_date) ? <CardEvent key={ i } props={ event } /> : ''
           )}
         </div>
       </section>
