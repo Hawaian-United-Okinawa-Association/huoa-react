@@ -20,6 +20,10 @@
   }
 }
 
+.card-event {
+  min-width: 30%;
+}
+
 @media screen and (max-width: $breakpoint-tablet){
   .events {
     &__cards {
