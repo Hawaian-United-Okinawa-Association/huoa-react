@@ -19,10 +19,10 @@ const Events = () => {
         <h4 className="events__subtitle">Upcoming Events</h4>
         <div className="events__cards">
           { events.map((event, i) =>
-            today < new Date(event.acf.event_date) ? <CardEvent key={ i } props={ event } /> : ''
+            today <= new Date(event.acf.event_date) ? <CardEvent key={ i } props={ event } /> : ''
           )}
         </div>
-
+      
       </section>
       <section className="events">
         <h4 className="events__subtitle events__subtitle--annual">Past Events</h4>

@@ -9,6 +9,7 @@ import Header from './header';
 // Components
 import Home from 'pages/Home/Home';
 import Events from 'pages/Events/Events';
+import EventsCalendar from 'pages/EventsCalendar/EventsCalendar';
 import Event from 'pages/Event/Event';
 import News from 'pages/News/News';
 import Contact from 'pages/Contact/Contact';
@@ -42,6 +43,10 @@ const Routes = () => {
       <Route exact path="/events">
         <Header props={ pageState.events } />
         <Events />
+      </Route>
+      <Route exact path="/events-calendar">
+        <Header props={ pageState["events-calendar"]} />
+        <EventsCalendar />
       </Route>
       <Route path="/events/:eventId">
         <Header props={ pageState.events } />
