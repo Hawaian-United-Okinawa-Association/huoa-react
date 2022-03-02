@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 import Layout from 'components/Layout/Layout';
 import Container from 'components/Container/Container';
