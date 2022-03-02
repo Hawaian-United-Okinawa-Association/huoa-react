@@ -4,12 +4,11 @@ import Layout from 'components/Layout/Layout';
 const StudentExchange = ({ data }) => {
   if (!data) return null;
   else {
-    // console.log(data.builder)
     let { builder } = data;
     return (
       <Layout>
-        { builder.map((el, i) =>
-            <div className="studentexchange__container" key={i}>
+        { builder.map((el) =>
+            <div className="studentexchange__container" key={el.title_body.title}>
               <h2 position="left" className="studentexchange__title">
                 {el.title_body.title}
               </h2>
