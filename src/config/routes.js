@@ -21,6 +21,7 @@ import Volunteer from 'pages/Volunteer/Volunteer';
 import AboutMissionAndPurpose from 'pages/MissionAndPurpose/MissionAndPurpose';
 import BanquetFacility from 'pages/BanquetFacility/BanquetFacility';
 import StudentExchange from 'pages/StudentExchange/StudentExchange';
+import Newsletters from 'pages/Newsletters/Newsletters';
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
@@ -86,6 +87,10 @@ const Routes = () => {
       <Route exact path="/student-exchange">
         <Header data={ pageState["student-exchange"] } />
         <StudentExchange data={ pageState["student-exchange"] } />
+      </Route>
+      <Route exact path="/archive">
+        <Header props={pageState.archive} />
+        <Newsletters data={pageState.archive} />
       </Route>
     </Switch>
   );

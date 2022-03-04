@@ -6,6 +6,7 @@ import routerReducer from './routerReducer';
 import clubsReducer from './clubsReducer';
 import scrollReducer from './scrollReducer';
 import settingsReducer from './settingsReducer';
+import newslettersReducer from './newslettersReducer';
 
 export default combineReducers({
   clubs: clubsReducer,
@@ -14,5 +15,6 @@ export default combineReducers({
   modals: modalReducer,
   pages: pagesReducer,
   scroll: scrollReducer,
+  newsletters: newslettersReducer,
   settings: settingsReducer
 });
