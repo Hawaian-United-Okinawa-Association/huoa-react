@@ -9,6 +9,7 @@ import {
   MODAL_CLOSE,
   TOGGLE_SCROLL,
   GET_SETTINGS,
+  GET_NEWSLETTERS,
 } from "./actionTypes";
 
 const api = "https://dev.huoa.org/wp-json";
@@ -66,6 +67,24 @@ export const getEvents = () => async (dispatch) => {
       );
 
       dispatch({ type: GET_EVENTS, payload: data });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+};
+
+export const getNewsletters = () => async (dispatch) => {
+  if (isProd) {
+    let cache = window.__REDUX_STATE__;
+
+    dispatch({ type: GET_NEWSLETTERS, payload: cache.newsletters });
+  } else {
+    try {
+      const { data } = await axios.get(
+        `${api}/wp/v2/newsletters?page=1&per_page=100&orderby=slug&order=desc`
+      );
+
+      dispatch({ type: GET_NEWSLETTERS, payload: data });
     } catch (error) {
       console.error(error);
     }

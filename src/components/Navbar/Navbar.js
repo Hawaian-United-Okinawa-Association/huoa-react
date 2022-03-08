@@ -8,63 +8,89 @@ import NavItem from './NavItem';
 import { ReactComponent as HUOALogo } from '../../assets/huoa-logo.svg';
 
 const Navbar = () => {
-  const [ navState, setNavState ] = useState(false);
-  const { routes } = useSelector((state) => state.router);
-  const { title, description } = useSelector((state) => state.settings);
+  const [navState, setNavState] = useState(false);
+  const { routes } = useSelector(state => state.router);
+  const { title, description } = useSelector(state => state.settings);
 
-  const renderMenuItems = (children) => {
-    return children.map((item) => (
-      <Link
-        className="navbar__dropdown--link"
-        to={'/' + item.slug}
-        onClick={() => setNavState(false)}
-        key={item.slug}
-        data-text={item.title}
-      >
-        {item.title}
-      </Link>
-    ));
-  };
-
-  const renderNavItems = (items) => {
-    return items.map((item) => {
-      return !!item && item.slug !== 'home' && (
-        <NavItem
-          name={item.title}
-          linkTo={ item.slug !== 'https://shophuoa.com/' ? '/' + item.slug : 'https://shophuoa.com/'}
+  const renderMenuItems = children => {
+    return children.map(item => {
+      if (item.slug === 'myhuoa')
+        return (
+          <a
+            className="navbar__dropdown--link"
+            key={item.slug}
+            href="https://huoa.tradewing.com/home"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MyHUOA
+          </a>
+        );
+      return (
+        <Link
+          className="navbar__dropdown--link"
+          to={'/' + item.slug}
+          onClick={() => setNavState(false)}
           key={item.slug}
-          navState={navState}
-          setNavState={setNavState}
+          data-text={item.title}
         >
-          {!!item.children.length && (
-            <div className="navbar__dropdown">
-              <ul className="navbar__dropdown--links">
-                {renderMenuItems(item.children)}
-              </ul>
-            </div>
-          )}
-        </NavItem>
+          {item.title}
+        </Link>
       );
     });
   };
 
-  return !!routes && (
-    <nav className="navbar__container">
-      <div className="navbar__container--sm" onMouseLeave={() => setNavState(false)}>
-        <Link to="/">
-          <div className="navbar__header">
-            <HUOALogo className="navbar__logo" />
-            <div className="navbar__titles">
-              <h2 className="navbar__title">{title}</h2>
-              <h5 className="navbar__title--sm">{description}</h5>
+  const renderNavItems = items => {
+    return items.map(item => {
+      return (
+        !!item &&
+        item.slug !== 'home' && (
+          <NavItem
+            name={item.title}
+            linkTo={
+              item.slug !== 'https://shophuoa.com/'
+                ? '/' + item.slug
+                : 'https://shophuoa.com/'
+            }
+            key={item.slug}
+            navState={navState}
+            setNavState={setNavState}
+          >
+            {!!item.children.length && (
+              <div className="navbar__dropdown">
+                <ul className="navbar__dropdown--links">
+                  {renderMenuItems(item.children)}
+                </ul>
+              </div>
+            )}
+          </NavItem>
+        )
+      );
+    });
+  };
+
+  return (
+    !!routes && (
+      <nav className="navbar__container">
+        <div
+          className="navbar__container--sm"
+          onMouseLeave={() => setNavState(false)}
+        >
+          <Link to="/">
+            <div className="navbar__header">
+              <HUOALogo className="navbar__logo" />
+              <div className="navbar__titles">
+                <h2 className="navbar__title">{title}</h2>
+                <h5 className="navbar__title--sm">{description}</h5>
+              </div>
             </div>
-          </div>
-        </Link>
-        <ul className="navbar__items" onMouseLeave={() => setNavState(false)}>
-          {renderNavItems(routes)}
-        </ul>
-      </div>
-    </nav>
+          </Link>
+          <ul className="navbar__items" onMouseLeave={() => setNavState(false)}>
+            {renderNavItems(routes)}
+          </ul>
+        </div>
+      </nav>
+    )
   );
 };
 

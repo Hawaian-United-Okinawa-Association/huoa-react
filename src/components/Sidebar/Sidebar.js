@@ -33,7 +33,7 @@ const Sidebar = () => {
         }
       })
 
-      if (!!route && route.slug === findMe) {
+      if (!!route && route.slug === findMe && !current) {
         current = route.title;
         children = route.children;
         return;
