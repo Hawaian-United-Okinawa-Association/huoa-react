@@ -1,0 +1,18 @@
+.title-body {
+  @media screen and (max-width: $breakpoint-tablet) {
+    .title-body {
+      h2 {
+        text-align: center;
+      }
+
+    &__title {
+      font-size: 22px;
+      text-align: center;
+    }
+
+    &__title {
+      order: -1;
+    }
+  }
+}
+}

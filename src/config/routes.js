@@ -44,9 +44,9 @@ const Routes = () => {
         <Header props={ pageState.events } />
         <Events />
       </Route>
-      <Route exact path="/events-calendar">
-        <Header props={ pageState["events-calendar"]} />
-        <EventsCalendar />
+      <Route exact path="/calendar">
+        <Header props={ pageState["calendar"]} />
+        <EventsCalendar data= { pageState["calendar"]}/>
       </Route>
       <Route path="/events/:eventId">
         <Header props={ pageState.events } />
