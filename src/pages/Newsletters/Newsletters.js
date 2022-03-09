@@ -61,6 +61,8 @@ const Newsletters = ({ data }) => {
                   href={issue.file.url}
                   className="newsletters__link"
                   key={i}
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   {issue.title}
                   <DownloadIcon />
