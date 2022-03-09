@@ -2,13 +2,19 @@ import React from 'react';
 
 import Layout from 'components/Layout/Layout';
 import Container from 'components/Container/Container';
+import TitleBody from 'components/TitleBody/TitleBody';
 
-const EventsCalendar = () => {
-  
+const EventsCalendar = ({ data }) => {
+  console.log(data)
+  if (!data) return null;
+  let { builder } = data;
+  console.log(builder)
+  console.log(builder[0].title)
+
   return (
     <Layout>
       <Container>
-      <h1>
+      <h1 className="events-calendar__title">
         Events Calendar
       </h1>
       <iframe 
@@ -17,8 +23,15 @@ const EventsCalendar = () => {
         height="500" 
         frameBorder="0" 
         scrolling="no"
-        title="Events Calendar">
+        title="Events Calendar"
+        className="events-calendar__calendar">
       </iframe>
+      <h2 className="class-schedule__title">{builder[0].title}</h2>
+      <TitleBody className="class-schedule__class" props={builder[1]}/>
+      <TitleBody className="class-schedule__class" props={builder[2]}/>
+      <TitleBody className="class-schedule__class" props={builder[3]}/>
+      <TitleBody className="class-schedule__class" props={builder[4]}/>
+      <TitleBody className="class-schedule__class" props={builder[5]}/>
       </Container>
     </Layout>
   );

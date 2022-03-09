@@ -1,0 +1,25 @@
+.events-calendar__calendar{
+  margin-bottom: 5rem;
+}
+
+.class-schedule{
+  &__title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-family: Poppins;
+    line-height: 27px;
+  }
+}
+
+.title-body__title {
+  font-weight: 600;
+  font-size: 1.125rem;
+  font-family: Poppins;
+  line-height: 27px;
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .events-calendar__calendar{
+    margin-bottom: 2rem;
+  }
+}
