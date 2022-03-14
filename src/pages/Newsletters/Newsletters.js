@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import Layout from 'components/Layout/Layout';
-import { ReactComponent as DownloadIcon } from '../../assets/download_2.svg';
+import { ReactComponent as DownloadIcon } from '../../assets/download.svg';
 import Container from 'components/Container/Container';
 const Newsletters = ({ data }) => {
   const newsletters = useSelector(state => state.newsletters);
