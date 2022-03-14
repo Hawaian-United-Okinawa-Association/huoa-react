@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from 'components/Layout/Layout';
-import { ReactComponent as Instagram } from 'assets/Instagram_black.svg';
-import { ReactComponent as YouTube } from 'assets/YouTube_black.svg';
-import { ReactComponent as Facebook } from 'assets/Facebook_black.svg';
+import { ReactComponent as Instagram } from 'assets/instagram.svg';
+import { ReactComponent as YouTube } from 'assets/youtube.svg';
+import { ReactComponent as Facebook } from 'assets/facebook.svg';
 
 const Contact = ({ data }) => {
   if (!data) return null;
