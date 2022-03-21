@@ -1,0 +1,59 @@
+.sports-leagues {
+    &__title {
+      @media screen and (max-width: $breakpoint-laptop) {
+        text-align: center;
+      }
+      
+      @media screen and (max-width: $breakpoint-mobile) {
+        text-align: center
+      }
+    }
+  
+    &__description {
+      @media screen and (max-width: $breakpoint-laptop) {
+        margin: 3rem 2rem;
+      }
+  
+      @media screen and (max-width: $breakpoint-tablet-large) {
+        margin: 3rem 2rem;
+      }
+  
+      @media screen and (max-width: $breakpoint-tablet) {
+        margin: 3rem 2rem;
+      }
+      
+      @media screen and (max-width: $breakpoint-mobile-large) {
+        margin: 3rem 2rem;
+      }
+  
+      @media screen and (max-width: $breakpoint-mobile) {
+        margin: 3rem 2rem;
+      }
+    }
+  
+    &__body {
+      
+      @media screen and (max-width: $breakpoint-laptop) {
+        justify-content: center;
+        margin: 3rem 2rem;
+      }
+  
+      @media screen and (max-width: $breakpoint-tablet-large) {
+        margin: 3rem 2rem;
+      }
+  
+      @media screen and (max-width: $breakpoint-tablet) {
+        margin: 3rem 2rem;
+      }
+      
+      @media screen and (max-width: $breakpoint-mobile-large) {
+        margin: 3rem 2rem;
+      }
+  
+      @media screen and (max-width: $breakpoint-mobile) {
+        justify-content: center;
+        margin: 3rem 2rem;
+      }
+    }
+  }
+  

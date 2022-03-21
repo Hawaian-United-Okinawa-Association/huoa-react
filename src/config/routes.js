@@ -22,6 +22,7 @@ import AboutMissionAndPurpose from 'pages/MissionAndPurpose/MissionAndPurpose';
 import BanquetFacility from 'pages/BanquetFacility/BanquetFacility';
 import StudentExchange from 'pages/StudentExchange/StudentExchange';
 import Newsletters from 'pages/Newsletters/Newsletters';
+import SportsLeagues from 'pages/SportsLeagues/SportsLeagues';
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
@@ -92,6 +93,10 @@ const Routes = () => {
         <Header props={pageState.archive} />
         <Newsletters data={pageState.archive} />
       </Route>
+      <Route exact path="/our-sports-leagues">
+        <Header props={pageState['our-sports-leagues']} />
+        <SportsLeagues data={pageState['our-sports-leagues']} />
+      </Route> 
     </Switch>
   );
 };
