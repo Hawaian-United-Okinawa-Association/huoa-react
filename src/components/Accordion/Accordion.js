@@ -42,9 +42,13 @@ class Panel extends Component {
         <div className='panel__inner'
           style={ innerStyle }
           aria-hidden={ !isActive }>
+          { Array.isArray(content) ? 
+          content
+          :
           <div className='panel__content' dangerouslySetInnerHTML = {{ __html: content }}>
             
           </div>
+          }
         </div>
       </div>
     );
