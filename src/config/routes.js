@@ -23,6 +23,7 @@ import BanquetFacility from 'pages/BanquetFacility/BanquetFacility';
 import StudentExchange from 'pages/StudentExchange/StudentExchange';
 import Newsletters from 'pages/Newsletters/Newsletters';
 import SportsLeagues from 'pages/SportsLeagues/SportsLeagues';
+import PerformingArts from 'pages/PerformingArts/PerformingArts';
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
@@ -97,6 +98,10 @@ const Routes = () => {
         <Header props={pageState['our-sports-leagues']} />
         <SportsLeagues data={pageState['our-sports-leagues']} />
       </Route> 
+      <Route exact path="/performing-arts-directory">
+        <Header props={pageState['performing-arts-directory']} />
+        <PerformingArts data={pageState['performing-arts-directory']} />
+      </Route>
     </Switch>
   );
 };
