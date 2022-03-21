@@ -5,9 +5,19 @@
 }
 
 .panel {
+  border: 1px solid $light-grey;
   border-radius: $card-border-radius;
+  padding: 0 1rem;
   background: $lighter-grey;
-  box-shadow: $card-square-shadow;
+
+  h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  strong {
+    text-transform: capitalize;
+  }
 
   &:not(:last-child) {
     margin-bottom: 15px;
@@ -44,7 +54,7 @@
   position: absolute;
   top: 50%;
   right: 25px;
-  width: 22px;
+  width: 12px;
   height: 2px;
   margin-top: -2px;
   background-color: $primary-1;
@@ -72,16 +82,22 @@
 
 .panel__content {
   margin: 5px 25px 25px;
+  margin-bottom: 2rem;
   color: $black;
   font-size: 14px;
   opacity: 0;
   transition: opacity 0.3s linear 0.18s;
 
+  &:not(:first-child){
+    border-top: 1px dashed $light-grey;
+  }
+  
   a {
     text-decoration-line: underline;
-
+    color: $primary-1;
+    font-weight: 500;
+    
     &:hover {
-      color: $primary-1;
       font-weight: 800;
     }
   }
