@@ -50,6 +50,7 @@ const Footer = () => {
               href="https://goo.gl/maps/vPeokXPRG2e59jPS7"
               target="_blank"
               rel="noopener noreferrer"
+              className='address'
             >
               94-587 Ukeʻe Street Waipahu, HI 96797 808.676.5400
             </a>
@@ -63,6 +64,7 @@ const Footer = () => {
             href="https://www.youtube.com/c/HawaiiUnitedOkinawaAssociation"
             target="_blank"
             rel="noopener noreferrer"
+            className='footer__element'
           >
             <Youtube className="footer__social-icon" />
           </a>
@@ -70,6 +72,7 @@ const Footer = () => {
             href="https://www.instagram.com/hawaiiunitedokinawaassociation/?hl=en"
             target="_blank"
             rel="noopener noreferrer"
+            className='footer__element'
           >
             <Instagram className="footer__social-icon" />
           </a>
@@ -77,6 +80,7 @@ const Footer = () => {
             href="https://www.facebook.com/HUOA.org/"
             target="_blank"
             rel="noopener noreferrer"
+            className='footer__element'
           >
             <Facebook className="footer__social-icon" />
           </a>

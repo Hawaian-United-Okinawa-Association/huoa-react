@@ -50,6 +50,10 @@
       line-height: 24px;
       text-align: center;
 
+      .address{
+        text-decoration: underline;
+      }
+
       @media (max-width: $breakpoint-tablet) {
         margin: 1rem auto;
       }
