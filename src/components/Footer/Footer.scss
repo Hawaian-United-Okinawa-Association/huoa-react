@@ -53,6 +53,10 @@
       @media (max-width: $breakpoint-tablet) {
         margin: 1rem auto;
       }
+      
+      .address{
+        text-decoration: underline;
+      }
     }
   }
 
