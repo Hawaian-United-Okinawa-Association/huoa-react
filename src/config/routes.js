@@ -24,6 +24,7 @@ import StudentExchange from 'pages/StudentExchange/StudentExchange';
 import Newsletters from 'pages/Newsletters/Newsletters';
 import SportsLeagues from 'pages/SportsLeagues/SportsLeagues';
 import PerformingArts from 'pages/PerformingArts/PerformingArts';
+import Resources from 'pages/Resources/Resources';
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
@@ -101,6 +102,10 @@ const Routes = () => {
       <Route exact path="/performing-arts-directory">
         <Header props={pageState['performing-arts-directory']} />
         <PerformingArts data={pageState['performing-arts-directory']} />
+      </Route>
+      <Route exact path="/resources">
+        <Header props={pageState.resources} />
+        <Resources data={pageState.resources} />
       </Route>
     </Switch>
   );
