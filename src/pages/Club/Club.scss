@@ -17,6 +17,7 @@
 
   &__title-box {
     display: inline-flex;
+    align-items: center;
 
     @media screen and (max-width: $breakpoint-tablet-large) {
       display: flex;
