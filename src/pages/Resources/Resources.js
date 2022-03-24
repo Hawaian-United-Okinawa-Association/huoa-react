@@ -5,26 +5,27 @@ import { ReactComponent as External } from '../../assets/external-link.svg';
 
 function Resources({ data }) {
   if (!data) return null;
-  const [first, ...resources] = data.builder;
+  const header = data.builder[0];
+  const {links} = data;
   return (
     <Layout>
       <Container>
-        <h2>{first.title_body.title}</h2>
-        <div dangerouslySetInnerHTML={{ __html: first.title_body.body }} />
+        <h2>{header.title_body.title}</h2>
+        <div dangerouslySetInnerHTML={{ __html: header.title_body.body }} />
         <div className="resources">
-          {resources.map((el, i) => {
-            const { title, body, button } = el.title_body_button;
-            const isExternal = button.link.startsWith('http') ? true : false;
+          {links.map((link, i) => {
+            const { title, body, type, url } = link;
+            const isExternal = type === 'external' ? true : false;
             return (
               <a
                 key={i}
-                className="resources__resource"
+                className="resources__link"
                 target="_blank"
                 rel="noopener noreferrer"
-                href={`${button.link}`}
+                href={url}
               >
                 <strong>{title}</strong>
-                <div className="resources__link">
+                <div className="resources__description">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: body,
