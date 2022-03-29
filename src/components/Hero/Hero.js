@@ -46,6 +46,10 @@ const Hero = ({ props }) => {
             )}
           </div>
         ) }
+        <div className='controls'>
+          <button onClick={()=> active === 0 ? setActive(slides.length - 1) : setActive(active - 1)}>{'<'}</button>
+          <button onClick={()=> active === slides.length - 1 ? setActive(0) : setActive(active + 1)}>{'>'}</button>
+        </div>
       </div>
       { slides[active].content_box && (
         <div className="hero__overlay--mobile">
