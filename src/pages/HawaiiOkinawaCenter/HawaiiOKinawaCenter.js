@@ -8,12 +8,15 @@ const HawaiiOKinawaCenter = ({ data }) => {
     <Layout>
       <Container>
         <div className="hawaii-okinawa-center">
+          <div className='hawaii-okinawa-center__section'>  
           <h2>{data.builder[0].title_body.title}</h2>
           <div
             dangerouslySetInnerHTML={{
               __html: data.builder[0].title_body.body,
             }}
           />
+          </div>
+          <div className='hawaii-okinawa-center__section'>
           <h4>{data.builder[1].title_body.title}</h4>
           <div
             dangerouslySetInnerHTML={{
@@ -37,6 +40,7 @@ const HawaiiOKinawaCenter = ({ data }) => {
               <strong>{image.title}</strong>
             </div>
           ))}
+          </div>
         </div>
       </Container>
     </Layout>

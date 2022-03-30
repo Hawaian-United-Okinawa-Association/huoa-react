@@ -8,12 +8,15 @@ const HistoryOfHUOA = ({ data }) => {
     <Layout>
       <Container>
         <div className="history-of-huoa">
+          <div className='history-of-huoa__section'>
           <h2>{data.builder[0].title_body.title}</h2>
           <div
             dangerouslySetInnerHTML={{
               __html: data.builder[0].title_body.body,
             }}
           />
+          </div>
+          <div className='history-of-huoa__section'>
           <h4>{data.builder[1].title_body.title}</h4>
           <div
             dangerouslySetInnerHTML={{
@@ -38,6 +41,7 @@ const HistoryOfHUOA = ({ data }) => {
               __html: data.builder[4].title_body.body,
             }}
           />
+          </div>
         </div>
       </Container>
     </Layout>
