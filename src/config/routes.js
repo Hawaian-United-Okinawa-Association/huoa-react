@@ -25,6 +25,10 @@ import Newsletters from 'pages/Newsletters/Newsletters';
 import SportsLeagues from 'pages/SportsLeagues/SportsLeagues';
 import PerformingArts from 'pages/PerformingArts/PerformingArts';
 import Resources from 'pages/Resources/Resources';
+import HistoryOfHUOA from 'pages/HistoryOfHUOA/HistoryOfHUOA';
+import HawaiiOkinawaCenter from 'pages/HawaiiOkinawaCenter/HawaiiOKinawaCenter';
+import HawaiiOkinawaPlaza from 'pages/HawaiiOkinawaPlaza/HawaiiOkinawaPlaza';
+import HUOATeam from 'pages/HUOATeam/HUOATeam';
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
@@ -106,6 +110,22 @@ const Routes = () => {
       <Route exact path="/resources">
         <Header props={pageState.resources} />
         <Resources data={pageState.resources} />
+      </Route>
+      <Route exact path="/history-of-huoa">
+        <Header props={pageState['history-of-huoa']} />
+        <HistoryOfHUOA data={pageState['history-of-huoa']} />
+      </Route>
+      <Route exact path="/hawaii-okinawa-center">
+        <Header props={pageState['hawaii-okinawa-center']} />
+        <HawaiiOkinawaCenter data={pageState['hawaii-okinawa-center']} />
+      </Route>
+      <Route exact path="/hawaii-okinawa-plaza">
+        <Header props={pageState['hawaii-okinawa-plaza']} />
+        <HawaiiOkinawaPlaza data={pageState['hawaii-okinawa-plaza']} />
+      </Route> 
+      <Route exact path="/huoa-team">
+        <Header props={pageState['huoa-team']} />
+        <HUOATeam data={pageState['huoa-team']} />
       </Route>
     </Switch>
   );
