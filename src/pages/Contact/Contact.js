@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from 'components/Layout/Layout';
+import Container from 'components/Container/Container';
 import { ReactComponent as Instagram } from 'assets/instagram.svg';
 import { ReactComponent as YouTube } from 'assets/youtube.svg';
 import { ReactComponent as Facebook } from 'assets/facebook.svg';
@@ -9,6 +10,7 @@ const Contact = ({ data }) => {
 
   return (
     <Layout>
+      <Container>
       <div className="contact">
         <h2 className="contact__title">Contact Us</h2>
         <div className="contact__section">
@@ -44,6 +46,7 @@ const Contact = ({ data }) => {
           </div>
         </div>
       </div>
+      </Container>
     </Layout>
   );
 };

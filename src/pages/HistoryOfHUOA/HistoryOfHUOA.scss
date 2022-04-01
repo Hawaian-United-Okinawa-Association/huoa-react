@@ -1,5 +1,7 @@
 .history-of-huoa {
-  margin-bottom: 3rem;
+  &__section:not(:last-child) {
+    margin-bottom: 5rem;
+  }
 
   &__image {
     display: flex;

@@ -1,5 +1,7 @@
 .hawaii-okinawa-center {
-  margin-bottom: 3rem;
+  &__section:not(:last-child) {
+    margin-bottom: 5rem;
+  }
 
   &__image {
     display: flex;
@@ -15,7 +17,7 @@
     strong {
       margin-top: 1rem;
     }
-    
+
     p {
       margin: 0;
       color: $grey;
