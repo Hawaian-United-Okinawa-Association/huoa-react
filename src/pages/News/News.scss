@@ -1,0 +1,75 @@
+.news {
+  margin-bottom: 2rem;
+
+  &__mobile-select {
+    display: none;
+    width: 200px;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    background: url(../../assets/chevron-down.svg) no-repeat right;
+    -webkit-appearance: none;
+    background-position-x: 95%;
+    background-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    @media (max-width: $breakpoint-mobile) {
+      display: block;
+      margin: auto;
+    }
+  }
+
+  &__desktop-select {
+    display: block;
+
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
+    }
+  }
+
+  &__tab {
+    border: none;
+    border-bottom: 2px solid $light-grey;
+    padding: 1rem 2rem;
+    background-color: $white;
+    color: $grey;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $lighter-grey;
+    }
+
+    &--active {
+      position: relative;
+      border-bottom: 2px solid $primary-1;
+      background-color: $white;
+      color: $black;
+      font-weight: bold;
+
+      &:hover {
+        background-color: $white;
+      }
+    }
+  }
+
+  &__facebook-feeds,
+  &__instagram-feeds {
+    position: relative;
+    max-width: 500px;
+    margin-top: 1rem;
+  }
+
+  &__facebook-feeds {
+    margin-top: 2rem;
+  }
+
+  .watermark-cover {
+    position: absolute;
+    bottom: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 25px;
+    background: $white;
+  }
+}
