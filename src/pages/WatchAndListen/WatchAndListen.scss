@@ -1,0 +1,9 @@
+.watch {
+    &__body {
+        margin: 3rem 0;
+
+        @media screen and (max-width: $breakpoint-tablet-large) {
+            margin: 3rem 0;
+        }
+    }
+}
