@@ -1,8 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '../../components/Layout/Layout';
 import Container from '../../components/Container/Container';
 
 const News = () => {
+  useEffect(() => {
+    try {
+      const widgetScript = document.createElement('script');
+      widgetScript.src = 'https://cdn2.woxo.tech/a.js#624b6caf5446b1002f472bbb';
+      widgetScript.async = true;
+      document.body.appendChild(widgetScript);
+
+      return () => {
+        document.body.removeChild(widgetScript);
+      };
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   const [activeTab, setActiveTab] = useState('facebook');
 
   return (
