@@ -29,6 +29,7 @@ import HistoryOfHUOA from 'pages/HistoryOfHUOA/HistoryOfHUOA';
 import HawaiiOkinawaCenter from 'pages/HawaiiOkinawaCenter/HawaiiOKinawaCenter';
 import HawaiiOkinawaPlaza from 'pages/HawaiiOkinawaPlaza/HawaiiOkinawaPlaza';
 import HUOATeam from 'pages/HUOATeam/HUOATeam';
+import WatchAndListen from 'pages/WatchAndListen/WatchAndListen';
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
@@ -47,6 +48,10 @@ const Routes = () => {
       <Route exact path="/banquet-facility">
         <Header props={ pageState["banquet-facility"]}/>
         <BanquetFacility data={ pageState["banquet-facility"]}/>
+      </Route>
+      <Route exact path="/watch-and-listen">
+        <Header props={ pageState["watch-and-listen"] }/>
+        <WatchAndListen data={ pageState["watch-and-listen"]} />
       </Route>
       <Route exact path="/events">
         <Header props={ pageState.events } />
