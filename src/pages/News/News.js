@@ -1,19 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Layout from '../../components/Layout/Layout';
 import Container from '../../components/Container/Container';
 
 const News = () => {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://cdn2.woxo.tech/a.js#624b6caf5446b1002f472bbb';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   const [activeTab, setActiveTab] = useState('facebook');
 
   return (
@@ -71,15 +60,7 @@ const News = () => {
               style={{
                 display: activeTab === 'instagram' ? 'block' : 'none',
               }}
-            >
-              <span className="watermark-cover"></span>
-              <script
-                src="https://cdn2.woxo.tech/a.js#624b6caf5446b1002f472bbb"
-                async
-                data-usrc
-              ></script>
-              <div data-mc-src="ab83987f-38ce-42bc-9769-5c835b179957#instagram"></div>
-            </div>
+            ></div>
           </section>
         </div>
       </Container>
