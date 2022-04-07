@@ -60,7 +60,15 @@ const News = () => {
               style={{
                 display: activeTab === 'instagram' ? 'block' : 'none',
               }}
-            ></div>
+            >
+              <span className="watermark-cover"></span>
+              <script
+                src="https://cdn2.woxo.tech/a.js#624b6caf5446b1002f472bbb"
+                async
+                data-usrc
+              ></script>
+              <div data-mc-src="ab83987f-38ce-42bc-9769-5c835b179957#instagram"></div>
+            </div>
           </section>
         </div>
       </Container>
