@@ -22,7 +22,7 @@ const WatchAndListen = ({ data }) => {
                     />
                      <div>
                         <a
-                            style={{width: '50%', marginTop: 15, marginBottom: 15}}
+                            style={{width: 'fit-content', marginTop: 15, marginBottom: 15}}
                             className="club__link"
                             href={data.watch_and_listen_page.huoa_youtube_link}
                             target="_blank"
