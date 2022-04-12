@@ -1,8 +1,8 @@
-.events-calendar__calendar{
+.events-calendar__calendar {
   margin-bottom: 5rem;
 }
 
-.class-schedule{
+.class-schedule {
   &__title {
     font-weight: 600;
     font-size: 1.5rem;
@@ -18,8 +18,40 @@
   line-height: 27px;
 }
 
+.responsiveCal {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 75%;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.deskContent {
+  display: block;
+}
+
+.phoneContent {
+  display: none;
+}
+@media all and (max-width: $breakpoint-mobile) {
+  .deskContent {
+    display: none;
+  }
+
+  .phoneContent {
+    display: block;
+  }
+}
+
 @media screen and (max-width: $breakpoint-mobile) {
-  .events-calendar__calendar{
+  .events-calendar__calendar {
     margin-bottom: 2rem;
   }
 }
