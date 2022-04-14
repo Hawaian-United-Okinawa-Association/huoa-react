@@ -1,0 +1,17 @@
+.follow-btn {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: $primary-1;
+  color: $white;
+  font-size: 12px;
+  letter-spacing: 0.55px;
+
+  svg {
+    width: 20px;
+    margin-right: 0.5rem;
+  }
+}
