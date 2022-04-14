@@ -13,9 +13,8 @@ const Events = () => {
   return (
     <Layout>
       <Container>
-      <h2 className="events__title">Events Calendar</h2>
+      <h2 className="events__title">Events</h2>
       <section className="events">
-        <h4 className="events__subtitle events__subtitle--annual">Events</h4>
         <div className="events__cards">
           { events.map((event, i) => 
             <CardEvent key={ i } props={ event } />

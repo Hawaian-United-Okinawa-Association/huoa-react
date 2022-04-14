@@ -23,7 +23,6 @@ const EventsCalendar = ({ data }) => {
               width={800}
               height={600}
               frameBorder={0}
-              title="mobile-calendar"
               scrolling="no"
             ></iframe>
           </div>
