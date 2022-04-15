@@ -2,14 +2,13 @@ import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import Button from 'components/Button/Button';
+// import Button from 'components/Button/Button';
 
-import { ReactComponent as Ballroom } from 'assets/ballroom.svg';
-import { ReactComponent as Newsletter1 } from 'assets/purple-blast.svg';
-import { ReactComponent as Newsletter2 } from 'assets/uchinanchu.svg';
+import { ReactComponent as Document } from 'assets/file-text.svg';
+import { ReactComponent as Mail } from 'assets/mail.svg';
 
 const Sidebar = () => {
-  const { routes } = useSelector((state) => state.router);
+  const { routes } = useSelector(state => state.router);
   const { pathname } = useLocation();
   let findMe = `${pathname.split('/')[1]}`;
   let current;
@@ -20,27 +19,27 @@ const Sidebar = () => {
   if (!!routes) {
     let lastParent;
 
-    routes.forEach((route) => {
+    routes.forEach(route => {
       if (!route) {
-        return
+        return;
       }
 
       lastParent = route;
 
-      lastParent.children.forEach((child) => {
+      lastParent.children.forEach(child => {
         if (findMe === child.slug) {
           parentTitle = lastParent.title;
         }
-      })
+      });
 
       if (!!route && route.slug === findMe && !current) {
         current = route.title;
         children = route.children;
         return;
-      };
+      }
 
       if (lastParent.children.length > 0 && !children) {
-        current = route.children.find((child) => {
+        current = route.children.find(child => {
           return child.slug === findMe;
         });
         if (current) {
@@ -50,45 +49,62 @@ const Sidebar = () => {
     });
   }
 
-  return !!current && (
-    <div className="sidebar">
-      {!!children.length && (
-        <div className="sidebar__card">
-        <div className="sidebar__parent">{ parentTitle }</div>
-        { children.map((child, i) =>
-          <Link to={ '/' + child.slug } key={ i }>
-            <div className="sidebar__link"
-              data-active={!!(pathname.includes(child.slug))}>
-              { child.title }
-            </div>
-          </Link>
+  return (
+    !!current && (
+      <div className="sidebar">
+        {!!children.length && (
+          <div className="sidebar__card">
+            <div className="sidebar__parent">{parentTitle}</div>
+            {children.map((child, i) => (
+              <Link
+                to={'/' + child.slug}
+                key={i}
+                className="sidebar__link"
+                data-active={!!pathname.includes(child.slug)}
+              >
+                {child.title}
+              </Link>
+            ))}
+          </div>
         )}
+        <div className="sidebar__card sidebar__card--center">
+          <div className="group">
+            <h3>Rent Our Ballroom</h3>
+            <p>
+              THE LEGACY BALLROOM is handled by A Catered Experience, a division
+              of Zippy's Restaurants
+            </p>
+            <a className="sidebar__button" type="text" href="/banquet-facility">
+              Learn More
+            </a>
+          </div>
+          <div className="group">
+            <h3>Support HUOA</h3>
+            <p>
+              Your support is vital in promoting and preserving Okinawan
+              culture.
+            </p>
+            <a className="sidebar__button" type="text" href="/donate">
+              Learn More
+            </a>
+          </div>
+          <div className="group">
+            <h3>Join Our Newsletters</h3>
+            <div className="sidebar__newsletters">
+              <Mail />
+              <p> Purple Blast</p>
+            </div>
+            <div className="sidebar__newsletters">
+              <Document />
+              <p> Uchinanchu Newsletter</p>
+            </div>
+            <a className="sidebar__button" type="text" href="/#newsletters">
+              Learn More
+            </a>
+          </div>
+        </div>
       </div>
-      ) }
-      <div className="sidebar__card sidebar__card--center">
-        <h3>Rent Our Ballroom</h3>
-        <Ballroom className="sidebar__icon" />
-        <p>THE LEGACY BALLROOM is handled by A Catered Experience, a division of Zippy's Restaurants</p>
-        <Button className="sidebar__button" type="text" link="/banquet-facility">
-          Learn More
-        </Button>
-      </div>
-      <div className="sidebar__card sidebar__card--center">
-        <h3>Support HUOA</h3>
-        <p>Your support is vital in promoting and preserving Okinawan culture.</p>
-        <Button className="sidebar__button" type="text" link="/donate">
-          Learn More
-        </Button>
-      </div>
-      <div className="sidebar__card sidebar__card--center">
-        <h3>Join Our Newsletters</h3>
-        <Newsletter1 className="sidebar__icon" />
-        <p className="sidebar__newsletters">Purple Blast</p>
-        <Newsletter2 className="sidebar__icon" />
-        <p className="sidebar__newsletters">Uchinanchu Newsletter</p>
-        <a className="button" type="text" href="/#newsletters">Learn More</a>
-      </div>
-    </div>
+    )
   );
 };
 
