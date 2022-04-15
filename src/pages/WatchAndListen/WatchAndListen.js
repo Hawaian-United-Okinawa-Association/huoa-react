@@ -19,6 +19,7 @@ const WatchAndListen = ({ data }) => {
                             allow="accelerometer; autoplay; picture-in-picture"
                             allowFullScreen
                             className="watch__frame"
+                            title="We are HUOA - Teaser"
                         />
                         <div>
                             <a
