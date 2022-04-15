@@ -17,13 +17,12 @@ const EventsCalendar = ({ data }) => {
         <h1 className="events-calendar__title">Events Calendar</h1>
         <div className="responsiveCal">
           <div className="deskContent">
-            <iframe
+            <iframe title="We are HUOA - Teaser"
               src="https://www.google.com/calendar/embed?showTitle=0&showPrint=0&height=500&wkst=1&bgcolor=%23FFFFFF&src=huoacalendar%40gmail.com&color=%232952A3&src=j7d5p9evkshjmhik3v9po98kus%40group.calendar.google.com&color=%23B1440E&ctz=Pacific%2FHonolulu"
               style={{ border: 0 }}
               width={800}
               height={600}
               frameBorder={0}
-              title="mobile-calendar"
               scrolling="no"
             ></iframe>
           </div>
