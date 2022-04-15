@@ -2,44 +2,42 @@
 @import 'styles/normalize';
 
 // Import Utilities
-@import
-  'styles/utilities/alignment',
-  'styles/utilities/borders',
-  'styles/utilities/breakpoints',
-  'styles/utilities/colors',
-  'styles/utilities/fonts',
-  'styles/utilities/typography';
+@import 'styles/utilities/alignment',
+'styles/utilities/borders',
+'styles/utilities/breakpoints',
+'styles/utilities/colors',
+'styles/utilities/fonts',
+'styles/utilities/typography';
 
 // Import pages
 // TODO: need to add pages import
-@import
-  'pages/Events/Events',
-  'pages/Event/Event',
-  'pages/EventsCalendar/EventsCalendar',
-  'pages/News/News',
-  'pages/Contact/Contact',
-  'pages/Clubs/Clubs',
-  'pages/Club/Club',
-  'pages/Scholarships/Scholarships',
-  'pages/MissionAndPurpose/MissionAndPurpose',
-  'pages/BanquetFacility/BanquetFacility',
-  'pages/Home/Home',
-  'pages/StudentExchange/StudentExchange',
-  'pages/Newsletters/Newsletters',
-  'pages/SportsLeagues/SportsLeagues',
-  'pages/PerformingArts/PerformingArts',
-  'pages/Resources/Resources',
-  'pages/HistoryOfHUOA/HistoryOfHUOA',
-  'pages/HawaiiOkinawaCenter/HawaiiOkinawaCenter',
-  'pages/HawaiiOkinawaPlaza/HawaiiOkinawaPlaza',
-  'pages/HUOATeam/HUOATeam',
-  'pages/Volunteer/Volunteer';
+@import 'pages/Events/Events',
+'pages/Event/Event',
+'pages/EventsCalendar/EventsCalendar',
+'pages/News/News',
+'pages/Contact/Contact',
+'pages/Clubs/Clubs',
+'pages/Club/Club',
+'pages/Scholarships/Scholarships',
+'pages/MissionAndPurpose/MissionAndPurpose',
+'pages/BanquetFacility/BanquetFacility',
+'pages/Home/Home',
+'pages/StudentExchange/StudentExchange',
+'pages/Newsletters/Newsletters',
+'pages/SportsLeagues/SportsLeagues',
+'pages/PerformingArts/PerformingArts',
+'pages/Resources/Resources',
+'pages/HistoryOfHUOA/HistoryOfHUOA',
+'pages/HawaiiOkinawaCenter/HawaiiOkinawaCenter',
+'pages/HawaiiOkinawaPlaza/HawaiiOkinawaPlaza',
+'pages/HUOATeam/HUOATeam',
+'pages/Volunteer/Volunteer',
+'pages/WatchAndListen/WatchAndListen';
 
 // Import Sections
 // TODO: refactor this though
-@import
-  'sections/DonateSectionOne/DonateSectionOne',
-  'sections/DonateSectionTwo/DonateSectionTwo';
+@import 'sections/DonateSectionOne/DonateSectionOne',
+'sections/DonateSectionTwo/DonateSectionTwo';
 
 // Import components
 @import 'components/components';

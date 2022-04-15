@@ -2,8 +2,72 @@
     &__body {
         margin: 3rem 0;
 
-        @media screen and (max-width: $breakpoint-tablet-large) {
-            margin: 3rem 0;
+        @media (max-width: $breakpoint-mobile-large) {
+            margin: 2rem 0;
+        }
+    }
+
+    &__subHeader {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 36px;
+        margin-block-start: 1rem;
+        margin-block-end: 1rem;
+
+        @media (max-width: $breakpoint-mobile-large) {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+
+    &__frame {
+        width: 75%;
+        height: 400px;
+
+        @media (max-width: $breakpoint-mobile-large) {
+            width: 100%;
+            height: 200px;
+        }
+    }
+
+    &__link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: fit-content;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-radius: 3px;
+        transition: 0.4s background-color ease-out;
+        background-color: $primary-1;
+        color: $white;
+
+        div {
+            padding: 0.5rem 1rem;
+        }
+
+        svg {
+            stroke-width: 1px;
+            align-self: stretch;
+            height: inherit;
+            padding: 1.1rem;
+            background-color: $primary-2;
+        }
+
+        p {
+            max-width: 15em;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        &:hover {
+            background-color: white;
+            color: black;
+
+            svg {
+                background-color: $lighter-grey;
+            }
         }
     }
 }
