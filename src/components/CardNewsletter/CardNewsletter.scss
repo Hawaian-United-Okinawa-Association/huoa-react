@@ -2,20 +2,19 @@
   justify-self: center;
   min-width: 280px;
   max-width: 536px;
+  height: fit-content;
   border-radius: $card-border-radius;
-  padding: 64px 80px;
-  background: $white;
-  box-shadow: $card-blank-shadow;
+  padding: 30px;
+  background-color: $background-lightest-grey;
   text-align: left;
-  
-  @media (max-width: $breakpoint-mobile-large) {
-    margin: 16px;
-    padding: 32px;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 16px;
   }
 
   &__title {
     margin: 0;
-    font-weight: 500;
+    font-weight: 700;
     font-style: normal;
     font-size: 21px;
   }
@@ -28,13 +27,21 @@
 
   &__button-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 1rem;
     width: 100%;
+  }
 
-    .button {
-      width: auto;
-      margin: auto auto auto 0;
+  &__link {
+    display: flex;
+    align-items: center;
+    width: auto;
+    margin-right: 2rem;
+    color: $primary-1;
+    font-weight: 600;
+
+    svg {
+      margin-right: 0.5rem;
     }
   }
 }

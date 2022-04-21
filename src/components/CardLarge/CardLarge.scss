@@ -3,14 +3,11 @@ $card-image-height: 330px;
 .card-large {
   display: grid;
   grid-template-areas: 'image' 'text' 'button';
-  grid-template-rows: $card-image-height auto 74px;
+  grid-template-rows: $card-image-height auto auto;
   justify-self: center;
   overflow: hidden;
   max-width: 600px;
-  border-radius: $card-border-radius;
-  background: $lighter-grey;
-  box-shadow: $card-large-shadow;
-  text-align: center;
+  padding: 0;
 }
 
 .card-large__image {
@@ -30,31 +27,30 @@ $card-image-height: 330px;
 }
 
 .card-large__title {
-  margin: 24px auto;
-  font-size: 27px;
-  line-height: 37px;
+  margin: 1rem 0 0.5rem 0;
+  font-weight: 800;
+  line-height: 1.4;
 }
 
 .card-large__body {
-  margin: 0 60px;
-  padding-bottom: 15px;
-  font-size: 17px;
-  line-height: 25px;
+  margin: 0;
+  padding-bottom: 1rem;
+  color: $grey;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .card-large__button {
   grid-area: button;
   grid-row: 50px;
   height: 45px;
-  margin-right: auto;
   margin-bottom: 35px;
-  margin-left: auto;
 }
 
 @media (max-width: $breakpoint-mobile) {
   .card-large {
     grid-template-rows: 230px auto 74px;
-    margin: 16px;
+    margin: 16px 0;
 
     &__body {
       padding-bottom: 0;
@@ -63,7 +59,6 @@ $card-image-height: 330px;
 
     &__title {
       margin: 0 0 16px;
-      font-size: 20px;
     }
 
     &__image {
@@ -71,12 +66,11 @@ $card-image-height: 330px;
     }
 
     &__button {
-      margin: auto;
+      margin-top: 1rem;
     }
   }
 
-  .card-large__body{
-    margin: 0 1rem;
+  .card-large__body {
     text-align: left;
   }
 }

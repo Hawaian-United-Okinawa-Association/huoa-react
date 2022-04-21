@@ -8,6 +8,11 @@ import CardBlast from 'components/CardBlast/CardBlast';
 import CardNewsletter from 'components/CardNewsletter/CardNewsletter';
 import Container from 'components/Container/Container';
 
+import { ReactComponent as Plant } from '../../assets/donate.svg';
+import { ReactComponent as Coin } from '../../assets/amazon.svg';
+import { ReactComponent as Car } from '../../assets/car-2.svg';
+const icons = [Plant, Coin, Car];
+
 const Home = ({ data }) => {
   if (!data) return null;
 
@@ -19,34 +24,40 @@ const Home = ({ data }) => {
 
   return (
     <>
-      <Hero props={ builder[0] }/>
-      <TextArea props={ builder[1] }/>
+      <Hero props={builder[0]} />
+      <TextArea props={builder[1]} />
       <section className="home__section">
-        <Container col='2'>
-          { cardsLarge.map((card, i) => 
-            <CardLarge key={ i } props={card}/>
-          )}
+        <Container col="2">
+          {cardsLarge.map((card, i) => (
+            <CardLarge key={i} props={card} />
+          ))}
         </Container>
       </section>
 
       <section className="home__section home__section--community">
-        <Container col='1'>
-          <h2 className="home__title">Support Your Community</h2>
+        <Container col="1">
+          <div className="home__div">
+            <p>WAYS TO GIVE</p>
+            <h2 className="home__title">Support Your Community</h2>
+          </div>
         </Container>
-        <Container col='3'>
-          { cardsSquare.map((card, i) => 
-            <CardSquare key={i} props={card}/>
-          )}
+        <Container col="3">
+          {cardsSquare.map((card, i) => (
+            <CardSquare key={i} props={{ ...card, Icon: icons[i] }} />
+          ))}
         </Container>
       </section>
 
       <section className="home__section" id="newsletters">
-        <Container col='1'>
-          <h2 className="home__title">Join Our Newsletter</h2>
+        <Container col="1">
+          <div className="home__div">
+            <p>LATEST NEWS</p>
+            <h2 className="home__title">Join Our Newsletter</h2>
+          </div>
         </Container>
-        <Container col='2'>
-          <CardBlast props={ cardBlast }/>
-          <CardNewsletter props={ cardNewsletter } />
+        <Container col="2">
+          <CardBlast props={cardBlast} />
+          <CardNewsletter props={cardNewsletter} />
         </Container>
       </section>
     </>

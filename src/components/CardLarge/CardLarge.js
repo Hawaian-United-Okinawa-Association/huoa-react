@@ -11,7 +11,7 @@ const CardLarge = ({ props }) => {
     <div className='card-large'>
       <Image className='card-large__image' webp={ image.url } alt={ image.alt } />
       <div className='card-large__text'>
-        <p className='card-large__title'>{ title }</p>
+        <h2 className='card-large__title'>{ title }</h2>
         <p className='card-large__body'>{ body }</p>
       </div>
       <div className='card-large__button'>
