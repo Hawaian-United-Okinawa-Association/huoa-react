@@ -1,14 +1,22 @@
 @import 'styles/utilities/colors';
 @import 'styles/utilities/breakpoints';
 
+$arrow_background: rgba($white, 0.5);
+
 .hero {
   position: relative;
   overflow: hidden;
-  width: 100%;
+  max-width: 1200px;
   height: 38rem;
+  margin: 3rem auto;
 
+  @media (max-width: $breakpoint-tablet) {
+    margin-top: 0;
+  }
+  
   @media (max-width: $breakpoint-mobile-large) {
     height: auto;
+    margin-top: 0;
   }
 
   &__wrapper {
@@ -34,8 +42,10 @@
   &__overlay {
     position: absolute;
     top: 0;
-    bottom: 0;
+    left: 0;
     z-index: 1;
+    display: flex;
+    align-items: flex-end;
     width: 100%;
     height: 100%;
 
@@ -63,23 +73,29 @@
     &--mobile {
       display: none;
       padding: 2.5rem 1rem 3rem;
-      background-color: $light-grey;
+      background-color: $lighter-grey;
 
       @media (max-width: $breakpoint-mobile-large) {
         display: block;
+        text-align: center;
       }
     }
   }
 
   &__content {
-    position: relative;
-
-    padding: 3rem;
-    background-color: $overlay-light-grey;
-
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    height: 50%;
+    padding: 4rem;
+    background-image: linear-gradient(to top, $black 0%, transparent 90%);
+    color: $white;
     opacity: 0;
 
-    @media (max-width: $breakpoint-laptop) {
+    @media (max-width: $breakpoint-tablet) {
+      align-content: flex-end;
       padding: 2rem;
     }
 
@@ -89,35 +105,29 @@
       text-align: center;
     }
 
-    [data-active=true] & {
+    [data-active='true'] & {
       opacity: 1;
     }
 
-    &[data-placement="left"] {
+    &[data-placement='left'] {
       grid-column-start: 2;
       grid-column-end: 8;
     }
 
-    &[data-placement="center"] {
+    &[data-placement='center'] {
       grid-column-start: 4;
       grid-column-end: 10;
     }
 
-    &[data-placement="right"] {
+    &[data-placement='right'] {
       grid-column-start: 6;
       grid-column-end: 12;
     }
   }
 
   &__title {
-    margin: 1.5rem auto 1rem;
-    font-weight: 300;
-    line-height: 1.1;
-
-    @media (max-width: $breakpoint-laptop) {
-      font-size: 28px;
-      line-height: 1.4;
-    }
+    margin: 1.5rem auto 0rem;
+    font-weight: 700;
 
     @media (max-width: $breakpoint-mobile-large) {
       margin-top: 0;
@@ -126,9 +136,14 @@
   }
 
   &__description {
-    font-weight: 100;
-    font-size: 18px;
+    max-width: 60ch;
+    color: $light-grey;
+    font-weight: 400;
+    font-size: 16px;
 
+    @media (max-width: $breakpoint-mobile-large) {
+      color: $grey;
+    }
     @media (max-width: $breakpoint-laptop) {
       margin: 1rem auto;
       font-size: 16px;
@@ -148,7 +163,7 @@
     object-fit: cover;
     width: 100%;
     opacity: 0;
-    transition: opacity .4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
 
     @media (max-width: $breakpoint-tablet) {
       min-width: 100%;
@@ -159,8 +174,47 @@
       min-height: 20rem;
     }
 
-    [data-active=true] & {
+    [data-active='true'] & {
       opacity: 1;
+    }
+  }
+
+  &__arrows {
+    position: absolute;
+    bottom: 50%;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    width: 92%;
+    margin: auto 4%;
+    transform: translateY(50%);
+
+    .arrow-left {
+      transform: rotate(90deg);
+    }
+
+    .arrow-right {
+      transform: rotate(-90deg);
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      border: none;
+      border-radius: 50%;
+      background-color: $arrow_background;
+      transition: 0.4s all ease;
+
+      &:hover {
+        background-color: $primary-4;
+      }
+
+      &:active {
+        background-color: $primary-2;
+      }
     }
   }
 
@@ -176,15 +230,15 @@
 
   &__selector {
     display: inline-block;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     margin: 0 5px;
+    border: 1px solid $light-grey;
     border-radius: 50%;
-    background-color: $white;
     cursor: pointer;
 
-    &[data-active=true] {
-      background-color: $primary-2;
+    &[data-active='true'] {
+      background-color: $light-grey;
     }
   }
 }

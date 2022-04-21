@@ -1,19 +1,17 @@
 .card-square {
   display: grid;
   grid-template-areas: 'text' 'button';
-  grid-template-rows: auto 80px;
+  grid-template-rows: auto 50px;
   justify-self: center;
   max-width: 600px;
   border-radius: $card-border-radius;
-  background: $lighter-grey;
-  box-shadow: $card-square-shadow;
-  text-align: center;
+  padding: 30px;
+  background: $white;
 }
 
 .card-square__text {
   grid-area: text;
   margin-bottom: 10px;
-  padding: 57px 7px 0 7px;
   color: $black;
   font-style: normal;
   font-family: Poppins;
@@ -21,49 +19,55 @@
 
 .card-square__title {
   margin: 0;
-  font-weight: 500;
-  font-size: 25px;
+  font-weight: 700;
+  font-size: 24px;
   line-height: 37px;
 }
 
 .card-square__subtitle {
   margin: 0 0 17px 0;
+  border-bottom: 3px solid $black;
+  padding-bottom: 1rem;
   font-weight: normal;
   font-size: 17px;
   line-height: 25px;
-  text-align: center;
 }
 
 .card-square__body {
-  margin: .8rem 15px;
+  max-width: 400px;
+  color: $grey;
   font-size: 17px;
-  line-height: 25px;
+  line-height: 1.6;
 }
 
 .card-square__button {
   grid-area: button;
   height: 45px;
-  margin: 0 auto 30px auto;
+  margin-top: 2rem;
+
+  a {
+    color: $primary-1;
+    font-weight: 600;
+  }
 }
 
 @media (max-width: $breakpoint-mobile) {
   .card-square {
-    margin: 16px;
-    
+    padding: 16px;
+
     &__text {
       padding-top: 20px;
     }
 
     &__title {
-      font-size: 22px;
+      font-size: 20px;
     }
 
     &__subtitle {
-      font-size: 18px;
+      font-size: 16px;
     }
 
     &__body {
-      margin: 28px 16px;
       font-size: 14px;
     }
   }

@@ -49,6 +49,7 @@ const CardBlast = ({ props }) => {
                 value="96858fbc3b" />
               <div className="card-blast__form__name-container">
                 <div className="card-blast__form__input-container">
+                  <label className='card-blast__label'>First Name</label>
                   <input 
                     className='card-blast__input' 
                     type="text" 
@@ -60,6 +61,7 @@ const CardBlast = ({ props }) => {
                   <p className="card-blast__input__error-message">Please enter first name*</p>
                 </div>
                 <div className="card-blast__form__input-container">
+                <label className='card-blast__label'>Last Name</label>
                   <input 
                     className='card-blast__input' 
                     type="text" 
@@ -74,6 +76,7 @@ const CardBlast = ({ props }) => {
               <div className="card-blast__form__name-container">
               </div>
               <div className="card-blast__form__input-container">
+              <label className='card-blast__label'>Email Address</label>
                 <input 
                   className='card-blast__input' 
                   type="email"

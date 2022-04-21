@@ -2,38 +2,13 @@
   margin-bottom: 3rem;
 
   .hero {
-    margin: 3rem 0;
+    overflow: visible;
+    margin-bottom: 5rem;
 
     picture,
     .hero__image {
       width: 100%;
       height: 100%;
-    }
-
-    .controls {
-      position: absolute;
-      bottom: 0;
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-
-      button {
-        z-index: 10;
-        border: none;
-        padding: 0.5rem 1.5rem;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: $white;
-        font-size: 2rem;
-        transition: 0.4s all ease;
-
-        &:first-child {
-          margin-right: 0.1rem;
-        }
-
-        &:hover {
-          background-color: $primary-1;
-        }
-      }
     }
   }
 

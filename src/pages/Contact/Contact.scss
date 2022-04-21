@@ -1,6 +1,4 @@
 .contact {
-
-
   &__title {
     @media screen and (max-width: $breakpoint-tablet-large) {
       text-align: center;
@@ -19,7 +17,6 @@
     h3 {
       flex-basis: 100%;
     }
-
   }
 
   &__social {
@@ -29,7 +26,7 @@
     margin-top: 1rem;
 
     @media screen and (max-width: $breakpoint-mobile) {
-      width: 70%
+      width: 70%;
     }
 
     a {
@@ -43,7 +40,7 @@
     @media screen and (max-width: $breakpoint-mobile-large) {
       flex-basis: 100%;
       text-align: left;
-      
+
       h3 {
         margin: auto;
         text-align: left;
