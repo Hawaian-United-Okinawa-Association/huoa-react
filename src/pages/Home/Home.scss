@@ -1,11 +1,11 @@
-$background-light-grey: #FBFBFB;
+$background-lightest-grey: #FBFBFB;
 
 .home {
   &__section {
     padding: 6rem 0;
 
     &:nth-child(even) {
-      background-color: $background-light-grey;
+      background-color: $background-lightest-grey;
     }
   }
 
