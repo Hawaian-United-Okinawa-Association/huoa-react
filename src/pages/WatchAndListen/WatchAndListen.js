@@ -14,7 +14,7 @@ const WatchAndListen = ({ data }) => {
                         <h2 position="left">{data.title}</h2>
                         <div className="watch__subHeader">Hawaii United Okinawa Association Youtube</div>
                         <iframe
-                            src="https://www.youtube.com/embed/AHpM6KMMOMY"
+                            src={data.watch_and_listen_page.huoa_youtube_video_link}
                             frameborder="0"
                             allow="accelerometer; autoplay; picture-in-picture"
                             allowFullScreen
@@ -24,7 +24,7 @@ const WatchAndListen = ({ data }) => {
                         <div>
                             <a
                                 className="watch__link"
-                                href={data.watch_and_listen_page.huoa_youtube_link}
+                                href={data.watch_and_listen_page.huoa_youtube_channel_link}
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
