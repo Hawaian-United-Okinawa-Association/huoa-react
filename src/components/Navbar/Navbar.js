@@ -6,11 +6,18 @@ import { useSelector } from 'react-redux';
 //Components, assets, actions, styles etc..
 import NavItem from './NavItem';
 import { ReactComponent as HUOALogo } from '../../assets/huoa-logo.svg';
+import { ReactComponent as Bag } from '../../assets/shopping-bag.svg';
+import { ReactComponent as Phone } from '../../assets/phone.svg';
 
 const Navbar = () => {
   const [navState, setNavState] = useState(false);
   const { routes } = useSelector(state => state.router);
-  const { title, description } = useSelector(state => state.settings);
+
+  const routesToObj =
+    routes?.reduce((acc, val) => ({ ...acc, [val.title]: val }), {}) || {};
+  const { Home, Shop, Contact, Donate, ...subItems } = routesToObj;
+
+  const { title } = useSelector(state => state.settings);
 
   const renderMenuItems = children => {
     return children.map(item => {
@@ -76,17 +83,37 @@ const Navbar = () => {
           className="navbar__container--sm"
           onMouseLeave={() => setNavState(false)}
         >
-          <Link to="/">
-            <div className="navbar__header">
+          <div className="navbar__first-row">
+            <Link to="/" className="navbar__logo-box">
               <HUOALogo className="navbar__logo" />
               <div className="navbar__titles">
                 <h2 className="navbar__title">{title}</h2>
-                <h5 className="navbar__title--sm">{description}</h5>
               </div>
+            </Link>
+            <div className="navbar__first-row-links">
+              <a
+                href={Shop.slug}
+                className="navbar__first-row-link"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <Bag />
+                {Shop.title}
+              </a>
+              <Link to={Contact.slug} className="navbar__first-row-link">
+                <Phone />
+                {Contact.title}
+              </Link>
+              <Link to={Donate.slug} className="button" type="outlined">
+                {Donate.title}
+              </Link>
             </div>
-          </Link>
-          <ul className="navbar__items" onMouseLeave={() => setNavState(false)}>
-            {renderNavItems(routes)}
+          </div>
+          <ul
+            className="navbar__second-row"
+            onMouseLeave={() => setNavState(false)}
+          >
+            {renderNavItems(Object.values(subItems))}
           </ul>
         </div>
       </nav>

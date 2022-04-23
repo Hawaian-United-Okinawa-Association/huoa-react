@@ -10,7 +10,7 @@ $arrow_background: rgba($white, 0.5);
   height: 38rem;
   margin: 3rem auto;
 
-  @media (max-width: $breakpoint-tablet) {
+  @media (max-width: $breakpoint-tablet-large) {
     margin-top: 0;
   }
   
