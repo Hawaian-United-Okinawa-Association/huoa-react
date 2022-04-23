@@ -9,7 +9,7 @@ import Button from '../Button/Button';
 import { ReactComponent as HUOALogo } from '../../assets/huoa-logo.svg';
 import { ReactComponent as Hamburger } from '../../assets/hamburger.svg';
 import { ReactComponent as ButtonClose } from '../../assets/button-close.svg';
-import { ReactComponent as Carrot } from '../../assets/carrot.svg';
+import { ReactComponent as Chevron } from '../../assets/chevron-down.svg';
 import './NavMobile.scss';
 
 const NavMobile = () => {
@@ -19,7 +19,7 @@ const NavMobile = () => {
   const [closeDropdown, setCloseDropdown] = useState('init');
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const { routes } = useSelector(state => state.router);
-  const { title, description } = useSelector(state => state.settings);
+  const { title } = useSelector(state => state.settings);
 
   const resetSideNav = status => {
     setCloseDropdown(status);
@@ -117,7 +117,7 @@ const NavMobile = () => {
         >
           <div className="nav-mobile__sidebar--item">
             {item.title}
-            <Carrot
+            <Chevron
               className={`nav-mobile__sidebar--carrot${handleAnimation(
                 handleDrop(item.title)
               )}`}
@@ -189,7 +189,6 @@ const NavMobile = () => {
             <HUOALogo className="nav-mobile__logo" height="90" width="90" />
             <div className="nav-mobile__titles">
               <div className="nav-mobile__title">{title}</div>
-              <div className="nav-mobile__title--sm">{description}</div>
             </div>
           </div>
         </Link>

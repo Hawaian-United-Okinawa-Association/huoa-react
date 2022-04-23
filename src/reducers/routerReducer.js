@@ -34,7 +34,7 @@ const getRouterReducer = (state, payload) => {
       []
     );
 
-    routes.splice((routes.length - 2), 0, { slug: 'https://shophuoa.com/', title: 'Shop', children: []});
+    routes.splice((routes.length - 1), 0, { slug: 'https://shophuoa.com/', title: 'Shop', children: []});
     routes.push({ slug: 'donate', title: 'Donate', children: []});
 
     return { routes: routes };
