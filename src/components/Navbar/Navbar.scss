@@ -5,36 +5,70 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 10rem;
+    margin: auto;
     background-color: $white;
-    filter: $navbar-container-shadow;
-    @media (max-width: $breakpoint-laptop) {
+ 
+    @media (max-width: $breakpoint-mobile-large) {
       display: none;
     }
   }
 
   &__container--sm {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 1440px;
-    height: 10rem;
-    padding: 0 1.5rem;
     background-color: $white;
   }
 
-  &__header {
+  &__first-row {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1264px;
+    padding: 1rem 2rem;
+
+    .button {
+      margin-left: 1rem;
+    }
+  }
+
+  &__logo-box {
+    display: flex;
+    align-items: center;
+  }
+
+  &__first-row-links {
+    display: flex;
+    align-items: center;
+  }
+
+  &__first-row-link {
+    position: relative;
+    flex-direction: row;
+    width: 5rem;
+    padding-left: 1rem;
+    font-weight: 500;
+
+    &:hover {
+      color: $primary-1;
+      font-weight: 700;
+    }
+
+    svg {
+      position: absolute;
+      left: -1rem;
+      width: 20px;
+    }
   }
 
   &__logo {
-    width: 7rem;
-    height: 7rem;
+    width: 5rem;
+    height: 5rem;
     margin-left: -0.5rem;
     fill: $primary-1;
   }
@@ -45,6 +79,10 @@
     color: $dark-grey;
     font-size: 1.3rem;
 
+    @media (max-width: $breakpoint-tablet-large) {
+      margin-right: 6rem;
+    }
+
     &--sm {
       margin: 0;
       padding: 0;
@@ -53,16 +91,23 @@
     }
   }
 
-  &__items {
+  &__second-row {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    // width: 55%;
-    height: 50%;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    border-top: 1px solid $light-grey;
+    border-bottom: 1px solid $light-grey;
+    padding: 0.75rem 0;
+    background-color: $background-lightest-grey;
     list-style: none;
 
-    .button {
-      margin-left: 32px;
+    .arrow-down {
+      position: absolute;
+      right: -1.5rem;
+      width: 16px;
+      color: $grey;
     }
   }
 
@@ -73,30 +118,37 @@
   }
 
   &__link {
+    position: relative;
     display: inline-flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     height: 100%;
-    margin: auto 1rem;
+    margin: auto 2rem;
+
     color: $black;
-    font-size: 1.1rem;
+    font-weight: 500;
+    font-size: 1rem;
     cursor: pointer;
+
+    svg {
+      margin-right: 0;
+    }
 
     &--active {
       color: $primary-1;
-      font-weight: 900;
+      font-weight: 700;
     }
 
     &:hover {
       color: $primary-1;
-      font-weight: 900;
+      font-weight: 700;
     }
 
     &::after {
       content: attr(data-text);
       overflow: hidden;
       height: 0;
-      font-weight: 900;
+      font-weight: 700;
       visibility: hidden;
       pointer-events: none;
       user-select: none;
@@ -109,11 +161,10 @@
 
   &__dropdown {
     position: absolute;
-    top: 7rem;
+    top: 10rem;
     z-index: 999;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.09);
-    padding: 0.5rem;
     background-color: $white;
     filter: $navbar-dropdown-shadow;
 
@@ -123,11 +174,15 @@
       align-items: flex-start;
       justify-content: center;
       height: 100%;
-      padding: 0.4rem 1rem;
+      padding: 0.5rem 1rem;
       color: $black;
       font-weight: 100;
       font-size: 1rem;
       font-family: $poppins;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $light-grey;
+      }
 
       &:hover {
         color: $primary-1;
@@ -136,7 +191,7 @@
 
       &::after {
         content: attr(data-text);
-        content: attr(data-text) / "";
+        content: attr(data-text) / '';
         overflow: hidden;
         height: 0;
         font-weight: 900;
@@ -155,8 +210,4 @@
       list-style-type: none;
     }
   }
-}
-
-@media screen and (max-width: $breakpoint-laptop){
-  display: none;
 }

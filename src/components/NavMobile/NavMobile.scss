@@ -7,7 +7,7 @@
   display: none;
 }
 
-@media screen and (max-width: $breakpoint-laptop) {
+@media screen and (max-width: $breakpoint-mobile-large) {
   .nav-mobile {
     position: relative;
     display: flex;
@@ -37,6 +37,7 @@
       margin: 0;
       padding: 0;
       color: $dark-grey;
+      font-weight: bold;
       font-size: 1.25rem;
       font-family: $lora;
 
@@ -132,7 +133,7 @@
 
         &-link {
           display: flex;
-          padding: 0.5rem 0;;
+          padding: 1rem 0;
         }
 
         &-button {

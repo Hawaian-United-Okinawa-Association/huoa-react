@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 
 // Components, actions, assets, etc..
 import Button from 'components/Button/Button';
+import { ReactComponent as Icon } from '../../assets/chevron-down.svg';
 
-const NavItem = (props) => {
+const NavItem = props => {
   const { name, linkTo, children, navState, setNavState } = props;
   const isActive = navState === name ? 'navbar__link--active' : null;
 
@@ -40,8 +41,12 @@ const NavItem = (props) => {
     if (children) {
       return (
         <div>
-          <div className={`navbar__link ${isActive}`} data-text={name} onMouseEnter={() => setNavState(name)}>
-            {name}
+          <div
+            className={`navbar__link ${isActive}`}
+            data-text={name}
+            onMouseEnter={() => setNavState(name)}
+          >
+            {name} <Icon className="arrow-down" />
           </div>
           {navState === name && children}
         </div>
