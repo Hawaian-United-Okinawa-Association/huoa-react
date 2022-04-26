@@ -1,6 +1,5 @@
 .donate-section-one {
   max-width: 900px;
-  margin-top: 60px;
   margin-bottom: 96px;
 
   @media (max-width: $breakpoint-tablet) {
@@ -9,14 +8,11 @@
 
   &__title {
     margin-bottom: 32px;
-
-    @media (max-width: $breakpoint-mobile) {
-      text-align: center;
-    }
   }
 
   &__body {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
 
     @media (max-width: $breakpoint-tablet-large) {
@@ -32,7 +28,10 @@
 
   &__text {
     margin-bottom: 32px;
-    @media (max-width: $breakpoint-mobile) {
+    line-height: 1.8;
+    text-align: justify;
+
+    @media (max-width: $breakpoint-mobile-large) {
       text-align: left;
     }
   }
@@ -40,12 +39,13 @@
   &__image {
     object-fit: cover;
     width: 280px;
-    height: 280px;
-    margin-left: 36px;
+    height: 100%;
+    margin-right: 36px;
 
     @media (max-width: $breakpoint-tablet-large) {
+      width: 100%;
+      margin-right: 0;
       margin-bottom: 32px;
-      margin-left: 0;
     }
 
     @media (max-width: $breakpoint-mobile) {

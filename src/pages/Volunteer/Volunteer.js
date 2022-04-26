@@ -8,7 +8,7 @@ const Volunteer = ({ data }) => {
 
   if (!data) return null;
   else {
-    const { title, body, opportunities_list, application_form_link, become_body, mail_to_body, fax_to_body, bottom } = data.volunteer_page;
+    const { title, body, opportunities_list, application_form_link, become_body, mail_to_body, bottom } = data.volunteer_page;
     return (
       <Layout>
         <div className="volunteer__container">
@@ -28,8 +28,6 @@ const Volunteer = ({ data }) => {
           <div className="volunteer__description" dangerouslySetInnerHTML={{__html: become_body}} />
           <h4>Mail to:</h4>
           <div className="volunteer__description" dangerouslySetInnerHTML={{__html: mail_to_body}} />
-          <h4>Fax to:</h4>
-          <div className="volunteer__description" dangerouslySetInnerHTML={{__html: fax_to_body}} />
           <Button 
             link='/volunteer'
             type='filled'>
