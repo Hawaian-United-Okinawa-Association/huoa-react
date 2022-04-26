@@ -1,5 +1,4 @@
 .donate-section-two {
-  max-width: 900px;
   margin: 64px auto 152px 0;
 
   @media (max-width: $breakpoint-tablet) {
@@ -7,14 +6,11 @@
   }
   
   &__title {
-    margin: 0 auto 72px;
     color: $black;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 32px;
-    font-family: $lora;
-    line-height: 48px;
 
-    @media (max-width: $breakpoint-mobile) {
+    @media (max-width: $breakpoint-mobile-large) {
       margin-bottom: 32px;
       text-align: center;
     }
@@ -22,42 +18,35 @@
 
   &__body {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: center;
-    
+
     @media(max-width: $breakpoint-mobile-large) {
       flex-direction: column;
       align-items: center;
+      max-width: 500px;
+      margin: auto;
     }
   }
 
   &__col {
-    max-width: 300px;
-    margin: 0 24px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2rem 1rem;
+    background: $white;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
 
     @media(max-width: $breakpoint-mobile-large) {
-      margin-bottom: 32px;
+    margin: 1rem auto;
     }
 
     @media (max-width: $breakpoint-mobile) {
       margin: 0 auto 32px;
     }
 
-    &:first-child {
-      margin-left: 0;
-      @media(max-width: $breakpoint-mobile-large) {
-        margin-right: auto;
-        margin-left: auto;
-      }
-    }
-
-    &:last-child {
-      margin-right: 0;
-      @media(max-width: $breakpoint-mobile-large) {
-        margin-right: auto;
-        margin-left: auto;
-      }
+    &:not(:last-child){
+      margin-right: 1rem;
     }
   }
 
@@ -65,26 +54,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 95px;
-    height: 95px;
+    width: 24px;
+    height: 24px;
     margin: 0 auto;
     border-radius: 50%;
-    background: $primary-3;
   }
 
   &__icon {
-    width: 70px;
-    height: 70px;
-    fill: $white;
+    width: 24px;
+    height: 24px;
   }
 
   &__subtitle {
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 20px;
     line-height: 24px;
   }
 
   &__text {
+    color: $grey;
     font-size: 14px;
+    line-height: 1.8;
   }
 }
