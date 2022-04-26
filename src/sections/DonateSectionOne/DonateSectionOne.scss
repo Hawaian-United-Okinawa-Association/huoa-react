@@ -8,10 +8,6 @@
 
   &__title {
     margin-bottom: 32px;
-
-    @media (max-width: $breakpoint-mobile) {
-      text-align: center;
-    }
   }
 
   &__body {
