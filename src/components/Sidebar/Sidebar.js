@@ -55,7 +55,32 @@ const Sidebar = () => {
         {!!children.length && (
           <div className="sidebar__card">
             <div className="sidebar__parent">{parentTitle}</div>
-            {children.map((child, i) => (
+            {children.map((child, i) => { 
+               if (child.slug === 'gallery')
+               return (
+                 <a
+                   className="sidebar__link"
+                   key={child.slug}
+                   href='https://huoa.smugmug.com'
+                   target="_blank"
+                   rel="noopener noreferrer"
+                 >
+                  {child.title}
+                 </a>
+               );
+               if (child.slug === 'myhuoa')
+               return (
+                 <a
+                   className="sidebar__link"
+                   key={child.slug}
+                   href="https://huoa.tradewing.com/home"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                 >
+                 {child.title}
+                 </a>
+               );
+              return (
               <Link
                 to={'/' + child.slug}
                 key={i}
@@ -64,7 +89,7 @@ const Sidebar = () => {
               >
                 {child.title}
               </Link>
-            ))}
+              )})}
           </div>
         )}
         <div className="sidebar__card sidebar__card--center">

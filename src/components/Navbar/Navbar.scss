@@ -45,13 +45,16 @@
   &__first-row-links {
     display: flex;
     align-items: center;
-  }
 
+    .navbar__link{
+      margin: auto 1rem;
+      padding-left: 2rem;
+    }
+  }
+  
   &__first-row-link {
     position: relative;
     flex-direction: row;
-    width: 5rem;
-    padding-left: 1rem;
     font-weight: 500;
 
     &:hover {
@@ -61,7 +64,7 @@
 
     svg {
       position: absolute;
-      left: -1rem;
+      left: 1rem;
       width: 20px;
     }
   }
