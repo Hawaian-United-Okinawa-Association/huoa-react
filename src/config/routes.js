@@ -83,7 +83,7 @@ const Routes = () => {
       </Route>
       <Route exact path="/news">
         <Header props={ pageState.news } />
-        <News />
+        <News data={ pageState.home }/>
       </Route>
       <Route exact path="/contact">
         <Header props={ pageState.contact } />

@@ -21,6 +21,18 @@ const Navbar = () => {
 
   const renderMenuItems = children => {
     return children.map(item => {
+      if (item.slug === 'gallery')
+      return (
+        <a
+          className="navbar__dropdown--link"
+          key={item.slug}
+          href='https://huoa.smugmug.com'
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+         {item.title}
+        </a>
+      );
       if (item.slug === 'myhuoa')
         return (
           <a
@@ -30,7 +42,7 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            MyHUOA
+            {item.title}
           </a>
         );
       return (
@@ -91,22 +103,9 @@ const Navbar = () => {
               </div>
             </Link>
             <div className="navbar__first-row-links">
-              <a
-                href={Shop.slug}
-                className="navbar__first-row-link"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <Bag />
-                {Shop.title}
-              </a>
-              <Link to={Contact.slug} className="navbar__first-row-link">
-                <Phone />
-                {Contact.title}
-              </Link>
-              <Link to={Donate.slug} className="button" type="outlined">
-                {Donate.title}
-              </Link>
+              <div className="navbar__first-row-link"><Bag/>{renderNavItems([Shop])}</div>
+              <div className="navbar__first-row-link"><Phone/>{renderNavItems([Contact])}</div>
+              {renderNavItems([Donate])}
             </div>
           </div>
           <ul

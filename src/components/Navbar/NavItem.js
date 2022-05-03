@@ -30,6 +30,7 @@ const NavItem = props => {
           target="_blank"
           rel="noopener noreferrer"
           onMouseEnter={() => setNavState(name)}
+          onMouseLeave={() => setNavState(null)}
         >
           {name}
         </a>
@@ -59,6 +60,7 @@ const NavItem = props => {
             to={linkTo}
             data-text={name}
             onMouseEnter={() => setNavState(name)}
+            onMouseLeave={() => setNavState(null)}
             onClick={() => setNavState(false)}
           >
             {name}
