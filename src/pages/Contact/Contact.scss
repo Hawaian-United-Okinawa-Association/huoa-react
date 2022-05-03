@@ -1,50 +1,57 @@
 .contact {
-  &__title {
-    @media screen and (max-width: $breakpoint-tablet-large) {
-      text-align: center;
-    }
-  }
-
   &__section {
     display: flex;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
-    margin: auto;
+    justify-content: flex-end;
+    margin: 2rem auto;
 
     @media screen and (max-width: $breakpoint-tablet-large) {
       text-align: left;
     }
 
     h3 {
+      display: flex;
       flex-basis: 100%;
+      align-items: center;
+      margin-bottom: 0;
+      font-weight: 700;
+
+      svg {
+        margin-right: 0.5rem;
+      }
     }
+
+    p {
+      margin: 0.5rem 0;
+    }
+  }
+
+  &__social-title {
+    margin-top: 2rem;
   }
 
   &__social {
     display: flex;
-    justify-content: space-between;
-    width: 40%;
+    width: fit-content;
     margin-top: 1rem;
 
-    @media screen and (max-width: $breakpoint-mobile) {
-      width: 70%;
-    }
-
     a {
-      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-right: 1rem;
+      border-radius: 5px;
+      background: $lighter-grey;
     }
   }
 
   &__col {
-    flex-basis: 50%;
-
     @media screen and (max-width: $breakpoint-mobile-large) {
       flex-basis: 100%;
       text-align: left;
-
-      h3 {
-        margin: auto;
-        text-align: left;
-      }
     }
 
     &--right {
@@ -56,16 +63,14 @@
 
   &__map {
     &--main {
-      width: 415px;
+      width: 500px;
       height: 300px;
       margin-top: 1rem;
+      margin-right: 2rem;
+      background-color: $lighter-grey;
+
       @media screen and (max-width: $breakpoint-mobile-large) {
         display: none;
-      }
-
-      @media screen and (max-width: $breakpoint-tablet-large) {
-        width: 18rem;
-        height: 200px;
       }
     }
 
