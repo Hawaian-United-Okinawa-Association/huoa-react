@@ -1,6 +1,6 @@
 .news {
   overflow: hidden;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 
   &__mobile-select {
     display: none;
@@ -31,7 +31,6 @@
 
   &__tab {
     border: none;
-    border-bottom: 2px solid $light-grey;
     padding: 0.75rem;
     background-color: $white;
     color: $grey;
@@ -44,10 +43,9 @@
     }
 
     &--active {
-      border-bottom: 3px solid $primary-1;
       background-color: $primary-4;
       color: $primary-1;
-      font-weight: bold;
+      font-weight: 600;
 
       &:hover {
         background-color: $primary-4;
@@ -59,7 +57,7 @@
     position: relative;
     min-height: 5rem;
     padding-top: 2rem;
-    background-color: $lighter-grey;
+    background-color: $background-lightest-grey;
   }
 
   .watermark-cover {
