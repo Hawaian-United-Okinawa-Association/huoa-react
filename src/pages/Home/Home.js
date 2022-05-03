@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Hero from 'components/Hero/Hero';
 import TextArea from 'components/TextArea/TextArea';
@@ -11,6 +12,8 @@ import Container from 'components/Container/Container';
 import { ReactComponent as Plant } from '../../assets/donate.svg';
 import { ReactComponent as Coin } from '../../assets/amazon.svg';
 import { ReactComponent as Car } from '../../assets/car-2.svg';
+import { ReactComponent as Chevron } from '../../assets/chevron-down.svg';
+
 const icons = [Plant, Coin, Car];
 
 const Home = ({ data }) => {
@@ -36,7 +39,7 @@ const Home = ({ data }) => {
 
       <section className="home__section home__section--community">
         <Container col="1">
-          <div className="home__div">
+          <div className="home__section-header">
             <p>WAYS TO GIVE</p>
             <h2 className="home__title">Support Your Community</h2>
           </div>
@@ -50,9 +53,15 @@ const Home = ({ data }) => {
 
       <section className="home__section" id="newsletters">
         <Container col="1">
-          <div className="home__div">
+          <div className="home__section-header">
             <p>LATEST NEWS</p>
             <h2 className="home__title">Join Our Newsletter</h2>
+              <Link
+              className="home__link"
+              to='/news'
+              >
+              View our latest news <Chevron />
+            </Link>
           </div>
         </Container>
         <Container col="2">
