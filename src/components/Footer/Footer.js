@@ -79,7 +79,7 @@ const Footer = () => {
             </div> 
             <div>
               <h4>Phone</h4>
-              <a href='tel:8086765400' target='_blank' className='footer__link'>808.676.5400</a>
+              <a href='tel:8086765400' target='_blank' rel="noopener noreferrer" className='footer__link'>808.676.5400</a>
             </div>
           </div>
           <div className="footer__contact--col">
@@ -89,7 +89,7 @@ const Footer = () => {
             </div>
             <div>
               <h4>Email</h4>
-              <a href='mailto:info@huoa.org' target='_blank' className='footer__link'>info@huoa.org</a>
+              <a href='mailto:info@huoa.org' target='_blank' rel="noopener noreferrer" className='footer__link'>info@huoa.org</a>
             </div>
           </div>
         </div>
