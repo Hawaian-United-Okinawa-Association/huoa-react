@@ -1,9 +1,6 @@
 .footer {
   background-color: $primary-1;
-  color: $white;
-  font-weight: 300;
-  font-size: 18px;
-  letter-spacing: .5px;
+  color: $primary-3;
 
   @media (max-width: $breakpoint-tablet) {
     display: block;
@@ -11,62 +8,99 @@
 
   &__container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 3rem 2rem;
+
+    @media (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  &__logo-and-social {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 1024px;
-    margin: auto;
-    padding: 3rem 1rem;
-  }
-
-  &__links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-  }
-
-  &__link {
-    margin: 1rem;
   }
 
   &__logo {
     width: 125px;
     height: 125px;
-    margin: 2rem auto;
-    fill: $white;
+    fill: $primary-4;
+  }
+
+  &__social {
+    display: flex;
+  }
+
+  &__social-icon {
+    width: 28px;
+    height: 28px;
+    margin: auto 0.5rem;
+    stroke-width: 1px;
+    padding: 0.5rem;
+    background-color: rgba($primary-4, 0.1);
+    color: $white;
+    transition: 0.4s all ease;
+
+    &:hover {
+    background-color: $primary-4;
+    color: $primary-1;
+    }
+  }
+
+  &__links-and-contact {
+    display: flex;
+    flex-wrap: wrap;
+  
+    @media (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+      margin-top: 3rem;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  h4 {
+    margin-top: 2rem;
+    margin-bottom: 5px;
+    color: $white;
+    font-size: 16px;
+  }
+
+  &__link {
+    margin: 0 0 0.5rem 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__contact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 4rem;
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
     margin-bottom: 2rem;
 
+    @media (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+    }
+   
     &--col {
-      max-width: 240px;
-      line-height: 24px;
-      text-align: center;
+      margin-left: 5rem;
 
       @media (max-width: $breakpoint-tablet) {
         margin: 1rem auto;
       }
-      
-      .address{
-        text-decoration: underline;
-      }
     }
-  }
-
-  &__social {
-    margin-top: 2em;
-  }
-
-  &__social-icon {
-    width: 40px;
-    height: 40px;
-    margin: auto 1rem;
   }
 }
