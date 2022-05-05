@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Image from 'components/Image/Image';
 import Button from 'components/Button/Button';
 
@@ -19,10 +20,10 @@ const CardEvent = ({ props }) => {
 
   return (
     <div className="card-event">
-      <div className='card-event__image-and-title'>
-      <Image className="card-event__image" webp={ event_image.url } />
-      <h3 className="card-event__title">{ event_title }</h3>
-      </div>
+      <Link to={`/events/${ event_slug }`} className='card-event__image-and-title'>
+        <Image className="card-event__image" webp={ event_image.url } />
+        <h3 className="card-event__title">{ event_title }</h3>
+      </Link>
       <p className="card-event__full-date">
         <Clock/>{ month } { day }, { year } <span className="card-event__spacer">|</span> { time }
       </p>
@@ -30,7 +31,7 @@ const CardEvent = ({ props }) => {
         <Map/>
         <div className="card-event__location"
           dangerouslySetInnerHTML={{ __html: event_location }} />
-        </div>
+      </div>
       <div className="card-event__button">
         <Button type="text" link={`/events/${ event_slug }`}>Read More</Button>
       </div>
