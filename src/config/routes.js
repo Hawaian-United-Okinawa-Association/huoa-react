@@ -81,8 +81,8 @@ const Routes = () => {
         <Header props={ pageState.volunteer}/>
         <Volunteer data={ pageState.volunteer } />
       </Route>
-      <Route exact path="/news">
-        <Header props={ pageState.news } />
+      <Route exact path="/latest-news">
+        <Header props={ pageState['latest-news'] } />
         <News data={ pageState.home }/>
       </Route>
       <Route exact path="/contact">
@@ -100,9 +100,9 @@ const Routes = () => {
         <Header data={ pageState["student-exchange"] } />
         <StudentExchange data={ pageState["student-exchange"] } />
       </Route>
-      <Route exact path="/archive">
-        <Header props={pageState.archive} />
-        <Newsletters data={pageState.archive} />
+      <Route exact path="/newsletters">
+        <Header props={pageState.newsletters} />
+        <Newsletters data={pageState.newsletters} />
       </Route>
       <Route exact path="/sports-leagues">
         <Header props={pageState['sports-leagues']} />
