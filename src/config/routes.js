@@ -101,8 +101,8 @@ const Routes = () => {
         <StudentExchange data={ pageState["student-exchange"] } />
       </Route>
       <Route exact path="/newsletters">
-        <Header props={pageState.newsletters} />
-        <Newsletters data={pageState.newsletters} />
+        <Header props={ pageState.newsletters } />
+        <Newsletters data={ pageState.newsletters } />
       </Route>
       <Route exact path="/sports-leagues">
         <Header props={pageState['sports-leagues']} />
