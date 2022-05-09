@@ -68,28 +68,17 @@ const NavMobile = () => {
 
   const renderDropdown = items => {
     return items.map(item => {
-      if (item.slug === 'gallery')
-      return (
-        <a
-          className="nav-mobile__dropdown-item"
-          key={item.slug}
-          href='https://huoa.smugmug.com'
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         {item.title}
-        </a>
-      );
-      if (item.slug === 'myhuoa')
+    
+      if (item.link)
         return (
           <a
-            href="https://huoa.tradewing.com/home"
-            className="nav-mobile__dropdown-item"
-            target="_blank"
-            key={item.slug}
-            rel="noopener noreferrer"
+          href={item.link}
+          className="nav-mobile__dropdown-item"
+          target={item.link.startsWith('/')? '_self' : '_blank'}
+          key={item.slug}
+          rel="noopener noreferrer"
           >
-            {item.slug}
+            {item.title}
           </a>
         );
       return (

@@ -21,30 +21,18 @@ const Navbar = () => {
 
   const renderMenuItems = children => {
     return children.map(item => {
-      if (item.slug === 'gallery')
+      if (item.link)
       return (
         <a
           className="navbar__dropdown--link"
           key={item.slug}
-          href='https://huoa.smugmug.com'
-          target="_blank"
+          href={item.link}
+          target={item.link.startsWith('/')? '_self' : '_blank'}
           rel="noopener noreferrer"
         >
          {item.title}
         </a>
       );
-      if (item.slug === 'myhuoa')
-        return (
-          <a
-            className="navbar__dropdown--link"
-            key={item.slug}
-            href="https://huoa.tradewing.com/home"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {item.title}
-          </a>
-        );
       return (
         <Link
           className="navbar__dropdown--link"

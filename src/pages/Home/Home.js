@@ -58,7 +58,7 @@ const Home = ({ data }) => {
             <h2 className="home__title">Join Our Newsletter</h2>
               <Link
               className="home__link"
-              to='/news'
+              to='/latest-news'
               >
               View our latest news <Chevron />
             </Link>
