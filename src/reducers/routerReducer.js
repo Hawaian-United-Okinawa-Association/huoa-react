@@ -6,7 +6,7 @@ const getRouterReducer = (state, payload) => {
     let keys = {};
 
     const routes = payload.reduce(
-      (allData, { id, slug, menu_order, title, parent }) => {
+      (allData, { id, slug, menu_order, title, parent, acf }) => {
         if (parent === 0) {
           keys[id] = menu_order;
 
@@ -26,7 +26,8 @@ const getRouterReducer = (state, payload) => {
           slug: slug,
           order: menu_order,
           title: title.rendered,
-          parent: parent
+          parent: parent,
+          link : acf.link || ''
         };
 
         return [ ...allData ];

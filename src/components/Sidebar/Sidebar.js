@@ -56,30 +56,19 @@ const Sidebar = () => {
           <div className="sidebar__card">
             <div className="sidebar__parent">{parentTitle}</div>
             {children.map((child, i) => { 
-               if (child.slug === 'gallery')
+               if (child.link)
                return (
-                 <a
-                   className="sidebar__link"
-                   key={child.slug}
-                   href='https://huoa.smugmug.com'
-                   target="_blank"
-                   rel="noopener noreferrer"
-                 >
-                  {child.title}
-                 </a>
-               );
-               if (child.slug === 'myhuoa')
-               return (
-                 <a
-                   className="sidebar__link"
-                   key={child.slug}
-                   href="https://huoa.tradewing.com/home"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                 >
-                 {child.title}
-                 </a>
-               );
+                <a
+                className="sidebar__link"
+                key={child.slug}
+                href={child.link}
+                target={child.link.startsWith('/')? '_self' : '_blank'}
+                rel="noopener noreferrer"
+              >
+               {child.title}
+              </a>
+            );
+
               return (
               <Link
                 to={'/' + child.slug}
