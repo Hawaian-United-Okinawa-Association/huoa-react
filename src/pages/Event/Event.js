@@ -6,6 +6,10 @@ import Layout from 'components/Layout/Layout';
 import Container from 'components/Container/Container';
 import Image from 'components/Image/Image';
 import Breadcrumbs from 'components/Breadcrumbs/Breadcrumbs';
+import Hero from 'components/Hero/Hero';
+
+import { ReactComponent as Map } from 'assets/map-pin.svg';
+import { ReactComponent as Clock } from 'assets/clock.svg';
 
 const Event = ({ match }) => {
   const eventsData = useSelector((state) => state.events);
@@ -20,20 +24,26 @@ const Event = ({ match }) => {
   let day = splitEvent[1].slice(0, -1);
   let year = splitEvent[2];
   let time =`${ splitEvent[3] } ${ splitEvent[4] }`;
+  const { hero_slider } = event.acf;
+  const { buttons } = event.acf;
 
   return (
     <Layout>
       <Container>
       <section className="event">
-      <Image className="event__image" webp={ event_image.url } />
-      <div className="event__section--left">
         <Breadcrumbs parent="events" parentText="Events" rendered={ event_title } />
         <h2 className="event__title">{ event_title }</h2>
+      <div>
         <h3 className="event__date">
-          { month } { day }, { year } <span className="event__spacer">|</span> { time }
+         <Clock/> { month } { day }, { year } <span className="event__spacer">|</span> { time }
         </h3>
-        <p className="event__location" dangerouslySetInnerHTML={{ __html: event_location }}></p>
-        <div className="event__details" dangerouslySetInnerHTML={{ __html: event_details }} />
+        <div className="event__location"><Map/><div dangerouslySetInnerHTML={{ __html: event_location }} /></div> 
+        { !!hero_slider ? <Hero props={{ hero_slider }}/> : <Image className="event__image" webp={ event_image.url } /> }
+        <h4>About this event</h4>
+        <div className="event__details">
+        <div dangerouslySetInnerHTML={{ __html: event_details }} />
+        { !!buttons && buttons.map(button=> <a className='button' type='filled' href={button.link}>{button.text}</a>) }
+      </div>
       </div>
       </section>
       </Container>
