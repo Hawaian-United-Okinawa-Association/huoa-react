@@ -1,12 +1,21 @@
 .breadcrumb {
+  display: flex;
+  align-items: center;
   margin: 0;
-
+  color: $grey;
+  font-weight: 500;
+  
   &__item {
     margin: 10px;
     
     &--selected {
-      color: $primary-1;
+      color: $black;
     }
+  }
+
+  svg {
+    width: 16px;
+    transform: rotate(-90deg);
   }
 
   &__item:hover {

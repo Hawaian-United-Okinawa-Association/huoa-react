@@ -1,52 +1,89 @@
 $max_event_content_width: 800px;
 
 .event {
-  display: grid;
-  grid-template-columns: 4fr 5fr;
-  margin: 1.5rem auto;
+  margin-top: 2rem;
 
   &__title {
-    line-height: 1.2;
-  }
-
-  &__section--left{
-    order: -1;
+    margin-bottom: 1rem;
+    line-height: 1.4;
   }
 
   &__image {
-    width: 100%;
+    display: block;
+    object-fit: cover;
     max-width: 600px;
+    max-height: 500px;
+    margin: 3rem 0;
   }
 
-  &__details, &__date, &__location {
-    max-width: $max_event_content_width;
+  .hero__image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
   }
 
-  &__date {
-    font-weight: 700;
-    font-size: 24px;
+  .hero { 
+    max-width: 600px;
+    height: 20rem;
+    margin: 3rem 0;
+  }
+
+  .hero__wrapper {
+    background-color: $background-lightest-grey;
+  }
+
+  &__date, &__location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 16px;
+
+    svg { 
+      width: 20px;
+      margin-right: 0.5rem;
+      color: $grey;
+    }
+  }
+
+  &__location {
+    margin-top: 0.5rem;
   }
 
   &__spacer {
-    margin: auto .4rem;
+    margin: auto 0.4rem;
+  }
+
+  h4 {
+    margin-top: 3rem;
+    font-weight: 700;
+  }
+
+  &__details {
+    padding: 1rem 2rem;
+    background: $background-lightest-grey;
+    line-height: 1.8;
+
+    p { 
+      margin-bottom: 2rem;
+    }
+
+    .button {
+      display: block; 
+      width: fit-content; 
+      margin: 1rem 0;
+    }
   }
 }
 
-@media screen and (max-width: $breakpoint-tablet){
+@media screen and (max-width: $breakpoint-tablet) {
   .event {
     display: block;
     margin: 0 auto 48px;
 
-    &__title{
-      font-weight: 600;
-      font-size: 24px;
-      font-family: $poppins;
-    }
-
-    &__date, &__location{
-        color: $grey;
-        font-weight: 300;
-        font-size: 16px;
+    &__details { 
+      padding: 1rem;
     }
   }
 }
