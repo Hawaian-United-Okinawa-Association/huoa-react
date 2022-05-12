@@ -1,68 +1,64 @@
 .clubs {
-  &__title {
-    @media screen and (max-width: $breakpoint-laptop) {
-      text-align: center;
-    }
-    
-    @media screen and (max-width: $breakpoint-mobile) {
-      text-align: center
+  &__container {
+    @media screen and (max-width: $breakpoint-tablet-large) {
+      margin: 0 1rem;
     }
   }
 
+  &__label {
+    display : block;
+    margin : 3rem 0 1rem;
+    font-weight: 500;
+  }  
+
+  &__search {
+    margin-bottom: 1rem;
+    border: 1px solid $light-grey;
+    padding: 0.5rem;
+    background-color: $lighter-grey;
+  } 
+
   &__items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
     padding-left: 0;
     list-style: none;
-    columns: 2;
-
-    @media screen and (max-width: $breakpoint-laptop) {
-      margin: 0 2rem;
-      text-align: left;
-      columns: 2;
-    }
-
-    @media screen and (max-width: $breakpoint-tablet) {
-      margin: 0 2rem;
-      text-align: left;
-      columns: 1;
-    }
 
     li {
-      margin: auto;
-      padding-top: 20px;
+      flex-basis: 50%;
+      box-sizing: border-box;
+      max-width: 500px;
+      padding: 0.5rem;
+      padding-left: 0;
+
+      @media screen and (max-width: $breakpoint-mobile-large) {
+        flex-basis: 100%;
+        padding: .5rem 0;
+      }      
     }
-    
   }
 
   &__item-link {
-    display: inline-block;
-    padding-bottom: 15px;
-    text-decoration-line: underline;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    margin-right: .5rem;
+    padding: .5rem 1rem;
+    background-color: $background-lightest-grey;
+    font-weight: 500;
+
+    svg {
+      width: 16px;
+      transform: rotate(-90deg);
+    }
   }
 
   &__item-link:hover {
+    background-color: $primary-4;
     color: $primary-1;
-    font-weight: 800;
-  }
-
-  &__description {
-    @media screen and (max-width: $breakpoint-laptop) {
-      margin: 3rem 2rem;
-    }
-
-    @media screen and (max-width: $breakpoint-tablet-large) {
-      margin: 3rem 2rem;
-    }
-
-    @media screen and (max-width: $breakpoint-tablet) {
-      margin: 3rem 2rem;
-    }
-    
-    @media screen and (max-width: $breakpoint-mobile-large) {
-      margin: 3rem 2rem;
-    }
-
-    @media screen and (max-width: $breakpoint-mobile) {
-      margin: 3rem 2rem;
-    }
   }
 }
