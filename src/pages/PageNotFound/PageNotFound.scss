@@ -14,13 +14,13 @@
     font-size: 5rem;
 
     @media screen and (max-width: $breakpoint-mobile-large) {
-    font-size: 3rem;
+      font-size: 3rem;
     }
   }
 
   &__description {
     max-width: 70ch;
     margin-top: 1rem;
-    font-size : 1rem;
+    font-size: 1rem;
   }
 }
