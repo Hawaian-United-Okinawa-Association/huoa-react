@@ -7,8 +7,8 @@ import { ReactComponent as Chevron } from 'assets/chevron-down.svg';
 
 const Clubs = ({ data }) => {
   let clubs = useSelector((state) => state.clubs);
-  const [first, setfirst] = useState('');
-  const filterClubs = club => first.split(' ').every(word => club.title.rendered.toLowerCase().includes(word));
+  const [query, setQuery] = useState('');
+  const filterClubs = club => query.split(' ').every(word => club.title.rendered.toLowerCase().includes(word));
   const resultsNumber = clubs.filter(filterClubs).length;
 
   if (!data) return null;
@@ -30,8 +30,8 @@ const Clubs = ({ data }) => {
           <div className="clubs__description" dangerouslySetInnerHTML={{__html: body}} />
           <div className="clubs__body">
             <label htmlFor="search" className="clubs__label">Our {clubs.length} Clubs</label>
-            <input id="search" onKeyUp={ e => setfirst(e.target.value.trim())} className="clubs__search" placeholder="Find a club"/></div>
-            {first && <p>{resultsNumber} result{resultsNumber > 1 ? 's' : ''} found</p>}
+            <input id="search" onKeyUp={ e => setQuery(e.target.value.trim())} className="clubs__search" placeholder="Find a club"/></div>
+            {query && <p>{resultsNumber} result{resultsNumber > 1 ? 's' : ''} found</p>}
             {!!clubs && (
               <ul className="clubs__items">{clubsList}</ul>
             )}
