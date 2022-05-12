@@ -1,6 +1,10 @@
 .club {
   &__container {
-    margin: 2rem 2rem;
+    margin: 2rem 0;
+
+    @media screen and (max-width: $breakpoint-tablet-large) {
+      margin: 2rem 1rem;
+    }
   }
 
   &__image {
@@ -12,6 +16,7 @@
 
     @media screen and (max-width: $breakpoint-mobile) {
       margin: auto;
+      margin-right: 1rem;
     }
   }
 
@@ -22,41 +27,20 @@
     @media screen and (max-width: $breakpoint-tablet-large) {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       margin: auto;
-    }
-
-    @media screen and (max-width: $breakpoint-mobile-large) {
-      text-align: center;
     }
   }
 
   &__title {
     display: inline-flex;
-    text-align: start;
 
-    @media screen and (max-width: $breakpoint-tablet-large) {
-      h2 {
-        font-size: 42px;
-        line-height: 3rem;
-      }
-    }
-
-    @media screen and (max-width: $breakpoint-mobile) {
-      margin: 0 2rem;
-
-      h2 {
-        text-align: center;
-      }
+    h2 {
+      margin-bottom: 1rem;
     }
   }
 
   &__description {
-    margin: 3rem 0;
-
-    @media screen and (max-width: $breakpoint-tablet-large) {
-      margin: 3rem 0;
-    }
+    margin-bottom: 3rem;
   }
 
   &__contact {
@@ -92,10 +76,11 @@
     width: 100%;
     min-width: 300px;
     border-radius: 3px;
+    background-color: $lighter-grey;
     transition: 0.4s background-color ease-out;
 
     div {
-      margin-right: 3rem;
+      margin-right: 2rem;
       padding: 0.5rem 1rem;
     }
 
@@ -111,6 +96,7 @@
 
     svg {
       stroke-width: 1px;
+      flex-shrink: 0;
       align-self: stretch;
       height: inherit;
       padding: 1.1rem;
