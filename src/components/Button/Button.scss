@@ -1,5 +1,6 @@
 .button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   border: 2px solid $primary-1;
   border-radius: 120px;
   padding: 8px 16px;
@@ -7,7 +8,7 @@
   font-size: 16px;
   font-family: $poppins;
   line-height: 24px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   transition-timing-function: ease-in-out;
   transition-duration: 0.4s;

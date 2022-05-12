@@ -3,6 +3,20 @@
     margin-bottom: 5rem;
   }
 
+  p {
+    margin-bottom: 2rem;
+  }
+
+  strong { 
+    display: inline-block;
+     margin-bottom: 0.5rem;
+  }
+
+  h4 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
   &__image {
     display: flex;
     flex-direction: column;
@@ -10,7 +24,7 @@
     margin: 2rem 0;
 
     img {
-      width: 60%;
+      max-height: 50vh;
       margin: 1rem 0;
     }
 
@@ -18,6 +32,10 @@
       margin: 0;
       color: $grey;
       text-align: center;
+    }
+
+    strong { 
+      text-transform: uppercase;
     }
   }
 }

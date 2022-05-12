@@ -24,7 +24,7 @@ const MissionAndPurpose = ({ data }) => {
       <Container>
         <div className="about-mission-purpose">
           { builder.map((el, i) =>
-            <div key={i}>
+            <div key={i} className="about-mission-purpose__section">
               <h2 className="about-mission-purpose__title">
                 {el.title_body.title}
               </h2>

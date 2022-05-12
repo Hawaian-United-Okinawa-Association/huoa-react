@@ -8,39 +8,39 @@ const HistoryOfHUOA = ({ data }) => {
     <Layout>
       <Container>
         <div className="history-of-huoa">
-          <div className='history-of-huoa__section'>
-          <h2>{data.builder[0].title_body.title}</h2>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: data.builder[0].title_body.body,
-            }}
-          />
+          <div className="history-of-huoa__section">
+            <h2>{data.builder[0].title_body.title}</h2>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.builder[0].title_body.body,
+              }}
+            />
           </div>
-          <div className='history-of-huoa__section'>
-          <h4>{data.builder[1].title_body.title}</h4>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: data.builder[1].title_body.body,
-            }}
-          />
-          {data.builder[2].image_banner.images.map((image, i) => (
-            <div className="history-of-huoa__image">
-              <img src={image.url} alt="" key={i} />
-              <strong>{image.title}</strong>
-              <p>{image.caption}</p>
-            </div>
-          ))}
-          {data.builder[3].image_banner.images.map((image, i) => (
-            <div className="history-of-huoa__image">
-              <img src={image.url} alt="" key={i} />
-              <strong>{image.title}</strong>
-            </div>
-          ))}
-          <div
-            dangerouslySetInnerHTML={{
-              __html: data.builder[4].title_body.body,
-            }}
-          />
+          <div className="history-of-huoa__section">
+            <h4>{data.builder[1].title_body.title}</h4>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.builder[1].title_body.body,
+              }}
+            />
+            {data.builder[2].image_banner.images.map((image, i) => (
+              <div className="history-of-huoa__image">
+                <img src={image.url} alt="" key={i} />
+                <strong>{data.builder[1].title_body.title}</strong>
+                <p>{image.caption}</p>
+              </div>
+            ))}
+            {data.builder[3].image_banner.images.map((image, i) => (
+              <div className="history-of-huoa__image">
+                <img src={image.url} alt="" key={i} />
+                <strong>{image.title}</strong>
+              </div>
+            ))}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.builder[4].title_body.body,
+              }}
+            />
           </div>
         </div>
       </Container>
