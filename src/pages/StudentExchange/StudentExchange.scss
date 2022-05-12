@@ -1,40 +1,9 @@
 .studentexchange {
-  &__title {
-
-    line-height: 1.2;
-
-    @media screen and (max-width: $breakpoint-laptop) {
-      text-align: center;
-    }
+  &__container {
+    margin-bottom: 3rem;
     
-    @media screen and (max-width: $breakpoint-mobile) {
-      text-align: center
-    }
-  }
-
-  &__description {
     @media screen and (max-width: $breakpoint-laptop) {
-      margin: 3rem 2rem;
-    }
-
-    @media screen and (max-width: $breakpoint-tablet-large) {
-      margin: 3rem 2rem;
-    }
-
-    @media screen and (max-width: $breakpoint-tablet) {
-      margin: 3rem 2rem;
-    }
-    
-    @media screen and (max-width: $breakpoint-mobile-large) {
-      margin: 3rem 2rem;
-    }
-
-    @media screen and (max-width: $breakpoint-mobile) {
-      margin: 3rem 2rem;
-    }
-
-    ol {
-      margin-bottom: 3vw;
+      padding: 0 1rem;
     }
   }
 }
