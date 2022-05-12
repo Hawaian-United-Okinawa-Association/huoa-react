@@ -30,11 +30,12 @@ import HawaiiOkinawaCenter from 'pages/HawaiiOkinawaCenter/HawaiiOKinawaCenter';
 import HawaiiOkinawaPlaza from 'pages/HawaiiOkinawaPlaza/HawaiiOkinawaPlaza';
 import HUOATeam from 'pages/HUOATeam/HUOATeam';
 import WatchAndListen from 'pages/WatchAndListen/WatchAndListen';
+import PageNotFound from 'pages/PageNotFound/PageNotFound'
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
   // TODO: Need to make these dynamic use `state.router`
-  
+
   return (
     <Switch>
       <Route exact path="/">
@@ -131,6 +132,9 @@ const Routes = () => {
       <Route exact path="/huoa-team">
         <Header props={pageState['huoa-team']} />
         <HUOATeam data={pageState['huoa-team']} />
+      </Route>
+      <Route path="*">
+        <PageNotFound/>
       </Route>
     </Switch>
   );
