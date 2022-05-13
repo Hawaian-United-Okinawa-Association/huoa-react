@@ -1,5 +1,6 @@
 //Dependencies
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
+import { useLocation } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
 //Components
@@ -15,6 +16,12 @@ const App = () => {
   Init();
   const scroll = useSelector(state => state.scroll);
   document.body.style.overflow = scroll ? 'scroll' : 'hidden';
+
+  const location = useLocation();
+  useLayoutEffect(() => {
+    if(location.hash) return;
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }, [location.pathname, location.hash]);
   
   return (
     <main>
