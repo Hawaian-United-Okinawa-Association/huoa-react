@@ -1,6 +1,7 @@
 .donate-section-one {
   max-width: 900px;
   margin-bottom: 96px;
+  font-family: $open-sans;
 
   @media (max-width: $breakpoint-tablet) {
     margin: 0 30px;
@@ -29,7 +30,6 @@
   &__text {
     margin-bottom: 32px;
     line-height: 1.8;
-    text-align: justify;
 
     @media (max-width: $breakpoint-mobile-large) {
       text-align: left;

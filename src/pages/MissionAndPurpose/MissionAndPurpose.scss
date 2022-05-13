@@ -1,16 +1,36 @@
 .about-mission-purpose {
-    h4 {
-      font-weight: 700;
-      text-indent: 20px;
-      text-transform: uppercase;
+  &__section {
+    margin-bottom: 3rem;
+
+    &:not(:first-child) {
+      h2 {
+        margin-bottom: 1rem;
+        font-size: 28px;
+        font-family: $poppins;
+      }
     }
+  }
+
+  h4 {
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  ul {
+    border: 1px solid $light-grey;
+    border-radius: 5px;
+    padding: 2rem 3rem;
+    background-color: $background-lightest-grey;
+  }
 }
 
 @media screen and (max-width: $breakpoint-tablet) {
   .about-mission-purpose {
-      h4 {
-        text-align: center;
-        text-indent: 0px;
-      }
+    margin: 1rem;
+
+    h4 {
+      text-indent: 0px;
+    }
   }
 }
