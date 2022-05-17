@@ -1,287 +1,283 @@
 [[redirects]]
   from = "/nuuzi/index.html"
-  to = "https://huoa.org/"
+  to = "/huoa.org/"
   status = 301
   
 [[redirects]]
   from = "/nuuzi/about/about.html"
-  to = "https://huoa.org/mission-purpose"
+  to = "/mission-purpose"
   status = 301
 
 [[redirects]]
   from = "/nuuzi/about/8principals.html"
-  to = "https://huoa.org/mission-purpose"
+  to = "/mission-purpose"
   status = 301
   
  [[redirects]]
   from = "/nuuzi/about/history.html"
-  to = "https://huoa.org/history-of-huoa"
+  to = "/history-of-huoa"
   status = 301
    
 
  [[redirects]]
   from = "/nuuzi/about/hoc.html"
-  to = "https://huoa.org/hawaii-okinawa-center"
+  to = "/hawaii-okinawa-center"
   status = 301
 
 [[redirects]]
   from = "/nuuzi/giving/ikuyumadin2012.html"
-  to = "https://huoa.org/hawaii-okinawa-plaza"
+  to = "/hawaii-okinawa-plaza"
   status = 301
   
 [[redirects]]
   from = "/nuuzi/about/memberclubs.html"
-  to = "https://huoa.org/clubs"
+  to = "/clubs"
   status = 301  
 
 [[redirects]]
   from = "/nuuzi/about/officers/officers2022.html"
-  to = "https://huoa.org/huoa-team"
+  to = "/huoa-team"
   status = 301 
  
  
 [[redirects]]
   from = "/nuuzi/about/officers/officers2021.html"
-  to = "https://huoa.org/huoa-team"
+  to = "/huoa-team"
   status = 301 
   
   
 [[redirects]]
   from = "/nuuzi/about/officers/officers2020.html"
-  to = "https://huoa.org/huoa-team"
+  to = "/huoa-team"
   status = 301 
   
   
 [[redirects]]
   from = "/nuuzi/about/officers/officers2019.html"
-  to = "https://huoa.org/huoa-team"
+  to = "/huoa-team"
   status = 301 
   
   
 [[redirects]]
   from = "/nuuzi/about/officers/officers2018.html"
-  to = "https://huoa.org/huoa-team"
+  to = "/huoa-team"
   status = 301 
- https://huoa.org/huoa-team 301
+ 
 
 
 [[redirects]]
   from = "/nuuzi/about/officers/officers2017.html"
-  to = "https://huoa.org/huoa-team"
+  to = "/huoa-team"
   status = 301 
- https://huoa.org/huoa-team 301
+
 
 
 [[redirects]]
   from = "/nuuzi/about/officers/officers2016.html"
-  to = "https://huoa.org/huoa-team"
+  to = "/huoa-team"
   status = 301 
- https://huoa.org/huoa-team 301
 
 
 
 [[redirects]]
   from = "/nuuzi/about/officers/officers2015.html"
-  to = "https://huoa.org/huoa-team"
+  to = "/huoa-team"
   status = 301 
- https://huoa.org/huoa-team 301
  
  
  
 [[redirects]]
   from = "/nuuzi/about/officers/officers2014.html"
-  to = "https://huoa.org/huoa-team"
+  to = "/huoa-team"
   status = 301 
- https://huoa.org/huoa-team 301
- 
+
+
  
 [[redirects]]
   from = "/nuuzi/about/officers/officers2013.html"
-  to = "https://huoa.org/huoa-team"
+  to = "/huoa-team"
   status = 301 
- https://huoa.org/huoa-team 301
- 
+
+
  
 [[redirects]]
   from = "/nuuzi/about/officers/officers2012.html"
-  to = "https://huoa.org/huoa-team"
+  to = "/huoa-team"
   status = 301 
- https://huoa.org/huoa-team 301
-
 
 
 [[redirects]]
   from = "/nuuzi/about/officers/officers2011.html"
-  to = "https://huoa.org/huoa-team"
+  to = "/huoa-team"
   status = 301 
- https://huoa.org/huoa-team 301
- 
+
+
  
 [[redirects]]
   from = "/nuuzi/about/officers/officers2010.html"
-  to = "https://huoa.org/huoa-team"
+  to = "/huoa-team"
   status = 301 
   
 
 [[redirects]]
   from = "/nuuzi/about/officers/officers2009.html"
-  to = "https://huoa.org/huoa-team"
+  to = "/huoa-team"
   status = 301 
- https://huoa.org/huoa-team 301
+
  
  
 [[redirects]]
   from = "/nuuzi/about/officers/officers2008.html"
-  to = "https://huoa.org/huoa-team"
+  to = "/huoa-team"
   status = 301 
 
 
 [[redirects]]
   from = "/nuuzi/contact/contact-HUOA.html"
-  to = "https://huoa.org/contact"
+  to = "/contact"
   status = 301 
 
 
 [[redirects]]
   from = "/nuuzi/banquetfacility/banquetfacility.html"
-  to = "https://huoa.org/banquet-facility"
+  to = "/banquet-facility"
   status = 301 
 
 
 
 [[redirects]]
   from = "/nuuzi/banquetfacility/banquetfacility.html"
-  to = "https://huoa.org/banquet-facility"
+  to = "/banquet-facility"
   status = 301 
   
   
   
 [[redirects]]
   from = "/nuuzi/faq/faq.html"
-  to = "https://huoa.org/"
+  to = "/"
   status = 301   
 
 
 [[redirects]]
   from = "/nuuzi/sports/sports.html
-  to = "https://huoa.org/sports-leagues"
+  to = "/sports-leagues"
   status = 301   
   
 [[redirects]]
   from = "/nuuzi/sports/volleyball_champs.html"
-  to = "https://huoa.org/sports-leagues"
+  to = "/sports-leagues"
   status = 301   
 
 
 [[redirects]]
   from = "/nuuzi/calendar/calendar.html"
-  to = "https://huoa.org/calendar"
+  to = "/calendar"
   status = 301   
   
 
 [[redirects]]
   from = "/nuuzi/calendar/sub/class.html"
-  to = "https://huoa.org/calendar"
+  to = "/calendar"
   status = 301   
   
   
 [[redirects]]
   from = "/nuuzi/awards/awards.html"
-  to = "https://huoa.org/scholarships"
+  to = "/scholarships"
   status = 301   
 
 
 [[redirects]]
   from = "/nuuzi/giftshop/gift%20shop.html"
-  to = "http://www.shophuoa.com/"
+  to = "/www.shophuoa.com/"
   status = 301   
   
 [[redirects]]
   from = "/nuuzi/uchinanchu/uchinanchu.html"
-  to = "https://huoa.org/watch-and-listen"
+  to = "watch-and-listen"
   status = 301   
 
 
 [[redirects]]
   from = "/nuuzi/media/media.html"
-  to = "https://huoa.org/watch-and-listen"
+  to = "/watch-and-listen"
   status = 301 
   
  
 [[redirects]]
   from = "/nuuzi/uchinanchu/uchinanchu.html"
-  to = "https://huoa.org/newsletters"
+  to = "/newsletters"
   status = 301 
   
  
 [[redirects]]
   from = "/nuuzi/purpleblast/pbsignup.html"
-  to = "https://huoa.org/#newsletters"
+  to = "/#newsletters"
   status = 301 
 
 
 [[redirects]]
   from = "/nuuzi/giving/giving.html"
-  to = "https://huoa.org/donate"
+  to = "g/donate"
   status = 301 
  
 
 [[redirects]]
   from = "/nuuzi/paypal/paypal.html"
-  to = "https://huoa.org/donate"
+  to = "/donate"
   status = 301 
   301
 
 
 [[redirects]]
   from = "/nuuzi/giving/volunteer.html"
-  to = "https://huoa.org/volunteer"
+  to = "/volunteer"
   status = 301 
 
 
 [[redirects]]
   from = "/nuuzi/calendar/sub/cdc.html"
-  to = "https://huoa.org/events/warabi-ashibi-children-at-play-childrens-day-camp"
+  to = "/events/warabi-ashibi-children-at-play-childrens-day-camp"
   status = 301 
 
 
 [[redirects]]
   from = "/nuuzi/calendar/sub/legacy.html"
-  to = "https://huoa.org/events/legacy-award-banquet"
+  to = "/events/legacy-award-banquet"
   status = 301 
   
   
 [[redirects]]
   from = "/nuuzi/calendar/sub/autumndance.html"
-  to = "https://huoa.org/events/autumn-matsuri"
+  to = "/events/autumn-matsuri"
   status = 301 
   
   
 [[redirects]]
   from = "/nuuzi/calendar/sub/StudyTour/StudyTour.html"
-  to = "https://huoa.org/events/study-tour-in-okinawa"
+  to = "/events/study-tour-in-okinawa"
   status = 301 
 
 
 [[redirects]]
   from = "/nuuzi/calendar/sub/craftfair.html"
-  to = "https://huoa.org/events/winter-craft-fair-at-hoc"
+  to = "/events/winter-craft-fair-at-hoc"
   status = 301 
   
   
 [[redirects]]
   from = "/nuuzi/calendar/sub/"
-  to = "https://huoa.org/events/"
+  to = "/events/"
   status = 301 
 
 
 [[redirects]]
   from = "/nuuzi/calendar/hoccu13.html"
-  to = "https://huoa.org/volunteer"
+  to = "/volunteer"
   status = 301 
 
 
 [[redirects]]
   from = "/nuuzi/calendar/sub/installbanquet.html"
-  to = "https://huoa.org/events/uchinanchu-of-the-year-and-72nd-installation-celebration"
+  to = "/events/uchinanchu-of-the-year-and-72nd-installation-celebration"
   status = 301 
