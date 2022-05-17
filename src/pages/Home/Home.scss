@@ -27,15 +27,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: -3rem auto 5rem;
     color: $primary-1;
     font-weight: 700;
-    margin: -3rem auto 5rem;
   
     svg {
-      transform: rotate(-90deg);
       width: 16px;
       height: 16px;
       margin-left: 0.5rem;
+      transform: rotate(-90deg);
     }
   }
 }
@@ -48,6 +48,10 @@
 
     &__section {
       padding: 24px 0;
+    }
+
+    &__link {
+      margin: 2rem auto;
     }
   }
 }

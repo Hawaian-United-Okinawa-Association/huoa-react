@@ -84,11 +84,9 @@ $arrow_background: rgba($white, 0.5);
 
   &__content {
     display: flex;
-    flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
     width: 100%;
-    height: 50%;
     padding: 4rem;
     background-image: linear-gradient(to top, $black 0%, transparent 90%);
     color: $white;
@@ -103,6 +101,10 @@ $arrow_background: rgba($white, 0.5);
       height: 100%;
       padding: 1.5rem 2rem;
       text-align: center;
+    }
+
+    a {
+      flex-shrink: 0;
     }
 
     [data-active='true'] & {
@@ -158,6 +160,12 @@ $arrow_background: rgba($white, 0.5);
       text-align: center;
     }
   }
+
+  picture,
+    &__image {
+      width: 100%;
+      height: 100%;
+    }
 
   &__image {
     object-fit: cover;

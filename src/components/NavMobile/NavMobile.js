@@ -124,7 +124,8 @@ const NavMobile = () => {
               )}`}
             />
           </div>
-          <ul
+          <ul       
+            style={{'--children-number' : item.children?.length}}
             className={`nav-mobile__dropdown${handleAnimation(
               handleDrop(item.title)
             )}`}
