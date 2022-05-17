@@ -165,7 +165,7 @@ publish = "src"
 
 
 [[redirects]]
-  from = "https://huoa.org/nuuzi/sports/sports.html
+  from = "https://huoa.org/nuuzi/sports/sports.html"
   to = "https://huoa.org/sports-leagues"
   status = 301   
   
@@ -232,7 +232,6 @@ publish = "src"
   from = "https://huoa.org/nuuzi/paypal/paypal.html"
   to = "https://huoa.org/donate"
   status = 301 
-  301
 
 
 [[redirects]]
