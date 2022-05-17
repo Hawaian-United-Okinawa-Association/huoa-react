@@ -69,21 +69,18 @@ publish = "src"
   from = "https://huoa.org/nuuzi/about/officers/officers2018.html"
   to = "https://huoa.org/huoa-team"
   status = 301 
- https://huoa.org/huoa-team 301
 
 
 [[redirects]]
   from = "https://huoa.org/nuuzi/about/officers/officers2017.html"
   to = "https://huoa.org/huoa-team"
   status = 301 
- https://huoa.org/huoa-team 301
 
 
 [[redirects]]
   from = "https://huoa.org/nuuzi/about/officers/officers2016.html"
   to = "https://huoa.org/huoa-team"
   status = 301 
- https://huoa.org/huoa-team 301
 
 
 
