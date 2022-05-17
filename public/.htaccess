@@ -46,3 +46,6 @@ Redirect 301 /nuuzi/calendar/sub/craftfair.html https://huoa.org/events/winter-c
 Redirect 301 /nuuzi/calendar/sub/ https://huoa.org/events/
 Redirect 301 /nuuzi/calendar/hoccu13.html https://huoa.org/volunteer
 Redirect 301 /nuuzi/calendar/sub/installbanquet.html https://huoa.org/events/uchinanchu-of-the-year-and-72nd-installation-celebration
+RewriteCond %{HTTP_HOST} ^huoa\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.huoa\.org$
+RewriteRule ^/nuuzi/index.html$ "https\:\/\/www\.huoa\.org\/" [R=301,L]
