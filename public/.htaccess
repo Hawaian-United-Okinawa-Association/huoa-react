@@ -1,4 +1,3 @@
-RewriteEngine On
 Redirect 301 /nuuzi/index.html https://huoa.org/
 Redirect 301 /nuuzi/about/about.html https://huoa.org/mission-purpose
 Redirect 301 /nuuzi/about/8principals.html https://huoa.org/mission-purpose
