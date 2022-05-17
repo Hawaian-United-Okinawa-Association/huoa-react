@@ -314,14 +314,14 @@
   }
 
   100% {
-    height: 5rem;
+    height: calc(var(--children-number)*48px);
     transform: scaleY(1);
   }
 }
 
 @keyframes pullUp {
   0% {
-    height: 5rem;
+    height: calc(var(--children-number)*48px);
     transform: scaleY(1);
   }
 
