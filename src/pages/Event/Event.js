@@ -26,7 +26,7 @@ const Event = ({ match }) => {
   let time =`${ splitEvent[3] } ${ splitEvent[4] }`;
   const { hero_slider } = event.acf;
   const { buttons } = event.acf;
-
+console.log(hero_slider)
   return (
     <Layout>
       <Container>
@@ -38,7 +38,7 @@ const Event = ({ match }) => {
          <Clock/> { month } { day }, { year } <span className="event__spacer">|</span> { time }
         </h3>
         <div className="event__location"><Map/><div dangerouslySetInnerHTML={{ __html: event_location }} /></div> 
-        { !!hero_slider ? <Hero props={{ hero_slider }}/> : <Image className="event__image" webp={ event_image.url } /> }
+        { !!hero_slider?.slides ? <Hero props={{ hero_slider }}/> : <Image className="event__image" webp={ event_image.url } /> }
         <h4>About this event</h4>
         <div className="event__details">
         <div dangerouslySetInnerHTML={{ __html: event_details }} />
