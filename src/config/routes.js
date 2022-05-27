@@ -109,9 +109,9 @@ const Routes = () => {
         <Header props={pageState['sports-leagues']} />
         <SportsLeagues data={pageState['sports-leagues']} />
       </Route> 
-      <Route exact path="/performing-arts-directory">
-        <Header props={pageState['performing-arts-directory']} />
-        <PerformingArts data={pageState['performing-arts-directory']} />
+      <Route exact path="/okinawan-cultural-directory">
+        <Header props={pageState['okinawan-cultural-directory']} />
+        <PerformingArts data={pageState['okinawan-cultural-directory']} />
       </Route>
       <Route exact path="/resources">
         <Header props={pageState.resources} />
