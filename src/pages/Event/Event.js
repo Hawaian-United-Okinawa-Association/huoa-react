@@ -26,7 +26,7 @@ const Event = ({ match }) => {
   let time =`${ splitEvent[3] } ${ splitEvent[4] }`;
   const { hero_slider } = event.acf;
   const { buttons } = event.acf;
-console.log(hero_slider)
+  
   return (
     <Layout>
       <Container>
