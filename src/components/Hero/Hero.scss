@@ -43,7 +43,6 @@ $arrow_background: rgba($white, 0.5);
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
     display: flex;
     align-items: flex-end;
     width: 100%;
@@ -108,6 +107,7 @@ $arrow_background: rgba($white, 0.5);
     }
 
     [data-active='true'] & {
+      z-index: 10;
       opacity: 1;
     }
 
