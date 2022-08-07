@@ -1,0 +1,16 @@
+.thank-you-page {
+    display: flex;
+    Align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 80ch;
+    min-height: 70vh;
+    margin: auto;
+    text-align: center;
+
+    .check-icon {
+        width: 3rem;
+        height: 3rem;
+        color: green;
+    }
+}
