@@ -30,7 +30,8 @@ import HawaiiOkinawaCenter from 'pages/HawaiiOkinawaCenter/HawaiiOKinawaCenter';
 import HawaiiOkinawaPlaza from 'pages/HawaiiOkinawaPlaza/HawaiiOkinawaPlaza';
 import HUOATeam from 'pages/HUOATeam/HUOATeam';
 import WatchAndListen from 'pages/WatchAndListen/WatchAndListen';
-import PageNotFound from 'pages/PageNotFound/PageNotFound'
+import PageNotFound from 'pages/PageNotFound/PageNotFound';
+import KariiThankYou from 'pages/KariiThankYou/KariiThankYou';
 
 const Routes = () => {
   const pageState = useSelector(state => state.pages);
@@ -132,6 +133,9 @@ const Routes = () => {
       <Route exact path="/huoa-team">
         <Header props={pageState['huoa-team']} />
         <HUOATeam data={pageState['huoa-team']} />
+      </Route>
+      <Route exact path="/karii-thank-you">
+        <KariiThankYou/>
       </Route>
       <Route path="*">
         <PageNotFound/>
