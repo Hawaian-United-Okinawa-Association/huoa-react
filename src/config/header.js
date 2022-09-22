@@ -32,7 +32,13 @@ const Header = ({ props }) => {
       <meta name="twitter:image" content={props.seo.image} />
       <meta name="twitter:card" content="summary_large_image" />
 
-      <GoogleAnalytics />
+      <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-122356652-1"></script>
+      <script>{`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments)}
+        gtag('js', new Date());
+        gtag('config', 'UA-122356652-1');`}
+      </script>
     </Helmet>
   ) : null;
 }
