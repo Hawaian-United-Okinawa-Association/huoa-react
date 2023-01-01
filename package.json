@@ -17,7 +17,7 @@
     "react-redux": "^7.2.0",
     "react-router-dom": "5.2.0",
     "react-scripts": "^3.4.3",
-    "react-snap": "^1.23.0",
+    "react-snap": "1.10.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "webfontloader": "^1.6.28"
@@ -30,8 +30,7 @@
     "dev": "docker run -it --rm -v ${PWD}:/huoa -v /huoa/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true huoa-app",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postbuild": "react-snap"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -58,6 +57,10 @@
     "stylelint-webpack-plugin": "^2.1.0"
   },
   "reactSnap": {
-    "cacheAjaxRequests": true
+    "cacheAjaxRequests": true,
+      "puppeteerArgs": [
+       "--no-sandbox",
+       "--disable-setuid-sandbox"
+     ]
   }
 }
