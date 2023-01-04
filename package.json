@@ -59,6 +59,11 @@
     "stylelint-webpack-plugin": "^2.1.0"
   },
   "reactSnap": {
-    "cacheAjaxRequests": true
+    "cacheAjaxRequests": true,
+     "puppeteerArgs": [
+            "--no-sandbox",
+            "--disable-setuid-sandbox",
+            "--disable-dev-shm-usage"
+        ]
   }
 }
