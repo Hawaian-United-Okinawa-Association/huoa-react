@@ -48,6 +48,11 @@
     }
   }
 
+  &__other-fields {
+    overflow: hidden;
+    transition: 2s all ease-out;
+  }
+
   &__label {
     margin-bottom: 0.5rem;
     font-weight: 600;
@@ -125,5 +130,10 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+  }
+
+  &__success__notice {
+    border-left: 4px solid gray;
+    padding-left: 8px;
   }
 }
