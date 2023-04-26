@@ -14,7 +14,7 @@ import { ReactComponent as Coin } from '../../assets/amazon.svg';
 import { ReactComponent as Car } from '../../assets/car-2.svg';
 import { ReactComponent as Chevron } from '../../assets/chevron-down.svg';
 
-const icons = [Plant, Coin, Car];
+const icons = [Plant, Car];
 
 const Home = ({ data }) => {
   if (!data) return null;
