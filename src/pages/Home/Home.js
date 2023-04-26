@@ -10,7 +10,6 @@ import CardNewsletter from 'components/CardNewsletter/CardNewsletter';
 import Container from 'components/Container/Container';
 
 import { ReactComponent as Plant } from '../../assets/donate.svg';
-import { ReactComponent as Coin } from '../../assets/amazon.svg';
 import { ReactComponent as Car } from '../../assets/car-2.svg';
 import { ReactComponent as Chevron } from '../../assets/chevron-down.svg';
 
