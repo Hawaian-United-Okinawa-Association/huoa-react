@@ -7,6 +7,13 @@
     }  
   }
 
+  &__contact { 
+    margin-bottom: 1.5rem;
+    * {
+      margin: 4px 0;
+    }
+  }
+
   &__description {
     margin-bottom: 3rem;
   }
