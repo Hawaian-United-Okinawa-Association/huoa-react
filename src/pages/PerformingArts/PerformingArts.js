@@ -1,6 +1,6 @@
-import React from 'react';
-import Layout from 'components/Layout/Layout';
-import Accordion from 'components/Accordion/Accordion';
+import React from "react";
+import Layout from "components/Layout/Layout";
+import Accordion from "components/Accordion/Accordion";
 
 const PerformingArts = ({ data }) => {
   if (!data) return null;
@@ -8,50 +8,64 @@ const PerformingArts = ({ data }) => {
     const { title, body, performing_arts_list } = data.performing_arts;
 
     function isLink(title) {
-      const options = ['phone', 'cell', 'email', 'website'];
-      return options.some(option => title.toLowerCase() === option);
+      const options = ["phone", "cell", "email", "website"];
+      return options.some((option) => title.toLowerCase() === option);
     }
 
     function generateLink(title, value) {
       const type = title.toLowerCase();
-      if(type === 'email') return `mailto:${value}`;
-      if(type === 'phone' || type === 'cell') return `tel:${value}`;
-      if(type === 'website') return value;
-      else return '';
+      if (type === "email") return `mailto:${value}`;
+      if (type === "phone" || type === "cell") return `tel:${value}`;
+      if (type === "website") return value;
+      else return "";
     }
 
     function generatePanelsJSX(panels) {
-      return panels.map(panel => {
+      return panels.map((panel) => {
         const content = panel.content.map((group, i) => {
-          const { name, contact, other, ...rest } = group;
-          // putting all links in one array
-          const links = [
-            ...Object.entries(rest).map(([title, value]) => 
-            ({ title, value })),
-            ...(other || []),
+          const { name, contacts, other = [] } = group;
+
+          const contactsArray = [
+            ...(contacts || []).map((el) =>
+              Object.entries(el).map(([title, value]) => ({ title, value }))
+            ),
           ];
 
           return (
             <div key={i} className="panel__content">
               <h4>{name}</h4>
-              <strong>{contact}</strong>
-              {links.map(({ title, value }, i) => {
-                if (!value) return null;
-                if (isLink(title))
-                  return (
-                    <p key={i}>
-                      <strong>{title} : </strong>
-                      <a
-                        href={generateLink(title, value)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {value}
-                      </a>
-                    </p>
-                  );
-                return (<p key={i}><strong>{title} : </strong>{value}</p>);
-              })}
+              {contactsArray.map((contact, i) => (
+                <div className="performing-arts__contact" key={i}>
+                  <p>
+                    <strong>Contact: </strong>
+                    {contact[0].value.trim() + ", " + contact[1].value}
+                  </p>
+                  {contact.slice(2).map(({ title, value }) => {
+                    return !value ? null : (
+                      <p>
+                        <strong>{title}: </strong>
+                        {isLink(title) ? (
+                          <a
+                            href={generateLink(title, value)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {value}
+                          </a>
+                        ) : (
+                          value
+                        )}
+                      </p>
+                    );
+                  })}
+                </div>
+              ))}
+              {(other || []).map(({ title, value }) => (
+                <p>
+                  <strong>{title}: </strong>
+                  {value}
+                </p>
+              ))}
             </div>
           );
         });
