@@ -21,7 +21,7 @@
     "puppeteer": "^19.4.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "webfontloader": "^1.6.28"
+    "webfontloader": "^1.6.28" 
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
