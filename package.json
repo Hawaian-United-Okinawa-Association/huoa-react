@@ -59,14 +59,4 @@
     "stylelint-webpack-plugin": "^2.1.0"
   },
   "reactSnap": {
-    "puppeteerOptions": {
-      "timeout": 90000,
-      "headless": false,
-      "waitUntil": "networkidle2"
-    },
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox"
-    ]
-  }
 }
