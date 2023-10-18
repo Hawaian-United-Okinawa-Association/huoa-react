@@ -56,6 +56,7 @@ const PerformingArts = ({ data }) => {
                         <a
                           href={addressToGoogleMapsLink(value)}
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           {value}
                         </a>
