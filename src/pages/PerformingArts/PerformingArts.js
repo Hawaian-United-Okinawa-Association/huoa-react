@@ -23,13 +23,23 @@ const PerformingArts = ({ data }) => {
     function generatePanelsJSX(panels) {
       return panels.map((panel) => {
         const content = panel.content.map((group, i) => {
-          const { name, contacts, other = [] } = group;
+          const { name, contacts, other } = group;
 
           const contactsArray = [
             ...(contacts || []).map((el) =>
               Object.entries(el).map(([title, value]) => ({ title, value }))
             ),
           ];
+
+          function addressToGoogleMapsLink(address) {
+            const encodedAddress = encodeURIComponent(
+              address.replace(/ /g, "+")
+            );
+
+            const googleMapsLink = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+
+            return googleMapsLink;
+          }
 
           return (
             <div key={i} className="panel__content">
@@ -41,6 +51,16 @@ const PerformingArts = ({ data }) => {
                     {contact[0].value.trim() + ", " + contact[1].value}
                   </p>
                   {contact.slice(2).map(({ title, value }) => {
+                    if (title === "address" && value)
+                      return (
+                        <a
+                          href={addressToGoogleMapsLink(value)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {value}
+                        </a>
+                      );
                     return !value ? null : (
                       <p>
                         <strong>{title}: </strong>
