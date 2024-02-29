@@ -23,8 +23,8 @@ const CardBlast = ({ props }) => {
 
   const submit = event => {
     event.preventDefault();
-    let api = `https://huoa.us10.list-manage.com/subscribe/post-json?u=fb4e3b9e255496f68e4d87e35&id=96858fbc3b&MERGE0=${email.MERGE0}.com&MERGE1=${firstName.MERGE1}&MERGE2=${lastName.MERGE2}&MERGE3=''&MERGE4=''&MERGE5=''&MERGE6=${affiliationCode.MERGE6}&MERGE7=''`;
-
+    let api = `https://huoa.us10.list-manage.com/subscribe/post-json?u=fb4e3b9e255496f68e4d87e35&id=96858fbc3b&EMAIL=${email.MERGE0}&FNAME=${firstName.MERGE1}&LNAME=${lastName.MERGE2}&MERGE3=''&MERGE4=''&MERGE5=''&MERGE6=${affiliationCode.MERGE6}&MERGE7=''`;
+   
     jsonp(
       api,
       {
