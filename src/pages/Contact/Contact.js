@@ -36,7 +36,7 @@ const Contact = ({ data }) => {
             <embed
                 src={data.section_1.section_body.right}
                 className="contact__map--main"
-                allowFullscreen=""
+                allowFullscreen="" 
                 style={{ border: 0 }}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
