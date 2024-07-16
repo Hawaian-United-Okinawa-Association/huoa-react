@@ -34,7 +34,7 @@ const Contact = ({ data }) => {
           </div>
           <div className="contact__col--right">
             <embed
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3714.2247443540655!2d-158.00848852522026!3d21.420409474212743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c0066f362e7b6bf%3A0x182448718fadf0c6!2sHawaii%20United%20Okinawa%20Association!5e0!3m2!1sfr!2sfr!4v1721130900763!5m2!1sfr!2sfr"
+                src={data.section_1.section_body.right}
                 className="contact__map--main"
                 allowFullscreen=""
                 style={{ border: 0 }}
