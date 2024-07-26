@@ -1,8 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import jsonp from 'jsonp';
+import React, { useState, useRef, useEffect } from "react";
+import jsonp from "jsonp";
 
-import checkmark from './check.svg';
-import Button from '../Button/Button';
+import checkmark from "./check.svg";
+import Button from "../Button/Button";
+import { ReactComponent as Icon } from "../../assets/file-text.svg";
 
 const CardBlast = ({ props }) => {
   const {
@@ -12,29 +13,32 @@ const CardBlast = ({ props }) => {
     last_name_placeholder,
     email_placeholder,
     button_text,
+    latest_purple_blast_message,
+    list_of_the_previous_messages,
   } = props;
 
   const [firstName, setFirstName] = useState({});
   const [lastName, setLastName] = useState({});
   const [email, setEmail] = useState({});
   const [affiliationCode, setAffiliationCode] = useState({});
-  const [formData, setFormData] = useState('');
+  const [formData, setFormData] = useState("");
   const [expanded, setExpanded] = useState(false);
 
-  const submit = event => {
+  const submit = (event) => {
     event.preventDefault();
     let api = `https://huoa.us10.list-manage.com/subscribe/post-json?u=fb4e3b9e255496f68e4d87e35&id=96858fbc3b&EMAIL=${email.MERGE0}&FNAME=${firstName.MERGE1}&LNAME=${lastName.MERGE2}&MERGE3=''&MERGE4=''&MERGE5=''&MERGE6=${affiliationCode.MERGE6}&MERGE7=''`;
-   
+
     jsonp(
       api,
       {
-        param: 'c',
+        param: "c",
       },
       (error, data) => {
         if (error) {
           console.log(error);
         }
         setFormData(data.result);
+        console.log(data);
       }
     );
   };
@@ -42,13 +46,13 @@ const CardBlast = ({ props }) => {
   // form expansion animation
   const otherFields = useRef(null);
   useEffect(() => {
-    if (expanded) otherFields.current.style.maxHeight = '1000px';
+    if (expanded) otherFields.current.style.maxHeight = "1000px";
     else otherFields.current.style.maxHeight = 0;
   }, [expanded]);
 
   return (
     <div className="card-blast">
-      {formData === '' && (
+      {formData === "" && (
         <div className="card-blast__form--wrapper">
           <div className="card-blast__text">
             <h3 className="card-blast__title">{title}</h3>
@@ -68,7 +72,9 @@ const CardBlast = ({ props }) => {
                   autoCorrect="off"
                   name="MERGE0"
                   id="MERGE0"
-                  onChange={e => setEmail({ ...email, MERGE0: e.target.value })}
+                  onChange={(e) =>
+                    setEmail({ ...email, MERGE0: e.target.value })
+                  }
                   required={true}
                 />
                 <p className="card-blast__input__error-message">
@@ -95,7 +101,7 @@ const CardBlast = ({ props }) => {
                       placeholder={first_name_placeholder}
                       name="MERGE1"
                       id="MERGE1"
-                      onChange={e =>
+                      onChange={(e) =>
                         setFirstName({ ...firstName, MERGE1: e.target.value })
                       }
                       required={true}
@@ -112,7 +118,7 @@ const CardBlast = ({ props }) => {
                       placeholder={last_name_placeholder}
                       name="MERGE2"
                       id="MERGE2"
-                      onChange={e =>
+                      onChange={(e) =>
                         setLastName({ ...lastName, MERGE2: e.target.value })
                       }
                       required={true}
@@ -132,7 +138,7 @@ const CardBlast = ({ props }) => {
                     type="text"
                     name="MMERGE6"
                     id="mce-MMERGE6"
-                    onChange={e =>
+                    onChange={(e) =>
                       setAffiliationCode({
                         ...affiliationCode,
                         MERGE6: e.target.value,
@@ -151,7 +157,7 @@ const CardBlast = ({ props }) => {
           </div>
         </div>
       )}
-      {formData === 'success' && (
+      {formData === "success" && (
         <div className="card-blast__success">
           <div className="card-blast__success__header-container">
             <img
@@ -163,9 +169,7 @@ const CardBlast = ({ props }) => {
               You've Subscribed to Purple Blast
             </p>
           </div>
-          <p className="card-blast__success__body">
-            Please confirm your subscription by checking the email you provided.
-          </p>
+          <p className="card-blast__success__body">{}</p>
           <small className="card-blast__success__notice">
             Delivery Notice: Since HUOA uses Mailchimp’s email service, our
             messages may be delivered to your promotions or spam folder,
@@ -175,6 +179,28 @@ const CardBlast = ({ props }) => {
           </small>
         </div>
       )}
+      <div className="card-blast__button-container">
+        <br />
+        <a
+          className="card-newsletter__link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={latest_purple_blast_message}
+        >
+          <Icon />
+          Latest Purple Blast Message
+        </a>
+        <br />
+        <a
+          className="card-newsletter__link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={list_of_the_previous_messages}
+        >
+          <Icon />
+          List of the Previous Messages
+        </a>
+      </div>
     </div>
   );
 };
