@@ -95,6 +95,8 @@
 
   &__button-container {
     width: 100%;
+    display: flex;
+    padding: 1rem 0;
 
     input {
       width: 100%;
