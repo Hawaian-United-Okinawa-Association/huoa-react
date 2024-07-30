@@ -196,7 +196,7 @@ const CardBlast = ({ props }) => {
           href={list_of_the_previous_messages}
         >
           <Icon />
-          See Previous
+          See Previous Blasts
         </a>
       </div>
     </div>
