@@ -180,7 +180,6 @@ const CardBlast = ({ props }) => {
         </div>
       )}
       <div className="card-blast__button-container">
-        <br />
         <a
           className="card-newsletter__link"
           target="_blank"
@@ -188,9 +187,8 @@ const CardBlast = ({ props }) => {
           href={latest_purple_blast_message}
         >
           <Icon />
-          Latest Purple Blast Message
+          Latest Purple Blast
         </a>
-        <br />
         <a
           className="card-newsletter__link"
           target="_blank"
@@ -198,7 +196,7 @@ const CardBlast = ({ props }) => {
           href={list_of_the_previous_messages}
         >
           <Icon />
-          List of the Previous Messages
+          See Previous
         </a>
       </div>
     </div>
