@@ -3,7 +3,7 @@ import jsonp from "jsonp";
 
 import checkmark from "./check.svg";
 import Button from "../Button/Button";
-import { ReactComponent as Icon } from "../../assets/file-text.svg";
+import { ReactComponent as Icon } from "./send.svg";
 
 const CardBlast = ({ props }) => {
   const {
