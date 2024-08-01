@@ -3,7 +3,8 @@ import jsonp from "jsonp";
 
 import checkmark from "./check.svg";
 import Button from "../Button/Button";
-import { ReactComponent as Icon } from "./send.svg";
+import { ReactComponent as Send } from "./send.svg";
+import { ReactComponent as ArrowRight } from "./arrow-right.svg";
 
 const CardBlast = ({ props }) => {
   const {
@@ -186,7 +187,7 @@ const CardBlast = ({ props }) => {
           rel="noopener noreferrer"
           href={latest_purple_blast_message}
         >
-          <Icon />
+          <Send />
           Latest Purple Blast
         </a>
         <a
@@ -195,8 +196,9 @@ const CardBlast = ({ props }) => {
           rel="noopener noreferrer"
           href={list_of_the_previous_messages}
         >
-          <Icon />
-          See Previous Blasts
+          <span>See Previous Blasts</span>
+          &nbsp; &nbsp;
+          <ArrowRight />
         </a>
       </div>
     </div>
