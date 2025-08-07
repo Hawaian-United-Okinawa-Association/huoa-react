@@ -3,7 +3,7 @@ import Layout from '../../components/Layout/Layout';
 import Container from '../../components/Container/Container';
 import FacebookFeed from 'components/FacebookFeed/FacebookFeed';
 import InstagramFeed from 'components/InstagramFeed/InstagramFeed';
-import CardBlast from 'components/CardBlast/CardBlast';
+// import CardBlast from 'components/CardBlast/CardBlast';
 import CardNewsletter from 'components/CardNewsletter/CardNewsletter';
 
 const News = ({data}) => {
