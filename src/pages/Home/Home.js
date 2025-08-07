@@ -22,7 +22,7 @@ const Home = ({ data }) => {
   let { builder } = data;
   let cardsLarge = builder[2].cards_large;
   let cardsSquare = builder[3].cards_small.card;
-  let cardBlast = builder[4].cards_custom.cards[0].purple_blast;
+  // let cardBlast = builder[4].cards_custom.cards[0].purple_blast;
   let cardNewsletter = builder[4].cards_custom.cards[0].newsletters;
   return (
     <>
