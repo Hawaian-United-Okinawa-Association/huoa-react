@@ -9,7 +9,7 @@ import CardNewsletter from 'components/CardNewsletter/CardNewsletter';
 const News = ({data}) => {
   const [activeTab, setActiveTab] = useState('facebook');
   let cardBlast = data?.builder[4].cards_custom.cards[0].purple_blast;
-  let cardNewsletter = data?.builder[4].cards_custom.cards[1].newsletters;
+  let cardNewsletter = data?.builder[4].cards_custom.cards[0].newsletters;
 
   return (
     <Layout>
