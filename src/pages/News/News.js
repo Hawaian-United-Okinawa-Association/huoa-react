@@ -3,13 +3,13 @@ import Layout from '../../components/Layout/Layout';
 import Container from '../../components/Container/Container';
 import FacebookFeed from 'components/FacebookFeed/FacebookFeed';
 import InstagramFeed from 'components/InstagramFeed/InstagramFeed';
-import CardBlast from 'components/CardBlast/CardBlast';
+// import CardBlast from 'components/CardBlast/CardBlast';
 import CardNewsletter from 'components/CardNewsletter/CardNewsletter';
 
 const News = ({data}) => {
   const [activeTab, setActiveTab] = useState('facebook');
-  let cardBlast = data?.builder[4].cards_custom.cards[0].purple_blast;
-  let cardNewsletter = data?.builder[4].cards_custom.cards[1].newsletters;
+  // let cardBlast = data?.builder[4].cards_custom.cards[0].purple_blast;
+  let cardNewsletter = data?.builder[4].cards_custom.cards[0].newsletters;
 
   return (
     <Layout>
@@ -46,7 +46,7 @@ const News = ({data}) => {
               {activeTab === 'facebook' ? <FacebookFeed /> : <InstagramFeed />}
             </div>
           </section>
-          {cardBlast && <CardBlast props={cardBlast} />}
+          {/* {cardBlast && <CardBlast props={cardBlast} />} */}
           {cardNewsletter && <CardNewsletter props={cardNewsletter} />}
         </div>
       </Container>
