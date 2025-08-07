@@ -46,7 +46,7 @@ const News = ({data}) => {
               {activeTab === 'facebook' ? <FacebookFeed /> : <InstagramFeed />}
             </div>
           </section>
-          {cardBlast && <CardBlast props={cardBlast} />}
+          {/* {cardBlast && <CardBlast props={cardBlast} />} */}
           {cardNewsletter && <CardNewsletter props={cardNewsletter} />}
         </div>
       </Container>
