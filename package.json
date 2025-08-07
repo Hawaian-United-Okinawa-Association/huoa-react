@@ -15,13 +15,13 @@
     "react-dom": "16.13.1",
     "react-helmet": "^6.1.0",
     "react-redux": "^7.2.0",
-    "react-router-dom": "5.2.0",
-    "react-scripts": "^3.4.3",
-    "react-snap": "^1.23.0",
+    "react-router-dom": "5.2.0", 
+    "react-scripts": "^3.4.3", 
+    "react-snap": "^1.10.0",
     "puppeteer": "^19.4.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "webfontloader": "^1.6.28"
+    "webfontloader": "^1.6.28" 
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
@@ -30,9 +30,9 @@
     "start": "react-app-rewired start",
     "dev": "docker run -it --rm -v ${PWD}:/huoa -v /huoa/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true huoa-app",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test", 
     "eject": "react-scripts eject",
-    "postbuild": "react-snap"
+    "postbuild": "react-snap"  
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -59,11 +59,5 @@
     "stylelint-webpack-plugin": "^2.1.0"
   },
   "reactSnap": {
-    "cacheAjaxRequests": true,
-     "puppeteerArgs": [
-            "--no-sandbox",
-            "--disable-setuid-sandbox",
-            "--disable-dev-shm-usage"
-        ]
-  }
+}
 }
