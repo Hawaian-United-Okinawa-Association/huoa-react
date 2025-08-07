@@ -5,7 +5,7 @@ import Hero from 'components/Hero/Hero';
 import TextArea from 'components/TextArea/TextArea';
 import CardLarge from 'components/CardLarge/CardLarge';
 import CardSquare from 'components/CardSquare/CardSquare';
-import CardBlast from 'components/CardBlast/CardBlast';
+// import CardBlast from 'components/CardBlast/CardBlast';
 import CardNewsletter from 'components/CardNewsletter/CardNewsletter';
 import Container from 'components/Container/Container';
 
