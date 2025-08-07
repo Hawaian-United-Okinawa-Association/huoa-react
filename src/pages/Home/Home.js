@@ -23,8 +23,7 @@ const Home = ({ data }) => {
   let cardsLarge = builder[2].cards_large;
   let cardsSquare = builder[3].cards_small.card;
   let cardBlast = builder[4].cards_custom.cards[0].purple_blast;
-  let cardNewsletter = builder[4].cards_custom.cards[1]?.newsletters;
-
+  let cardNewsletter = builder[4].cards_custom.cards[0].newsletters;
   return (
     <>
       <Hero props={builder[0]} />
@@ -62,8 +61,8 @@ const Home = ({ data }) => {
           </div>
         </Container>
         <Container col="2">
-          <CardBlast props={cardBlast} />
-          {cardNewsletter ? <CardNewsletter props={cardNewsletter} /> : null}
+          {/* <CardBlast props={cardBlast} /> */}
+          <CardNewsletter props={cardNewsletter} />
         </Container>
       </section>
     </>
