@@ -43,7 +43,7 @@ const Home = ({ data }) => {
             <h2 className="home__title">Support Your Community</h2>
           </div>
         </Container>
-        <Container col="3">
+        <Container col="2">
           {cardsSquare.map((card, i) => (
             <CardSquare key={i} props={{ ...card, Icon: icons[i] }} />
           ))}
@@ -60,7 +60,7 @@ const Home = ({ data }) => {
             </Link>
           </div>
         </Container>
-        <Container col="2">
+        <Container col="1">
           {/* <CardBlast props={cardBlast} /> */}
           <CardNewsletter props={cardNewsletter} />
         </Container>
