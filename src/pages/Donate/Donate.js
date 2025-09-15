@@ -13,6 +13,7 @@ import React from 'react';
 import Layout from 'components/Layout/Layout';
 import DonateSectionOne from 'sections/DonateSectionOne/DonateSectionOne';
 import DonateSectionTwo from 'sections/DonateSectionTwo/DonateSectionTwo';
+import DonorSnapForm from 'sections/DonateSectionThree/DonorSnapForm';
 
 const Donate = ({ data }) => {
   if (!data) return null;
@@ -22,6 +23,7 @@ const Donate = ({ data }) => {
       <Layout>
         <DonateSectionOne data={data.donate_section_one} />
         <DonateSectionTwo data={data.donate_section_two} />
+        <DonorSnapForm/>
       </Layout>
     </div>
     )
