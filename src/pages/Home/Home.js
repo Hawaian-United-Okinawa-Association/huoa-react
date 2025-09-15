@@ -5,7 +5,7 @@ import Hero from 'components/Hero/Hero';
 import TextArea from 'components/TextArea/TextArea';
 import CardLarge from 'components/CardLarge/CardLarge';
 import CardSquare from 'components/CardSquare/CardSquare';
-// import CardBlast from 'components/CardBlast/CardBlast';
+import CardBlast from 'components/CardBlast/CardBlast';
 import CardNewsletter from 'components/CardNewsletter/CardNewsletter';
 import Container from 'components/Container/Container';
 
@@ -22,7 +22,7 @@ const Home = ({ data }) => {
   let { builder } = data;
   let cardsLarge = builder[2].cards_large;
   let cardsSquare = builder[3].cards_small.card;
-  // let cardBlast = builder[4].cards_custom.cards[0].purple_blast;
+  let cardBlast = builder[4].cards_custom.cards[0].purple_blast;
   let cardNewsletter = builder[4].cards_custom.cards[0].newsletters;
   return (
     <>
@@ -61,7 +61,7 @@ const Home = ({ data }) => {
           </div>
         </Container>
         <Container col="1">
-          {/* <CardBlast props={cardBlast} /> */}
+          <CardBlast props={cardBlast} /> 
           <CardNewsletter props={cardNewsletter} />
         </Container>
       </section>
