@@ -60,7 +60,7 @@ const Home = ({ data }) => {
             </Link>
           </div>
         </Container>
-        <Container col="1">
+        <Container col="2">
           <CardBlast props={cardBlast} /> 
           <CardNewsletter props={cardNewsletter} />
         </Container>
