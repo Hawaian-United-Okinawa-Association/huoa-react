@@ -3,7 +3,6 @@ import jsonp from "jsonp";
 
 import checkmark from "./check.svg";
 import Button from "../Button/Button";
-import { ReactComponent as Send } from "./send.svg";
 import { ReactComponent as ArrowRight } from "./arrow-right.svg";
 
 const CardBlast = ({ props }) => {
@@ -181,15 +180,6 @@ const CardBlast = ({ props }) => {
         </div>
       )}
       <div className="card-blast__button-container">
-        <a
-          className="card-newsletter__link"
-          target="_blank"
-          rel="noopener noreferrer"
-          href={latest_purple_blast_message}
-        >
-          <Send />
-          Latest Purple Blast
-        </a>
         <a
           className="card-newsletter__link"
           target="_blank"
