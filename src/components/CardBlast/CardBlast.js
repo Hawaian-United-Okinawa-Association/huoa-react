@@ -13,7 +13,6 @@ const CardBlast = ({ props }) => {
     last_name_placeholder,
     email_placeholder,
     button_text,
-    latest_purple_blast_message,
     list_of_the_previous_messages,
   } = props;
 
