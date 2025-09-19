@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 import Image from "components/Image/Image";
 import Button from "components/Button/Button";
-import DonorSnapForm from "pages/Donate/form";
+import DonorSnapForm from "sections/DonateSectionThree/DonorSnapForm";
 
 const DonateSectionOne = ({ data }) => {
   const dialogRef = useRef(null);
