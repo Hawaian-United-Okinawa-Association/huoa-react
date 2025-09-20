@@ -50,7 +50,7 @@ const CardBlast = ({ props }) => {
   }, [expanded]);
 
   return (
-    <div className="card-blast">
+    <div className="card-blast" id="purple-blast">
       {formData === "" && (
         <div className="card-blast__form--wrapper">
           <div className="card-blast__text">
