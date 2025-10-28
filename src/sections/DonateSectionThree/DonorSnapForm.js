@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
-const DonorSnapForm = ({ dialogRef, handleBackdropClick, closeModal }) => {
+const DonorSnapForm = ({ handleBackdropClick, closeModal }) => {
   const [isClient, setIsClient] = useState(false);
+  const dialogRef = useRef(null);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  if (typeof window === "undefined" || !isClient) {
+    return null;
+  }
 
   return (
     <dialog
@@ -53,8 +58,8 @@ const DonorSnapForm = ({ dialogRef, handleBackdropClick, closeModal }) => {
             color: "#666",
             transition: "background-color 0.2s ease",
           }}
-          onMouseOver={(e) => (e.target.style.backgroundColor = "#f5f5f5")}
-          onMouseOut={(e) => (e.target.style.backgroundColor = "transparent")}
+          onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#f5f5f5")}
+          onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
           aria-label="Close modal"
         >
           ×
@@ -74,21 +79,15 @@ const DonorSnapForm = ({ dialogRef, handleBackdropClick, closeModal }) => {
             height: "75vh",
           }}
         >
-          {isClient ? (
-            <iframe
-              src="https://forms.donorsnap.com/form?id=07dd50e2-c705-44f8-ad53-38881a916255"
-              allow="payment"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              style={{ flexGrow: 1, display: "block", margin: "5px" }}
-              title="DonorSnap Form"
-            />
-          ) : (
-            <p style={{ textAlign: "center", marginTop: "2rem" }}>
-              Donation form will load here.
-            </p>
-          )}
+          <iframe
+            src="https://forms.donorsnap.com/form?id=07dd50e2-c705-44f8-ad53-38881a916255"
+            allow="payment"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            style={{ flexGrow: 1, display: "block", margin: "5px" }}
+            title="DonorSnap Form"
+          />
           <div style={{ margin: "5px", textAlign: "right" }}>
             <a
               href="http://www.donorsnap.com"
