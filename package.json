@@ -60,10 +60,12 @@
   },
   "reactSnap": {
     "cacheAjaxRequests": true,
-     "puppeteerArgs": [
-            "--no-sandbox",
-            "--disable-setuid-sandbox",
-            "--disable-dev-shm-usage"
-        ]
+    "skipThirdPartyRequests": true,
+    "exclude": ["/donate"],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage"
+    ]
   }
 }
