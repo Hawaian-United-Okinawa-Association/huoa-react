@@ -84,10 +84,6 @@ const DonorSnapForm = ({ dialogRef, handleBackdropClick, closeModal }) => {
               style={{ flexGrow: 1, display: "block", margin: "5px" }}
               title="DonorSnap Form"
             />
-          ) : (
-            <p style={{ textAlign: "center", marginTop: "2rem" }}>
-              Donation form will load here.
-            </p>
           )}
           <div style={{ margin: "5px", textAlign: "right" }}>
             <a
