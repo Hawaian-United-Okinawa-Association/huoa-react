@@ -74,7 +74,7 @@ const DonorSnapForm = ({ dialogRef, handleBackdropClick, closeModal }) => {
             height: "75vh",
           }}
         >
-          {isClient ? (
+          {isClient && typeof window !== "undefined" && (
             <iframe
               src="https://forms.donorsnap.com/form?id=07dd50e2-c705-44f8-ad53-38881a916255"
               allow="payment"
