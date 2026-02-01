@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const DonorSnapForm = ({ dialogRef, handleBackdropClick, closeModal }) => {
   const [isClient, setIsClient] = useState(false);
+  const isSnap = navigator.userAgent === "ReactSnap";
 
   useEffect(() => {
     setIsClient(true);
@@ -74,7 +75,7 @@ const DonorSnapForm = ({ dialogRef, handleBackdropClick, closeModal }) => {
             height: "75vh",
           }}
         >
-          {isClient && typeof window !== "undefined" && (
+          {isClient && !isSnap && (
             <iframe
               src="https://forms.donorsnap.com/form?id=07dd50e2-c705-44f8-ad53-38881a916255"
               allow="payment"
