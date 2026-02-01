@@ -58,14 +58,4 @@
     "stylelint-selector-bem-pattern": "^2.1.0",
     "stylelint-webpack-plugin": "^2.1.0"
   },
-  "reactSnap": {
-    "cacheAjaxRequests": true,
-    "skipRequests": req =>
-      new URL(req.url).pathname.startsWith("/donate"),
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-dev-shm-usage"
-    ]
-  }
 }
