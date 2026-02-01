@@ -57,5 +57,5 @@
     "stylelint-scss": "^3.18.0",
     "stylelint-selector-bem-pattern": "^2.1.0",
     "stylelint-webpack-plugin": "^2.1.0"
-  },
+  }
 }
