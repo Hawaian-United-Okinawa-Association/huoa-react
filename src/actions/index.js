@@ -14,6 +14,10 @@ import {
 
 const api = "https://dev.huoa.org/wp-json";
 let isProd = process.env.NODE_ENV === "production" && navigator.userAgent !== "ReactSnap";
+// Under react-snap the app reads collections pre-fetched to build/snap-data/*.json
+// (see scripts/snap-prefetch.js) instead of hammering dev.huoa.org on every route.
+const isSnap = navigator.userAgent === "ReactSnap";
+const snapData = (name) => `/snap-data/${name}.json`;
 
 export const getPages = () => async (dispatch) => {
   if (isProd) {
@@ -25,7 +29,7 @@ export const getPages = () => async (dispatch) => {
     try {
       // TODO: we need to check if there is more than 100 pages then we need to paginate
       const { data } = await axios.get(
-        `${api}/wp/v2/pages?page=1&per_page=100&orderby=parent&order=asc`
+        isSnap ? snapData("pages") : `${api}/wp/v2/pages?page=1&per_page=100&orderby=parent&order=asc`
       );
 
       dispatch({ type: GET_PAGES, payload: data });
@@ -45,7 +49,7 @@ export const getClubs = () => async (dispatch) => {
     try {
       // TODO: we need to check if there is more than 100 clubs then we need to paginate
       const { data } = await axios.get(
-        `${api}/wp/v2/clubs?&page=1&per_page=100&orderby=slug&order=asc`
+        isSnap ? snapData("clubs") : `${api}/wp/v2/clubs?&page=1&per_page=100&orderby=slug&order=asc`
       );
 
       dispatch({ type: FETCH_CLUBS, payload: data });
@@ -63,7 +67,7 @@ export const getEvents = () => async (dispatch) => {
   } else {
     try {
       const { data } = await axios.get(
-        `${api}/wp/v2/events?page=1&per_page=100&orderby=date&order=asc`
+        isSnap ? snapData("events") : `${api}/wp/v2/events?page=1&per_page=100&orderby=date&order=asc`
       );
 
       dispatch({ type: GET_EVENTS, payload: data });
@@ -81,7 +85,7 @@ export const getNewsletters = () => async (dispatch) => {
   } else {
     try {
       const { data } = await axios.get(
-        `${api}/wp/v2/newsletters?page=1&per_page=100&orderby=slug&order=desc`
+        isSnap ? snapData("newsletters") : `${api}/wp/v2/newsletters?page=1&per_page=100&orderby=slug&order=desc`
       );
 
       dispatch({ type: GET_NEWSLETTERS, payload: data });
@@ -99,7 +103,7 @@ export const getSettings = () => async (dispatch) => {
   } else {
     try {
       const { data } = await axios.get(
-        `${api}`
+        isSnap ? snapData("settings") : `${api}`
       );
 
       dispatch({ type: GET_SETTINGS, payload: {title: data.name, description: data.description} });
