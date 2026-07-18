@@ -21,6 +21,28 @@ const buildDir = path.join(__dirname, "..", "build");
 const indexHtml = path.join(buildDir, "index.html");
 const shellHtml = path.join(buildDir, "200.html");
 
+// react-snap generates one page per club and per event, so the prefetched record
+// counts say how many should exist. A run that exits 0 having produced far fewer
+// has gone wrong quietly (bad data, a routing change, an early exit), and Netlify
+// would publish it without complaint. Checked only when react-snap reports
+// success: a run that already failed has warned loudly and is handled above.
+function checkCoverage() {
+  for (const name of ["clubs", "events"]) {
+    const records = JSON.parse(
+      fs.readFileSync(path.join(buildDir, "snap-data", `${name}.json`), "utf8")
+    ).length;
+    const dir = path.join(buildDir, name);
+    const built = fs.existsSync(dir)
+      ? fs.readdirSync(dir, { withFileTypes: true }).filter(e => e.isDirectory()).length
+      : 0;
+    if (built < Math.floor(records * 0.9)) {
+      console.error(`\nOnly ${built} of ${records} ${name} pages were prerendered.`);
+      console.error("Failing the build rather than publishing a site missing pages.\n");
+      process.exit(1);
+    }
+  }
+}
+
 // react-snap writes 200.html itself; seed it from the CRA shell if it never ran.
 function ensureSpaShell() {
   if (fs.existsSync(shellHtml)) return;
@@ -55,5 +77,6 @@ function bail(reason) {
   if (res.error) return bail(`could not start react-snap (${res.error.message})`);
   if (res.status !== 0) return bail(`react-snap exited with code ${res.status}`);
 
+  checkCoverage();
   ensureSpaShell();
 })();
