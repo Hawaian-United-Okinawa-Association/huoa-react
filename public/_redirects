@@ -93,3 +93,7 @@ https://huoa.org/nuuzi/calendar/sub/ https://huoa.org/events/
 https://huoa.org/nuuzi/calendar/hoccu13.html https://huoa.org/volunteer
 
 https://huoa.org/nuuzi/calendar/sub/installbanquet.html https://huoa.org/events/uchinanchu-of-the-year-and-72nd-installation-celebration
+
+# Serve the SPA shell for routes react-snap did not prerender (Netlify still
+# serves real files first, so prerendered pages win).
+/*    /200.html   200

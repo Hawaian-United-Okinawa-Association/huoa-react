@@ -1,19 +1,7 @@
 /**
- * Pre-crawl data fetch for react-snap.
- *
- * react-snap runs each route as an isolated headless-Chrome navigation. Because
- * the app refetches all five WordPress collections on every route mount
- * (see src/base/Init.js), a full crawl fires ~5 requests per route — hundreds of
- * concurrent hits at dev.huoa.org, which then throttles/503s and stalls
- * navigation past react-snap's 30s timeout, failing the whole build.
- *
- * This script fetches each collection ONCE (sequentially, off a healthy backend)
- * and writes it to build/snap-data/*.json. Under the ReactSnap user agent the app
- * reads those local files (see src/actions/index.js), so the crawl makes zero
- * requests to dev.huoa.org. Remote load drops from ~485 requests to 5.
- *
- * If any endpoint fails, the build aborts here (exit 1) rather than letting
- * react-snap bake empty state into the prerendered HTML.
+ * Fetches each WordPress collection once into build/snap-data, so the react-snap
+ * crawl can read them locally instead of refetching all five on every one of the
+ * ~97 routes it renders (see the ReactSnap branch in src/actions/index.js).
  */
 const fs = require("fs");
 const path = require("path");
@@ -30,20 +18,48 @@ const targets = [
   ["settings", `${api}`]
 ];
 
-(async () => {
+const ATTEMPTS = 3;
+
+const wait = ms => new Promise(r => setTimeout(r, ms));
+
+async function get(name, url) {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      const { data } = await axios.get(url, { timeout: 90000 });
+      return data;
+    } catch (e) {
+      if (attempt === ATTEMPTS) throw e;
+      console.log(`  ${name} attempt ${attempt} failed (${e.message}), retrying`);
+      await wait(attempt * 3000);
+    }
+  }
+}
+
+// An empty collection is treated as a failure rather than as real content. The
+// club and event routes are generated from this data, so empty collections make
+// react-snap prerender a handful of pages instead of ~97 and still exit 0, which
+// would quietly publish a site with most of its pages missing.
+function check(name, payload) {
+  if (name === "settings") {
+    if (!payload.name) throw new Error("settings response has no site name");
+    return;
+  }
+  if (!Array.isArray(payload) || payload.length === 0) {
+    throw new Error(`${name} came back empty`);
+  }
+}
+
+async function prefetch() {
   fs.mkdirSync(outDir, { recursive: true });
   for (const [name, url] of targets) {
-    const t0 = Date.now();
-    const { data } = await axios.get(url, { timeout: 60000 });
-    // The app only reads name/description from the wp-json root; don't ship the
-    // ~470KB of route/namespace metadata the settings endpoint returns.
+    const data = await get(name, url);
+    // The app reads only name/description from the wp-json root; skip the ~470KB
+    // of route metadata the rest of that response carries.
     const payload =
       name === "settings" ? { name: data.name, description: data.description } : data;
+    check(name, payload);
     fs.writeFileSync(path.join(outDir, `${name}.json`), JSON.stringify(payload));
-    console.log(`  prefetched ${name} in ${Date.now() - t0}ms`);
   }
-  console.log("snap-prefetch complete");
-})().catch(e => {
-  console.error("snap-prefetch failed:", e.message);
-  process.exit(1);
-});
+}
+
+module.exports = { prefetch };
