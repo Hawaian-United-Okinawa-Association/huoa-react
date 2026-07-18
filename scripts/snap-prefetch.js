@@ -3,17 +3,15 @@
  *
  * react-snap runs each route as an isolated headless-Chrome navigation. Because
  * the app refetches all five WordPress collections on every route mount
- * (see src/base/Init.js), a full crawl fires ~5 requests per route — hundreds of
- * concurrent hits at dev.huoa.org, which then throttles/503s and stalls
- * navigation past react-snap's 30s timeout, failing the whole build.
+ * (see src/base/Init.js), a full crawl fired ~485 requests at dev.huoa.org,
+ * which throttled and 503'd under that load and stalled navigation past
+ * react-snap's 30s timeout, failing the build.
  *
- * This script fetches each collection ONCE (sequentially, off a healthy backend)
- * and writes it to build/snap-data/*.json. Under the ReactSnap user agent the app
- * reads those local files (see src/actions/index.js), so the crawl makes zero
- * requests to dev.huoa.org. Remote load drops from ~485 requests to 5.
+ * This module fetches each collection ONCE and writes it to build/snap-data.
+ * Under the ReactSnap user agent the app reads those local files
+ * (see src/actions/index.js), so the crawl makes zero requests to the backend.
  *
- * If any endpoint fails, the build aborts here (exit 1) rather than letting
- * react-snap bake empty state into the prerendered HTML.
+ * Exported for scripts/snap-build.js; also runnable directly for debugging.
  */
 const fs = require("fs");
 const path = require("path");
@@ -30,20 +28,51 @@ const targets = [
   ["settings", `${api}`]
 ];
 
-(async () => {
+const ATTEMPTS = 4;
+const TIMEOUT_MS = 90000;
+
+const wait = ms => new Promise(r => setTimeout(r, ms));
+
+async function fetchWithRetry(name, url) {
+  let lastErr;
+  for (let attempt = 1; attempt <= ATTEMPTS; attempt++) {
+    const t0 = Date.now();
+    try {
+      const { data } = await axios.get(url, { timeout: TIMEOUT_MS });
+      console.log(`  prefetched ${name} in ${Date.now() - t0}ms`);
+      return data;
+    } catch (e) {
+      lastErr = e;
+      const backoff = attempt * 3000;
+      console.log(
+        `  prefetch ${name} attempt ${attempt}/${ATTEMPTS} failed after ` +
+          `${Date.now() - t0}ms (${e.message})` +
+          (attempt < ATTEMPTS ? `, retrying in ${backoff}ms` : "")
+      );
+      if (attempt < ATTEMPTS) await wait(backoff);
+    }
+  }
+  throw lastErr;
+}
+
+async function prefetch() {
   fs.mkdirSync(outDir, { recursive: true });
   for (const [name, url] of targets) {
-    const t0 = Date.now();
-    const { data } = await axios.get(url, { timeout: 60000 });
+    const data = await fetchWithRetry(name, url);
     // The app only reads name/description from the wp-json root; don't ship the
     // ~470KB of route/namespace metadata the settings endpoint returns.
     const payload =
       name === "settings" ? { name: data.name, description: data.description } : data;
     fs.writeFileSync(path.join(outDir, `${name}.json`), JSON.stringify(payload));
-    console.log(`  prefetched ${name} in ${Date.now() - t0}ms`);
   }
   console.log("snap-prefetch complete");
-})().catch(e => {
-  console.error("snap-prefetch failed:", e.message);
-  process.exit(1);
-});
+}
+
+module.exports = { prefetch };
+
+if (require.main === module) {
+  prefetch().catch(e => {
+    console.error("snap-prefetch failed:", e.message);
+    process.exit(1);
+  });
+}

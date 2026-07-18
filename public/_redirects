@@ -93,3 +93,8 @@ https://huoa.org/nuuzi/calendar/sub/ https://huoa.org/events/
 https://huoa.org/nuuzi/calendar/hoccu13.html https://huoa.org/volunteer
 
 https://huoa.org/nuuzi/calendar/sub/installbanquet.html https://huoa.org/events/uchinanchu-of-the-year-and-72nd-installation-celebration
+
+# Fallback: serve the SPA shell for any route react-snap did not prerender.
+# Netlify serves existing static files first, so prerendered pages still win.
+# Without this, a route missing from the build returns a hard 404.
+/*    /200.html   200

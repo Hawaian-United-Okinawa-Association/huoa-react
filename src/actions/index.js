@@ -19,12 +19,30 @@ let isProd = process.env.NODE_ENV === "production" && navigator.userAgent !== "R
 const isSnap = navigator.userAgent === "ReactSnap";
 const snapData = (name) => `/snap-data/${name}.json`;
 
-export const getPages = () => async (dispatch) => {
-  if (isProd) {
-    let cache = window.__REDUX_STATE__;
+/**
+ * Prerendered pages inline their data as window.__REDUX_STATE__ so production
+ * never refetches. That state is not guaranteed to be there: a page may ship
+ * un-prerendered (prerendering is non-fatal, see scripts/snap-build.js) or a
+ * slice may be empty if the data was unavailable when the snapshot was taken.
+ * Returning null in those cases makes the caller fall back to a live fetch
+ * instead of throwing on undefined and rendering an empty page.
+ */
+const cached = (key) => {
+  const state = typeof window !== "undefined" ? window.__REDUX_STATE__ : null;
+  const slice = state ? state[key] : null;
+  if (!slice) return null;
+  const empty = Array.isArray(slice)
+    ? slice.length === 0
+    : typeof slice === "object" && Object.keys(slice).length === 0;
+  return empty ? null : slice;
+};
 
-    dispatch({ type: GET_PAGES, payload: cache.pages });
-    dispatch({ type: GET_ROUTER, payload: cache.router });
+export const getPages = () => async (dispatch) => {
+  const pages = isProd && cached("pages");
+  const router = isProd && cached("router");
+  if (pages && router) {
+    dispatch({ type: GET_PAGES, payload: pages });
+    dispatch({ type: GET_ROUTER, payload: router });
   } else {
     try {
       // TODO: we need to check if there is more than 100 pages then we need to paginate
@@ -41,10 +59,9 @@ export const getPages = () => async (dispatch) => {
 };
 
 export const getClubs = () => async (dispatch) => {
-  if (isProd) {
-    let cache = window.__REDUX_STATE__;
-
-    dispatch({ type: FETCH_CLUBS, payload: cache.clubs });
+  const clubs = isProd && cached("clubs");
+  if (clubs) {
+    dispatch({ type: FETCH_CLUBS, payload: clubs });
   } else {
     try {
       // TODO: we need to check if there is more than 100 clubs then we need to paginate
@@ -60,10 +77,9 @@ export const getClubs = () => async (dispatch) => {
 };
 
 export const getEvents = () => async (dispatch) => {
-  if (isProd) {
-    let cache = window.__REDUX_STATE__;
-
-    dispatch({ type: GET_EVENTS, payload: cache.events });
+  const events = isProd && cached("events");
+  if (events) {
+    dispatch({ type: GET_EVENTS, payload: events });
   } else {
     try {
       const { data } = await axios.get(
@@ -78,10 +94,9 @@ export const getEvents = () => async (dispatch) => {
 };
 
 export const getNewsletters = () => async (dispatch) => {
-  if (isProd) {
-    let cache = window.__REDUX_STATE__;
-
-    dispatch({ type: GET_NEWSLETTERS, payload: cache.newsletters });
+  const newsletters = isProd && cached("newsletters");
+  if (newsletters) {
+    dispatch({ type: GET_NEWSLETTERS, payload: newsletters });
   } else {
     try {
       const { data } = await axios.get(
@@ -96,10 +111,9 @@ export const getNewsletters = () => async (dispatch) => {
 };
 
 export const getSettings = () => async (dispatch) => {
-  if (isProd) {
-    let cache = window.__REDUX_STATE__;
-
-    dispatch({ type: GET_SETTINGS, payload: cache.settings });
+  const settings = isProd && cached("settings");
+  if (settings) {
+    dispatch({ type: GET_SETTINGS, payload: settings });
   } else {
     try {
       const { data } = await axios.get(
