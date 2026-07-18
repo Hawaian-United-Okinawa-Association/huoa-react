@@ -1,11 +1,16 @@
 /**
  * Postbuild: prefetch WordPress data, then prerender with react-snap.
  *
- * Prerendering is an SEO enhancement, not a requirement, but it used to run as a
- * bare postbuild script so a single route exceeding react-snap's 30s navigation
- * timeout exited non-zero and failed the whole Netlify deploy. Here a failure is
- * logged and swallowed instead: the site ships client-rendered, served by the
- * catch-all in public/_redirects.
+ * react-snap used to run as a bare postbuild script, so one route exceeding its
+ * 30s navigation timeout exited non-zero and failed the deploy, leaving the site
+ * stuck on the previous build. A prerender failure is therefore logged and
+ * swallowed here: un-prerendered routes are served the SPA shell by the catch-all
+ * in public/_redirects and fetch their data at runtime.
+ *
+ * A prefetch failure is different and must stay fatal. If WordPress is unreachable
+ * now it is probably unreachable for visitors too, so shipping a shell that has to
+ * fetch from it would replace a working prerendered site with a blank one. Failing
+ * keeps the last good deploy, which is self-contained.
  */
 const fs = require("fs");
 const path = require("path");
@@ -38,7 +43,9 @@ function bail(reason) {
   try {
     await prefetch();
   } catch (e) {
-    return bail(`could not fetch WordPress data (${e.message})`);
+    console.error(`\nCould not fetch WordPress data: ${e.message}`);
+    console.error("Failing the build so the last good deploy keeps serving.\n");
+    process.exit(1);
   }
 
   const res = spawnSync(process.execPath, [require.resolve("react-snap/run.js")], {

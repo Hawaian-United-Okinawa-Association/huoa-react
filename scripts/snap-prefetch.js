@@ -35,6 +35,20 @@ async function get(name, url) {
   }
 }
 
+// An empty collection is treated as a failure rather than as real content. The
+// club and event routes are generated from this data, so empty collections make
+// react-snap prerender a handful of pages instead of ~97 and still exit 0, which
+// would quietly publish a site with most of its pages missing.
+function check(name, payload) {
+  if (name === "settings") {
+    if (!payload.name) throw new Error("settings response has no site name");
+    return;
+  }
+  if (!Array.isArray(payload) || payload.length === 0) {
+    throw new Error(`${name} came back empty`);
+  }
+}
+
 async function prefetch() {
   fs.mkdirSync(outDir, { recursive: true });
   for (const [name, url] of targets) {
@@ -43,6 +57,7 @@ async function prefetch() {
     // of route metadata the rest of that response carries.
     const payload =
       name === "settings" ? { name: data.name, description: data.description } : data;
+    check(name, payload);
     fs.writeFileSync(path.join(outDir, `${name}.json`), JSON.stringify(payload));
   }
 }
