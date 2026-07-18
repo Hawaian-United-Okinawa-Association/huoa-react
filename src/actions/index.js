@@ -14,19 +14,14 @@ import {
 
 const api = "https://dev.huoa.org/wp-json";
 let isProd = process.env.NODE_ENV === "production" && navigator.userAgent !== "ReactSnap";
-// Under react-snap the app reads collections pre-fetched to build/snap-data/*.json
-// (see scripts/snap-prefetch.js) instead of hammering dev.huoa.org on every route.
+// Under react-snap, read the collections prefetched to build/snap-data instead of
+// refetching from dev.huoa.org on every route (see scripts/snap-prefetch.js).
 const isSnap = navigator.userAgent === "ReactSnap";
 const snapData = (name) => `/snap-data/${name}.json`;
 
-/**
- * Prerendered pages inline their data as window.__REDUX_STATE__ so production
- * never refetches. That state is not guaranteed to be there: a page may ship
- * un-prerendered (prerendering is non-fatal, see scripts/snap-build.js) or a
- * slice may be empty if the data was unavailable when the snapshot was taken.
- * Returning null in those cases makes the caller fall back to a live fetch
- * instead of throwing on undefined and rendering an empty page.
- */
+// Prerendered pages inline their data as window.__REDUX_STATE__, but a page may
+// ship un-prerendered or with an empty slice. Return null in those cases so the
+// caller refetches instead of throwing on undefined and rendering nothing.
 const cached = (key) => {
   const state = typeof window !== "undefined" ? window.__REDUX_STATE__ : null;
   const slice = state ? state[key] : null;
