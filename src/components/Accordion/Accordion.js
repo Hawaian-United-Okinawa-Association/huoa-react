@@ -33,8 +33,6 @@ class Panel extends Component {
     return (
       <div className='panel'
         role='tabpanel'>
-        {/* aria-expanded belongs on the control, not the panel: it is not a
-            supported attribute of role tabpanel. */}
         <button className='panel__label'
           role='tab'
           aria-expanded={ isActive }

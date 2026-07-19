@@ -2,29 +2,13 @@
 command = "yarn build"
 publish = "build/"
 
-# react-scripts 5 pulls in workbox-webpack-plugin, which requires Node >= 16, so
-# the build fails outright on the 14.21.3 Netlify was using. Node 14 has also
-# been out of security support since 2023.
 [build.environment]
   NODE_VERSION = "20"
 
 [dev]
 publish = "src"
 
-# Security headers.
-#
-# Deliberately no script-src/default-src Content-Security-Policy: react-snap
-# inlines the page data as an inline <script> and static files cannot carry a
-# nonce, so any script-src policy would need 'unsafe-inline' and buy very
-# little. frame-ancestors is the part of CSP that cannot break the site, and
-# X-Frame-Options covers browsers that ignore it.
-#
-# payment= must keep forms.donorsnap.com, which the donate page embeds with
-# allow="payment". Dropping it would silently break donations.
-#
-# No Strict-Transport-Security here: it is enabled at the Netlify site level
-# and served as "max-age=31536000; includeSubDomains; preload" regardless of
-# what this file says, so setting it here would only be misleading.
+# payment= must keep forms.donorsnap.com or the donate page stops working.
 [[headers]]
   for = "/*"
   [headers.values]

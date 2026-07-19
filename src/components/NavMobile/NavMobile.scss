@@ -2,11 +2,6 @@
 @import '../../styles/utilities/breakpoints.scss';
 @import '../../styles/utilities/fonts.scss';
 
-// The --active and --inactive variants below need the same base styles as the
-// block they modify. That used to be `@extend .nav-mobile__sidebar`, which
-// node-sass allowed but dart-sass rejects, since the rules sit inside a media
-// query and @extend may not cross one. Mixins give the same declarations
-// without depending on selector grouping.
 @mixin nav-mobile-sidebar-base {
   position: fixed;
   z-index: 999;
@@ -219,9 +214,6 @@
       }
     }
 
-    // The variants are listed explicitly because they used to pick this rule up
-    // through @extend, which applied to every .nav-mobile__dropdown rule in the
-    // file rather than just the block that defined it.
     &__dropdown,
     &__dropdown--active,
     &__dropdown--inactive {
@@ -256,9 +248,6 @@
       }
     }
 
-    // Kept as a separate rule rather than adding the variants to the selector
-    // below, because that block nests &--item and &--footer, which would then
-    // expand against the variants too and produce selectors that never existed.
     &__sidebar--active,
     &__sidebar--inactive {
       width: 95%;
