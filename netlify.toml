@@ -11,6 +11,29 @@ publish = "build/"
 [dev]
 publish = "src"
 
+# Security headers.
+#
+# Deliberately no script-src/default-src Content-Security-Policy: react-snap
+# inlines the page data as an inline <script> and static files cannot carry a
+# nonce, so any script-src policy would need 'unsafe-inline' and buy very
+# little. frame-ancestors is the part of CSP that cannot break the site, and
+# X-Frame-Options covers browsers that ignore it.
+#
+# payment= must keep forms.donorsnap.com, which the donate page embeds with
+# allow="payment". Dropping it would silently break donations.
+#
+# No Strict-Transport-Security here: it is enabled at the Netlify site level
+# and served as "max-age=31536000; includeSubDomains; preload" regardless of
+# what this file says, so setting it here would only be misleading.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "frame-ancestors 'self'"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = 'camera=(), microphone=(), geolocation=(), payment=(self "https://forms.donorsnap.com")'
+
 [[redirects]]
   from = "https://huoa.org/nuuzi/index.html"
   to = "https://huoa.org/"
