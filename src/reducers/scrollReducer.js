@@ -2,7 +2,7 @@ import { TOGGLE_SCROLL } from '../actions/actionTypes';
 
 const INITIAL_STATE = true;
 
-export default (state = INITIAL_STATE, action) => {
+const scrollReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case TOGGLE_SCROLL:
       return !state;
@@ -10,3 +10,5 @@ export default (state = INITIAL_STATE, action) => {
       return state;
   }
 };
+
+export default scrollReducer;

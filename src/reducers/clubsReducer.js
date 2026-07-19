@@ -1,7 +1,7 @@
 import {FETCH_CLUBS} from '../actions/actionTypes';
 
 const INITIAL_STATE = [];
-export default (state = INITIAL_STATE, action) => {
+const clubsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_CLUBS:
       return action.payload;
@@ -9,3 +9,5 @@ export default (state = INITIAL_STATE, action) => {
       return state;
   }
 };
+
+export default clubsReducer;
