@@ -2,6 +2,31 @@
 @import '../../styles/utilities/breakpoints.scss';
 @import '../../styles/utilities/fonts.scss';
 
+// The --active and --inactive variants below need the same base styles as the
+// block they modify. That used to be `@extend .nav-mobile__sidebar`, which
+// node-sass allowed but dart-sass rejects, since the rules sit inside a media
+// query and @extend may not cross one. Mixins give the same declarations
+// without depending on selector grouping.
+@mixin nav-mobile-sidebar-base {
+  position: fixed;
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: scroll;
+  width: 35%;
+  height: 100%;
+  padding: 2rem;
+  background-color: $white;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+@mixin nav-mobile-dropdown-base {
+  display: none;
+  margin: 0 -2rem;
+  padding: 0;
+}
+
 .nav-mobile {
   -webkit-tap-highlight-color: transparent;
   display: none;
@@ -56,20 +81,10 @@
     }
 
     &__sidebar {
-      position: fixed;
-      z-index: 999;
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      overflow-y: scroll;
-      width: 35%;
-      height: 100%;
-      padding: 2rem;
-      background-color: $white;
-      filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+      @include nav-mobile-sidebar-base;
 
       &--active {
-        @extend .nav-mobile__sidebar;
+        @include nav-mobile-sidebar-base;
         top: 0;
         right: 0;
         display: flex;
@@ -77,7 +92,7 @@
       }
 
       &--inactive {
-        @extend .nav-mobile__sidebar;
+        @include nav-mobile-sidebar-base;
         position: fixed;
         top: 0;
         right: -35rem;
@@ -148,19 +163,17 @@
     }
 
     &__dropdown {
-      display: none;
-      margin: 0 -2rem;
-      padding: 0;
+      @include nav-mobile-dropdown-base;
 
       &--active {
-        @extend .nav-mobile__dropdown;
+        @include nav-mobile-dropdown-base;
         display: block;
         transform-origin: top center;
         animation: dropDown 200ms ease-in-out forwards;
       }
 
       &--inactive {
-        @extend .nav-mobile__dropdown;
+        @include nav-mobile-dropdown-base;
         display: block;
         height: 0;
         transform-origin: top center;
@@ -206,7 +219,12 @@
       }
     }
 
-    &__dropdown {
+    // The variants are listed explicitly because they used to pick this rule up
+    // through @extend, which applied to every .nav-mobile__dropdown rule in the
+    // file rather than just the block that defined it.
+    &__dropdown,
+    &__dropdown--active,
+    &__dropdown--inactive {
       margin: 0 -3.5rem;
       padding-left: 1rem;
     }
@@ -236,6 +254,15 @@
       &--sm {
         display: none;
       }
+    }
+
+    // Kept as a separate rule rather than adding the variants to the selector
+    // below, because that block nests &--item and &--footer, which would then
+    // expand against the variants too and produce selectors that never existed.
+    &__sidebar--active,
+    &__sidebar--inactive {
+      width: 95%;
+      padding: 1rem;
     }
 
     &__sidebar {
