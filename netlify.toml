@@ -15,6 +15,10 @@ publish = "src"
 #
 # payment= must keep forms.donorsnap.com, which the donate page embeds with
 # allow="payment". Dropping it would silently break donations.
+#
+# No Strict-Transport-Security here: it is enabled at the Netlify site level
+# and served as "max-age=31536000; includeSubDomains; preload" regardless of
+# what this file says, so setting it here would only be misleading.
 [[headers]]
   for = "/*"
   [headers.values]
@@ -22,7 +26,6 @@ publish = "src"
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Strict-Transport-Security = "max-age=31536000"
     Permissions-Policy = 'camera=(), microphone=(), geolocation=(), payment=(self "https://forms.donorsnap.com")'
 
 [[redirects]]
