@@ -15,7 +15,7 @@ $container-width: 1260px;
     column-gap: 3rem;
 
     @media screen and (max-width: $breakpoint-tablet) {
-      grid-template-columns: repeat(ceil($i/2), 1fr);
+      grid-template-columns: repeat(ceil($i * 0.5), 1fr);
       row-gap: 2rem;
       column-gap: 2rem;
     }

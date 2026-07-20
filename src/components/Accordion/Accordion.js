@@ -32,10 +32,10 @@ class Panel extends Component {
 
     return (
       <div className='panel'
-        role='tabpanel'
-        aria-expanded={ isActive }>
+        role='tabpanel'>
         <button className='panel__label'
           role='tab'
+          aria-expanded={ isActive }
           onClick={ activateTab }>
           { title }
         </button>
