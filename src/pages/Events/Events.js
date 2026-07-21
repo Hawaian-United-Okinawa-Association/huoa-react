@@ -14,6 +14,15 @@ const Events = () => {
 
   if (!events.length) return null;
 
+  const upcoming = events
+    .filter(event => today < new Date(event.acf.event_date))
+    .sort(getDateDifference);
+
+  // Past events read most recent first.
+  const past = events
+    .filter(event => today > new Date(event.acf.event_date))
+    .sort((a, b) => getDateDifference(b, a));
+
   return (
     <Layout>
       <Container>
@@ -21,15 +30,9 @@ const Events = () => {
         <section className="events">
           <h4 className="events__subtitle">Upcoming Events</h4>
           <div className="events__cards">
-            {events
-              .sort(getDateDifference)
-              .map((event, i) =>
-                today < new Date(event.acf.event_date) ? (
-                  <CardEvent key={i} props={event} />
-                ) : (
-                  ''
-                )
-              )}
+            {upcoming.map((event, i) => (
+              <CardEvent key={i} props={event} />
+            ))}
           </div>
         </section>
         <section className="events">
@@ -37,15 +40,9 @@ const Events = () => {
             Past Events
           </h4>
           <div className="events__cards">
-            {events
-              .sort(getDateDifference)
-              .map((event, i) =>
-                today > new Date(event.acf.event_date) ? (
-                  <CardEvent key={i} props={event} />
-                ) : (
-                  ''
-                )
-              )}
+            {past.map((event, i) => (
+              <CardEvent key={i} props={event} />
+            ))}
           </div>
         </section>
       </Container>
