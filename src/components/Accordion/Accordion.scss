@@ -60,17 +60,15 @@
   background-color: $primary-1;
 }
 
-.panel[aria-expanded='true'] {
-  .panel__content {
-    opacity: 1;
-  }
+.panel__inner[aria-hidden='false'] .panel__content {
+  opacity: 1;
+}
 
-  .panel__label {
-    color: $primary-1;
+.panel__label[aria-expanded='true'] {
+  color: $primary-1;
 
-    &:before {
-      transform: rotate(0deg);
-    }
+  &:before {
+    transform: rotate(0deg);
   }
 }
 
