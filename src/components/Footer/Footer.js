@@ -85,7 +85,7 @@ const Footer = () => {
           <div className="footer__contact--col">
             <div> 
               <h4>Hours Of Operation</h4>
-              Mon-Fri, 8:30 am - 5 pm <br/>Saturday & Sunday, Closed
+              Mon-Fri, 9 am - 4:30 pm <br/>Saturday & Sunday, Closed
             </div>
             <div>
               <h4>Email</h4>
